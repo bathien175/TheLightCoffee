@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eea63cb06379418cb48cd61994a2a3de" Name="Diagram1">
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Bill" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Bill_Info" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Category" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Import" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Import_Info" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Ingredient" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Product" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Recipe" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staff" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Surcharge" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Table" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKBill_Info16588" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKBill122024" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKBill510862" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKBill_Info640249" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKProduct568957" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKImport_Inf571201" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKImport434180" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKImport_Inf447235" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKRecipe221258" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKRecipe859301" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.Bill_Surcharge" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

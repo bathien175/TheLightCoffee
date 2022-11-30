@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TheLightCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="Bill_ID" />
+          </Key>
+          <Property Name="Bill_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bill_Table" Type="varchar" MaxLength="10" />
+          <Property Name="Bill_Staff" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Bill_TimeFrom" Type="datetime" Nullable="false" />
+          <Property Name="Bill_TimeTo" Type="datetime" />
+          <Property Name="Bill_Discount" Type="bigint" Nullable="false" />
+          <Property Name="Bill_isTakeAway" Type="bit" Nullable="false" />
+          <Property Name="Bill_TotalMoney" Type="bigint" Nullable="false" />
+          <Property Name="Bill_Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bill_Info">
+          <Key>
+            <PropertyRef Name="BI_ID" />
+          </Key>
+          <Property Name="BI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BI_Bill" Type="int" Nullable="false" />
+          <Property Name="BI_Product" Type="int" Nullable="false" />
+          <Property Name="BI_Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bill_Surcharge">
+          <Key>
+            <PropertyRef Name="Bill_ID" />
+            <PropertyRef Name="Surcharge_ID" />
+          </Key>
+          <Property Name="Bill_ID" Type="int" Nullable="false" />
+          <Property Name="Surcharge_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category_Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Import">
+          <Key>
+            <PropertyRef Name="Import_ID" />
+          </Key>
+          <Property Name="Import_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Import_Date" Type="datetime" Nullable="false" />
+          <Property Name="Import_Staff" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Import_TotalMoney" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Import_Info">
+          <Key>
+            <PropertyRef Name="Import_ID" />
+            <PropertyRef Name="Ingredient_ID" />
+          </Key>
+          <Property Name="Import_ID" Type="int" Nullable="false" />
+          <Property Name="Ingredient_ID" Type="int" Nullable="false" />
+          <Property Name="II_Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="Ingredient_ID" />
+          </Key>
+          <Property Name="Ingredient_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ingredient_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ingredient_Type" Type="int" Nullable="false" />
+          <Property Name="Ingredient_Unit" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ingredient_Volumn" Type="real" />
+          <Property Name="Ingredient_PriceImport" Type="bigint" Nullable="false" />
+          <Property Name="Ingredient_Reserved" Type="real" Nullable="false" />
+          <Property Name="Ingredient_isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Product_Image" Type="text" />
+          <Property Name="Product_Category" Type="int" Nullable="false" />
+          <Property Name="Product_Unit" Type="nvarchar" MaxLength="10" />
+          <Property Name="Product_Price" Type="bigint" Nullable="false" />
+          <Property Name="Product_isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+            <PropertyRef Name="Ingredient_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Ingredient_ID" Type="int" Nullable="false" />
+          <Property Name="Recipe_Volumn" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Staff_Code" />
+          </Key>
+          <Property Name="Staff_Code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Staff_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Staff_Datebirth" Type="date" />
+          <Property Name="Staff_Gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="Staff_Phone" Type="varchar" MaxLength="12" />
+          <Property Name="Staff_Address" Type="text" />
+          <Property Name="Staff_Password" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Staff_Image" Type="text" />
+          <Property Name="Staff_isAdmin" Type="bit" Nullable="false" />
+          <Property Name="Staff_isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Surcharge">
+          <Key>
+            <PropertyRef Name="Surcharge_ID" />
+          </Key>
+          <Property Name="Surcharge_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surcharge_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Surcharge_Price" Type="bigint" Nullable="false" />
+          <Property Name="Surcharge_DateStart" Type="date" Nullable="false" />
+          <Property Name="Surcharge_DateEnd" Type="date" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Table_Code" />
+          </Key>
+          <Property Name="Table_Code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Table_Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Table_Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FKBill_Info16588">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="Bill_ID" />
+            </Principal>
+            <Dependent Role="Bill_Info">
+              <PropertyRef Name="BI_Bill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill_Info640249">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Bill_Info">
+              <PropertyRef Name="BI_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill_Surch454692">
+          <End Role="Surcharge" Type="Self.Surcharge" Multiplicity="1" />
+          <End Role="Bill_Surcharge" Type="Self.Bill_Surcharge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Surcharge">
+              <PropertyRef Name="Surcharge_ID" />
+            </Principal>
+            <Dependent Role="Bill_Surcharge">
+              <PropertyRef Name="Surcharge_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill_Surch974873">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Bill_Surcharge" Type="Self.Bill_Surcharge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="Bill_ID" />
+            </Principal>
+            <Dependent Role="Bill_Surcharge">
+              <PropertyRef Name="Bill_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill122024">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="Bill_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill510862">
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Table">
+              <PropertyRef Name="Table_Code" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="Bill_Table" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImport_Inf447235">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="Ingredient_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Ingredient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImport_Inf571201">
+          <End Role="Import" Type="Self.Import" Multiplicity="1" />
+          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Import">
+              <PropertyRef Name="Import_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Import_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImport434180">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Import" Type="Self.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="Import">
+              <PropertyRef Name="Import_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKProduct568957">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Product_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRecipe221258">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="Ingredient_ID" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="Ingredient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRecipe859301">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TheLightCoffeeModelStoreContainer">
+          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill_Surcharge" EntityType="Self.Bill_Surcharge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Import" EntityType="Self.Import" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Import_Info" EntityType="Self.Import_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Surcharge" EntityType="Self.Surcharge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FKBill_Info16588" Association="Self.FKBill_Info16588">
+            <End Role="Bill" EntitySet="Bill" />
+            <End Role="Bill_Info" EntitySet="Bill_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill_Info640249" Association="Self.FKBill_Info640249">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Bill_Info" EntitySet="Bill_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill_Surch454692" Association="Self.FKBill_Surch454692">
+            <End Role="Surcharge" EntitySet="Surcharge" />
+            <End Role="Bill_Surcharge" EntitySet="Bill_Surcharge" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill_Surch974873" Association="Self.FKBill_Surch974873">
+            <End Role="Bill" EntitySet="Bill" />
+            <End Role="Bill_Surcharge" EntitySet="Bill_Surcharge" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill122024" Association="Self.FKBill122024">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill510862" Association="Self.FKBill510862">
+            <End Role="Table" EntitySet="Table" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FKImport_Inf447235" Association="Self.FKImport_Inf447235">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKImport_Inf571201" Association="Self.FKImport_Inf571201">
+            <End Role="Import" EntitySet="Import" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKImport434180" Association="Self.FKImport434180">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Import" EntitySet="Import" />
+          </AssociationSet>
+          <AssociationSet Name="FKProduct568957" Association="Self.FKProduct568957">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FKRecipe221258" Association="Self.FKRecipe221258">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Recipe" EntitySet="Recipe" />
+          </AssociationSet>
+          <AssociationSet Name="FKRecipe859301" Association="Self.FKRecipe859301">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Recipe" EntitySet="Recipe" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TheLightCoffeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="Bill_ID" />
+          </Key>
+          <Property Name="Bill_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bill_Table" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Bill_Staff" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bill_TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Bill_TimeTo" Type="DateTime" Precision="3" />
+          <Property Name="Bill_Discount" Type="Int64" Nullable="false" />
+          <Property Name="Bill_TotalMoney" Type="Int64" Nullable="false" />
+          <Property Name="Bill_Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Bill_Info" Relationship="Self.FKBill_Info16588" FromRole="Bill" ToRole="Bill_Info" />
+          <NavigationProperty Name="Staff" Relationship="Self.FKBill122024" FromRole="Bill" ToRole="Staff" />
+          <NavigationProperty Name="Table" Relationship="Self.FKBill510862" FromRole="Bill" ToRole="Table" />
+          <NavigationProperty Name="Surcharges" Relationship="Self.Bill_Surcharge" FromRole="Bill" ToRole="Surcharge" />
+          <Property Name="Bill_isTakeAway" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bill_Info">
+          <Key>
+            <PropertyRef Name="BI_ID" />
+          </Key>
+          <Property Name="BI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BI_Bill" Type="Int32" Nullable="false" />
+          <Property Name="BI_Product" Type="Int32" Nullable="false" />
+          <Property Name="BI_Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bill" Relationship="Self.FKBill_Info16588" FromRole="Bill_Info" ToRole="Bill" />
+          <NavigationProperty Name="Product" Relationship="Self.FKBill_Info640249" FromRole="Bill_Info" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FKProduct568957" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Import">
+          <Key>
+            <PropertyRef Name="Import_ID" />
+          </Key>
+          <Property Name="Import_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Import_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Import_Staff" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Import_TotalMoney" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Import_Info" Relationship="Self.FKImport_Inf571201" FromRole="Import" ToRole="Import_Info" />
+          <NavigationProperty Name="Staff" Relationship="Self.FKImport434180" FromRole="Import" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Import_Info">
+          <Key>
+            <PropertyRef Name="Import_ID" />
+            <PropertyRef Name="Ingredient_ID" />
+          </Key>
+          <Property Name="Import_ID" Type="Int32" Nullable="false" />
+          <Property Name="Ingredient_ID" Type="Int32" Nullable="false" />
+          <Property Name="II_Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Import" Relationship="Self.FKImport_Inf571201" FromRole="Import_Info" ToRole="Import" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FKImport_Inf447235" FromRole="Import_Info" ToRole="Ingredient" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="Ingredient_ID" />
+          </Key>
+          <Property Name="Ingredient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ingredient_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ingredient_Type" Type="Int32" Nullable="false" />
+          <Property Name="Ingredient_Unit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ingredient_Volumn" Type="Single" />
+          <Property Name="Ingredient_PriceImport" Type="Int64" Nullable="false" />
+          <Property Name="Ingredient_Reserved" Type="Single" Nullable="false" />
+          <Property Name="Ingredient_isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Import_Info" Relationship="Self.FKImport_Inf447235" FromRole="Ingredient" ToRole="Import_Info" />
+          <NavigationProperty Name="Recipes" Relationship="Self.FKRecipe221258" FromRole="Ingredient" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Product_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Product_Category" Type="Int32" Nullable="false" />
+          <Property Name="Product_Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Price" Type="Int64" Nullable="false" />
+          <Property Name="Product_isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Bill_Info" Relationship="Self.FKBill_Info640249" FromRole="Product" ToRole="Bill_Info" />
+          <NavigationProperty Name="Category" Relationship="Self.FKProduct568957" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Recipes" Relationship="Self.FKRecipe859301" FromRole="Product" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+            <PropertyRef Name="Ingredient_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Ingredient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Recipe_Volumn" Type="Single" Nullable="false" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FKRecipe221258" FromRole="Recipe" ToRole="Ingredient" />
+          <NavigationProperty Name="Product" Relationship="Self.FKRecipe859301" FromRole="Recipe" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Staff_Code" />
+          </Key>
+          <Property Name="Staff_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Staff_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Staff_Datebirth" Type="DateTime" Precision="0" />
+          <Property Name="Staff_Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Staff_Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Staff_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Staff_Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Staff_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Staff_isAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="Staff_isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Bills" Relationship="Self.FKBill122024" FromRole="Staff" ToRole="Bill" />
+          <NavigationProperty Name="Imports" Relationship="Self.FKImport434180" FromRole="Staff" ToRole="Import" />
+        </EntityType>
+        <EntityType Name="Surcharge">
+          <Key>
+            <PropertyRef Name="Surcharge_ID" />
+          </Key>
+          <Property Name="Surcharge_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surcharge_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surcharge_Price" Type="Int64" Nullable="false" />
+          <Property Name="Surcharge_DateStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Surcharge_DateEnd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Bills" Relationship="Self.Bill_Surcharge" FromRole="Surcharge" ToRole="Bill" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Table_Code" />
+          </Key>
+          <Property Name="Table_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Table_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Table_Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bills" Relationship="Self.FKBill510862" FromRole="Table" ToRole="Bill" />
+        </EntityType>
+        <Association Name="FKBill_Info16588">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="Bill_ID" />
+            </Principal>
+            <Dependent Role="Bill_Info">
+              <PropertyRef Name="BI_Bill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill122024">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="Bill_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill510862">
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Table">
+              <PropertyRef Name="Table_Code" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="Bill_Table" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBill_Info640249">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Bill_Info">
+              <PropertyRef Name="BI_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKProduct568957">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Product_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImport_Inf571201">
+          <End Role="Import" Type="Self.Import" Multiplicity="1" />
+          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Import">
+              <PropertyRef Name="Import_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Import_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImport434180">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Import" Type="Self.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="Import">
+              <PropertyRef Name="Import_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImport_Inf447235">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="Ingredient_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Ingredient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRecipe221258">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="Ingredient_ID" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="Ingredient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRecipe859301">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Bill_Surcharge">
+          <End Role="Surcharge" Type="Self.Surcharge" Multiplicity="*" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="TheLightCoffeeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bills" EntityType="Self.Bill" />
+          <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Imports" EntityType="Self.Import" />
+          <EntitySet Name="Import_Info" EntityType="Self.Import_Info" />
+          <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Recipes" EntityType="Self.Recipe" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="Surcharges" EntityType="Self.Surcharge" />
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <AssociationSet Name="FKBill_Info16588" Association="Self.FKBill_Info16588">
+            <End Role="Bill" EntitySet="Bills" />
+            <End Role="Bill_Info" EntitySet="Bill_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill122024" Association="Self.FKBill122024">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill510862" Association="Self.FKBill510862">
+            <End Role="Table" EntitySet="Tables" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FKBill_Info640249" Association="Self.FKBill_Info640249">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Bill_Info" EntitySet="Bill_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKProduct568957" Association="Self.FKProduct568957">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FKImport_Inf571201" Association="Self.FKImport_Inf571201">
+            <End Role="Import" EntitySet="Imports" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKImport434180" Association="Self.FKImport434180">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Import" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FKImport_Inf447235" Association="Self.FKImport_Inf447235">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FKRecipe221258" Association="Self.FKRecipe221258">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Recipe" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="FKRecipe859301" Association="Self.FKRecipe859301">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Recipe" EntitySet="Recipes" />
+          </AssociationSet>
+          <AssociationSet Name="Bill_Surcharge" Association="Self.Bill_Surcharge">
+            <End Role="Surcharge" EntitySet="Surcharges" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TheLightCoffeeModelStoreContainer" CdmEntityContainer="TheLightCoffeeEntities">
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="Bill_isTakeAway" ColumnName="Bill_isTakeAway" />
+                <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
+                <ScalarProperty Name="Bill_Table" ColumnName="Bill_Table" />
+                <ScalarProperty Name="Bill_Staff" ColumnName="Bill_Staff" />
+                <ScalarProperty Name="Bill_TimeFrom" ColumnName="Bill_TimeFrom" />
+                <ScalarProperty Name="Bill_TimeTo" ColumnName="Bill_TimeTo" />
+                <ScalarProperty Name="Bill_Discount" ColumnName="Bill_Discount" />
+                <ScalarProperty Name="Bill_TotalMoney" ColumnName="Bill_TotalMoney" />
+                <ScalarProperty Name="Bill_Status" ColumnName="Bill_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bill_Info">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Bill_Info">
+              <MappingFragment StoreEntitySet="Bill_Info">
+                <ScalarProperty Name="BI_ID" ColumnName="BI_ID" />
+                <ScalarProperty Name="BI_Bill" ColumnName="BI_Bill" />
+                <ScalarProperty Name="BI_Product" ColumnName="BI_Product" />
+                <ScalarProperty Name="BI_Quantity" ColumnName="BI_Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imports">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Import">
+              <MappingFragment StoreEntitySet="Import">
+                <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
+                <ScalarProperty Name="Import_Date" ColumnName="Import_Date" />
+                <ScalarProperty Name="Import_Staff" ColumnName="Import_Staff" />
+                <ScalarProperty Name="Import_TotalMoney" ColumnName="Import_TotalMoney" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Import_Info">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Import_Info">
+              <MappingFragment StoreEntitySet="Import_Info">
+                <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
+                <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
+                <ScalarProperty Name="II_Quantity" ColumnName="II_Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingredients">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Ingredient">
+              <MappingFragment StoreEntitySet="Ingredient">
+                <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
+                <ScalarProperty Name="Ingredient_Name" ColumnName="Ingredient_Name" />
+                <ScalarProperty Name="Ingredient_Type" ColumnName="Ingredient_Type" />
+                <ScalarProperty Name="Ingredient_Unit" ColumnName="Ingredient_Unit" />
+                <ScalarProperty Name="Ingredient_Volumn" ColumnName="Ingredient_Volumn" />
+                <ScalarProperty Name="Ingredient_PriceImport" ColumnName="Ingredient_PriceImport" />
+                <ScalarProperty Name="Ingredient_Reserved" ColumnName="Ingredient_Reserved" />
+                <ScalarProperty Name="Ingredient_isActive" ColumnName="Ingredient_isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Image" ColumnName="Product_Image" />
+                <ScalarProperty Name="Product_Category" ColumnName="Product_Category" />
+                <ScalarProperty Name="Product_Unit" ColumnName="Product_Unit" />
+                <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
+                <ScalarProperty Name="Product_isActive" ColumnName="Product_isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recipes">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Recipe">
+              <MappingFragment StoreEntitySet="Recipe">
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
+                <ScalarProperty Name="Recipe_Volumn" ColumnName="Recipe_Volumn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="Staff_Code" ColumnName="Staff_Code" />
+                <ScalarProperty Name="Staff_Name" ColumnName="Staff_Name" />
+                <ScalarProperty Name="Staff_Datebirth" ColumnName="Staff_Datebirth" />
+                <ScalarProperty Name="Staff_Gender" ColumnName="Staff_Gender" />
+                <ScalarProperty Name="Staff_Phone" ColumnName="Staff_Phone" />
+                <ScalarProperty Name="Staff_Address" ColumnName="Staff_Address" />
+                <ScalarProperty Name="Staff_Password" ColumnName="Staff_Password" />
+                <ScalarProperty Name="Staff_Image" ColumnName="Staff_Image" />
+                <ScalarProperty Name="Staff_isAdmin" ColumnName="Staff_isAdmin" />
+                <ScalarProperty Name="Staff_isActive" ColumnName="Staff_isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Surcharges">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Surcharge">
+              <MappingFragment StoreEntitySet="Surcharge">
+                <ScalarProperty Name="Surcharge_ID" ColumnName="Surcharge_ID" />
+                <ScalarProperty Name="Surcharge_Name" ColumnName="Surcharge_Name" />
+                <ScalarProperty Name="Surcharge_Price" ColumnName="Surcharge_Price" />
+                <ScalarProperty Name="Surcharge_DateStart" ColumnName="Surcharge_DateStart" />
+                <ScalarProperty Name="Surcharge_DateEnd" ColumnName="Surcharge_DateEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Table_Code" ColumnName="Table_Code" />
+                <ScalarProperty Name="Table_Location" ColumnName="Table_Location" />
+                <ScalarProperty Name="Table_Status" ColumnName="Table_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Bill_Surcharge" TypeName="TheLightCoffeeModel.Bill_Surcharge" StoreEntitySet="Bill_Surcharge">
+            <EndProperty Name="Surcharge">
+              <ScalarProperty Name="Surcharge_ID" ColumnName="Surcharge_ID" />
+            </EndProperty>
+            <EndProperty Name="Bill">
+              <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
