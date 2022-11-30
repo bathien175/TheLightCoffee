@@ -115,6 +115,24 @@
   <ItemGroup>
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\menuDAO.cs" />
+    <Compile Include="DTO\Bill.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Bill_Info.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Category.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Import.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Import_Info.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Ingredient.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\LightCoffee.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +147,27 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LightCoffee.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Product.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Recipe.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Staff.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Surcharge.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Table.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChooseTable_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChooseTable_GUI.Designer.cs">
+      <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home_GUI.cs">
       <SubType>Form</SubType>
@@ -162,12 +201,21 @@
     <Compile Include="userControl\itemMenu.Designer.cs">
       <DependentUpon>itemMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\itemTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\itemTable.Designer.cs">
+      <DependentUpon>itemTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\OptionHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="userControl\OptionHome.Designer.cs">
       <DependentUpon>OptionHome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\ChooseTable_GUI.resx">
+      <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home_GUI.resx">
       <DependentUpon>Home_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\itemMenu.resx">
       <DependentUpon>itemMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\itemTable.resx">
+      <DependentUpon>itemTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\OptionHome.resx">
       <DependentUpon>OptionHome.cs</DependentUpon>
@@ -284,6 +335,8 @@
       <DependentUpon>LightCoffee.edmx</DependentUpon>
       <LastGenOutput>LightCoffee.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\bill %281%29.png" />
+    <None Include="Resources\menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

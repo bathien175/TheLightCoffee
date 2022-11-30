@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TheLightCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TheLightCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bill">
           <Key>
             <PropertyRef Name="Bill_ID" />
@@ -334,7 +334,8 @@
             <End Role="Recipe" EntitySet="Recipe" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TheLightCoffeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -348,13 +349,13 @@
           <Property Name="Bill_TimeFrom" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Bill_TimeTo" Type="DateTime" Precision="3" />
           <Property Name="Bill_Discount" Type="Int64" Nullable="false" />
+          <Property Name="Bill_isTakeAway" Type="Boolean" Nullable="false" />
           <Property Name="Bill_TotalMoney" Type="Int64" Nullable="false" />
           <Property Name="Bill_Status" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bill_Info" Relationship="Self.FKBill_Info16588" FromRole="Bill" ToRole="Bill_Info" />
           <NavigationProperty Name="Staff" Relationship="Self.FKBill122024" FromRole="Bill" ToRole="Staff" />
           <NavigationProperty Name="Table" Relationship="Self.FKBill510862" FromRole="Bill" ToRole="Table" />
           <NavigationProperty Name="Surcharges" Relationship="Self.Bill_Surcharge" FromRole="Bill" ToRole="Surcharge" />
-          <Property Name="Bill_isTakeAway" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Bill_Info">
           <Key>
@@ -476,8 +477,8 @@
           <NavigationProperty Name="Bills" Relationship="Self.FKBill510862" FromRole="Table" ToRole="Bill" />
         </EntityType>
         <Association Name="FKBill_Info16588">
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bill">
               <PropertyRef Name="Bill_ID" />
@@ -599,7 +600,7 @@
           <End Role="Surcharge" Type="Self.Surcharge" Multiplicity="*" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="TheLightCoffeeEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
@@ -661,17 +662,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TheLightCoffeeModelStoreContainer" CdmEntityContainer="TheLightCoffeeEntities">
+        <EntityContainerMapping StorageEntityContainer="TheLightCoffeeModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="TheLightCoffeeModel.Bill">
               <MappingFragment StoreEntitySet="Bill">
-                <ScalarProperty Name="Bill_isTakeAway" ColumnName="Bill_isTakeAway" />
                 <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
                 <ScalarProperty Name="Bill_Table" ColumnName="Bill_Table" />
                 <ScalarProperty Name="Bill_Staff" ColumnName="Bill_Staff" />
                 <ScalarProperty Name="Bill_TimeFrom" ColumnName="Bill_TimeFrom" />
                 <ScalarProperty Name="Bill_TimeTo" ColumnName="Bill_TimeTo" />
                 <ScalarProperty Name="Bill_Discount" ColumnName="Bill_Discount" />
+                <ScalarProperty Name="Bill_isTakeAway" ColumnName="Bill_isTakeAway" />
                 <ScalarProperty Name="Bill_TotalMoney" ColumnName="Bill_TotalMoney" />
                 <ScalarProperty Name="Bill_Status" ColumnName="Bill_Status" />
               </MappingFragment>
