@@ -32,16 +32,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(itemTable));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.lblTime = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblTotalBill = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblTableCode = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.lblStatus = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.btnOptionBill = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.createBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookTable = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancleBook = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTrip = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.bunifuPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
+            this.menuTrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -51,13 +57,13 @@
             // 
             // bunifuPanel2
             // 
-            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Red;
             this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
             this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel2.BorderRadius = 3;
+            this.bunifuPanel2.BorderRadius = 10;
             this.bunifuPanel2.BorderThickness = 1;
-            this.bunifuPanel2.Controls.Add(this.bunifuLabel1);
+            this.bunifuPanel2.Controls.Add(this.lblTime);
             this.bunifuPanel2.Controls.Add(this.bunifuPictureBox1);
             this.bunifuPanel2.Controls.Add(this.lblTotalBill);
             this.bunifuPanel2.Controls.Add(this.lblTableCode);
@@ -68,12 +74,31 @@
             this.bunifuPanel2.Size = new System.Drawing.Size(300, 154);
             this.bunifuPanel2.TabIndex = 1;
             // 
+            // lblTime
+            // 
+            this.lblTime.AllowParentOverrides = false;
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTime.AutoEllipsis = false;
+            this.lblTime.AutoSize = false;
+            this.lblTime.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblTime.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblTime.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(3, 132);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTime.Size = new System.Drawing.Size(130, 22);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "Bây giờ";
+            this.lblTime.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTime.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // bunifuPictureBox1
             // 
             this.bunifuPictureBox1.AllowFocused = false;
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 17;
+            this.bunifuPictureBox1.BorderRadius = 14;
             this.bunifuPictureBox1.Image = global::DoAnThucTap.Properties.Resources.bill__1_;
             this.bunifuPictureBox1.IsCircle = true;
             this.bunifuPictureBox1.Location = new System.Drawing.Point(3, 3);
@@ -95,7 +120,7 @@
             this.lblTotalBill.Location = new System.Drawing.Point(38, 6);
             this.lblTotalBill.Name = "lblTotalBill";
             this.lblTotalBill.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotalBill.Size = new System.Drawing.Size(9, 20);
+            this.lblTotalBill.Size = new System.Drawing.Size(9, 19);
             this.lblTotalBill.TabIndex = 1;
             this.lblTotalBill.Text = "0";
             this.lblTotalBill.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,10 +156,11 @@
             this.bunifuPanel1.BorderRadius = 10;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.lblStatus);
-            this.bunifuPanel1.Controls.Add(this.bunifuImageButton1);
+            this.bunifuPanel1.Controls.Add(this.btnOptionBill);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
+            this.bunifuPanel1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(300, 48);
             this.bunifuPanel1.TabIndex = 0;
@@ -147,76 +173,106 @@
             this.lblStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblStatus.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(0, 0);
+            this.lblStatus.Location = new System.Drawing.Point(5, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatus.Size = new System.Drawing.Size(243, 48);
+            this.lblStatus.Size = new System.Drawing.Size(238, 48);
             this.lblStatus.TabIndex = 2;
-            this.lblStatus.Text = "Bàn trống";
+            this.lblStatus.Text = "    Bàn trống";
             this.lblStatus.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblStatus.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuImageButton1
+            // btnOptionBill
             // 
-            this.bunifuImageButton1.ActiveImage = null;
-            this.bunifuImageButton1.AllowAnimations = true;
-            this.bunifuImageButton1.AllowBuffering = false;
-            this.bunifuImageButton1.AllowToggling = false;
-            this.bunifuImageButton1.AllowZooming = true;
-            this.bunifuImageButton1.AllowZoomingOnFocus = false;
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
-            this.bunifuImageButton1.FadeWhenInactive = false;
-            this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.bunifuImageButton1.Image = global::DoAnThucTap.Properties.Resources.menu;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.ImageLocation = null;
-            this.bunifuImageButton1.ImageMargin = 0;
-            this.bunifuImageButton1.ImageSize = new System.Drawing.Size(56, 47);
-            this.bunifuImageButton1.ImageZoomSize = new System.Drawing.Size(57, 48);
-            this.bunifuImageButton1.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.InitialImage")));
-            this.bunifuImageButton1.Location = new System.Drawing.Point(243, 0);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Rotation = 0;
-            this.bunifuImageButton1.ShowActiveImage = true;
-            this.bunifuImageButton1.ShowCursorChanges = true;
-            this.bunifuImageButton1.ShowImageBorders = false;
-            this.bunifuImageButton1.ShowSizeMarkers = false;
-            this.bunifuImageButton1.Size = new System.Drawing.Size(57, 48);
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.ToolTipText = "";
-            this.bunifuImageButton1.WaitOnLoad = false;
-            this.bunifuImageButton1.Zoom = 0;
-            this.bunifuImageButton1.ZoomSpeed = 10;
+            this.btnOptionBill.ActiveImage = null;
+            this.btnOptionBill.AllowAnimations = true;
+            this.btnOptionBill.AllowBuffering = false;
+            this.btnOptionBill.AllowToggling = false;
+            this.btnOptionBill.AllowZooming = true;
+            this.btnOptionBill.AllowZoomingOnFocus = false;
+            this.btnOptionBill.BackColor = System.Drawing.Color.Transparent;
+            this.btnOptionBill.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnOptionBill.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnOptionBill.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnOptionBill.ErrorImage")));
+            this.btnOptionBill.FadeWhenInactive = false;
+            this.btnOptionBill.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnOptionBill.Image = global::DoAnThucTap.Properties.Resources.menu;
+            this.btnOptionBill.ImageActive = null;
+            this.btnOptionBill.ImageLocation = null;
+            this.btnOptionBill.ImageMargin = 0;
+            this.btnOptionBill.ImageSize = new System.Drawing.Size(56, 47);
+            this.btnOptionBill.ImageZoomSize = new System.Drawing.Size(57, 48);
+            this.btnOptionBill.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnOptionBill.InitialImage")));
+            this.btnOptionBill.Location = new System.Drawing.Point(243, 0);
+            this.btnOptionBill.Name = "btnOptionBill";
+            this.btnOptionBill.Rotation = 0;
+            this.btnOptionBill.ShowActiveImage = true;
+            this.btnOptionBill.ShowCursorChanges = true;
+            this.btnOptionBill.ShowImageBorders = false;
+            this.btnOptionBill.ShowSizeMarkers = false;
+            this.btnOptionBill.Size = new System.Drawing.Size(57, 48);
+            this.btnOptionBill.TabIndex = 1;
+            this.btnOptionBill.ToolTipText = "";
+            this.btnOptionBill.WaitOnLoad = false;
+            this.btnOptionBill.Zoom = 0;
+            this.btnOptionBill.ZoomSpeed = 10;
             // 
-            // bunifuLabel1
+            // createBill
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.AutoSize = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuLabel1.Location = new System.Drawing.Point(3, 132);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(130, 22);
-            this.bunifuLabel1.TabIndex = 3;
-            this.bunifuLabel1.Text = "Bây giờ";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.createBill.Image = global::DoAnThucTap.Properties.Resources.invoice;
+            this.createBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createBill.Name = "createBill";
+            this.createBill.Size = new System.Drawing.Size(261, 26);
+            this.createBill.Text = "Tạo hóa đơn";
+            // 
+            // bookTable
+            // 
+            this.bookTable.Image = global::DoAnThucTap.Properties.Resources.check;
+            this.bookTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookTable.Name = "bookTable";
+            this.bookTable.Size = new System.Drawing.Size(261, 26);
+            this.bookTable.Text = "Đặt bàn";
+            // 
+            // cancleBook
+            // 
+            this.cancleBook.Image = global::DoAnThucTap.Properties.Resources.close__1_;
+            this.cancleBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cancleBook.Name = "cancleBook";
+            this.cancleBook.Size = new System.Drawing.Size(261, 26);
+            this.cancleBook.Text = "Hủy lệnh đặt";
+            // 
+            // detailBill
+            // 
+            this.detailBill.Image = global::DoAnThucTap.Properties.Resources.pencil;
+            this.detailBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.detailBill.Name = "detailBill";
+            this.detailBill.Size = new System.Drawing.Size(261, 26);
+            this.detailBill.Text = "Xem thông tin hóa đơn";
+            // 
+            // menuTrip
+            // 
+            this.menuTrip.BackColor = System.Drawing.Color.White;
+            this.menuTrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuTrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuTrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createBill,
+            this.bookTable,
+            this.cancleBook,
+            this.detailBill});
+            this.menuTrip.Name = "menuTrip";
+            this.menuTrip.Size = new System.Drawing.Size(262, 136);
+            this.menuTrip.Style = MetroFramework.MetroColorStyle.Green;
+            this.menuTrip.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.menuTrip.UseCustomBackColor = true;
+            this.menuTrip.UseCustomForeColor = true;
+            this.menuTrip.UseStyleColors = true;
             // 
             // itemTable
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.Controls.Add(this.bunifuPanel2);
             this.Controls.Add(this.bunifuPanel1);
             this.Name = "itemTable";
@@ -225,6 +281,7 @@
             this.bunifuPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
+            this.menuTrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -233,12 +290,17 @@
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
+        private Bunifu.UI.WinForms.BunifuImageButton btnOptionBill;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private Bunifu.UI.WinForms.BunifuLabel lblTotalBill;
         private Bunifu.UI.WinForms.BunifuLabel lblTableCode;
         private Bunifu.UI.WinForms.BunifuLabel lblStatus;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel lblTime;
+        private System.Windows.Forms.ToolStripMenuItem createBill;
+        private System.Windows.Forms.ToolStripMenuItem bookTable;
+        private System.Windows.Forms.ToolStripMenuItem cancleBook;
+        private System.Windows.Forms.ToolStripMenuItem detailBill;
+        private MetroFramework.Controls.MetroContextMenu menuTrip;
     }
 }

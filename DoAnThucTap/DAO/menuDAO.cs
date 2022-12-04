@@ -34,5 +34,14 @@ namespace DoAnThucTap.DAO
                 return pro;
             }
         }
+
+        public Product getProductbyID(int id)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var pr = db.Products.Where(p => p.Product_ID == id && p.Product_isActive == true).FirstOrDefault();
+                return pr;
+            }
+        }
     }
 }

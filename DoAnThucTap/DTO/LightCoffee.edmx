@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TheLightCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TheLightCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bill">
           <Key>
             <PropertyRef Name="Bill_ID" />
@@ -18,6 +18,7 @@
           <Property Name="Bill_isTakeAway" Type="bit" Nullable="false" />
           <Property Name="Bill_TotalMoney" Type="bigint" Nullable="false" />
           <Property Name="Bill_Status" Type="bit" Nullable="false" />
+          <Property Name="Bill_ExtraFee" Type="bigint" />
         </EntityType>
         <EntityType Name="Bill_Info">
           <Key>
@@ -42,6 +43,14 @@
           </Key>
           <Property Name="Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Category_Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DBTable">
+          <Key>
+            <PropertyRef Name="Table_Code" />
+          </Key>
+          <Property Name="Table_Code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Table_Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Table_Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -120,14 +129,6 @@
           <Property Name="Surcharge_DateStart" Type="date" Nullable="false" />
           <Property Name="Surcharge_DateEnd" Type="date" />
         </EntityType>
-        <EntityType Name="Table">
-          <Key>
-            <PropertyRef Name="Table_Code" />
-          </Key>
-          <Property Name="Table_Code" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Table_Location" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Table_Status" Type="nvarchar" MaxLength="255" />
-        </EntityType>
         <Association Name="FKBill_Info16588">
           <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
           <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="*" />
@@ -188,11 +189,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKBill510862">
-          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+        <Association Name="FKBill723377">
+          <End Role="DBTable" Type="Self.DBTable" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Table">
+            <Principal Role="DBTable">
               <PropertyRef Name="Table_Code" />
             </Principal>
             <Dependent Role="Bill">
@@ -272,11 +273,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="exportBillTakeAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BillID" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="TheLightCoffeeModelStoreContainer">
           <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill_Surcharge" EntityType="Self.Bill_Surcharge" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DBTable" EntityType="Self.DBTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Import" EntityType="Self.Import" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Import_Info" EntityType="Self.Import_Info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
@@ -284,7 +289,6 @@
           <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Surcharge" EntityType="Self.Surcharge" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FKBill_Info16588" Association="Self.FKBill_Info16588">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="Bill_Info" EntitySet="Bill_Info" />
@@ -305,8 +309,8 @@
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FKBill510862" Association="Self.FKBill510862">
-            <End Role="Table" EntitySet="Table" />
+          <AssociationSet Name="FKBill723377" Association="Self.FKBill723377">
+            <End Role="DBTable" EntitySet="DBTable" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
           <AssociationSet Name="FKImport_Inf447235" Association="Self.FKImport_Inf447235">
@@ -334,8 +338,7 @@
             <End Role="Recipe" EntitySet="Recipe" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TheLightCoffeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -354,8 +357,9 @@
           <Property Name="Bill_Status" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bill_Info" Relationship="Self.FKBill_Info16588" FromRole="Bill" ToRole="Bill_Info" />
           <NavigationProperty Name="Staff" Relationship="Self.FKBill122024" FromRole="Bill" ToRole="Staff" />
-          <NavigationProperty Name="Table" Relationship="Self.FKBill510862" FromRole="Bill" ToRole="Table" />
+          <NavigationProperty Name="DBTable" Relationship="Self.FKBill723377" FromRole="Bill" ToRole="DBTable" />
           <NavigationProperty Name="Surcharges" Relationship="Self.Bill_Surcharge" FromRole="Bill" ToRole="Surcharge" />
+          <Property Name="Bill_ExtraFee" Type="Int64" />
         </EntityType>
         <EntityType Name="Bill_Info">
           <Key>
@@ -375,6 +379,15 @@
           <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Products" Relationship="Self.FKProduct568957" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="DBTable">
+          <Key>
+            <PropertyRef Name="Table_Code" />
+          </Key>
+          <Property Name="Table_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Table_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Table_Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bills" Relationship="Self.FKBill723377" FromRole="DBTable" ToRole="Bill" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -467,15 +480,6 @@
           <Property Name="Surcharge_DateEnd" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Bills" Relationship="Self.Bill_Surcharge" FromRole="Surcharge" ToRole="Bill" />
         </EntityType>
-        <EntityType Name="Table">
-          <Key>
-            <PropertyRef Name="Table_Code" />
-          </Key>
-          <Property Name="Table_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Table_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Table_Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Bills" Relationship="Self.FKBill510862" FromRole="Table" ToRole="Bill" />
-        </EntityType>
         <Association Name="FKBill_Info16588">
           <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
           <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="*" />
@@ -500,11 +504,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKBill510862">
-          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+        <Association Name="FKBill723377">
+          <End Role="DBTable" Type="Self.DBTable" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Table">
+            <Principal Role="DBTable">
               <PropertyRef Name="Table_Code" />
             </Principal>
             <Dependent Role="Bill">
@@ -600,10 +604,11 @@
           <End Role="Surcharge" Type="Self.Surcharge" Multiplicity="*" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TheLightCoffeeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="Bill_Info" EntityType="Self.Bill_Info" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="DBTables" EntityType="Self.DBTable" />
           <EntitySet Name="Imports" EntityType="Self.Import" />
           <EntitySet Name="Import_Info" EntityType="Self.Import_Info" />
           <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
@@ -611,7 +616,6 @@
           <EntitySet Name="Recipes" EntityType="Self.Recipe" />
           <EntitySet Name="Staffs" EntityType="Self.Staff" />
           <EntitySet Name="Surcharges" EntityType="Self.Surcharge" />
-          <EntitySet Name="Tables" EntityType="Self.Table" />
           <AssociationSet Name="FKBill_Info16588" Association="Self.FKBill_Info16588">
             <End Role="Bill" EntitySet="Bills" />
             <End Role="Bill_Info" EntitySet="Bill_Info" />
@@ -620,8 +624,8 @@
             <End Role="Staff" EntitySet="Staffs" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
-          <AssociationSet Name="FKBill510862" Association="Self.FKBill510862">
-            <End Role="Table" EntitySet="Tables" />
+          <AssociationSet Name="FKBill723377" Association="Self.FKBill723377">
+            <End Role="DBTable" EntitySet="DBTables" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
           <AssociationSet Name="FKBill_Info640249" Association="Self.FKBill_Info640249">
@@ -656,16 +660,30 @@
             <End Role="Surcharge" EntitySet="Surcharges" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
+          <FunctionImport Name="exportBillTakeAway" ReturnType="Collection(TheLightCoffeeModel.exportBillTakeAway_Result)">
+          <Parameter Name="BillID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="exportBillTakeAway_Result">
+          <Property Type="Int32" Name="Bill_Code" Nullable="false" />
+          <Property Type="String" Name="Bill_Staff" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Bill_Product" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Bill_Quantity" Nullable="false" />
+          <Property Type="Int64" Name="Bill_UnitPrice" Nullable="false" />
+          <Property Type="Int64" Name="Bill_ExtraFee" Nullable="true" />
+          <Property Type="Int64" Name="Bill_Discount" Nullable="false" />
+          <Property Type="Int64" Name="Bill_TotalMoney" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TheLightCoffeeModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="TheLightCoffeeModelStoreContainer" CdmEntityContainer="TheLightCoffeeEntities">
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="TheLightCoffeeModel.Bill">
               <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="Bill_ExtraFee" ColumnName="Bill_ExtraFee" />
                 <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
                 <ScalarProperty Name="Bill_Table" ColumnName="Bill_Table" />
                 <ScalarProperty Name="Bill_Staff" ColumnName="Bill_Staff" />
@@ -693,6 +711,15 @@
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
                 <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBTables">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.DBTable">
+              <MappingFragment StoreEntitySet="DBTable">
+                <ScalarProperty Name="Table_Code" ColumnName="Table_Code" />
+                <ScalarProperty Name="Table_Location" ColumnName="Table_Location" />
+                <ScalarProperty Name="Table_Status" ColumnName="Table_Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -778,15 +805,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tables">
-            <EntityTypeMapping TypeName="TheLightCoffeeModel.Table">
-              <MappingFragment StoreEntitySet="Table">
-                <ScalarProperty Name="Table_Code" ColumnName="Table_Code" />
-                <ScalarProperty Name="Table_Location" ColumnName="Table_Location" />
-                <ScalarProperty Name="Table_Status" ColumnName="Table_Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="Bill_Surcharge" TypeName="TheLightCoffeeModel.Bill_Surcharge" StoreEntitySet="Bill_Surcharge">
             <EndProperty Name="Surcharge">
               <ScalarProperty Name="Surcharge_ID" ColumnName="Surcharge_ID" />
@@ -795,6 +813,20 @@
               <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="exportBillTakeAway" FunctionName="TheLightCoffeeModel.Store.exportBillTakeAway">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportBillTakeAway_Result">
+                <ScalarProperty Name="Bill_Code" ColumnName="Bill_Code" />
+                <ScalarProperty Name="Bill_Staff" ColumnName="Bill_Staff" />
+                <ScalarProperty Name="Bill_Product" ColumnName="Bill_Product" />
+                <ScalarProperty Name="Bill_Quantity" ColumnName="Bill_Quantity" />
+                <ScalarProperty Name="Bill_UnitPrice" ColumnName="Bill_UnitPrice" />
+                <ScalarProperty Name="Bill_ExtraFee" ColumnName="Bill_ExtraFee" />
+                <ScalarProperty Name="Bill_Discount" ColumnName="Bill_Discount" />
+                <ScalarProperty Name="Bill_TotalMoney" ColumnName="Bill_TotalMoney" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

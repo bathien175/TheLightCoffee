@@ -592,7 +592,7 @@
         JEnS3mNj/XV8lSRJkiRJkiS93tf4es65PD6SJEmSJEmSpNc751w+ACLEom2pPTokAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLocation2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAAxCAYAAABj0M2FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHbSURBVHhe7d0rT1xBGIfxkevA4QiKIGv4BjiSGkw9BoNp
@@ -606,7 +606,7 @@
         r6oiPCwAKQp/BPXzfGdoNvU6+c69AOg0Ny7GEsXpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLocation1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAAxCAYAAABj0M2FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHbSURBVHhe7d0rT1xBGIfxkevA4QiKIGv4BjiSGkw9BoNp
@@ -620,7 +620,7 @@
         r6oiPCwAKQp/BPXzfGdoNvU6+c69AOg0Ny7GEsXpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLocation0.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAAxCAYAAABj0M2FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHbSURBVHhe7d0rT1xBGIfxkevA4QiKIGv4BjiSGkw9BoNp
@@ -648,4 +648,7 @@
         r6oiPCwAKQp/BPXzfGdoNvU6+c69AOg0Ny7GEsXpAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="menuTrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

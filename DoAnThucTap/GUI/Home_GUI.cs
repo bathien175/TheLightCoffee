@@ -47,15 +47,15 @@ namespace DoAnThucTap.GUI
 
         private void btnCreateBill_Click(object sender, EventArgs e)
         {
-            Sell_GUI sell = new Sell_GUI();
+            ChooseTable_GUI choose = new ChooseTable_GUI(s);
             this.Hide();
-            sell.ShowDialog();
+            choose.ShowDialog();
             this.Show();
         }
 
         private void btnTakeAway_Click(object sender, EventArgs e)
         {
-            Sell_GUI sell = new Sell_GUI();
+            Sell_GUI sell = new Sell_GUI("TakeAway",s);
             this.Hide();
             sell.ShowDialog();
             this.Show();

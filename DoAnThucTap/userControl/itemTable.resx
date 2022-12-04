@@ -124,24 +124,26 @@
   <data name="bunifuPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAACaCAYAAAATmXWpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJaSURBVHhe7dahbQNBFEXRhSkjMDCluITAdGEza9bu2Vkr
-        AwLMM1c6TzpoPr6azcyst+v1fbvdLgBLud8/ZqXm9v3zeHgALGmM06zVsd+SvT4E+H+XWatjggWsTbCA
-        DMECMgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQ
-        LCBDsIAMwQIyBAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMEC
-        MgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQLCBD
-        sIAMwQIyBAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMECMgQL
-        yBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAM
-        wQIyBAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMECMgQLyBAs
-        IEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIy
-        BAvIECwgQ7CADMECMgQLyBAsIEOwgAzBAjIEC8gQLCBDsIAMwQIyBAvIECwgQ7CADMECMv4Ea4zTiwOA
-        NYzxPWs1t+9fx8PzpwWwjmeszue3WSozs8K27Qdnv7V/+J6J7wAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALFSURBVHhe7dkhbhtBAIbRgYGFhYWFgTlCjlBoWBgYmFsU
+        9liFhYWFRUk6rkeq7Dq0u5/0fulpZe8s/bSyh5lZeq9j3E6H6QngPzu8jHG3cvT2joeex/g2H3gF2NJs
+        0Y/ZpPuVp/MdY3XtIYCNHVamTptf3Myafb84BLC52aaf8/p+5crbFbBvs1GfVq7+BOvh2iGAnXhauZqf
+        Tr/MXzsEsAeCBWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZ
+        ggVkCBaQIVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFY
+        QIZgARmCBWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZggVk
+        CBaQIVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFYQIZg
+        ARmCBWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZggVkCBaQ
+        IVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFYQIZgARmC
+        BWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZggVkCBaQIVhA
+        hmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZggVkCBaQIVhAxlmwHi9uAuzJ32C9jHF/5QDALsxG
+        fV65mp/GePc8xq/LQwA78XHl6rRjwa4cAtjUfJn6sjJ1vnnz0ZsWsBezR1/n9WYl6t/Nmx/m29bDvB7/
+        OQTYwvGPwNuVJTOz2sb4DTTApMNwWndTAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
+  <data name="lblTime.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 1px;font-family: 'Times New Roman'; font-size: 10.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
   <data name="lblTotalBill.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 1px;font-family: 'Times New Roman'; font-size: 10.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Times New Roman'; font-size: 10.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
   <data name="lblTableCode.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 54px;font-family: 'Times New Roman'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
@@ -157,12 +159,12 @@
 </value>
   </data>
   <data name="lblStatus.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 12px;font-family: 'Times New Roman'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 10px;font-family: 'Times New Roman'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
-  <data name="bunifuImageButton1.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnOptionBill.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAABtUSURBVHhe7d1L
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAABtUSURBVHhe7d1L
         cuRGkoBhHUJ36QPogNI1atdlJtOid3WCWfdpetzJTBYLzAeAxCMi/PvNfrOZFpkEgkCEu4cH6zcAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACg
         aX78+PF7+Me7//z148e37/PMr71+34/fLx8HAABaJBfrXxf7v/8v/v//vWZ+xi9BgYAAAIAWyEX5fYHe
@@ -282,10 +284,10 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAABAE/z22/8D7PeeJN72OGoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuImageButton1.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnOptionBill.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAawAAAGsCAYAAACByJOsAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAEiiSURBVHhe7Z0J
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAEiiSURBVHhe7Z0J
         tCRVff/DNgwgm7IpoghKUFFRFFExQQGDBg0qEI0ecUGjRo1JTGISDbh7YhJMMCGDM4Mzo38jJjHb0SSI
         83xvYFgUDCioGHHHaAwgwpig4f/5Frce1dW3lu7XXUv393PO99R7Xffeqq7l9+271K2fMWaW+fSnP70K
         7ZPRH6GPZLWwsHA7y7u6LPbxDpYD+430XbLfbVX42sYYY7qKgnUI2gOGRKD/EcuoCcya+K63sbSZGWNM
@@ -599,4 +601,7 @@
         RK5CYII=
 </value>
   </data>
+  <metadata name="menuTrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
+  </metadata>
 </root>

@@ -64,12 +64,19 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
       <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextBox">
       <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
       <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Dialogs.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -102,6 +109,8 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -113,15 +122,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\menuDAO.cs" />
+    <Compile Include="DAO\tableDAO.cs" />
     <Compile Include="DTO\Bill.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\billIsTakeAway.cs" />
     <Compile Include="DTO\Bill_Info.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Category.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DBTable.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\dtaBill.cs">
+      <DependentUpon>dtaBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\dtaBill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtaBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\exportBillTakeAway_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Import.cs">
@@ -154,14 +180,24 @@
     <Compile Include="DTO\Recipe.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ReportBillTakeAway.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportBillTakeAway.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DTO\Staff.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Surcharge.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\Table.cs">
-      <DependentUpon>LightCoffee.tt</DependentUpon>
+    <Compile Include="DTO\tableBill.cs" />
+    <Compile Include="GUI\addToBill_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\addToBill_GUI.Designer.cs">
+      <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ChooseTable_GUI.cs">
       <SubType>Form</SubType>
@@ -180,6 +216,12 @@
     </Compile>
     <Compile Include="GUI\Login_GUI.Designer.cs">
       <DependentUpon>Login_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\printBill_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\printBill_GUI.Designer.cs">
+      <DependentUpon>printBill_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Sell_GUI.cs">
       <SubType>Form</SubType>
@@ -213,6 +255,13 @@
     <Compile Include="userControl\OptionHome.Designer.cs">
       <DependentUpon>OptionHome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DTO\ReportBillTakeAway.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportBillTakeAway.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\addToBill_GUI.resx">
+      <DependentUpon>addToBill_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChooseTable_GUI.resx">
       <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login_GUI.resx">
       <DependentUpon>Login_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\printBill_GUI.resx">
+      <DependentUpon>printBill_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Sell_GUI.resx">
       <DependentUpon>Sell_GUI.cs</DependentUpon>
@@ -252,6 +304,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LightCoffee.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DTO\dtaBill.xsc">
+      <DependentUpon>dtaBill.xsd</DependentUpon>
+    </None>
+    <None Include="DTO\dtaBill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtaBill.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DTO\dtaBill.xss">
+      <DependentUpon>dtaBill.xsd</DependentUpon>
+    </None>
     <None Include="DTO\LightCoffee.edmx.diagram">
       <DependentUpon>LightCoffee.edmx</DependentUpon>
     </None>
@@ -320,9 +383,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ImageProduct\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill %281%29.png" />
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\close %281%29.png" />
+    <None Include="Resources\invoice.png" />
+    <None Include="Resources\check.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DTO\LightCoffee.Context.tt">
@@ -335,8 +409,6 @@
       <DependentUpon>LightCoffee.edmx</DependentUpon>
       <LastGenOutput>LightCoffee.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\bill %281%29.png" />
-    <None Include="Resources\menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

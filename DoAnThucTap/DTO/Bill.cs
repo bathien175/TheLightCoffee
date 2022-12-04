@@ -30,11 +30,12 @@ namespace DoAnThucTap.DTO
         public bool Bill_isTakeAway { get; set; }
         public long Bill_TotalMoney { get; set; }
         public bool Bill_Status { get; set; }
+        public Nullable<long> Bill_ExtraFee { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill_Info> Bill_Info { get; set; }
         public virtual Staff Staff { get; set; }
-        public virtual Table Table { get; set; }
+        public virtual DBTable DBTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Surcharge> Surcharges { get; set; }
     }

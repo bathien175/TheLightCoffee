@@ -12,17 +12,17 @@ namespace DoAnThucTap.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class Table
+    public partial class DBTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Table()
+        public DBTable()
         {
             this.Bills = new HashSet<Bill>();
         }
     
         public string Table_Code { get; set; }
         public string Table_Location { get; set; }
-        public string Table_Status { get; set; }
+        public int Table_Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }

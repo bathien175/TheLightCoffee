@@ -12,11 +12,13 @@ namespace DoAnThucTap.DTO
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class Entities : DbContext
+    public partial class TheLightCoffeeEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public TheLightCoffeeEntities()
+            : base("name=TheLightCoffeeEntities")
         {
         }
     
@@ -28,6 +30,7 @@ namespace DoAnThucTap.DTO
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Bill_Info> Bill_Info { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<DBTable> DBTables { get; set; }
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<Import_Info> Import_Info { get; set; }
         public virtual DbSet<Ingredient> Ingredients { get; set; }
@@ -35,6 +38,14 @@ namespace DoAnThucTap.DTO
         public virtual DbSet<Recipe> Recipes { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Surcharge> Surcharges { get; set; }
-        public virtual DbSet<Table> Tables { get; set; }
+    
+        public virtual ObjectResult<exportBillTakeAway_Result> exportBillTakeAway(Nullable<int> billID)
+        {
+            var billIDParameter = billID.HasValue ?
+                new ObjectParameter("BillID", billID) :
+                new ObjectParameter("BillID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportBillTakeAway_Result>("exportBillTakeAway", billIDParameter);
+        }
     }
 }

@@ -18,13 +18,35 @@ namespace DoAnThucTap.GUI
     public partial class Sell_GUI : Form
     {
         private List<itemBill> itemBillList = new List<itemBill>();
-        public Sell_GUI()
+        private DBTable tablecurrent = new DBTable();
+        private Bill billcurrent = new Bill();
+        private Staff staff= new Staff();
+        public Sell_GUI(string tbCode,Staff s)
         {
             InitializeComponent();
+            if (tbCode == "TakeAway")
+            {
+                lblData.Text = "Bán mang về";
+                tablecurrent = null;
+            }
+            else
+            {
+                tablecurrent = new tableDAO().getTableByID(tbCode);
+                lblData.Text = tablecurrent.Table_Location + " - Bàn " + tablecurrent.Table_Code;
+            }
+            this.staff = s;
+            loadBill();
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
+            if (billcurrent != null)
+            {
+                if (billcurrent.Bill_isTakeAway == true)
+                {
+                    billDAO dao = new billDAO();
+                    dao.CancelBillTakeAway();
+                }
+            }
             this.Close();
         }
 
@@ -79,69 +101,97 @@ namespace DoAnThucTap.GUI
                 }
             }
         }
-        void loadBill()
+        void loadBill() // đảm nhận vai trò load dữ liệu lên bảng hóa đơn tạm
         {
             Bill.Controls.Clear();
-            if (itemBillList.Count > 0)
+            billDAO dao = new billDAO();
+            DTO.Bill b = new DTO.Bill();
+            if (tablecurrent == null)
             {
-                foreach (itemBill item in itemBillList)
+                //takeAway
+                b = dao.getTakeAwayCurrent();
+            }
+            else
+            {
+                //at store
+                 b = dao.getBillbyTableID(tablecurrent.Table_Code);
+            }
+            billcurrent = b;
+            if (b != null)
+            {
+                List<Bill_Info> list =  dao.getListBillInfo(b.Bill_ID);
+                if (list.Count > 0)
                 {
-                    item.btnDel().Tag = item.productid;
-                    item.btnDel().Click += deleteItemBill_Click;
-                    Bill.Controls.Add(item);
+                    foreach (Bill_Info item in list)
+                    {
+                        itemBill i = new itemBill();
+                        i.productid = item.BI_Product;
+                        i.nameMenu = new menuDAO().getProductbyID(item.BI_Product).Product_Name;
+                        i.slMenu = item.BI_Quantity;
+                        i.btnDel().Tag = item.BI_Product;
+                        i.btnDel().Click += deleteItemBill_Click;
+                        itemBillList.Add(i);
+                        Bill.Controls.Add(i);
+                    }
                 }
             }
         }
 
         private void deleteItemBill_Click(object sender, EventArgs e)
         {
-            List<itemBill> list = new List<itemBill>();
-            foreach (itemBill item in itemBillList)
-            {
-                if(item.productid!=Convert.ToInt32((sender as BunifuImageButton).Tag))
-                {
-                    list.Add(item);
-                }
-            }
-            itemBillList = list;
-            loadBill();
+            //List<itemBill> list = new List<itemBill>();
+            //foreach (itemBill item in itemBillList)
+            //{
+            //    if(item.productid!=Convert.ToInt32((sender as BunifuImageButton).Tag))
+            //    {
+            //        list.Add(item);
+            //    }
+            //}
+            //itemBillList = list;
+            //loadBill();
         }
 
         private void addMenu_Click(object sender, EventArgs e)
         {
-            itemBill b = new itemBill();
             Product p = (sender as PictureBox).Tag as Product;
-            b.nameMenu = p.Product_Name;
-            b.slMenu = 1;
-            b.productid= p.Product_ID;
-            if (itemBillList.Count == 0)
-            {
-                itemBillList.Add(b);
-            }
-            else
-            {
-                List<itemBill> list = new List<itemBill>();
-                bool existMenu = false;
-                foreach (itemBill item in itemBillList)
-                {
-                    if (b.productid == item.productid)
-                    {
-                        item.slMenu += 1;
-                        list.Add(item);
-                        existMenu = true;
-                    }
-                    else
-                    {
-                        list.Add(item);
-                    }
-                }
-                if (existMenu == false)
-                {
-                    list.Add(b);
-                }
-                itemBillList = list;
-            }
+            addToBill_GUI add = new addToBill_GUI(p,staff,tablecurrent);
+            this.Opacity = 0.93;
+            add.ShowDialog();
+            this.Opacity = 1;
             loadBill();
+            //itemBill b = new itemBill();
+            //Product p = (sender as PictureBox).Tag as Product;
+            //b.nameMenu = p.Product_Name;
+            //b.slMenu = 1;
+            //b.productid= p.Product_ID;
+            //if (itemBillList.Count == 0)
+            //{
+            //    itemBillList.Add(b);
+            //}
+            //else
+            //{
+            //    List<itemBill> list = new List<itemBill>();
+            //    bool existMenu = false;
+            //    foreach (itemBill item in itemBillList)
+            //    {
+            //        if (b.productid == item.productid)
+            //        {
+            //            item.slMenu += 1;
+            //            list.Add(item);
+            //            existMenu = true;
+            //        }
+            //        else
+            //        {
+            //            list.Add(item);
+            //        }
+            //    }
+            //    if (existMenu == false)
+            //    {
+            //        list.Add(b);
+            //    }
+            //    itemBillList = list;
+            //}
+            //loadBill();
         }
 
         #region clickGenre
@@ -220,6 +270,20 @@ namespace DoAnThucTap.GUI
             else
             {
                 MessageBox.Show("Không tìm thấy sản phẩm trùng khớp!", "Lỗi tìm kiếm!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            if (billcurrent.Bill_isTakeAway == true)
+            {
+                MessageBox.Show("Hóa đơn mang về");
+                printBill_GUI print = new printBill_GUI(billcurrent.Bill_ID);
+                print.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Hóa đơn tại chỗ");
             }
         }
     }

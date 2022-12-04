@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6b7a2dd2d7394075a6f7ae981f624ee8" Name="Diagram1">
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Bill" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Bill_Info" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Category" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Import" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Import_Info" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Ingredient" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Product" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Recipe" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Staff" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Surcharge" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Table" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+      <Diagram DiagramId="c4aef83a01e34430a122516ae15b4a25" Name="Diagram1">
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Bill" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Bill_Info" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Category" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.DBTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Import" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Import_Info" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Ingredient" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Product" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Recipe" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staff" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Surcharge" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="TheLightCoffeeModel.FKBill_Info16588" ManuallyRouted="false" />
         <AssociationConnector Association="TheLightCoffeeModel.FKBill122024" ManuallyRouted="false" />
-        <AssociationConnector Association="TheLightCoffeeModel.FKBill510862" ManuallyRouted="false" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKBill723377" ManuallyRouted="false" />
         <AssociationConnector Association="TheLightCoffeeModel.FKBill_Info640249" ManuallyRouted="false" />
         <AssociationConnector Association="TheLightCoffeeModel.FKProduct568957" ManuallyRouted="false" />
         <AssociationConnector Association="TheLightCoffeeModel.FKImport_Inf571201" ManuallyRouted="false" />
