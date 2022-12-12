@@ -60,5 +60,19 @@ namespace DoAnThucTap.GUI
             sell.ShowDialog();
             this.Show();
         }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            //form cá nhân
+            Persional_GUI per = new Persional_GUI(s.Staff_Code);
+            this.Hide();
+            per.ShowDialog();
+            this.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

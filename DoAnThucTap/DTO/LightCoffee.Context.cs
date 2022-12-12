@@ -47,5 +47,67 @@ namespace DoAnThucTap.DTO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportBillTakeAway_Result>("exportBillTakeAway", billIDParameter);
         }
+    
+        public virtual ObjectResult<Nullable<long>> TotalMoney(Nullable<int> billID)
+        {
+            var billIDParameter = billID.HasValue ?
+                new ObjectParameter("BillID", billID) :
+                new ObjectParameter("BillID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<long>>("TotalMoney", billIDParameter);
+        }
+    
+        public virtual ObjectResult<exportBillNoTakeAway_Result> exportBillNoTakeAway(Nullable<int> billID)
+        {
+            var billIDParameter = billID.HasValue ?
+                new ObjectParameter("BillID", billID) :
+                new ObjectParameter("BillID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportBillNoTakeAway_Result>("exportBillNoTakeAway", billIDParameter);
+        }
+    
+        public virtual int addSurchange(Nullable<int> billid, Nullable<int> surid)
+        {
+            var billidParameter = billid.HasValue ?
+                new ObjectParameter("billid", billid) :
+                new ObjectParameter("billid", typeof(int));
+    
+            var suridParameter = surid.HasValue ?
+                new ObjectParameter("surid", surid) :
+                new ObjectParameter("surid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addSurchange", billidParameter, suridParameter);
+        }
+    
+        public virtual int removeSurchange(Nullable<int> billid, Nullable<int> surid)
+        {
+            var billidParameter = billid.HasValue ?
+                new ObjectParameter("billid", billid) :
+                new ObjectParameter("billid", typeof(int));
+    
+            var suridParameter = surid.HasValue ?
+                new ObjectParameter("surid", surid) :
+                new ObjectParameter("surid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("removeSurchange", billidParameter, suridParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> checkSurcharge(Nullable<int> billid)
+        {
+            var billidParameter = billid.HasValue ?
+                new ObjectParameter("billid", billid) :
+                new ObjectParameter("billid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("checkSurcharge", billidParameter);
+        }
+    
+        public virtual int removeFullSurchange(Nullable<int> billid)
+        {
+            var billidParameter = billid.HasValue ?
+                new ObjectParameter("billid", billid) :
+                new ObjectParameter("billid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("removeFullSurchange", billidParameter);
+        }
     }
 }

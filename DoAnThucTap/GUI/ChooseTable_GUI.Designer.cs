@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseTable_GUI));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.top = new Bunifu.UI.WinForms.BunifuPanel();
             this.lblData = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnBack = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -48,6 +48,8 @@
             this.bookTable = new System.Windows.Forms.ToolStripMenuItem();
             this.cancleBook = new System.Windows.Forms.ToolStripMenuItem();
             this.detailBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.chỉnhSửaHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chuyểnBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.top.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             this.menuTrip.SuspendLayout();
@@ -167,11 +169,11 @@
             this.btnLocation2.ColorContrastOnClick = 45;
             this.btnLocation2.ColorContrastOnHover = 45;
             this.btnLocation2.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnLocation2.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnLocation2.CustomizableEdges = borderEdges5;
             this.btnLocation2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLocation2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLocation2.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -259,11 +261,11 @@
             this.btnLocation1.ColorContrastOnClick = 45;
             this.btnLocation1.ColorContrastOnHover = 45;
             this.btnLocation1.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnLocation1.CustomizableEdges = borderEdges2;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnLocation1.CustomizableEdges = borderEdges6;
             this.btnLocation1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLocation1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLocation1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -351,11 +353,11 @@
             this.btnLocation0.ColorContrastOnClick = 45;
             this.btnLocation0.ColorContrastOnHover = 45;
             this.btnLocation0.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnLocation0.CustomizableEdges = borderEdges3;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnLocation0.CustomizableEdges = borderEdges7;
             this.btnLocation0.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLocation0.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLocation0.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -443,11 +445,11 @@
             this.btnTea.ColorContrastOnClick = 45;
             this.btnTea.ColorContrastOnHover = 45;
             this.btnTea.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnTea.CustomizableEdges = borderEdges4;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnTea.CustomizableEdges = borderEdges8;
             this.btnTea.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnTea.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnTea.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -535,7 +537,7 @@
             this.detailBill});
             this.menuTrip.Name = "menuTrip";
             this.menuTrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuTrip.Size = new System.Drawing.Size(262, 108);
+            this.menuTrip.Size = new System.Drawing.Size(215, 136);
             this.menuTrip.Style = MetroFramework.MetroColorStyle.Green;
             this.menuTrip.Theme = MetroFramework.MetroThemeStyle.Light;
             this.menuTrip.UseCustomBackColor = true;
@@ -547,7 +549,7 @@
             this.createBill.Image = global::DoAnThucTap.Properties.Resources.invoice;
             this.createBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.createBill.Name = "createBill";
-            this.createBill.Size = new System.Drawing.Size(261, 26);
+            this.createBill.Size = new System.Drawing.Size(214, 26);
             this.createBill.Text = "Tạo hóa đơn";
             this.createBill.Click += new System.EventHandler(this.createBill_Click);
             // 
@@ -556,7 +558,7 @@
             this.bookTable.Image = global::DoAnThucTap.Properties.Resources.check;
             this.bookTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bookTable.Name = "bookTable";
-            this.bookTable.Size = new System.Drawing.Size(261, 26);
+            this.bookTable.Size = new System.Drawing.Size(214, 26);
             this.bookTable.Text = "Đặt bàn";
             this.bookTable.Click += new System.EventHandler(this.bookTable_Click);
             // 
@@ -566,19 +568,36 @@
             this.cancleBook.Image = global::DoAnThucTap.Properties.Resources.close__1_;
             this.cancleBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cancleBook.Name = "cancleBook";
-            this.cancleBook.Size = new System.Drawing.Size(261, 26);
+            this.cancleBook.Size = new System.Drawing.Size(214, 26);
             this.cancleBook.Text = "Hủy lệnh đặt";
             this.cancleBook.Click += new System.EventHandler(this.cancleBook_Click);
             // 
             // detailBill
             // 
+            this.detailBill.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chỉnhSửaHóaĐơnToolStripMenuItem,
+            this.chuyểnBànToolStripMenuItem});
             this.detailBill.Enabled = false;
             this.detailBill.Image = global::DoAnThucTap.Properties.Resources.pencil;
             this.detailBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.detailBill.Name = "detailBill";
-            this.detailBill.Size = new System.Drawing.Size(261, 26);
-            this.detailBill.Text = "Xem thông tin hóa đơn";
+            this.detailBill.Size = new System.Drawing.Size(214, 26);
+            this.detailBill.Text = "Hóa đơn";
             this.detailBill.Click += new System.EventHandler(this.detailBill_Click);
+            // 
+            // chỉnhSửaHóaĐơnToolStripMenuItem
+            // 
+            this.chỉnhSửaHóaĐơnToolStripMenuItem.Name = "chỉnhSửaHóaĐơnToolStripMenuItem";
+            this.chỉnhSửaHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.chỉnhSửaHóaĐơnToolStripMenuItem.Text = "Chỉnh sửa hóa đơn";
+            this.chỉnhSửaHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.chỉnhSửaHóaĐơnToolStripMenuItem_Click);
+            // 
+            // chuyểnBànToolStripMenuItem
+            // 
+            this.chuyểnBànToolStripMenuItem.Name = "chuyểnBànToolStripMenuItem";
+            this.chuyểnBànToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.chuyểnBànToolStripMenuItem.Text = "Chuyển bàn";
+            this.chuyểnBànToolStripMenuItem.Click += new System.EventHandler(this.chuyểnBànToolStripMenuItem_Click);
             // 
             // ChooseTable_GUI
             // 
@@ -619,5 +638,7 @@
         private System.Windows.Forms.ToolStripMenuItem bookTable;
         private System.Windows.Forms.ToolStripMenuItem cancleBook;
         private System.Windows.Forms.ToolStripMenuItem detailBill;
+        private System.Windows.Forms.ToolStripMenuItem chỉnhSửaHóaĐơnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chuyểnBànToolStripMenuItem;
     }
 }

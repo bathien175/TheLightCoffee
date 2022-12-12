@@ -51,6 +51,7 @@
           <Property Name="Table_Code" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Table_Location" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Table_Status" Type="int" Nullable="false" />
+          <Property Name="isActive" Type="bit" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -273,7 +274,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="addSurchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billid" Type="int" Mode="In" />
+          <Parameter Name="surid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="checkSurcharge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="exportBillNoTakeAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BillID" Type="int" Mode="In" />
+        </Function>
         <Function Name="exportBillTakeAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BillID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="removeFullSurchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="removeSurchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billid" Type="int" Mode="In" />
+          <Parameter Name="surid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TotalMoney" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BillID" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="TheLightCoffeeModelStoreContainer">
@@ -388,6 +409,7 @@
           <Property Name="Table_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Table_Status" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Bills" Relationship="Self.FKBill723377" FromRole="DBTable" ToRole="Bill" />
+          <Property Name="isActive" Type="Boolean" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -663,6 +685,26 @@
           <FunctionImport Name="exportBillTakeAway" ReturnType="Collection(TheLightCoffeeModel.exportBillTakeAway_Result)">
           <Parameter Name="BillID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="TotalMoney" ReturnType="Collection(Int64)">
+          <Parameter Name="BillID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="exportBillNoTakeAway" ReturnType="Collection(TheLightCoffeeModel.exportBillNoTakeAway_Result)">
+          <Parameter Name="BillID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="addSurchange">
+            <Parameter Name="billid" Mode="In" Type="Int32" />
+            <Parameter Name="surid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="removeSurchange">
+            <Parameter Name="billid" Mode="In" Type="Int32" />
+            <Parameter Name="surid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="checkSurcharge" ReturnType="Collection(Int32)">
+          <Parameter Name="billid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="removeFullSurchange">
+            <Parameter Name="billid" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="exportBillTakeAway_Result">
           <Property Type="Int32" Name="Bill_Code" Nullable="false" />
@@ -673,6 +715,19 @@
           <Property Type="Int64" Name="Bill_ExtraFee" Nullable="true" />
           <Property Type="Int64" Name="Bill_Discount" Nullable="false" />
           <Property Type="Int64" Name="Bill_TotalMoney" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="exportBillNoTakeAway_Result">
+          <Property Type="Int32" Name="Bill_Code" Nullable="false" />
+          <Property Type="String" Name="Bill_Staff" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Bill_Product" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Bill_Quantity" Nullable="false" />
+          <Property Type="Int64" Name="Bill_UnitPrice" Nullable="false" />
+          <Property Type="Int64" Name="Bill_ExtraFee" Nullable="true" />
+          <Property Type="Int64" Name="Bill_Discount" Nullable="false" />
+          <Property Type="Int64" Name="Bill_TotalMoney" Nullable="false" />
+          <Property Type="String" Name="Bill_Table" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="Bill_TimeFrom" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="Bill_TimeTo" Nullable="true" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -717,6 +772,7 @@
           <EntitySetMapping Name="DBTables">
             <EntityTypeMapping TypeName="TheLightCoffeeModel.DBTable">
               <MappingFragment StoreEntitySet="DBTable">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="Table_Code" ColumnName="Table_Code" />
                 <ScalarProperty Name="Table_Location" ColumnName="Table_Location" />
                 <ScalarProperty Name="Table_Status" ColumnName="Table_Status" />
@@ -827,6 +883,28 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TotalMoney" FunctionName="TheLightCoffeeModel.Store.TotalMoney" />
+          <FunctionImportMapping FunctionImportName="exportBillNoTakeAway" FunctionName="TheLightCoffeeModel.Store.exportBillNoTakeAway">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportBillNoTakeAway_Result">
+                <ScalarProperty Name="Bill_Code" ColumnName="Bill_Code" />
+                <ScalarProperty Name="Bill_Staff" ColumnName="Bill_Staff" />
+                <ScalarProperty Name="Bill_Product" ColumnName="Bill_Product" />
+                <ScalarProperty Name="Bill_Quantity" ColumnName="Bill_Quantity" />
+                <ScalarProperty Name="Bill_UnitPrice" ColumnName="Bill_UnitPrice" />
+                <ScalarProperty Name="Bill_ExtraFee" ColumnName="Bill_ExtraFee" />
+                <ScalarProperty Name="Bill_Discount" ColumnName="Bill_Discount" />
+                <ScalarProperty Name="Bill_TotalMoney" ColumnName="Bill_TotalMoney" />
+                <ScalarProperty Name="Bill_Table" ColumnName="Bill_Table" />
+                <ScalarProperty Name="Bill_TimeFrom" ColumnName="Bill_TimeFrom" />
+                <ScalarProperty Name="Bill_TimeTo" ColumnName="Bill_TimeTo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="addSurchange" FunctionName="TheLightCoffeeModel.Store.addSurchange" />
+          <FunctionImportMapping FunctionImportName="removeSurchange" FunctionName="TheLightCoffeeModel.Store.removeSurchange" />
+          <FunctionImportMapping FunctionImportName="checkSurcharge" FunctionName="TheLightCoffeeModel.Store.checkSurcharge" />
+          <FunctionImportMapping FunctionImportName="removeFullSurchange" FunctionName="TheLightCoffeeModel.Store.removeFullSurchange" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

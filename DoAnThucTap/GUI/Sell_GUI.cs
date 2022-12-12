@@ -44,7 +44,12 @@ namespace DoAnThucTap.GUI
                 if (billcurrent.Bill_isTakeAway == true)
                 {
                     billDAO dao = new billDAO();
-                    dao.CancelBillTakeAway();
+                    var t = dao.getBill(billcurrent.Bill_ID);
+                    billcurrent = t;
+                    if (t.Bill_Status == false)
+                    {
+                        dao.CancelBillTakeAway();
+                    }
                 }
             }
             this.Close();
@@ -128,8 +133,12 @@ namespace DoAnThucTap.GUI
                         i.productid = item.BI_Product;
                         i.nameMenu = new menuDAO().getProductbyID(item.BI_Product).Product_Name;
                         i.slMenu = item.BI_Quantity;
-                        i.btnDel().Tag = item.BI_Product;
-                        i.btnDel().Click += deleteItemBill_Click;
+                        Bunifu.UI.WinForms.BunifuImageButton btndel = i.btnDel();
+                        Bunifu.UI.WinForms.BunifuImageButton btnsub = i.btnSubtract();
+                        btndel.Tag= item.BI_Product;
+                        btnsub.Tag= item.BI_Product;
+                        btndel.Click += deleteItemBill_Click;
+                        btnsub.Click += subItemBill_Click;
                         itemBillList.Add(i);
                         Bill.Controls.Add(i);
                     }
@@ -137,18 +146,20 @@ namespace DoAnThucTap.GUI
             }
         }
 
+        private void subItemBill_Click(object sender, EventArgs e)
+        {
+            int pid = Convert.ToInt32((sender as BunifuImageButton).Tag);
+            billDAO dao  =new billDAO();
+            dao.editQuantityBillinfo(billcurrent.Bill_ID, pid);
+            loadBill();
+        }
+
         private void deleteItemBill_Click(object sender, EventArgs e)
         {
-            //List<itemBill> list = new List<itemBill>();
-            //foreach (itemBill item in itemBillList)
-            //{
-            //    if(item.productid!=Convert.ToInt32((sender as BunifuImageButton).Tag))
-            //    {
-            //        list.Add(item);
-            //    }
-            //}
-            //itemBillList = list;
-            //loadBill();
+            int pid = Convert.ToInt32((sender as BunifuImageButton).Tag);
+            billDAO dao = new billDAO();
+            dao.removeQuantityBillinfo(billcurrent.Bill_ID, pid);
+            loadBill();
         }
 
         private void addMenu_Click(object sender, EventArgs e)
@@ -159,39 +170,6 @@ namespace DoAnThucTap.GUI
             add.ShowDialog();
             this.Opacity = 1;
             loadBill();
-            //itemBill b = new itemBill();
-            //Product p = (sender as PictureBox).Tag as Product;
-            //b.nameMenu = p.Product_Name;
-            //b.slMenu = 1;
-            //b.productid= p.Product_ID;
-            //if (itemBillList.Count == 0)
-            //{
-            //    itemBillList.Add(b);
-            //}
-            //else
-            //{
-            //    List<itemBill> list = new List<itemBill>();
-            //    bool existMenu = false;
-            //    foreach (itemBill item in itemBillList)
-            //    {
-            //        if (b.productid == item.productid)
-            //        {
-            //            item.slMenu += 1;
-            //            list.Add(item);
-            //            existMenu = true;
-            //        }
-            //        else
-            //        {
-            //            list.Add(item);
-            //        }
-            //    }
-            //    if (existMenu == false)
-            //    {
-            //        list.Add(b);
-            //    }
-            //    itemBillList = list;
-            //}
-            //loadBill();
         }
 
         #region clickGenre
@@ -275,15 +253,31 @@ namespace DoAnThucTap.GUI
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            if (billcurrent.Bill_isTakeAway == true)
+            if (Bill.Controls.Count <= 0)
             {
-                MessageBox.Show("Hóa đơn mang về");
-                printBill_GUI print = new printBill_GUI(billcurrent.Bill_ID);
-                print.ShowDialog();
+                MessageBox.Show("Vui lòng chọn ít nhất 1 món!", "Lỗi thanh toán!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Hóa đơn tại chỗ");
+                billDAO dao  = new billDAO();
+                if (billcurrent.Bill_isTakeAway == true)
+                {
+                    Checkout_GUI check = new Checkout_GUI(billcurrent.Bill_ID, true,staff);
+                    check.ShowDialog();
+                    if (dao.checkStatusBill(billcurrent.Bill_ID))
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    Checkout_GUI check = new Checkout_GUI(billcurrent.Bill_ID, false,staff);
+                    check.ShowDialog();
+                    if (dao.checkStatusBill(billcurrent.Bill_ID))
+                    {
+                        this.Close();
+                    }
+                }
             }
         }
     }

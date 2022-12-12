@@ -24,9 +24,9 @@ namespace DoAnThucTap.DTO {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dtaBill : global::System.Data.DataSet {
         
-        private BillTableDataTable tableBillTable;
-        
         private BillTakeAwayDataTable tableBillTakeAway;
+        
+        private BillNoTakeAwayDataTable tableBillNoTakeAway;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -56,11 +56,11 @@ namespace DoAnThucTap.DTO {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["BillTable"] != null)) {
-                    base.Tables.Add(new BillTableDataTable(ds.Tables["BillTable"]));
-                }
                 if ((ds.Tables["BillTakeAway"] != null)) {
                     base.Tables.Add(new BillTakeAwayDataTable(ds.Tables["BillTakeAway"]));
+                }
+                if ((ds.Tables["BillNoTakeAway"] != null)) {
+                    base.Tables.Add(new BillNoTakeAwayDataTable(ds.Tables["BillNoTakeAway"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +84,9 @@ namespace DoAnThucTap.DTO {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BillTableDataTable BillTable {
+        public BillTakeAwayDataTable BillTakeAway {
             get {
-                return this.tableBillTable;
+                return this.tableBillTakeAway;
             }
         }
         
@@ -94,9 +94,9 @@ namespace DoAnThucTap.DTO {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BillTakeAwayDataTable BillTakeAway {
+        public BillNoTakeAwayDataTable BillNoTakeAway {
             get {
-                return this.tableBillTakeAway;
+                return this.tableBillNoTakeAway;
             }
         }
         
@@ -167,11 +167,11 @@ namespace DoAnThucTap.DTO {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["BillTable"] != null)) {
-                    base.Tables.Add(new BillTableDataTable(ds.Tables["BillTable"]));
-                }
                 if ((ds.Tables["BillTakeAway"] != null)) {
                     base.Tables.Add(new BillTakeAwayDataTable(ds.Tables["BillTakeAway"]));
+                }
+                if ((ds.Tables["BillNoTakeAway"] != null)) {
+                    base.Tables.Add(new BillNoTakeAwayDataTable(ds.Tables["BillNoTakeAway"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +206,16 @@ namespace DoAnThucTap.DTO {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBillTable = ((BillTableDataTable)(base.Tables["BillTable"]));
-            if ((initTable == true)) {
-                if ((this.tableBillTable != null)) {
-                    this.tableBillTable.InitVars();
-                }
-            }
             this.tableBillTakeAway = ((BillTakeAwayDataTable)(base.Tables["BillTakeAway"]));
             if ((initTable == true)) {
                 if ((this.tableBillTakeAway != null)) {
                     this.tableBillTakeAway.InitVars();
+                }
+            }
+            this.tableBillNoTakeAway = ((BillNoTakeAwayDataTable)(base.Tables["BillNoTakeAway"]));
+            if ((initTable == true)) {
+                if ((this.tableBillNoTakeAway != null)) {
+                    this.tableBillNoTakeAway.InitVars();
                 }
             }
         }
@@ -228,21 +228,21 @@ namespace DoAnThucTap.DTO {
             this.Namespace = "http://tempuri.org/dtaBill.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBillTable = new BillTableDataTable();
-            base.Tables.Add(this.tableBillTable);
             this.tableBillTakeAway = new BillTakeAwayDataTable();
             base.Tables.Add(this.tableBillTakeAway);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeBillTable() {
-            return false;
+            this.tableBillNoTakeAway = new BillNoTakeAwayDataTable();
+            base.Tables.Add(this.tableBillNoTakeAway);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeBillTakeAway() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeBillNoTakeAway() {
             return false;
         }
         
@@ -302,411 +302,10 @@ namespace DoAnThucTap.DTO {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void BillTableRowChangeEventHandler(object sender, BillTableRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void BillTakeAwayRowChangeEventHandler(object sender, BillTakeAwayRowChangeEvent e);
         
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BillTableDataTable : global::System.Data.TypedTableBase<BillTableRow> {
-            
-            private global::System.Data.DataColumn columnBill_Code;
-            
-            private global::System.Data.DataColumn columnBill_Table;
-            
-            private global::System.Data.DataColumn columnBill_TimeFrom;
-            
-            private global::System.Data.DataColumn columnBill_TimeTo;
-            
-            private global::System.Data.DataColumn columnBill_Staff;
-            
-            private global::System.Data.DataColumn columnBill_Discount;
-            
-            private global::System.Data.DataColumn columnBill_Product;
-            
-            private global::System.Data.DataColumn columnBill_Quantity;
-            
-            private global::System.Data.DataColumn columnBill_UnitPrice;
-            
-            private global::System.Data.DataColumn columnBill_ExtraFee;
-            
-            private global::System.Data.DataColumn columnBill_PriceExtraFee;
-            
-            private global::System.Data.DataColumn columnBill_TotalMoney;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BillTableDataTable() {
-                this.TableName = "BillTable";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BillTableDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected BillTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_CodeColumn {
-                get {
-                    return this.columnBill_Code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_TableColumn {
-                get {
-                    return this.columnBill_Table;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_TimeFromColumn {
-                get {
-                    return this.columnBill_TimeFrom;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_TimeToColumn {
-                get {
-                    return this.columnBill_TimeTo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_StaffColumn {
-                get {
-                    return this.columnBill_Staff;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_DiscountColumn {
-                get {
-                    return this.columnBill_Discount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_ProductColumn {
-                get {
-                    return this.columnBill_Product;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_QuantityColumn {
-                get {
-                    return this.columnBill_Quantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_UnitPriceColumn {
-                get {
-                    return this.columnBill_UnitPrice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_ExtraFeeColumn {
-                get {
-                    return this.columnBill_ExtraFee;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_PriceExtraFeeColumn {
-                get {
-                    return this.columnBill_PriceExtraFee;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Bill_TotalMoneyColumn {
-                get {
-                    return this.columnBill_TotalMoney;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BillTableRow this[int index] {
-                get {
-                    return ((BillTableRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BillTableRowChangeEventHandler BillTableRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BillTableRowChangeEventHandler BillTableRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BillTableRowChangeEventHandler BillTableRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BillTableRowChangeEventHandler BillTableRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddBillTableRow(BillTableRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BillTableRow AddBillTableRow(string Bill_Code, string Bill_Table, string Bill_TimeFrom, string Bill_TimeTo, string Bill_Staff, string Bill_Discount, string Bill_Product, string Bill_Quantity, string Bill_UnitPrice, string Bill_ExtraFee, string Bill_PriceExtraFee, string Bill_TotalMoney) {
-                BillTableRow rowBillTableRow = ((BillTableRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Bill_Code,
-                        Bill_Table,
-                        Bill_TimeFrom,
-                        Bill_TimeTo,
-                        Bill_Staff,
-                        Bill_Discount,
-                        Bill_Product,
-                        Bill_Quantity,
-                        Bill_UnitPrice,
-                        Bill_ExtraFee,
-                        Bill_PriceExtraFee,
-                        Bill_TotalMoney};
-                rowBillTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBillTableRow);
-                return rowBillTableRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                BillTableDataTable cln = ((BillTableDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new BillTableDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnBill_Code = base.Columns["Bill_Code"];
-                this.columnBill_Table = base.Columns["Bill_Table"];
-                this.columnBill_TimeFrom = base.Columns["Bill_TimeFrom"];
-                this.columnBill_TimeTo = base.Columns["Bill_TimeTo"];
-                this.columnBill_Staff = base.Columns["Bill_Staff"];
-                this.columnBill_Discount = base.Columns["Bill_Discount"];
-                this.columnBill_Product = base.Columns["Bill_Product"];
-                this.columnBill_Quantity = base.Columns["Bill_Quantity"];
-                this.columnBill_UnitPrice = base.Columns["Bill_UnitPrice"];
-                this.columnBill_ExtraFee = base.Columns["Bill_ExtraFee"];
-                this.columnBill_PriceExtraFee = base.Columns["Bill_PriceExtraFee"];
-                this.columnBill_TotalMoney = base.Columns["Bill_TotalMoney"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnBill_Code = new global::System.Data.DataColumn("Bill_Code", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_Code);
-                this.columnBill_Table = new global::System.Data.DataColumn("Bill_Table", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_Table);
-                this.columnBill_TimeFrom = new global::System.Data.DataColumn("Bill_TimeFrom", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_TimeFrom);
-                this.columnBill_TimeTo = new global::System.Data.DataColumn("Bill_TimeTo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_TimeTo);
-                this.columnBill_Staff = new global::System.Data.DataColumn("Bill_Staff", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_Staff);
-                this.columnBill_Discount = new global::System.Data.DataColumn("Bill_Discount", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_Discount);
-                this.columnBill_Product = new global::System.Data.DataColumn("Bill_Product", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_Product);
-                this.columnBill_Quantity = new global::System.Data.DataColumn("Bill_Quantity", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_Quantity);
-                this.columnBill_UnitPrice = new global::System.Data.DataColumn("Bill_UnitPrice", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_UnitPrice);
-                this.columnBill_ExtraFee = new global::System.Data.DataColumn("Bill_ExtraFee", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_ExtraFee);
-                this.columnBill_PriceExtraFee = new global::System.Data.DataColumn("Bill_PriceExtraFee", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_PriceExtraFee);
-                this.columnBill_TotalMoney = new global::System.Data.DataColumn("Bill_TotalMoney", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_TotalMoney);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BillTableRow NewBillTableRow() {
-                return ((BillTableRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BillTableRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(BillTableRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.BillTableRowChanged != null)) {
-                    this.BillTableRowChanged(this, new BillTableRowChangeEvent(((BillTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.BillTableRowChanging != null)) {
-                    this.BillTableRowChanging(this, new BillTableRowChangeEvent(((BillTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.BillTableRowDeleted != null)) {
-                    this.BillTableRowDeleted(this, new BillTableRowChangeEvent(((BillTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.BillTableRowDeleting != null)) {
-                    this.BillTableRowDeleting(this, new BillTableRowChangeEvent(((BillTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveBillTableRow(BillTableRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dtaBill ds = new dtaBill();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BillTableDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void BillNoTakeAwayRowChangeEventHandler(object sender, BillNoTakeAwayRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1054,353 +653,389 @@ namespace DoAnThucTap.DTO {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class BillTableRow : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class BillNoTakeAwayDataTable : global::System.Data.TypedTableBase<BillNoTakeAwayRow> {
             
-            private BillTableDataTable tableBillTable;
+            private global::System.Data.DataColumn columnBill_Code;
+            
+            private global::System.Data.DataColumn columnBill_Staff;
+            
+            private global::System.Data.DataColumn columnBill_Product;
+            
+            private global::System.Data.DataColumn columnBill_Quantity;
+            
+            private global::System.Data.DataColumn columnBill_UnitPrice;
+            
+            private global::System.Data.DataColumn columnBill_Discount;
+            
+            private global::System.Data.DataColumn columnBill_ExtraFee;
+            
+            private global::System.Data.DataColumn columnBill_TotalMoney;
+            
+            private global::System.Data.DataColumn columnBill_Table;
+            
+            private global::System.Data.DataColumn columnBill_TimeFrom;
+            
+            private global::System.Data.DataColumn columnBill_TimeTo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BillTableRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableBillTable = ((BillTableDataTable)(this.Table));
+            public BillNoTakeAwayDataTable() {
+                this.TableName = "BillNoTakeAway";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_Code {
+            internal BillNoTakeAwayDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected BillNoTakeAwayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Bill_CodeColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_CodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Code\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_CodeColumn] = value;
+                    return this.columnBill_Code;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_Table {
+            public global::System.Data.DataColumn Bill_StaffColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_TableColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Table\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_TableColumn] = value;
+                    return this.columnBill_Staff;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_TimeFrom {
+            public global::System.Data.DataColumn Bill_ProductColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_TimeFromColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_TimeFrom\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_TimeFromColumn] = value;
+                    return this.columnBill_Product;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_TimeTo {
+            public global::System.Data.DataColumn Bill_QuantityColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_TimeToColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_TimeTo\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_TimeToColumn] = value;
+                    return this.columnBill_Quantity;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_Staff {
+            public global::System.Data.DataColumn Bill_UnitPriceColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_StaffColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Staff\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_StaffColumn] = value;
+                    return this.columnBill_UnitPrice;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_Discount {
+            public global::System.Data.DataColumn Bill_DiscountColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_DiscountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Discount\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_DiscountColumn] = value;
+                    return this.columnBill_Discount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_Product {
+            public global::System.Data.DataColumn Bill_ExtraFeeColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_ProductColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Product\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_ProductColumn] = value;
+                    return this.columnBill_ExtraFee;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_Quantity {
+            public global::System.Data.DataColumn Bill_TotalMoneyColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_QuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Quantity\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_QuantityColumn] = value;
+                    return this.columnBill_TotalMoney;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_UnitPrice {
+            public global::System.Data.DataColumn Bill_TableColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_UnitPriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_UnitPrice\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_UnitPriceColumn] = value;
+                    return this.columnBill_Table;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_ExtraFee {
+            public global::System.Data.DataColumn Bill_TimeFromColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_ExtraFeeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_ExtraFee\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_ExtraFeeColumn] = value;
+                    return this.columnBill_TimeFrom;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_PriceExtraFee {
+            public global::System.Data.DataColumn Bill_TimeToColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableBillTable.Bill_PriceExtraFeeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_PriceExtraFee\' in table \'BillTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBillTable.Bill_PriceExtraFeeColumn] = value;
+                    return this.columnBill_TimeTo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Bill_TotalMoney {
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
                 get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public BillNoTakeAwayRow this[int index] {
+                get {
+                    return ((BillNoTakeAwayRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event BillNoTakeAwayRowChangeEventHandler BillNoTakeAwayRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event BillNoTakeAwayRowChangeEventHandler BillNoTakeAwayRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event BillNoTakeAwayRowChangeEventHandler BillNoTakeAwayRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event BillNoTakeAwayRowChangeEventHandler BillNoTakeAwayRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddBillNoTakeAwayRow(BillNoTakeAwayRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public BillNoTakeAwayRow AddBillNoTakeAwayRow(string Bill_Code, string Bill_Staff, string Bill_Product, string Bill_Quantity, string Bill_UnitPrice, string Bill_Discount, string Bill_ExtraFee, string Bill_TotalMoney, string Bill_Table, string Bill_TimeFrom, string Bill_TimeTo) {
+                BillNoTakeAwayRow rowBillNoTakeAwayRow = ((BillNoTakeAwayRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Bill_Code,
+                        Bill_Staff,
+                        Bill_Product,
+                        Bill_Quantity,
+                        Bill_UnitPrice,
+                        Bill_Discount,
+                        Bill_ExtraFee,
+                        Bill_TotalMoney,
+                        Bill_Table,
+                        Bill_TimeFrom,
+                        Bill_TimeTo};
+                rowBillNoTakeAwayRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBillNoTakeAwayRow);
+                return rowBillNoTakeAwayRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                BillNoTakeAwayDataTable cln = ((BillNoTakeAwayDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new BillNoTakeAwayDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnBill_Code = base.Columns["Bill_Code"];
+                this.columnBill_Staff = base.Columns["Bill_Staff"];
+                this.columnBill_Product = base.Columns["Bill_Product"];
+                this.columnBill_Quantity = base.Columns["Bill_Quantity"];
+                this.columnBill_UnitPrice = base.Columns["Bill_UnitPrice"];
+                this.columnBill_Discount = base.Columns["Bill_Discount"];
+                this.columnBill_ExtraFee = base.Columns["Bill_ExtraFee"];
+                this.columnBill_TotalMoney = base.Columns["Bill_TotalMoney"];
+                this.columnBill_Table = base.Columns["Bill_Table"];
+                this.columnBill_TimeFrom = base.Columns["Bill_TimeFrom"];
+                this.columnBill_TimeTo = base.Columns["Bill_TimeTo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnBill_Code = new global::System.Data.DataColumn("Bill_Code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_Code);
+                this.columnBill_Staff = new global::System.Data.DataColumn("Bill_Staff", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_Staff);
+                this.columnBill_Product = new global::System.Data.DataColumn("Bill_Product", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_Product);
+                this.columnBill_Quantity = new global::System.Data.DataColumn("Bill_Quantity", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_Quantity);
+                this.columnBill_UnitPrice = new global::System.Data.DataColumn("Bill_UnitPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_UnitPrice);
+                this.columnBill_Discount = new global::System.Data.DataColumn("Bill_Discount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_Discount);
+                this.columnBill_ExtraFee = new global::System.Data.DataColumn("Bill_ExtraFee", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_ExtraFee);
+                this.columnBill_TotalMoney = new global::System.Data.DataColumn("Bill_TotalMoney", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_TotalMoney);
+                this.columnBill_Table = new global::System.Data.DataColumn("Bill_Table", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_Table);
+                this.columnBill_TimeFrom = new global::System.Data.DataColumn("Bill_TimeFrom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_TimeFrom);
+                this.columnBill_TimeTo = new global::System.Data.DataColumn("Bill_TimeTo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_TimeTo);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public BillNoTakeAwayRow NewBillNoTakeAwayRow() {
+                return ((BillNoTakeAwayRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new BillNoTakeAwayRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(BillNoTakeAwayRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.BillNoTakeAwayRowChanged != null)) {
+                    this.BillNoTakeAwayRowChanged(this, new BillNoTakeAwayRowChangeEvent(((BillNoTakeAwayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.BillNoTakeAwayRowChanging != null)) {
+                    this.BillNoTakeAwayRowChanging(this, new BillNoTakeAwayRowChangeEvent(((BillNoTakeAwayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.BillNoTakeAwayRowDeleted != null)) {
+                    this.BillNoTakeAwayRowDeleted(this, new BillNoTakeAwayRowChangeEvent(((BillNoTakeAwayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.BillNoTakeAwayRowDeleting != null)) {
+                    this.BillNoTakeAwayRowDeleting(this, new BillNoTakeAwayRowChangeEvent(((BillNoTakeAwayRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveBillNoTakeAwayRow(BillNoTakeAwayRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dtaBill ds = new dtaBill();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "BillNoTakeAwayDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tableBillTable.Bill_TotalMoneyColumn]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_TotalMoney\' in table \'BillTable\' is DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableBillTable.Bill_TotalMoneyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_CodeNull() {
-                return this.IsNull(this.tableBillTable.Bill_CodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_CodeNull() {
-                this[this.tableBillTable.Bill_CodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_TableNull() {
-                return this.IsNull(this.tableBillTable.Bill_TableColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_TableNull() {
-                this[this.tableBillTable.Bill_TableColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_TimeFromNull() {
-                return this.IsNull(this.tableBillTable.Bill_TimeFromColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_TimeFromNull() {
-                this[this.tableBillTable.Bill_TimeFromColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_TimeToNull() {
-                return this.IsNull(this.tableBillTable.Bill_TimeToColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_TimeToNull() {
-                this[this.tableBillTable.Bill_TimeToColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_StaffNull() {
-                return this.IsNull(this.tableBillTable.Bill_StaffColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_StaffNull() {
-                this[this.tableBillTable.Bill_StaffColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_DiscountNull() {
-                return this.IsNull(this.tableBillTable.Bill_DiscountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_DiscountNull() {
-                this[this.tableBillTable.Bill_DiscountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_ProductNull() {
-                return this.IsNull(this.tableBillTable.Bill_ProductColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_ProductNull() {
-                this[this.tableBillTable.Bill_ProductColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_QuantityNull() {
-                return this.IsNull(this.tableBillTable.Bill_QuantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_QuantityNull() {
-                this[this.tableBillTable.Bill_QuantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_UnitPriceNull() {
-                return this.IsNull(this.tableBillTable.Bill_UnitPriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_UnitPriceNull() {
-                this[this.tableBillTable.Bill_UnitPriceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_ExtraFeeNull() {
-                return this.IsNull(this.tableBillTable.Bill_ExtraFeeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_ExtraFeeNull() {
-                this[this.tableBillTable.Bill_ExtraFeeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_PriceExtraFeeNull() {
-                return this.IsNull(this.tableBillTable.Bill_PriceExtraFeeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_PriceExtraFeeNull() {
-                this[this.tableBillTable.Bill_PriceExtraFeeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBill_TotalMoneyNull() {
-                return this.IsNull(this.tableBillTable.Bill_TotalMoneyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBill_TotalMoneyNull() {
-                this[this.tableBillTable.Bill_TotalMoneyColumn] = global::System.Convert.DBNull;
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
@@ -1644,36 +1279,325 @@ namespace DoAnThucTap.DTO {
         }
         
         /// <summary>
-        ///Row event argument class
+        ///Represents strongly named DataRow class.
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class BillTableRowChangeEvent : global::System.EventArgs {
+        public partial class BillNoTakeAwayRow : global::System.Data.DataRow {
             
-            private BillTableRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
+            private BillNoTakeAwayDataTable tableBillNoTakeAway;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BillTableRowChangeEvent(BillTableRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
+            internal BillNoTakeAwayRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBillNoTakeAway = ((BillNoTakeAwayDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BillTableRow Row {
+            public string Bill_Code {
                 get {
-                    return this.eventRow;
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_CodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Code\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_CodeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
+            public string Bill_Staff {
                 get {
-                    return this.eventAction;
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_StaffColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Staff\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
                 }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_StaffColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_Product {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_ProductColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Product\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_ProductColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_Quantity {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_QuantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Quantity\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_UnitPrice {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_UnitPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_UnitPrice\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_UnitPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_Discount {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_DiscountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Discount\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_DiscountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_ExtraFee {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_ExtraFeeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_ExtraFee\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_ExtraFeeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_TotalMoney {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_TotalMoneyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_TotalMoney\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_TotalMoneyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_Table {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_TableColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Table\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_TableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_TimeFrom {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_TimeFromColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_TimeFrom\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_TimeFromColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Bill_TimeTo {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillNoTakeAway.Bill_TimeToColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_TimeTo\' in table \'BillNoTakeAway\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillNoTakeAway.Bill_TimeToColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_CodeNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_CodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_CodeNull() {
+                this[this.tableBillNoTakeAway.Bill_CodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_StaffNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_StaffColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_StaffNull() {
+                this[this.tableBillNoTakeAway.Bill_StaffColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_ProductNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_ProductColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_ProductNull() {
+                this[this.tableBillNoTakeAway.Bill_ProductColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_QuantityNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_QuantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_QuantityNull() {
+                this[this.tableBillNoTakeAway.Bill_QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_UnitPriceNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_UnitPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_UnitPriceNull() {
+                this[this.tableBillNoTakeAway.Bill_UnitPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_DiscountNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_DiscountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_DiscountNull() {
+                this[this.tableBillNoTakeAway.Bill_DiscountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_ExtraFeeNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_ExtraFeeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_ExtraFeeNull() {
+                this[this.tableBillNoTakeAway.Bill_ExtraFeeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_TotalMoneyNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_TotalMoneyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_TotalMoneyNull() {
+                this[this.tableBillNoTakeAway.Bill_TotalMoneyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_TableNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_TableColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_TableNull() {
+                this[this.tableBillNoTakeAway.Bill_TableColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_TimeFromNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_TimeFromColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_TimeFromNull() {
+                this[this.tableBillNoTakeAway.Bill_TimeFromColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBill_TimeToNull() {
+                return this.IsNull(this.tableBillNoTakeAway.Bill_TimeToColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBill_TimeToNull() {
+                this[this.tableBillNoTakeAway.Bill_TimeToColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1697,6 +1621,40 @@ namespace DoAnThucTap.DTO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BillTakeAwayRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class BillNoTakeAwayRowChangeEvent : global::System.EventArgs {
+            
+            private BillNoTakeAwayRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public BillNoTakeAwayRowChangeEvent(BillNoTakeAwayRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public BillNoTakeAwayRow Row {
                 get {
                     return this.eventRow;
                 }

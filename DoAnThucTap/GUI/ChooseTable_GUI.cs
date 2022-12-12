@@ -16,7 +16,7 @@ namespace DoAnThucTap.GUI
     public partial class ChooseTable_GUI : Form
     {
         private String tableCode = "";
-        private Staff staff= null;
+        private Staff staff= null;private int stat = 0;
         public ChooseTable_GUI(Staff s)
         {
             InitializeComponent();
@@ -145,21 +145,25 @@ namespace DoAnThucTap.GUI
         private void btnLocation0_Click(object sender, EventArgs e)
         {
             loadTable(1);
+            stat = 1;
         }
 
         private void btnLocation1_Click(object sender, EventArgs e)
         {
             loadTable(2);
+            stat = 2;
         }
 
         private void btnLocation2_Click(object sender, EventArgs e)
         {
             loadTable(3);
+            stat = 3;
         }
 
         private void btnTea_Click(object sender, EventArgs e)
         {
             loadTable(0);
+            stat= 0;
         }
 
         private void createBill_Click(object sender, EventArgs e)
@@ -174,21 +178,45 @@ namespace DoAnThucTap.GUI
 
         private void bookTable_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(tableCode);
+            DialogResult rs = MessageBox.Show("Quyết định đặt bàn số "+tableCode,"Chờ đã!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                tableDAO dao = new tableDAO();
+                dao.bookingTable(tableCode);
+                loadTable(stat);
+            }  
         }
 
         private void cancleBook_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(tableCode);
+            DialogResult rs = MessageBox.Show("Bạn có chắc muốn hủy đặt bàn số " + tableCode, "Chờ đã!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                tableDAO dao = new tableDAO();
+                dao.cancelbookingTable(tableCode);
+                loadTable(stat);
+            }
         }
 
         private void detailBill_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chỉnhSửaHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Sell_GUI sell = new Sell_GUI(tableCode, staff);
             this.Hide();
             sell.ShowDialog();
             this.Show();
             loadTable(0);
+        }
+
+        private void chuyểnBànToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            swithTable_GUI switchtb = new swithTable_GUI(tableCode);
+            switchtb.ShowDialog();
+            loadTable(stat);
         }
     }
 }

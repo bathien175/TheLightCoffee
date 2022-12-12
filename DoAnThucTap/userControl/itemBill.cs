@@ -32,5 +32,9 @@ namespace DoAnThucTap.userControl
         {
             return btnDelete;
         }
+        public Bunifu.UI.WinForms.BunifuImageButton btnSubtract()
+        {
+            return btnSub;
+        }
     }
 }

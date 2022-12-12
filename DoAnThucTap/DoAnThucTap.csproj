@@ -49,6 +49,12 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
       <HintPath>..\..\..\..\..\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
@@ -77,16 +83,35 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Drawing, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraDialogs.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -125,11 +150,13 @@
     <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\menuDAO.cs" />
+    <Compile Include="DAO\staffDAO.cs" />
     <Compile Include="DAO\tableDAO.cs" />
     <Compile Include="DTO\Bill.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\billIsTakeAway.cs" />
+    <Compile Include="DTO\billnoTakeAway.cs" />
     <Compile Include="DTO\Bill_Info.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -146,6 +173,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtaBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\exportBillNoTakeAway_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\exportBillTakeAway_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
@@ -180,11 +210,17 @@
     <Compile Include="DTO\Recipe.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\ReportBillTakeAway.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportBillTakeAway.rpt</DependentUpon>
+    <Compile Include="DTO\ReportBill.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DTO\ReportBill.Designer.cs">
+      <DependentUpon>ReportBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\ReportBillTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DTO\ReportBillTable.Designer.cs">
+      <DependentUpon>ReportBillTable.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Staff.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
@@ -198,6 +234,18 @@
     </Compile>
     <Compile Include="GUI\addToBill_GUI.Designer.cs">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChangePassword_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChangePassword_GUI.Designer.cs">
+      <DependentUpon>ChangePassword_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Checkout_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Checkout_GUI.Designer.cs">
+      <DependentUpon>Checkout_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ChooseTable_GUI.cs">
       <SubType>Form</SubType>
@@ -217,17 +265,35 @@
     <Compile Include="GUI\Login_GUI.Designer.cs">
       <DependentUpon>Login_GUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\printBill_GUI.cs">
+    <Compile Include="GUI\Persional_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\printBill_GUI.Designer.cs">
-      <DependentUpon>printBill_GUI.cs</DependentUpon>
+    <Compile Include="GUI\Persional_GUI.Designer.cs">
+      <DependentUpon>Persional_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\printBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\printBill.Designer.cs">
+      <DependentUpon>printBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Product_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Product_GUI.Designer.cs">
+      <DependentUpon>Product_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Sell_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Sell_GUI.Designer.cs">
       <DependentUpon>Sell_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\swithTable_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\swithTable_GUI.Designer.cs">
+      <DependentUpon>swithTable_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,18 +315,32 @@
     <Compile Include="userControl\itemTable.Designer.cs">
       <DependentUpon>itemTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\item_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\item_Product.Designer.cs">
+      <DependentUpon>item_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\OptionHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="userControl\OptionHome.Designer.cs">
       <DependentUpon>OptionHome.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DTO\ReportBillTakeAway.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReportBillTakeAway.cs</LastGenOutput>
+    <EmbeddedResource Include="DTO\ReportBill.resx">
+      <DependentUpon>ReportBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DTO\ReportBillTable.resx">
+      <DependentUpon>ReportBillTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\addToBill_GUI.resx">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChangePassword_GUI.resx">
+      <DependentUpon>ChangePassword_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Checkout_GUI.resx">
+      <DependentUpon>Checkout_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChooseTable_GUI.resx">
       <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
@@ -271,11 +351,20 @@
     <EmbeddedResource Include="GUI\Login_GUI.resx">
       <DependentUpon>Login_GUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\printBill_GUI.resx">
-      <DependentUpon>printBill_GUI.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Persional_GUI.resx">
+      <DependentUpon>Persional_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\printBill.resx">
+      <DependentUpon>printBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Product_GUI.resx">
+      <DependentUpon>Product_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Sell_GUI.resx">
       <DependentUpon>Sell_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\swithTable_GUI.resx">
+      <DependentUpon>swithTable_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -296,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\itemTable.resx">
       <DependentUpon>itemTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\item_Product.resx">
+      <DependentUpon>item_Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\OptionHome.resx">
       <DependentUpon>OptionHome.cs</DependentUpon>
@@ -409,6 +501,9 @@
       <DependentUpon>LightCoffee.edmx</DependentUpon>
       <LastGenOutput>LightCoffee.cs</LastGenOutput>
     </Content>
+    <Content Include="ImageStaff\avatar.gif" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\remove.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -23,6 +23,7 @@ namespace DoAnThucTap.DTO
         public string Table_Code { get; set; }
         public string Table_Location { get; set; }
         public int Table_Status { get; set; }
+        public Nullable<bool> isActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }

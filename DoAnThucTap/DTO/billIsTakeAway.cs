@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoAnThucTap.DTO
 {
-    internal class billIsTakeAway
+    public class billIsTakeAway
     {
         public int Bill_Code { get; set; }
         public String Bill_Staff { get; set; }

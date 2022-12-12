@@ -43,5 +43,22 @@ namespace DoAnThucTap.DAO
                 return pr;
             }
         }
+
+        public Category GetCategory(int id)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var cate = db.Categories.Where(c => c.Category_ID == id).FirstOrDefault();
+                return cate;
+            }
+        }
+        public List<Product> find50(String name)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<Product> list = db.Products.Where(p => p.Product_Name.Contains(name)).ToList();
+                return list;
+            }
+        }
     }
 }

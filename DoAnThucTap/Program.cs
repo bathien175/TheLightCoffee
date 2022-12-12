@@ -17,7 +17,7 @@ namespace DoAnThucTap
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_GUI());
+            Application.Run(new Product_GUI());
         }
     }
 }
