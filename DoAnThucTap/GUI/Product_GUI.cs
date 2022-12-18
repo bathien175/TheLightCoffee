@@ -67,7 +67,9 @@ namespace DoAnThucTap.GUI
 
         private void BtnDetail_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hello");
+            int pid = Convert.ToInt32((sender as BunifuImageButton).Tag);
+            DetailProduct_GUI detail = new DetailProduct_GUI(pid);
+            detail.ShowDialog();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

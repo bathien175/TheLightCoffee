@@ -64,12 +64,12 @@
         </EntityType>
         <EntityType Name="Import_Info">
           <Key>
-            <PropertyRef Name="Import_ID" />
-            <PropertyRef Name="Ingredient_ID" />
+            <PropertyRef Name="ImportInfo_ID" />
           </Key>
-          <Property Name="Import_ID" Type="int" Nullable="false" />
-          <Property Name="Ingredient_ID" Type="int" Nullable="false" />
-          <Property Name="II_Quantity" Type="int" Nullable="false" />
+          <Property Name="ImportInfo_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Import_ID" Type="int" />
+          <Property Name="Info_Quantity" Type="int" />
+          <Property Name="Info_Ingredient" Type="int" />
         </EntityType>
         <EntityType Name="Ingredient">
           <Key>
@@ -77,12 +77,11 @@
           </Key>
           <Property Name="Ingredient_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ingredient_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Ingredient_Type" Type="int" Nullable="false" />
           <Property Name="Ingredient_Unit" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Ingredient_Volumn" Type="real" />
           <Property Name="Ingredient_PriceImport" Type="bigint" Nullable="false" />
-          <Property Name="Ingredient_Reserved" Type="real" Nullable="false" />
           <Property Name="Ingredient_isActive" Type="bit" Nullable="false" />
+          <Property Name="Ingredient_Reserved" Type="real" />
+          <Property Name="Ingredient_Image" Type="text" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -98,12 +97,11 @@
         </EntityType>
         <EntityType Name="Recipe">
           <Key>
-            <PropertyRef Name="Product_ID" />
-            <PropertyRef Name="Ingredient_ID" />
+            <PropertyRef Name="Recipe_ID" />
           </Key>
-          <Property Name="Product_ID" Type="int" Nullable="false" />
-          <Property Name="Ingredient_ID" Type="int" Nullable="false" />
-          <Property Name="Recipe_Volumn" Type="real" Nullable="false" />
+          <Property Name="Recipe_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Recipe_Info" Type="nvarchar(max)" />
+          <Property Name="Recipe_Product" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Staff">
           <Key>
@@ -130,6 +128,42 @@
           <Property Name="Surcharge_DateStart" Type="date" Nullable="false" />
           <Property Name="Surcharge_DateEnd" Type="date" />
         </EntityType>
+        <Association Name="FK_infoImport">
+          <End Role="Import" Type="Self.Import" Multiplicity="0..1" />
+          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Import">
+              <PropertyRef Name="Import_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Import_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_infoIngredient">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="Ingredient_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Info_Ingredient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeProduct">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="Recipe_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKBill_Info16588">
           <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
           <End Role="Bill_Info" Type="Self.Bill_Info" Multiplicity="*" />
@@ -202,30 +236,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKImport_Inf447235">
-          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
-          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ingredient">
-              <PropertyRef Name="Ingredient_ID" />
-            </Principal>
-            <Dependent Role="Import_Info">
-              <PropertyRef Name="Ingredient_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKImport_Inf571201">
-          <End Role="Import" Type="Self.Import" Multiplicity="1" />
-          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Import">
-              <PropertyRef Name="Import_ID" />
-            </Principal>
-            <Dependent Role="Import_Info">
-              <PropertyRef Name="Import_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKImport434180">
           <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
           <End Role="Import" Type="Self.Import" Multiplicity="*" />
@@ -250,30 +260,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKRecipe221258">
-          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
-          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ingredient">
-              <PropertyRef Name="Ingredient_ID" />
-            </Principal>
-            <Dependent Role="Recipe">
-              <PropertyRef Name="Ingredient_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKRecipe859301">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="Product_ID" />
-            </Principal>
-            <Dependent Role="Recipe">
-              <PropertyRef Name="Product_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Function Name="addSurchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="billid" Type="int" Mode="In" />
           <Parameter Name="surid" Type="int" Mode="In" />
@@ -286,6 +272,9 @@
         </Function>
         <Function Name="exportBillTakeAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BillID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="exportIImport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ImportID" Type="int" Mode="In" />
         </Function>
         <Function Name="removeFullSurchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="billid" Type="int" Mode="In" />
@@ -310,6 +299,18 @@
           <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Surcharge" EntityType="Self.Surcharge" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_infoImport" Association="Self.FK_infoImport">
+            <End Role="Import" EntitySet="Import" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_infoIngredient" Association="Self.FK_infoIngredient">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeProduct" Association="Self.FK_RecipeProduct">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Recipe" EntitySet="Recipe" />
+          </AssociationSet>
           <AssociationSet Name="FKBill_Info16588" Association="Self.FKBill_Info16588">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="Bill_Info" EntitySet="Bill_Info" />
@@ -334,14 +335,6 @@
             <End Role="DBTable" EntitySet="DBTable" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FKImport_Inf447235" Association="Self.FKImport_Inf447235">
-            <End Role="Ingredient" EntitySet="Ingredient" />
-            <End Role="Import_Info" EntitySet="Import_Info" />
-          </AssociationSet>
-          <AssociationSet Name="FKImport_Inf571201" Association="Self.FKImport_Inf571201">
-            <End Role="Import" EntitySet="Import" />
-            <End Role="Import_Info" EntitySet="Import_Info" />
-          </AssociationSet>
           <AssociationSet Name="FKImport434180" Association="Self.FKImport434180">
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Import" EntitySet="Import" />
@@ -349,14 +342,6 @@
           <AssociationSet Name="FKProduct568957" Association="Self.FKProduct568957">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
-          </AssociationSet>
-          <AssociationSet Name="FKRecipe221258" Association="Self.FKRecipe221258">
-            <End Role="Ingredient" EntitySet="Ingredient" />
-            <End Role="Recipe" EntitySet="Recipe" />
-          </AssociationSet>
-          <AssociationSet Name="FKRecipe859301" Association="Self.FKRecipe859301">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Recipe" EntitySet="Recipe" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -419,34 +404,8 @@
           <Property Name="Import_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Import_Staff" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Import_TotalMoney" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Import_Info" Relationship="Self.FKImport_Inf571201" FromRole="Import" ToRole="Import_Info" />
           <NavigationProperty Name="Staff" Relationship="Self.FKImport434180" FromRole="Import" ToRole="Staff" />
-        </EntityType>
-        <EntityType Name="Import_Info">
-          <Key>
-            <PropertyRef Name="Import_ID" />
-            <PropertyRef Name="Ingredient_ID" />
-          </Key>
-          <Property Name="Import_ID" Type="Int32" Nullable="false" />
-          <Property Name="Ingredient_ID" Type="Int32" Nullable="false" />
-          <Property Name="II_Quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Import" Relationship="Self.FKImport_Inf571201" FromRole="Import_Info" ToRole="Import" />
-          <NavigationProperty Name="Ingredient" Relationship="Self.FKImport_Inf447235" FromRole="Import_Info" ToRole="Ingredient" />
-        </EntityType>
-        <EntityType Name="Ingredient">
-          <Key>
-            <PropertyRef Name="Ingredient_ID" />
-          </Key>
-          <Property Name="Ingredient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ingredient_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ingredient_Type" Type="Int32" Nullable="false" />
-          <Property Name="Ingredient_Unit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ingredient_Volumn" Type="Single" />
-          <Property Name="Ingredient_PriceImport" Type="Int64" Nullable="false" />
-          <Property Name="Ingredient_Reserved" Type="Single" Nullable="false" />
-          <Property Name="Ingredient_isActive" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Import_Info" Relationship="Self.FKImport_Inf447235" FromRole="Ingredient" ToRole="Import_Info" />
-          <NavigationProperty Name="Recipes" Relationship="Self.FKRecipe221258" FromRole="Ingredient" ToRole="Recipe" />
+          <NavigationProperty Name="Import_Info" Relationship="TheLightCoffeeModel.FK_infoImport" FromRole="Import" ToRole="Import_Info" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -461,19 +420,8 @@
           <Property Name="Product_isActive" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bill_Info" Relationship="Self.FKBill_Info640249" FromRole="Product" ToRole="Bill_Info" />
           <NavigationProperty Name="Category" Relationship="Self.FKProduct568957" FromRole="Product" ToRole="Category" />
-          <NavigationProperty Name="Recipes" Relationship="Self.FKRecipe859301" FromRole="Product" ToRole="Recipe" />
-        </EntityType>
-        <EntityType Name="Recipe">
-          <Key>
-            <PropertyRef Name="Product_ID" />
-            <PropertyRef Name="Ingredient_ID" />
-          </Key>
-          <Property Name="Product_ID" Type="Int32" Nullable="false" />
-          <Property Name="Ingredient_ID" Type="Int32" Nullable="false" />
-          <Property Name="Recipe_Volumn" Type="Single" Nullable="false" />
-          <NavigationProperty Name="Ingredient" Relationship="Self.FKRecipe221258" FromRole="Recipe" ToRole="Ingredient" />
-          <NavigationProperty Name="Product" Relationship="Self.FKRecipe859301" FromRole="Recipe" ToRole="Product" />
-        </EntityType>
+          <NavigationProperty Name="Recipes" Relationship="TheLightCoffeeModel.FK_RecipeProduct" FromRole="Product" ToRole="Recipe" />
+          </EntityType>
         <EntityType Name="Staff">
           <Key>
             <PropertyRef Name="Staff_Code" />
@@ -562,18 +510,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKImport_Inf571201">
-          <End Role="Import" Type="Self.Import" Multiplicity="1" />
-          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Import">
-              <PropertyRef Name="Import_ID" />
-            </Principal>
-            <Dependent Role="Import_Info">
-              <PropertyRef Name="Import_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKImport434180">
           <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
           <End Role="Import" Type="Self.Import" Multiplicity="*" />
@@ -583,42 +519,6 @@
             </Principal>
             <Dependent Role="Import">
               <PropertyRef Name="Import_Staff" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKImport_Inf447235">
-          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
-          <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ingredient">
-              <PropertyRef Name="Ingredient_ID" />
-            </Principal>
-            <Dependent Role="Import_Info">
-              <PropertyRef Name="Ingredient_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKRecipe221258">
-          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
-          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ingredient">
-              <PropertyRef Name="Ingredient_ID" />
-            </Principal>
-            <Dependent Role="Recipe">
-              <PropertyRef Name="Ingredient_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKRecipe859301">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="Product_ID" />
-            </Principal>
-            <Dependent Role="Recipe">
-              <PropertyRef Name="Product_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -632,10 +532,7 @@
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="DBTables" EntityType="Self.DBTable" />
           <EntitySet Name="Imports" EntityType="Self.Import" />
-          <EntitySet Name="Import_Info" EntityType="Self.Import_Info" />
-          <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
           <EntitySet Name="Products" EntityType="Self.Product" />
-          <EntitySet Name="Recipes" EntityType="Self.Recipe" />
           <EntitySet Name="Staffs" EntityType="Self.Staff" />
           <EntitySet Name="Surcharges" EntityType="Self.Surcharge" />
           <AssociationSet Name="FKBill_Info16588" Association="Self.FKBill_Info16588">
@@ -658,25 +555,9 @@
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FKImport_Inf571201" Association="Self.FKImport_Inf571201">
-            <End Role="Import" EntitySet="Imports" />
-            <End Role="Import_Info" EntitySet="Import_Info" />
-          </AssociationSet>
           <AssociationSet Name="FKImport434180" Association="Self.FKImport434180">
             <End Role="Staff" EntitySet="Staffs" />
             <End Role="Import" EntitySet="Imports" />
-          </AssociationSet>
-          <AssociationSet Name="FKImport_Inf447235" Association="Self.FKImport_Inf447235">
-            <End Role="Ingredient" EntitySet="Ingredients" />
-            <End Role="Import_Info" EntitySet="Import_Info" />
-          </AssociationSet>
-          <AssociationSet Name="FKRecipe221258" Association="Self.FKRecipe221258">
-            <End Role="Ingredient" EntitySet="Ingredients" />
-            <End Role="Recipe" EntitySet="Recipes" />
-          </AssociationSet>
-          <AssociationSet Name="FKRecipe859301" Association="Self.FKRecipe859301">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="Recipe" EntitySet="Recipes" />
           </AssociationSet>
           <AssociationSet Name="Bill_Surcharge" Association="Self.Bill_Surcharge">
             <End Role="Surcharge" EntitySet="Surcharges" />
@@ -703,9 +584,27 @@
           <Parameter Name="billid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="removeFullSurchange">
-            <Parameter Name="billid" Mode="In" Type="Int32" />
+          <Parameter Name="billid" Mode="In" Type="Int32" />
           </FunctionImport>
-        </EntityContainer>
+          <EntitySet Name="Ingredients" EntityType="TheLightCoffeeModel.Ingredient" />
+          <EntitySet Name="Recipes" EntityType="TheLightCoffeeModel.Recipe" />
+          <AssociationSet Name="FK_RecipeProduct" Association="TheLightCoffeeModel.FK_RecipeProduct">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Recipe" EntitySet="Recipes" />
+          </AssociationSet>
+          <EntitySet Name="Import_Info" EntityType="TheLightCoffeeModel.Import_Info" />
+          <AssociationSet Name="FK_infoImport" Association="TheLightCoffeeModel.FK_infoImport">
+            <End Role="Import" EntitySet="Imports" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_infoIngredient" Association="TheLightCoffeeModel.FK_infoIngredient">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <FunctionImport Name="exportIImport" ReturnType="Collection(TheLightCoffeeModel.exportIImport_Result)">
+            <Parameter Name="ImportID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          </EntityContainer>
         <ComplexType Name="exportBillTakeAway_Result">
           <Property Type="Int32" Name="Bill_Code" Nullable="false" />
           <Property Type="String" Name="Bill_Staff" Nullable="false" MaxLength="100" />
@@ -729,7 +628,86 @@
           <Property Type="DateTime" Name="Bill_TimeFrom" Nullable="false" Precision="23" />
           <Property Type="DateTime" Name="Bill_TimeTo" Nullable="true" Precision="23" />
         </ComplexType>
-      </Schema>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="Ingredient_ID" />
+          </Key>
+          <Property Name="Ingredient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ingredient_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ingredient_Unit" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ingredient_PriceImport" Type="Int64" Nullable="false" />
+          <Property Name="Ingredient_isActive" Type="Boolean" Nullable="false" />
+          <Property Name="Ingredient_Reserved" Type="Single" />
+          <Property Name="Ingredient_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Import_Info" Relationship="TheLightCoffeeModel.FK_infoIngredient" FromRole="Ingredient" ToRole="Import_Info" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="Recipe_ID" />
+          </Key>
+          <Property Name="Recipe_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Recipe_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Recipe_Product" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="TheLightCoffeeModel.FK_RecipeProduct" FromRole="Recipe" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_RecipeProduct">
+          <End Type="TheLightCoffeeModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="TheLightCoffeeModel.Recipe" Role="Recipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Recipe">
+              <PropertyRef Name="Recipe_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Import_Info">
+          <Key>
+            <PropertyRef Name="ImportInfo_ID" />
+          </Key>
+          <Property Name="ImportInfo_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Import_ID" Type="Int32" />
+          <Property Name="Info_Quantity" Type="Int32" />
+          <Property Name="Info_Ingredient" Type="Int32" />
+          <NavigationProperty Name="Import" Relationship="TheLightCoffeeModel.FK_infoImport" FromRole="Import_Info" ToRole="Import" />
+          <NavigationProperty Name="Ingredient" Relationship="TheLightCoffeeModel.FK_infoIngredient" FromRole="Import_Info" ToRole="Ingredient" />
+        </EntityType>
+        <Association Name="FK_infoImport">
+          <End Type="TheLightCoffeeModel.Import" Role="Import" Multiplicity="0..1" />
+          <End Type="TheLightCoffeeModel.Import_Info" Role="Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Import">
+              <PropertyRef Name="Import_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Import_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_infoIngredient">
+          <End Type="TheLightCoffeeModel.Ingredient" Role="Ingredient" Multiplicity="0..1" />
+          <End Type="TheLightCoffeeModel.Import_Info" Role="Import_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="Ingredient_ID" />
+            </Principal>
+            <Dependent Role="Import_Info">
+              <PropertyRef Name="Info_Ingredient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="exportIImport_Result">
+          <Property Type="Int32" Name="Import_ID" Nullable="false" />
+          <Property Type="DateTime" Name="Import_Date" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Import_Staff" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Import_Ingredient" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Import_Quantity" Nullable="true" />
+          <Property Type="String" Name="Import_Unit" Nullable="false" MaxLength="100" />
+          <Property Type="Int64" Name="Import_Price" Nullable="false" />
+          <Property Type="Int64" Name="Import_TotalMoney" Nullable="false" />
+        </ComplexType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -789,29 +767,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Import_Info">
-            <EntityTypeMapping TypeName="TheLightCoffeeModel.Import_Info">
-              <MappingFragment StoreEntitySet="Import_Info">
-                <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
-                <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
-                <ScalarProperty Name="II_Quantity" ColumnName="II_Quantity" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ingredients">
-            <EntityTypeMapping TypeName="TheLightCoffeeModel.Ingredient">
-              <MappingFragment StoreEntitySet="Ingredient">
-                <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
-                <ScalarProperty Name="Ingredient_Name" ColumnName="Ingredient_Name" />
-                <ScalarProperty Name="Ingredient_Type" ColumnName="Ingredient_Type" />
-                <ScalarProperty Name="Ingredient_Unit" ColumnName="Ingredient_Unit" />
-                <ScalarProperty Name="Ingredient_Volumn" ColumnName="Ingredient_Volumn" />
-                <ScalarProperty Name="Ingredient_PriceImport" ColumnName="Ingredient_PriceImport" />
-                <ScalarProperty Name="Ingredient_Reserved" ColumnName="Ingredient_Reserved" />
-                <ScalarProperty Name="Ingredient_isActive" ColumnName="Ingredient_isActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="TheLightCoffeeModel.Product">
               <MappingFragment StoreEntitySet="Product">
@@ -822,15 +777,6 @@
                 <ScalarProperty Name="Product_Unit" ColumnName="Product_Unit" />
                 <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
                 <ScalarProperty Name="Product_isActive" ColumnName="Product_isActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Recipes">
-            <EntityTypeMapping TypeName="TheLightCoffeeModel.Recipe">
-              <MappingFragment StoreEntitySet="Recipe">
-                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-                <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
-                <ScalarProperty Name="Recipe_Volumn" ColumnName="Recipe_Volumn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -905,6 +851,52 @@
           <FunctionImportMapping FunctionImportName="removeSurchange" FunctionName="TheLightCoffeeModel.Store.removeSurchange" />
           <FunctionImportMapping FunctionImportName="checkSurcharge" FunctionName="TheLightCoffeeModel.Store.checkSurcharge" />
           <FunctionImportMapping FunctionImportName="removeFullSurchange" FunctionName="TheLightCoffeeModel.Store.removeFullSurchange" />
+          <EntitySetMapping Name="Ingredients">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Ingredient">
+              <MappingFragment StoreEntitySet="Ingredient">
+                <ScalarProperty Name="Ingredient_Image" ColumnName="Ingredient_Image" />
+                <ScalarProperty Name="Ingredient_Reserved" ColumnName="Ingredient_Reserved" />
+                <ScalarProperty Name="Ingredient_isActive" ColumnName="Ingredient_isActive" />
+                <ScalarProperty Name="Ingredient_PriceImport" ColumnName="Ingredient_PriceImport" />
+                <ScalarProperty Name="Ingredient_Unit" ColumnName="Ingredient_Unit" />
+                <ScalarProperty Name="Ingredient_Name" ColumnName="Ingredient_Name" />
+                <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recipes">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Recipe">
+              <MappingFragment StoreEntitySet="Recipe">
+                <ScalarProperty Name="Recipe_Product" ColumnName="Recipe_Product" />
+                <ScalarProperty Name="Recipe_Info" ColumnName="Recipe_Info" />
+                <ScalarProperty Name="Recipe_ID" ColumnName="Recipe_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Import_Info">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Import_Info">
+              <MappingFragment StoreEntitySet="Import_Info">
+                <ScalarProperty Name="Info_Ingredient" ColumnName="Info_Ingredient" />
+                <ScalarProperty Name="Info_Quantity" ColumnName="Info_Quantity" />
+                <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
+                <ScalarProperty Name="ImportInfo_ID" ColumnName="ImportInfo_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="exportIImport" FunctionName="TheLightCoffeeModel.Store.exportIImport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportIImport_Result">
+                <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
+                <ScalarProperty Name="Import_Date" ColumnName="Import_Date" />
+                <ScalarProperty Name="Import_Staff" ColumnName="Import_Staff" />
+                <ScalarProperty Name="Import_Ingredient" ColumnName="Import_Ingredient" />
+                <ScalarProperty Name="Import_Quantity" ColumnName="Import_Quantity" />
+                <ScalarProperty Name="Import_Unit" ColumnName="Import_Unit" />
+                <ScalarProperty Name="Import_Price" ColumnName="Import_Price" />
+                <ScalarProperty Name="Import_TotalMoney" ColumnName="Import_TotalMoney" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

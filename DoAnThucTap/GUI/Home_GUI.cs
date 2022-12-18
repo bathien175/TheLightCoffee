@@ -72,7 +72,18 @@ namespace DoAnThucTap.GUI
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
+            Product_GUI product_GUI = new Product_GUI();
+            this.Hide();
+            product_GUI.ShowDialog();
+            this.Show();
+        }
 
+        private void btnIngredient_Click(object sender, EventArgs e)
+        {
+            Ingredient_GUI ingredient = new Ingredient_GUI(s.Staff_Code);
+            this.Hide();
+            ingredient.ShowDialog();
+            this.Show();
         }
     }
 }

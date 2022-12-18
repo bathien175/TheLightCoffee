@@ -25,8 +25,8 @@ namespace DoAnThucTap.DTO
         public string Import_Staff { get; set; }
         public long Import_TotalMoney { get; set; }
     
+        public virtual Staff Staff { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Import_Info> Import_Info { get; set; }
-        public virtual Staff Staff { get; set; }
     }
 }

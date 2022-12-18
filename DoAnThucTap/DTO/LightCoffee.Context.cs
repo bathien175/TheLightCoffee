@@ -32,12 +32,12 @@ namespace DoAnThucTap.DTO
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<DBTable> DBTables { get; set; }
         public virtual DbSet<Import> Imports { get; set; }
-        public virtual DbSet<Import_Info> Import_Info { get; set; }
-        public virtual DbSet<Ingredient> Ingredients { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Recipe> Recipes { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Surcharge> Surcharges { get; set; }
+        public virtual DbSet<Ingredient> Ingredients { get; set; }
+        public virtual DbSet<Recipe> Recipes { get; set; }
+        public virtual DbSet<Import_Info> Import_Info { get; set; }
     
         public virtual ObjectResult<exportBillTakeAway_Result> exportBillTakeAway(Nullable<int> billID)
         {
@@ -108,6 +108,15 @@ namespace DoAnThucTap.DTO
                 new ObjectParameter("billid", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("removeFullSurchange", billidParameter);
+        }
+    
+        public virtual ObjectResult<exportIImport_Result> exportIImport(Nullable<int> importID)
+        {
+            var importIDParameter = importID.HasValue ?
+                new ObjectParameter("ImportID", importID) :
+                new ObjectParameter("ImportID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportIImport_Result>("exportIImport", importIDParameter);
         }
     }
 }

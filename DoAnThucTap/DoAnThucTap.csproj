@@ -88,6 +88,7 @@
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v21.2.Drawing, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -106,6 +107,7 @@
     <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -148,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\billDAO.cs" />
+    <Compile Include="DAO\IngredientDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\menuDAO.cs" />
     <Compile Include="DAO\staffDAO.cs" />
@@ -166,6 +169,7 @@
     <Compile Include="DTO\DBTable.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\detailImport.cs" />
     <Compile Include="DTO\dtaBill.cs">
       <DependentUpon>dtaBill.xsd</DependentUpon>
     </Compile>
@@ -180,9 +184,13 @@
     <Compile Include="DTO\exportBillTakeAway_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\exportIImport_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Import.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\importReport.cs" />
     <Compile Include="DTO\Import_Info.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -222,6 +230,12 @@
     <Compile Include="DTO\ReportBillTable.Designer.cs">
       <DependentUpon>ReportBillTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ReportImport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DTO\ReportImport.Designer.cs">
+      <DependentUpon>ReportImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Staff.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -253,17 +267,35 @@
     <Compile Include="GUI\ChooseTable_GUI.Designer.cs">
       <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DetailProduct_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DetailProduct_GUI.Designer.cs">
+      <DependentUpon>DetailProduct_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Home_GUI.Designer.cs">
       <DependentUpon>Home_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Ingredient_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Ingredient_GUI.Designer.cs">
+      <DependentUpon>Ingredient_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login_GUI.Designer.cs">
       <DependentUpon>Login_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\multip_Import_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\multip_Import_GUI.Designer.cs">
+      <DependentUpon>multip_Import_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Persional_GUI.cs">
       <SubType>Form</SubType>
@@ -289,11 +321,23 @@
     <Compile Include="GUI\Sell_GUI.Designer.cs">
       <DependentUpon>Sell_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\single_Import_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\single_Import_GUI.Designer.cs">
+      <DependentUpon>single_Import_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\swithTable_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\swithTable_GUI.Designer.cs">
       <DependentUpon>swithTable_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\printImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\printImport.Designer.cs">
+      <DependentUpon>printImport.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -315,6 +359,18 @@
     <Compile Include="userControl\itemTable.Designer.cs">
       <DependentUpon>itemTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\item_Import.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\item_Import.Designer.cs">
+      <DependentUpon>item_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\item_Ingredient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\item_Ingredient.Designer.cs">
+      <DependentUpon>item_Ingredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\item_Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -333,6 +389,9 @@
     <EmbeddedResource Include="DTO\ReportBillTable.resx">
       <DependentUpon>ReportBillTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DTO\ReportImport.resx">
+      <DependentUpon>ReportImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\addToBill_GUI.resx">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,11 +404,20 @@
     <EmbeddedResource Include="GUI\ChooseTable_GUI.resx">
       <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DetailProduct_GUI.resx">
+      <DependentUpon>DetailProduct_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home_GUI.resx">
       <DependentUpon>Home_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Ingredient_GUI.resx">
+      <DependentUpon>Ingredient_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login_GUI.resx">
       <DependentUpon>Login_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\multip_Import_GUI.resx">
+      <DependentUpon>multip_Import_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Persional_GUI.resx">
       <DependentUpon>Persional_GUI.cs</DependentUpon>
@@ -357,11 +425,17 @@
     <EmbeddedResource Include="GUI\printBill.resx">
       <DependentUpon>printBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\printImport.resx">
+      <DependentUpon>printImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Product_GUI.resx">
       <DependentUpon>Product_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Sell_GUI.resx">
       <DependentUpon>Sell_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\single_Import_GUI.resx">
+      <DependentUpon>single_Import_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\swithTable_GUI.resx">
       <DependentUpon>swithTable_GUI.cs</DependentUpon>
@@ -385,6 +459,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\itemTable.resx">
       <DependentUpon>itemTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\item_Import.resx">
+      <DependentUpon>item_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\item_Ingredient.resx">
+      <DependentUpon>item_Ingredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\item_Product.resx">
       <DependentUpon>item_Product.cs</DependentUpon>
@@ -478,6 +558,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ImageIngredient\" />
     <Folder Include="ImageProduct\" />
   </ItemGroup>
   <ItemGroup>
@@ -502,6 +583,8 @@
       <LastGenOutput>LightCoffee.cs</LastGenOutput>
     </Content>
     <Content Include="ImageStaff\avatar.gif" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\backgroundRecipe.jpg" />
     <None Include="Resources\images.png" />
     <None Include="Resources\remove.png" />
   </ItemGroup>

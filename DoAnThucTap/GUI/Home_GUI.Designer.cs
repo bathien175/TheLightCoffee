@@ -38,7 +38,6 @@
             this.bottom = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnReportDay = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnImport = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnIngredient = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnMenu = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnTakeAway = new Bunifu.Framework.UI.BunifuTileButton();
@@ -178,7 +177,6 @@
             this.bunifuPanel2.BorderRadius = 20;
             this.bunifuPanel2.BorderThickness = 1;
             this.bunifuPanel2.Controls.Add(this.btnReportDay);
-            this.bunifuPanel2.Controls.Add(this.btnImport);
             this.bunifuPanel2.Controls.Add(this.btnIngredient);
             this.bunifuPanel2.Controls.Add(this.btnMenu);
             this.bunifuPanel2.Controls.Add(this.btnTakeAway);
@@ -204,31 +202,11 @@
             this.btnReportDay.ImageZoom = 60;
             this.btnReportDay.LabelPosition = 39;
             this.btnReportDay.LabelText = "Chốt ngày";
-            this.btnReportDay.Location = new System.Drawing.Point(825, 326);
+            this.btnReportDay.Location = new System.Drawing.Point(896, 326);
             this.btnReportDay.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnReportDay.Name = "btnReportDay";
             this.btnReportDay.Size = new System.Drawing.Size(200, 200);
             this.btnReportDay.TabIndex = 18;
-            // 
-            // btnImport
-            // 
-            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnImport.BackColor = System.Drawing.Color.Snow;
-            this.btnImport.color = System.Drawing.Color.Snow;
-            this.btnImport.colorActive = System.Drawing.Color.RosyBrown;
-            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImport.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.ForeColor = System.Drawing.Color.Black;
-            this.btnImport.Image = global::DoAnThucTap.Properties.Resources.productivity;
-            this.btnImport.ImagePosition = 19;
-            this.btnImport.ImageZoom = 60;
-            this.btnImport.LabelPosition = 39;
-            this.btnImport.LabelText = "Nhập hàng";
-            this.btnImport.Location = new System.Drawing.Point(575, 326);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(200, 200);
-            this.btnImport.TabIndex = 17;
             // 
             // btnIngredient
             // 
@@ -244,11 +222,12 @@
             this.btnIngredient.ImageZoom = 60;
             this.btnIngredient.LabelPosition = 39;
             this.btnIngredient.LabelText = "Nguyên liệu";
-            this.btnIngredient.Location = new System.Drawing.Point(948, 70);
+            this.btnIngredient.Location = new System.Drawing.Point(566, 326);
             this.btnIngredient.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnIngredient.Name = "btnIngredient";
             this.btnIngredient.Size = new System.Drawing.Size(200, 200);
             this.btnIngredient.TabIndex = 15;
+            this.btnIngredient.Click += new System.EventHandler(this.btnIngredient_Click);
             // 
             // btnMenu
             // 
@@ -264,7 +243,7 @@
             this.btnMenu.ImageZoom = 60;
             this.btnMenu.LabelPosition = 39;
             this.btnMenu.LabelText = "Thực đơn";
-            this.btnMenu.Location = new System.Drawing.Point(698, 70);
+            this.btnMenu.Location = new System.Drawing.Point(237, 326);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(200, 200);
@@ -285,7 +264,7 @@
             this.btnTakeAway.ImageZoom = 60;
             this.btnTakeAway.LabelPosition = 39;
             this.btnTakeAway.LabelText = "Mang về";
-            this.btnTakeAway.Location = new System.Drawing.Point(438, 70);
+            this.btnTakeAway.Location = new System.Drawing.Point(566, 70);
             this.btnTakeAway.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnTakeAway.Name = "btnTakeAway";
             this.btnTakeAway.Size = new System.Drawing.Size(200, 200);
@@ -306,7 +285,7 @@
             this.btnStaff.ImageZoom = 60;
             this.btnStaff.LabelPosition = 39;
             this.btnStaff.LabelText = "Cá nhân";
-            this.btnStaff.Location = new System.Drawing.Point(325, 326);
+            this.btnStaff.Location = new System.Drawing.Point(896, 70);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(200, 200);
@@ -327,7 +306,7 @@
             this.btnCreateBill.ImageZoom = 60;
             this.btnCreateBill.LabelPosition = 39;
             this.btnCreateBill.LabelText = "Bán tại chỗ";
-            this.btnCreateBill.Location = new System.Drawing.Point(170, 70);
+            this.btnCreateBill.Location = new System.Drawing.Point(237, 70);
             this.btnCreateBill.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnCreateBill.Name = "btnCreateBill";
             this.btnCreateBill.Size = new System.Drawing.Size(200, 200);
@@ -411,7 +390,6 @@
         private System.Windows.Forms.Timer clock;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
         private Bunifu.Framework.UI.BunifuTileButton btnReportDay;
-        private Bunifu.Framework.UI.BunifuTileButton btnImport;
         private Bunifu.Framework.UI.BunifuTileButton btnIngredient;
         private Bunifu.Framework.UI.BunifuTileButton btnMenu;
         private Bunifu.Framework.UI.BunifuTileButton btnTakeAway;

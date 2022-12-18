@@ -10,16 +10,16 @@
 namespace DoAnThucTap.DTO
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Import_Info
+    public partial class exportIImport_Result
     {
-        public int ImportInfo_ID { get; set; }
-        public Nullable<int> Import_ID { get; set; }
-        public Nullable<int> Info_Quantity { get; set; }
-        public Nullable<int> Info_Ingredient { get; set; }
-    
-        public virtual Import Import { get; set; }
-        public virtual Ingredient Ingredient { get; set; }
+        public int Import_ID { get; set; }
+        public System.DateTime Import_Date { get; set; }
+        public string Import_Staff { get; set; }
+        public string Import_Ingredient { get; set; }
+        public Nullable<int> Import_Quantity { get; set; }
+        public string Import_Unit { get; set; }
+        public long Import_Price { get; set; }
+        public long Import_TotalMoney { get; set; }
     }
 }

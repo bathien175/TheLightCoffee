@@ -18,21 +18,17 @@ namespace DoAnThucTap.DTO
         public Ingredient()
         {
             this.Import_Info = new HashSet<Import_Info>();
-            this.Recipes = new HashSet<Recipe>();
         }
     
         public int Ingredient_ID { get; set; }
         public string Ingredient_Name { get; set; }
-        public int Ingredient_Type { get; set; }
         public string Ingredient_Unit { get; set; }
-        public Nullable<float> Ingredient_Volumn { get; set; }
         public long Ingredient_PriceImport { get; set; }
-        public float Ingredient_Reserved { get; set; }
         public bool Ingredient_isActive { get; set; }
+        public Nullable<float> Ingredient_Reserved { get; set; }
+        public string Ingredient_Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Import_Info> Import_Info { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Recipe> Recipes { get; set; }
     }
 }

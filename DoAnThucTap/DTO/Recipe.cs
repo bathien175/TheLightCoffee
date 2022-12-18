@@ -14,11 +14,10 @@ namespace DoAnThucTap.DTO
     
     public partial class Recipe
     {
-        public int Product_ID { get; set; }
-        public int Ingredient_ID { get; set; }
-        public float Recipe_Volumn { get; set; }
+        public int Recipe_ID { get; set; }
+        public string Recipe_Info { get; set; }
+        public int Recipe_Product { get; set; }
     
-        public virtual Ingredient Ingredient { get; set; }
         public virtual Product Product { get; set; }
     }
 }

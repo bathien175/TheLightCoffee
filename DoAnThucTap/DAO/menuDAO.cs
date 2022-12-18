@@ -60,5 +60,14 @@ namespace DoAnThucTap.DAO
                 return list;
             }
         }
+
+        public List<Recipe> getRecipe(int pid)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<Recipe> list = db.Recipes.Where(r => r.Recipe_Product == pid).ToList();
+                return list;
+            }
+        }
     }
 }
