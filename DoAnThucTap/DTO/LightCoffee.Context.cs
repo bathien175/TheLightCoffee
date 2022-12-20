@@ -118,5 +118,10 @@ namespace DoAnThucTap.DTO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportIImport_Result>("exportIImport", importIDParameter);
         }
+    
+        public virtual ObjectResult<exportDate_Result> exportDate()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportDate_Result>("exportDate");
+        }
     }
 }

@@ -207,6 +207,7 @@
             this.btnReportDay.Name = "btnReportDay";
             this.btnReportDay.Size = new System.Drawing.Size(200, 200);
             this.btnReportDay.TabIndex = 18;
+            this.btnReportDay.Click += new System.EventHandler(this.btnReportDay_Click);
             // 
             // btnIngredient
             // 

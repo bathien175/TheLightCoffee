@@ -85,5 +85,11 @@ namespace DoAnThucTap.GUI
             ingredient.ShowDialog();
             this.Show();
         }
+
+        private void btnReportDay_Click(object sender, EventArgs e)
+        {
+            printReportDate date = new printReportDate();
+            date.ShowDialog();
+        }
     }
 }

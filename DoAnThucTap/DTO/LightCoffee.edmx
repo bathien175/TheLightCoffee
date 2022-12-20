@@ -273,6 +273,7 @@
         <Function Name="exportBillTakeAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BillID" Type="int" Mode="In" />
         </Function>
+        <Function Name="exportDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="exportIImport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ImportID" Type="int" Mode="In" />
         </Function>
@@ -602,8 +603,9 @@
             <End Role="Import_Info" EntitySet="Import_Info" />
           </AssociationSet>
           <FunctionImport Name="exportIImport" ReturnType="Collection(TheLightCoffeeModel.exportIImport_Result)">
-            <Parameter Name="ImportID" Mode="In" Type="Int32" />
+          <Parameter Name="ImportID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="exportDate" ReturnType="Collection(TheLightCoffeeModel.exportDate_Result)" />
           </EntityContainer>
         <ComplexType Name="exportBillTakeAway_Result">
           <Property Type="Int32" Name="Bill_Code" Nullable="false" />
@@ -706,6 +708,17 @@
           <Property Type="String" Name="Import_Unit" Nullable="false" MaxLength="100" />
           <Property Type="Int64" Name="Import_Price" Nullable="false" />
           <Property Type="Int64" Name="Import_TotalMoney" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="exportDate_Result">
+          <Property Type="Int32" Name="IDExport" Nullable="false" />
+          <Property Type="String" Name="NameExport" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ProductExport" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="QuantityExport" Nullable="true" />
+          <Property Type="String" Name="UnitExport" Nullable="true" MaxLength="100" />
+          <Property Type="Int64" Name="PriceExport" Nullable="false" />
+          <Property Type="Int64" Name="Bill_ExtraFee" Nullable="true" />
+          <Property Type="Int64" Name="Bill_Discount" Nullable="true" />
+          <Property Type="Int32" Name="type" Nullable="false" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -894,6 +907,21 @@
                 <ScalarProperty Name="Import_Unit" ColumnName="Import_Unit" />
                 <ScalarProperty Name="Import_Price" ColumnName="Import_Price" />
                 <ScalarProperty Name="Import_TotalMoney" ColumnName="Import_TotalMoney" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="exportDate" FunctionName="TheLightCoffeeModel.Store.exportDate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportDate_Result">
+                <ScalarProperty Name="IDExport" ColumnName="IDExport" />
+                <ScalarProperty Name="NameExport" ColumnName="NameExport" />
+                <ScalarProperty Name="ProductExport" ColumnName="ProductExport" />
+                <ScalarProperty Name="QuantityExport" ColumnName="QuantityExport" />
+                <ScalarProperty Name="UnitExport" ColumnName="UnitExport" />
+                <ScalarProperty Name="PriceExport" ColumnName="PriceExport" />
+                <ScalarProperty Name="Bill_ExtraFee" ColumnName="Bill_ExtraFee" />
+                <ScalarProperty Name="Bill_Discount" ColumnName="Bill_Discount" />
+                <ScalarProperty Name="type" ColumnName="type" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

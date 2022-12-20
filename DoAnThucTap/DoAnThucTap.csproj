@@ -166,6 +166,7 @@
     <Compile Include="DTO\Category.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\dateReport.cs" />
     <Compile Include="DTO\DBTable.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -182,6 +183,9 @@
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\exportBillTakeAway_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\exportDate_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\exportIImport_Result.cs">
@@ -229,6 +233,12 @@
     </Compile>
     <Compile Include="DTO\ReportBillTable.Designer.cs">
       <DependentUpon>ReportBillTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\ReportDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DTO\ReportDate.Designer.cs">
+      <DependentUpon>ReportDate.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\ReportImport.cs">
       <SubType>Component</SubType>
@@ -308,6 +318,12 @@
     </Compile>
     <Compile Include="GUI\printBill.Designer.cs">
       <DependentUpon>printBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\printReportDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\printReportDate.Designer.cs">
+      <DependentUpon>printReportDate.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Product_GUI.cs">
       <SubType>Form</SubType>
@@ -389,6 +405,9 @@
     <EmbeddedResource Include="DTO\ReportBillTable.resx">
       <DependentUpon>ReportBillTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DTO\ReportDate.resx">
+      <DependentUpon>ReportDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DTO\ReportImport.resx">
       <DependentUpon>ReportImport.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\printImport.resx">
       <DependentUpon>printImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\printReportDate.resx">
+      <DependentUpon>printReportDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Product_GUI.resx">
       <DependentUpon>Product_GUI.cs</DependentUpon>

@@ -20,7 +20,15 @@ namespace DoAnThucTap.DAO
                 return b;
             }
         }
-
+        public List<exportDate_Result> GetExportDate_Results()
+        {
+            List<exportDate_Result> list = new List<exportDate_Result>();
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                list = db.exportDate().ToList();
+                return list;
+            }
+        }
         public List<Bill_Info> getListBillInfo(int billID)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())

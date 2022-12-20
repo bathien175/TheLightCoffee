@@ -8,13 +8,13 @@ namespace DoAnThucTap.DTO
 {
     public class importReport
     {
-        public int Import_ID;
-        public DateTime Import_Date;
-        public String Import_Staff;
-        public String Import_Ingredient;
-        public int Import_Quantity;
-        public String Import_Unit;
-        public long Import_Price;
-        public long Import_TotalMoney;
+        public int Import_ID { get; set; }
+        public DateTime Import_Date { get; set; }
+        public String Import_Staff { get; set; }
+        public String Import_Ingredient { get; set; }
+        public int Import_Quantity { get; set; }
+        public String Import_Unit { get; set; }
+        public long Import_Price { get; set; }
+        public long Import_TotalMoney { get; set; }
     }
 }
