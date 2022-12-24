@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,9 @@ namespace DoAnThucTap.userControl
     public partial class item_Product : UserControl
     {
         private int id;
-        private String namePro, imagePro, cateName, unitPro;
+        private String namePro, cateName, unitPro;
         private long pricePro;
+        private byte[] imagePro;
         public item_Product()
         {
             InitializeComponent();
@@ -45,8 +47,14 @@ namespace DoAnThucTap.userControl
                 lblNameProduct.Text = namePro.ToString();
             }
         }
-
-        public String imageProduct
+        public Image Base64ToImage(byte[] imageBytes)
+        {
+            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+        }
+        public byte[] imageProduct
         {
             get
             {
@@ -55,7 +63,7 @@ namespace DoAnThucTap.userControl
             set
             {
                 imagePro = value;
-                pictureProduct.Image = Image.FromFile(@"../../ImageProduct/"+imagePro);
+                pictureProduct.Image = Base64ToImage(imagePro);
             }
         }
         public long priceProduct

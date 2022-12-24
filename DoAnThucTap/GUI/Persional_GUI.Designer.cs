@@ -699,7 +699,6 @@
             // 
             // btnChangeImage
             // 
-            this.btnChangeImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnChangeImage.BackColor = System.Drawing.Color.Teal;
             this.btnChangeImage.color = System.Drawing.Color.Teal;
             this.btnChangeImage.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -714,13 +713,13 @@
             this.btnChangeImage.Location = new System.Drawing.Point(6, 451);
             this.btnChangeImage.Margin = new System.Windows.Forms.Padding(6);
             this.btnChangeImage.Name = "btnChangeImage";
-            this.btnChangeImage.Size = new System.Drawing.Size(204, 199);
+            this.btnChangeImage.Size = new System.Drawing.Size(204, 190);
             this.btnChangeImage.TabIndex = 2;
             this.btnChangeImage.Click += new System.EventHandler(this.btnChangeImage_Click);
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChangePassword.BackColor = System.Drawing.Color.Teal;
             this.btnChangePassword.color = System.Drawing.Color.Teal;
             this.btnChangePassword.colorActive = System.Drawing.Color.MediumSeaGreen;
@@ -735,7 +734,7 @@
             this.btnChangePassword.Location = new System.Drawing.Point(222, 451);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(6);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(211, 199);
+            this.btnChangePassword.Size = new System.Drawing.Size(211, 190);
             this.btnChangePassword.TabIndex = 1;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
@@ -745,7 +744,7 @@
             this.imgAvatar.AutoSizeHeight = true;
             this.imgAvatar.BorderRadius = 221;
             this.imgAvatar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgAvatar.Image = ((System.Drawing.Image)(resources.GetObject("imgAvatar.Image")));
+            this.imgAvatar.Image = global::DoAnThucTap.Properties.Resources.noimage;
             this.imgAvatar.IsCircle = true;
             this.imgAvatar.Location = new System.Drawing.Point(0, 0);
             this.imgAvatar.Name = "imgAvatar";
@@ -759,11 +758,13 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1365, 703);
-            this.ControlBox = false;
             this.Controls.Add(this.main);
             this.Controls.Add(this.top);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Persional_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thông tin cá nhân";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.top.ResumeLayout(false);
             this.main.ResumeLayout(false);

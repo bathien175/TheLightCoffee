@@ -10,21 +10,21 @@
         <EntityTypeShape EntityType="TheLightCoffeeModel.Category" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TheLightCoffeeModel.DBTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TheLightCoffeeModel.Import" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Product" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Staff" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TheLightCoffeeModel.Surcharge" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="TheLightCoffeeModel.FKBill_Info16588" ManuallyRouted="false" />
-        <AssociationConnector Association="TheLightCoffeeModel.FKBill122024" ManuallyRouted="false" />
         <AssociationConnector Association="TheLightCoffeeModel.FKBill723377" ManuallyRouted="false" />
-        <AssociationConnector Association="TheLightCoffeeModel.FKBill_Info640249" ManuallyRouted="false" />
-        <AssociationConnector Association="TheLightCoffeeModel.FKProduct568957" ManuallyRouted="false" />
-        <AssociationConnector Association="TheLightCoffeeModel.FKImport434180" ManuallyRouted="false" />
         <AssociationConnector Association="TheLightCoffeeModel.Bill_Surcharge" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Ingredient" Width="1.5" PointX="7.375" PointY="1" />
         <EntityTypeShape EntityType="TheLightCoffeeModel.Recipe" Width="1.5" PointX="5.25" PointY="12.25" />
-        <AssociationConnector Association="TheLightCoffeeModel.FK_RecipeProduct" />
         <EntityTypeShape EntityType="TheLightCoffeeModel.Import_Info" Width="1.5" PointX="8.5" PointY="5.75" />
         <AssociationConnector Association="TheLightCoffeeModel.FK_infoImport" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Product" Width="1.5" PointX="3" PointY="11.625" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKBill_Info640249" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKProduct568957" />
+        <AssociationConnector Association="TheLightCoffeeModel.FK_RecipeProduct" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Ingredient" Width="1.5" PointX="10.375" PointY="1" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staff" Width="1.5" PointX="0.75" PointY="5.25" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKBill122024" />
+        <AssociationConnector Association="TheLightCoffeeModel.FKImport434180" />
         <AssociationConnector Association="TheLightCoffeeModel.FK_infoIngredient" />
         </Diagram>
     </edmx:Diagrams>

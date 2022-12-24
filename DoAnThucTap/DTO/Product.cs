@@ -23,11 +23,11 @@ namespace DoAnThucTap.DTO
     
         public int Product_ID { get; set; }
         public string Product_Name { get; set; }
-        public string Product_Image { get; set; }
         public int Product_Category { get; set; }
         public string Product_Unit { get; set; }
         public long Product_Price { get; set; }
         public bool Product_isActive { get; set; }
+        public byte[] Product_Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill_Info> Bill_Info { get; set; }

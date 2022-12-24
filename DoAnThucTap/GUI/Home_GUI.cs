@@ -91,5 +91,14 @@ namespace DoAnThucTap.GUI
             printReportDate date = new printReportDate();
             date.ShowDialog();
         }
+
+        private void Home_GUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult sl = MessageBox.Show("Bạn thực sự muốn đăng xuất khỏi hệ thống chứ?", "Chờ đã!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sl != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

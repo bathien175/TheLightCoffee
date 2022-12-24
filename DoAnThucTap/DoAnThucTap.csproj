@@ -219,6 +219,7 @@
     <Compile Include="DTO\Product.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\productDTO.cs" />
     <Compile Include="DTO\Recipe.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -259,6 +260,12 @@
     <Compile Include="GUI\addToBill_GUI.Designer.cs">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\adminManagement_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\adminManagement_GUI.Designer.cs">
+      <DependentUpon>adminManagement_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChangePassword_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,11 +302,29 @@
     <Compile Include="GUI\Ingredient_GUI.Designer.cs">
       <DependentUpon>Ingredient_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\loadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\loadingForm.Designer.cs">
+      <DependentUpon>loadingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login_GUI.Designer.cs">
       <DependentUpon>Login_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\managementStaff_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\managementStaff_GUI.Designer.cs">
+      <DependentUpon>managementStaff_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\menu_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\menu_Management_GUI.Designer.cs">
+      <DependentUpon>menu_Management_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\multip_Import_GUI.cs">
       <SubType>Form</SubType>
@@ -414,6 +439,9 @@
     <EmbeddedResource Include="GUI\addToBill_GUI.resx">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\adminManagement_GUI.resx">
+      <DependentUpon>adminManagement_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChangePassword_GUI.resx">
       <DependentUpon>ChangePassword_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,8 +460,17 @@
     <EmbeddedResource Include="GUI\Ingredient_GUI.resx">
       <DependentUpon>Ingredient_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\loadingForm.resx">
+      <DependentUpon>loadingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login_GUI.resx">
       <DependentUpon>Login_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\managementStaff_GUI.resx">
+      <DependentUpon>managementStaff_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\menu_Management_GUI.resx">
+      <DependentUpon>menu_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\multip_Import_GUI.resx">
       <DependentUpon>multip_Import_GUI.cs</DependentUpon>
@@ -581,7 +618,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ImageIngredient\" />
-    <Folder Include="ImageProduct\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bill %281%29.png" />
@@ -604,6 +640,7 @@
       <DependentUpon>LightCoffee.edmx</DependentUpon>
       <LastGenOutput>LightCoffee.cs</LastGenOutput>
     </Content>
+    <None Include="ImageProduct\noimage.png" />
     <Content Include="ImageStaff\avatar.gif" />
     <None Include="Resources\add.png" />
     <None Include="Resources\backgroundRecipe.jpg" />

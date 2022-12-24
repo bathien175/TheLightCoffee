@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using System;
@@ -6,18 +7,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheArtOfDev.HtmlRenderer.Adapters;
 
 namespace DoAnThucTap.GUI
 {
     public partial class Persional_GUI : DevExpress.XtraEditors.XtraForm
     {
         private String staff= "";
-        OpenFileDialog open;
         public Persional_GUI(String s)
         {
             InitializeComponent();
@@ -54,14 +56,7 @@ namespace DoAnThucTap.GUI
                 }
                 if(staffcur.Staff_Address!=null)
                     txtAddress.Text = staffcur.Staff_Address;
-                if (staffcur.Staff_Image != null)
-                {
-                    imgAvatar.Image = Image.FromFile(@"../../ImageStaff/" + staffcur.Staff_Image);
-                }
-                else
-                {
-                    imgAvatar.Image = Image.FromFile(@"../../ImageStaff/avatar.gif");
-                }
+                imgAvatar.Image = Base64ToImage(staffcur.Staff_Image);
             }
         }
 
@@ -70,34 +65,39 @@ namespace DoAnThucTap.GUI
             ChangePassword_GUI pass = new ChangePassword_GUI(new staffDAO().getStaff(staff));
             pass.ShowDialog();
         }
-
-        private void btnChangeImage_Click(object sender, EventArgs e)
+        public byte[] ImageToBase64(Image image, ImageFormat format)
         {
-            open = new OpenFileDialog();
-            if(open.ShowDialog() == DialogResult.OK) 
+            using (MemoryStream ms = new MemoryStream())
             {
-                try
-                {
-                    //coppy ảnh sang thư mục của app
-                    String path = open.FileName;
-                    String imageName = staff + ".jpg";
-                    String source = @"../../ImageStaff/" + imageName;
-                    File.Copy(path, source, true);
-                    imgAvatar.Image = Image.FromFile(source);
-
-                    //update data trong csdl
-                    staffDAO dao = new staffDAO();
-                    dao.EditImageStaff(imageName, staff);
-
-                    //thông báo
-                    MessageBox.Show("Cập nhật ảnh thành công!","Chúc mừng!",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }  
+                image.Save(ms, format);
+                byte[] imageBytes = ms.ToArray();
+                return imageBytes;
             }
         }
+        public Image Base64ToImage(byte[] imageBytes)
+        {
+            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+        }
+        private void btnChangeImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;";
+            DialogResult choose = open.ShowDialog();
+            if (choose == DialogResult.OK)
+            {
+                String path = open.FileName;
+                Bitmap bt = new Bitmap(Image.FromFile(path));
+
+                //-- Xuất ra pictureBox 
+                imgAvatar.Image = bt;
+
+                byte[] codeimage = ImageToBase64(bt, ImageFormat.Jpeg);
+                staffDAO dao = new staffDAO();
+                dao.EditImageStaff(codeimage, staff);
+            }
+        }    
     }
 }

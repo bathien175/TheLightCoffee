@@ -61,7 +61,6 @@
             this.rightTop = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bottomLeft = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnFood = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnMoreDrink = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnYaour = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -71,6 +70,7 @@
             this.btnMilkTea = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCoffee = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnTea = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.top.SuspendLayout();
             this.bottom.SuspendLayout();
             this.bottomMain.SuspendLayout();
@@ -101,7 +101,7 @@
             this.top.Location = new System.Drawing.Point(0, 0);
             this.top.Name = "top";
             this.top.ShowBorders = true;
-            this.top.Size = new System.Drawing.Size(1353, 53);
+            this.top.Size = new System.Drawing.Size(1353, 66);
             this.top.TabIndex = 0;
             // 
             // lblData
@@ -119,7 +119,7 @@
             this.lblData.Location = new System.Drawing.Point(56, 3);
             this.lblData.Name = "lblData";
             this.lblData.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblData.Size = new System.Drawing.Size(1294, 47);
+            this.lblData.Size = new System.Drawing.Size(1294, 60);
             this.lblData.TabIndex = 1;
             this.lblData.Text = "Tầng 1 - Bàn A01";
             this.lblData.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,10 +172,10 @@
             this.bottom.Controls.Add(this.bottomRight);
             this.bottom.Controls.Add(this.bottomLeft);
             this.bottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bottom.Location = new System.Drawing.Point(0, 53);
+            this.bottom.Location = new System.Drawing.Point(0, 66);
             this.bottom.Name = "bottom";
             this.bottom.ShowBorders = true;
-            this.bottom.Size = new System.Drawing.Size(1353, 708);
+            this.bottom.Size = new System.Drawing.Size(1353, 695);
             this.bottom.TabIndex = 1;
             // 
             // bottomMain
@@ -192,7 +192,7 @@
             this.bottomMain.Location = new System.Drawing.Point(209, 0);
             this.bottomMain.Name = "bottomMain";
             this.bottomMain.ShowBorders = true;
-            this.bottomMain.Size = new System.Drawing.Size(738, 708);
+            this.bottomMain.Size = new System.Drawing.Size(738, 695);
             this.bottomMain.TabIndex = 2;
             // 
             // tbMenu
@@ -202,7 +202,7 @@
             this.tbMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMenu.Location = new System.Drawing.Point(0, 60);
             this.tbMenu.Name = "tbMenu";
-            this.tbMenu.Size = new System.Drawing.Size(738, 648);
+            this.tbMenu.Size = new System.Drawing.Size(738, 635);
             this.tbMenu.TabIndex = 1;
             // 
             // botMainTop
@@ -358,7 +358,7 @@
             this.bottomRight.Location = new System.Drawing.Point(947, 0);
             this.bottomRight.Name = "bottomRight";
             this.bottomRight.ShowBorders = true;
-            this.bottomRight.Size = new System.Drawing.Size(406, 708);
+            this.bottomRight.Size = new System.Drawing.Size(406, 695);
             this.bottomRight.TabIndex = 1;
             // 
             // Bill
@@ -370,7 +370,7 @@
             this.Bill.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.Bill.Location = new System.Drawing.Point(0, 60);
             this.Bill.Name = "Bill";
-            this.Bill.Size = new System.Drawing.Size(406, 588);
+            this.Bill.Size = new System.Drawing.Size(406, 575);
             this.Bill.TabIndex = 2;
             this.Bill.WrapContents = false;
             // 
@@ -385,7 +385,7 @@
             this.rightOption.BorderThickness = 1;
             this.rightOption.Controls.Add(this.btnCheckout);
             this.rightOption.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rightOption.Location = new System.Drawing.Point(0, 648);
+            this.rightOption.Location = new System.Drawing.Point(0, 635);
             this.rightOption.Name = "rightOption";
             this.rightOption.ShowBorders = true;
             this.rightOption.Size = new System.Drawing.Size(406, 60);
@@ -540,24 +540,8 @@
             this.bottomLeft.Name = "bottomLeft";
             this.bottomLeft.Padding = new System.Windows.Forms.Padding(5);
             this.bottomLeft.ShowBorders = true;
-            this.bottomLeft.Size = new System.Drawing.Size(209, 708);
+            this.bottomLeft.Size = new System.Drawing.Size(209, 695);
             this.bottomLeft.TabIndex = 0;
-            // 
-            // bunifuPictureBox1
-            // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 94;
-            this.bunifuPictureBox1.Image = global::DoAnThucTap.Properties.Resources.logoquan;
-            this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(12, 503);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(189, 189);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 9;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // btnFood
             // 
@@ -1369,6 +1353,22 @@
             this.btnTea.UseDefaultRadiusAndThickness = true;
             this.btnTea.Click += new System.EventHandler(this.btnTea_Click);
             // 
+            // bunifuPictureBox1
+            // 
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BorderRadius = 94;
+            this.bunifuPictureBox1.Image = global::DoAnThucTap.Properties.Resources.logoquan;
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(12, 496);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(189, 189);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 9;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
             // Sell_GUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1410,7 +1410,6 @@
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private System.Windows.Forms.FlowLayoutPanel tbMenu;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnFood;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnMoreDrink;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnYaour;
@@ -1423,5 +1422,6 @@
         private System.Windows.Forms.FlowLayoutPanel Bill;
         private Bunifu.UI.WinForms.BunifuPanel rightOption;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCheckout;
+        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
     }
 }

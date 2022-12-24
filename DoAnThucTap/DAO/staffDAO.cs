@@ -18,7 +18,7 @@ namespace DoAnThucTap.DAO
             }
         }
 
-        public void EditImageStaff(String fileName,String staff_code)
+        public void EditImageStaff(byte[] fileName,String staff_code)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {

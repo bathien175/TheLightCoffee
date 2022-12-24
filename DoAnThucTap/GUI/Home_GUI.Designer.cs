@@ -368,6 +368,7 @@
             this.Name = "Home_GUI";
             this.Text = "The Light Coffee";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_GUI_FormClosing);
             this.Load += new System.EventHandler(this.Home_GUI_Load);
             this.top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();

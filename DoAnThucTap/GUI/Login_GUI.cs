@@ -1,4 +1,6 @@
-﻿using DoAnThucTap.DAO;
+﻿using DevExpress.Pdf.Drawing.DirectX;
+using DevExpress.XtraSplashScreen;
+using DoAnThucTap.DAO;
 using DoAnThucTap.GUI;
 using System;
 using System.Collections.Generic;
@@ -7,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,28 +58,44 @@ namespace DoAnThucTap
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             LoginDAO dao = new LoginDAO();
             bool admin = false;
             if (btnAdmin.CheckState == Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked)
             {
-                admin= true;
+                admin = true;
             }
             else
             {
-                admin= false;
+                admin = false;
             }
             var staff = dao.Login(txtStaffCode.Text, txtPassword.Text, admin);
-            if (staff!=null)
+            if (staff != null)
             {
-                Home_GUI home = new Home_GUI(staff);
-                this.Hide();
-                home.ShowDialog();
-                this.Show();
-                txtPassword.Clear();
+                if (admin == true)
+                {
+                    managementStaff_GUI ad = new managementStaff_GUI();
+                    this.Hide();
+                    SplashScreenManager.CloseForm();
+                    ad.ShowDialog();
+                    this.Show();
+                    txtPassword.Clear();
+                }
+                else
+                {
+                    Home_GUI home = new Home_GUI(staff);
+                    this.Hide();
+                    SplashScreenManager.CloseForm();
+                    home.ShowDialog();
+                    this.Show();
+                    txtPassword.Clear();
+                }
             }
             else
             {
                 MessageBox.Show("Thông tin đăng nhập không đúng!", "Lỗi đăng nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SplashScreenManager.CloseForm();
             }
         }
     }

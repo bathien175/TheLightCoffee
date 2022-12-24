@@ -28,9 +28,9 @@ namespace DoAnThucTap.DTO
         public string Staff_Phone { get; set; }
         public string Staff_Address { get; set; }
         public string Staff_Password { get; set; }
-        public string Staff_Image { get; set; }
         public bool Staff_isAdmin { get; set; }
         public bool Staff_isActive { get; set; }
+        public byte[] Staff_Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }

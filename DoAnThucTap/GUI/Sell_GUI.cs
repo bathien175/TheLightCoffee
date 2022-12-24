@@ -12,6 +12,9 @@ using DoAnThucTap.Properties;
 using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using Bunifu.UI.WinForms;
+using DevExpress.Pdf.Native.BouncyCastle.Utilities.Encoders;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace DoAnThucTap.GUI
 {
@@ -54,7 +57,22 @@ namespace DoAnThucTap.GUI
             }
             this.Close();
         }
-
+        public byte[] ImageToBase64(Image image, ImageFormat format)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, format);
+                byte[] imageBytes = ms.ToArray();
+                return imageBytes;
+            }
+        }
+        public Image Base64ToImage(byte[] imageBytes)
+        {
+            MemoryStream ms = new MemoryStream(imageBytes,0,imageBytes.Length);
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            Image image = Image.FromStream(ms,true);
+            return image;
+        }
         private void Sell_GUI_Load(object sender, EventArgs e)
         {
             loadMenu(0);
@@ -74,7 +92,7 @@ namespace DoAnThucTap.GUI
                         itemMenu menu = new itemMenu();
                         menu.nameMenu = item.Product_Name;
                         menu.priceMenu = String.Format("{0:0,0 vnđ}", item.Product_Price);
-                        menu.imageProduct = Image.FromFile(@"../../ImageProduct/" + item.Product_Image);
+                        menu.imageProduct = Base64ToImage(item.Product_Image);
                         menu.productid= item.Product_ID;
                         PictureBox i = menu.getpicture();
                         i.Tag = item;
@@ -96,7 +114,7 @@ namespace DoAnThucTap.GUI
                         itemMenu menu = new itemMenu();
                         menu.nameMenu = item.Product_Name;
                         menu.priceMenu = String.Format("{0:0,0 vnđ}", item.Product_Price);
-                        menu.imageProduct = Image.FromFile(@"../../ImageProduct/" + item.Product_Image);
+                        menu.imageProduct = Base64ToImage(item.Product_Image);
                         menu.productid = item.Product_ID;
                         PictureBox i = menu.getpicture();
                         i.Tag = item;

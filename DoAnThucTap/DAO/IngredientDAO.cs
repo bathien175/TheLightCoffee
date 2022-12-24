@@ -19,6 +19,51 @@ namespace DoAnThucTap.DAO
                 return db.Ingredients.Where(i => i.Ingredient_isActive == true).ToList();
             }
         }
+        public List<Ingredient> getFullIngredient2()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.Ingredients.ToList();
+            }
+        }
+        public void addIngredient(Ingredient i)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                db.Ingredients.Add(i);
+                db.SaveChanges();
+            }
+        }
+        public void updateIngredient(Ingredient i)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Ingredient i2 = db.Ingredients.Where(ingre => ingre.Ingredient_ID==i.Ingredient_ID).FirstOrDefault();
+                i2.Ingredient_Name= i.Ingredient_Name;
+                i2.Ingredient_PriceImport = i.Ingredient_PriceImport;
+                i2.Ingredient_Unit = i.Ingredient_Unit;
+                db.SaveChanges();
+            }
+        }
+
+        public void deleteIngredient(int iid)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Ingredient i2 = db.Ingredients.Where(ingre => ingre.Ingredient_ID == iid).FirstOrDefault();
+                i2.Ingredient_isActive = false;
+                db.SaveChanges();
+            }
+        }
+        public void restoreIngredient(int iid)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Ingredient i2 = db.Ingredients.Where(ingre => ingre.Ingredient_ID == iid).FirstOrDefault();
+                i2.Ingredient_isActive = true;
+                db.SaveChanges();
+            }
+        }
 
         public List<Ingredient> findIngredient(string textfind)
         {
