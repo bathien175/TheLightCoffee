@@ -46,6 +46,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblID.AutoEllipsis = false;
             this.lblID.AutoSize = false;
+            this.lblID.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblID.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(0, 0);
@@ -66,7 +67,7 @@
             this.lblNameProduct.AutoSize = false;
             this.lblNameProduct.CursorType = null;
             this.lblNameProduct.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameProduct.Location = new System.Drawing.Point(201, 0);
+            this.lblNameProduct.Location = new System.Drawing.Point(164, 0);
             this.lblNameProduct.Name = "lblNameProduct";
             this.lblNameProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblNameProduct.Size = new System.Drawing.Size(545, 80);
@@ -82,9 +83,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnit.AutoEllipsis = false;
             this.lblUnit.AutoSize = false;
+            this.lblUnit.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblUnit.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblUnit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnit.Location = new System.Drawing.Point(953, 0);
+            this.lblUnit.Location = new System.Drawing.Point(916, 0);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblUnit.Size = new System.Drawing.Size(99, 80);
@@ -100,9 +102,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrice.AutoEllipsis = false;
             this.lblPrice.AutoSize = false;
+            this.lblPrice.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblPrice.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(1058, 0);
+            this.lblPrice.Location = new System.Drawing.Point(1021, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPrice.Size = new System.Drawing.Size(196, 80);
@@ -133,7 +136,7 @@
             this.btnDetail.ImageSize = new System.Drawing.Size(89, 76);
             this.btnDetail.ImageZoomSize = new System.Drawing.Size(90, 77);
             this.btnDetail.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnDetail.InitialImage")));
-            this.btnDetail.Location = new System.Drawing.Point(1260, 3);
+            this.btnDetail.Location = new System.Drawing.Point(1223, 3);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Rotation = 0;
             this.btnDetail.ShowActiveImage = true;
@@ -155,7 +158,7 @@
             this.pictureProduct.Image = global::DoAnThucTap.Properties.Resources.bill;
             this.pictureProduct.Location = new System.Drawing.Point(78, 0);
             this.pictureProduct.Name = "pictureProduct";
-            this.pictureProduct.Size = new System.Drawing.Size(117, 80);
+            this.pictureProduct.Size = new System.Drawing.Size(80, 80);
             this.pictureProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureProduct.TabIndex = 5;
             this.pictureProduct.TabStop = false;
@@ -167,9 +170,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCate.AutoEllipsis = false;
             this.lblCate.AutoSize = false;
+            this.lblCate.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCate.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblCate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCate.Location = new System.Drawing.Point(752, 0);
+            this.lblCate.Location = new System.Drawing.Point(715, 0);
             this.lblCate.Name = "lblCate";
             this.lblCate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCate.Size = new System.Drawing.Size(195, 77);
@@ -190,7 +194,7 @@
             this.Controls.Add(this.lblNameProduct);
             this.Controls.Add(this.lblID);
             this.Name = "item_Product";
-            this.Size = new System.Drawing.Size(1350, 80);
+            this.Size = new System.Drawing.Size(1313, 80);
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduct)).EndInit();
             this.ResumeLayout(false);
 

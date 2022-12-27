@@ -1,6 +1,6 @@
 ﻿namespace DoAnThucTap.GUI
 {
-    partial class Ingredient_Management_GUI
+    partial class Staff_Management_GUI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ingredient_Management_GUI));
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff_Management_GUI));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -46,25 +45,33 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.openfile = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.cbbGender = new System.Windows.Forms.ComboBox();
+            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.dtpkDatebirth = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.ptImage = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.txtUnit = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.gcIngredient = new DevExpress.XtraGrid.GridControl();
-            this.gvListIngredient = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Ingredient_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ingredient_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ingredient_Image = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ingredient_Unit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ingredient_Reserved = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ingredient_PriceImport = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ingredient_isActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcStaff = new DevExpress.XtraGrid.GridControl();
+            this.gvListStaff = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Staff_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_Image = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_Gender = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_Datebirth = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_Phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_Address = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_isAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Staff_isActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.openfile = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.txtStaffCode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -73,17 +80,9 @@
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcIngredient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvListIngredient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvListStaff)).BeginInit();
             this.SuspendLayout();
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 30);
-            this.barDockControlTop.Manager = null;
-            this.barDockControlTop.Size = new System.Drawing.Size(1322, 0);
             // 
             // barManager1
             // 
@@ -218,15 +217,15 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1322, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1419, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 730);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1322, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1419, 20);
             // 
             // barDockControlLeft
             // 
@@ -234,19 +233,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 670);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1322, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1419, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
-            // 
-            // openfile
-            // 
-            this.openfile.FileName = "filedialog";
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 670);
             // 
             // splitContainerControl1
             // 
@@ -257,36 +252,113 @@
             // 
             // splitContainerControl1.Panel1
             // 
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtPrice);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtStaffCode);
+            this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel7);
+            this.splitContainerControl1.Panel1.Controls.Add(this.cbbGender);
+            this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel6);
+            this.splitContainerControl1.Panel1.Controls.Add(this.dtpkDatebirth);
+            this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel4);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtAddress);
             this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel2);
             this.splitContainerControl1.Panel1.Controls.Add(this.txtName);
             this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel1);
             this.splitContainerControl1.Panel1.Controls.Add(this.ptImage);
             this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel5);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtUnit);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtSDT);
             this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel3);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             // 
             // splitContainerControl1.Panel2
             // 
-            this.splitContainerControl1.Panel2.Controls.Add(this.gcIngredient);
+            this.splitContainerControl1.Panel2.Controls.Add(this.gcStaff);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1322, 700);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1419, 670);
             this.splitContainerControl1.SplitterPosition = 147;
-            this.splitContainerControl1.TabIndex = 5;
+            this.splitContainerControl1.TabIndex = 6;
             // 
-            // txtPrice
+            // cbbGender
             // 
-            this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtPrice.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(921, 90);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(398, 30);
-            this.txtPrice.TabIndex = 13;
-            this.txtPrice.Enter += new System.EventHandler(this.txtPrice_Enter);
-            this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
+            this.cbbGender.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbbGender.FormattingEnabled = true;
+            this.cbbGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.cbbGender.Location = new System.Drawing.Point(1286, 75);
+            this.cbbGender.Name = "cbbGender";
+            this.cbbGender.Size = new System.Drawing.Size(121, 24);
+            this.cbbGender.TabIndex = 17;
+            // 
+            // bunifuLabel6
+            // 
+            this.bunifuLabel6.AllowParentOverrides = false;
+            this.bunifuLabel6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel6.AutoEllipsis = false;
+            this.bunifuLabel6.AutoSize = false;
+            this.bunifuLabel6.CursorType = null;
+            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel6.Location = new System.Drawing.Point(1158, 75);
+            this.bunifuLabel6.Name = "bunifuLabel6";
+            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel6.Size = new System.Drawing.Size(122, 23);
+            this.bunifuLabel6.TabIndex = 16;
+            this.bunifuLabel6.Text = "Giới tính:";
+            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // dtpkDatebirth
+            // 
+            this.dtpkDatebirth.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dtpkDatebirth.BackColor = System.Drawing.Color.Transparent;
+            this.dtpkDatebirth.BorderRadius = 1;
+            this.dtpkDatebirth.Color = System.Drawing.Color.Silver;
+            this.dtpkDatebirth.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.dtpkDatebirth.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dtpkDatebirth.DisabledColor = System.Drawing.Color.Gray;
+            this.dtpkDatebirth.DisplayWeekNumbers = false;
+            this.dtpkDatebirth.DPHeight = 0;
+            this.dtpkDatebirth.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpkDatebirth.FillDatePicker = true;
+            this.dtpkDatebirth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpkDatebirth.ForeColor = System.Drawing.Color.Black;
+            this.dtpkDatebirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkDatebirth.Icon = ((System.Drawing.Image)(resources.GetObject("dtpkDatebirth.Icon")));
+            this.dtpkDatebirth.IconColor = System.Drawing.Color.Gray;
+            this.dtpkDatebirth.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dtpkDatebirth.LeftTextMargin = 5;
+            this.dtpkDatebirth.Location = new System.Drawing.Point(949, 67);
+            this.dtpkDatebirth.MinimumSize = new System.Drawing.Size(0, 32);
+            this.dtpkDatebirth.Name = "dtpkDatebirth";
+            this.dtpkDatebirth.Size = new System.Drawing.Size(203, 32);
+            this.dtpkDatebirth.TabIndex = 15;
+            // 
+            // bunifuLabel4
+            // 
+            this.bunifuLabel4.AllowParentOverrides = false;
+            this.bunifuLabel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel4.AutoEllipsis = false;
+            this.bunifuLabel4.AutoSize = false;
+            this.bunifuLabel4.CursorType = null;
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Location = new System.Drawing.Point(821, 75);
+            this.bunifuLabel4.Name = "bunifuLabel4";
+            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel4.Size = new System.Drawing.Size(122, 23);
+            this.bunifuLabel4.TabIndex = 14;
+            this.bunifuLabel4.Text = "Ngày sinh:";
+            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(302, 114);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(1105, 30);
+            this.txtAddress.TabIndex = 13;
             // 
             // bunifuLabel2
             // 
@@ -296,13 +368,13 @@
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(793, 97);
+            this.bunifuLabel2.Location = new System.Drawing.Point(174, 121);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(122, 23);
             this.bunifuLabel2.TabIndex = 12;
-            this.bunifuLabel2.Text = "Đơn giá nhập:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel2.Text = "Địa chỉ:";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtName
@@ -311,9 +383,9 @@
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(424, 35);
+            this.txtName.Location = new System.Drawing.Point(894, 24);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(363, 30);
+            this.txtName.Size = new System.Drawing.Size(513, 30);
             this.txtName.TabIndex = 11;
             // 
             // bunifuLabel1
@@ -324,12 +396,12 @@
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(291, 42);
+            this.bunifuLabel1.Location = new System.Drawing.Point(766, 29);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(127, 23);
+            this.bunifuLabel1.Size = new System.Drawing.Size(122, 23);
             this.bunifuLabel1.TabIndex = 10;
-            this.bunifuLabel1.Text = "Tên sản phẩm:";
+            this.bunifuLabel1.Text = "Tên nhân viên:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -366,16 +438,16 @@
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // txtUnit
+            // txtSDT
             // 
-            this.txtUnit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnit.Location = new System.Drawing.Point(921, 28);
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(398, 30);
-            this.txtUnit.TabIndex = 5;
+            this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(302, 69);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(513, 30);
+            this.txtSDT.TabIndex = 5;
             // 
             // bunifuLabel3
             // 
@@ -385,130 +457,183 @@
             this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(793, 35);
+            this.bunifuLabel3.Location = new System.Drawing.Point(174, 74);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(122, 23);
             this.bunifuLabel3.TabIndex = 4;
-            this.bunifuLabel3.Text = "Đơn vị tính:";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel3.Text = "Số điện thoại:";
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // gcIngredient
+            // gcStaff
             // 
-            this.gcIngredient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcIngredient.Location = new System.Drawing.Point(0, 0);
-            this.gcIngredient.MainView = this.gvListIngredient;
-            this.gcIngredient.MenuManager = this.barManager1;
-            this.gcIngredient.Name = "gcIngredient";
-            this.gcIngredient.Size = new System.Drawing.Size(1322, 541);
-            this.gcIngredient.TabIndex = 0;
-            this.gcIngredient.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvListIngredient});
+            this.gcStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcStaff.Location = new System.Drawing.Point(0, 0);
+            this.gcStaff.MainView = this.gvListStaff;
+            this.gcStaff.MenuManager = this.barManager1;
+            this.gcStaff.Name = "gcStaff";
+            this.gcStaff.Size = new System.Drawing.Size(1419, 511);
+            this.gcStaff.TabIndex = 0;
+            this.gcStaff.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvListStaff});
             // 
-            // gvListIngredient
+            // gvListStaff
             // 
-            this.gvListIngredient.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Ingredient_ID,
-            this.Ingredient_Name,
-            this.Ingredient_Image,
-            this.Ingredient_Unit,
-            this.Ingredient_Reserved,
-            this.Ingredient_PriceImport,
-            this.Ingredient_isActive});
-            this.gvListIngredient.GridControl = this.gcIngredient;
-            this.gvListIngredient.Name = "gvListIngredient";
-            this.gvListIngredient.OptionsFind.AlwaysVisible = true;
-            this.gvListIngredient.OptionsFind.FindNullPrompt = "Tìm kiếm...";
-            this.gvListIngredient.OptionsView.ShowAutoFilterRow = true;
-            this.gvListIngredient.OptionsView.ShowGroupPanel = false;
-            this.gvListIngredient.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListIngredient_RowClick);
+            this.gvListStaff.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Staff_ID,
+            this.Staff_Name,
+            this.Staff_Image,
+            this.Staff_Gender,
+            this.Staff_Datebirth,
+            this.Staff_Phone,
+            this.Staff_Address,
+            this.Staff_isAdmin,
+            this.Staff_isActive});
+            this.gvListStaff.GridControl = this.gcStaff;
+            this.gvListStaff.Name = "gvListStaff";
+            this.gvListStaff.OptionsFind.AlwaysVisible = true;
+            this.gvListStaff.OptionsFind.FindNullPrompt = "Tìm kiếm...";
+            this.gvListStaff.OptionsView.ShowAutoFilterRow = true;
+            this.gvListStaff.OptionsView.ShowGroupPanel = false;
+            this.gvListStaff.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListStaff_RowClick);
             // 
-            // Ingredient_ID
+            // Staff_ID
             // 
-            this.Ingredient_ID.Caption = "ID";
-            this.Ingredient_ID.FieldName = "Ingredient_ID";
-            this.Ingredient_ID.MinWidth = 10;
-            this.Ingredient_ID.Name = "Ingredient_ID";
-            this.Ingredient_ID.Visible = true;
-            this.Ingredient_ID.VisibleIndex = 0;
-            this.Ingredient_ID.Width = 57;
+            this.Staff_ID.Caption = "ID";
+            this.Staff_ID.FieldName = "Staff_ID";
+            this.Staff_ID.MinWidth = 10;
+            this.Staff_ID.Name = "Staff_ID";
+            this.Staff_ID.Visible = true;
+            this.Staff_ID.VisibleIndex = 0;
+            this.Staff_ID.Width = 37;
             // 
-            // Ingredient_Name
+            // Staff_Name
             // 
-            this.Ingredient_Name.Caption = "Tên món";
-            this.Ingredient_Name.FieldName = "Ingredient_Name";
-            this.Ingredient_Name.MinWidth = 25;
-            this.Ingredient_Name.Name = "Ingredient_Name";
-            this.Ingredient_Name.Visible = true;
-            this.Ingredient_Name.VisibleIndex = 1;
-            this.Ingredient_Name.Width = 530;
+            this.Staff_Name.Caption = "Tên nhân viên";
+            this.Staff_Name.FieldName = "Staff_Name";
+            this.Staff_Name.MinWidth = 25;
+            this.Staff_Name.Name = "Staff_Name";
+            this.Staff_Name.Visible = true;
+            this.Staff_Name.VisibleIndex = 1;
+            this.Staff_Name.Width = 152;
             // 
-            // Ingredient_Image
+            // Staff_Image
             // 
-            this.Ingredient_Image.Caption = "Ảnh minh họa";
-            this.Ingredient_Image.FieldName = "Ingredient_Image";
-            this.Ingredient_Image.MinWidth = 25;
-            this.Ingredient_Image.Name = "Ingredient_Image";
-            this.Ingredient_Image.Visible = true;
-            this.Ingredient_Image.VisibleIndex = 2;
-            this.Ingredient_Image.Width = 141;
+            this.Staff_Image.Caption = "Ảnh";
+            this.Staff_Image.FieldName = "Staff_Image";
+            this.Staff_Image.MinWidth = 25;
+            this.Staff_Image.Name = "Staff_Image";
+            this.Staff_Image.Visible = true;
+            this.Staff_Image.VisibleIndex = 2;
+            this.Staff_Image.Width = 76;
             // 
-            // Ingredient_Unit
+            // Staff_Gender
             // 
-            this.Ingredient_Unit.Caption = "Đơn vị tính";
-            this.Ingredient_Unit.FieldName = "Ingredient_Unit";
-            this.Ingredient_Unit.MinWidth = 25;
-            this.Ingredient_Unit.Name = "Ingredient_Unit";
-            this.Ingredient_Unit.Visible = true;
-            this.Ingredient_Unit.VisibleIndex = 4;
-            this.Ingredient_Unit.Width = 200;
+            this.Staff_Gender.Caption = "Giới tính";
+            this.Staff_Gender.FieldName = "Staff_Gender";
+            this.Staff_Gender.MinWidth = 25;
+            this.Staff_Gender.Name = "Staff_Gender";
+            this.Staff_Gender.Visible = true;
+            this.Staff_Gender.VisibleIndex = 3;
+            this.Staff_Gender.Width = 53;
             // 
-            // Ingredient_Reserved
+            // Staff_Datebirth
             // 
-            this.Ingredient_Reserved.Caption = "Tồn kho";
-            this.Ingredient_Reserved.FieldName = "Ingredient_Reserved";
-            this.Ingredient_Reserved.MinWidth = 25;
-            this.Ingredient_Reserved.Name = "Ingredient_Reserved";
-            this.Ingredient_Reserved.Visible = true;
-            this.Ingredient_Reserved.VisibleIndex = 3;
-            this.Ingredient_Reserved.Width = 88;
+            this.Staff_Datebirth.Caption = "Ngày sinh";
+            this.Staff_Datebirth.FieldName = "Staff_Datebirth";
+            this.Staff_Datebirth.MinWidth = 25;
+            this.Staff_Datebirth.Name = "Staff_Datebirth";
+            this.Staff_Datebirth.Visible = true;
+            this.Staff_Datebirth.VisibleIndex = 4;
+            this.Staff_Datebirth.Width = 73;
             // 
-            // Ingredient_PriceImport
+            // Staff_Phone
             // 
-            this.Ingredient_PriceImport.Caption = "Đơn giá nhập";
-            this.Ingredient_PriceImport.FieldName = "Ingredient_PriceImport";
-            this.Ingredient_PriceImport.MinWidth = 25;
-            this.Ingredient_PriceImport.Name = "Ingredient_PriceImport";
-            this.Ingredient_PriceImport.Visible = true;
-            this.Ingredient_PriceImport.VisibleIndex = 5;
-            this.Ingredient_PriceImport.Width = 153;
+            this.Staff_Phone.Caption = "Số điện thoại";
+            this.Staff_Phone.FieldName = "Staff_Phone";
+            this.Staff_Phone.MinWidth = 25;
+            this.Staff_Phone.Name = "Staff_Phone";
+            this.Staff_Phone.Visible = true;
+            this.Staff_Phone.VisibleIndex = 5;
+            this.Staff_Phone.Width = 91;
             // 
-            // Ingredient_isActive
+            // Staff_Address
             // 
-            this.Ingredient_isActive.Caption = "Trạng thái";
-            this.Ingredient_isActive.FieldName = "Ingredient_isActive";
-            this.Ingredient_isActive.MinWidth = 25;
-            this.Ingredient_isActive.Name = "Ingredient_isActive";
-            this.Ingredient_isActive.Visible = true;
-            this.Ingredient_isActive.VisibleIndex = 6;
-            this.Ingredient_isActive.Width = 123;
+            this.Staff_Address.Caption = "Địa chỉ";
+            this.Staff_Address.FieldName = "Staff_Address";
+            this.Staff_Address.MinWidth = 25;
+            this.Staff_Address.Name = "Staff_Address";
+            this.Staff_Address.Visible = true;
+            this.Staff_Address.VisibleIndex = 6;
+            this.Staff_Address.Width = 212;
             // 
-            // Ingredient_Management_GUI
+            // Staff_isAdmin
+            // 
+            this.Staff_isAdmin.Caption = "Chức vụ";
+            this.Staff_isAdmin.FieldName = "Staff_isAdmin";
+            this.Staff_isAdmin.MinWidth = 25;
+            this.Staff_isAdmin.Name = "Staff_isAdmin";
+            this.Staff_isAdmin.Visible = true;
+            this.Staff_isAdmin.VisibleIndex = 7;
+            this.Staff_isAdmin.Width = 100;
+            // 
+            // Staff_isActive
+            // 
+            this.Staff_isActive.Caption = "Làm việc";
+            this.Staff_isActive.FieldName = "Staff_isActive";
+            this.Staff_isActive.MinWidth = 25;
+            this.Staff_isActive.Name = "Staff_isActive";
+            this.Staff_isActive.Visible = true;
+            this.Staff_isActive.VisibleIndex = 8;
+            this.Staff_isActive.Width = 100;
+            // 
+            // openfile
+            // 
+            this.openfile.FileName = "filedialog";
+            // 
+            // bunifuLabel7
+            // 
+            this.bunifuLabel7.AllowParentOverrides = false;
+            this.bunifuLabel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel7.AutoEllipsis = false;
+            this.bunifuLabel7.AutoSize = false;
+            this.bunifuLabel7.CursorType = null;
+            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel7.Location = new System.Drawing.Point(174, 31);
+            this.bunifuLabel7.Name = "bunifuLabel7";
+            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel7.Size = new System.Drawing.Size(122, 23);
+            this.bunifuLabel7.TabIndex = 18;
+            this.bunifuLabel7.Text = "Mã nhân viên:";
+            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // txtStaffCode
+            // 
+            this.txtStaffCode.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtStaffCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtStaffCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtStaffCode.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffCode.Location = new System.Drawing.Point(302, 24);
+            this.txtStaffCode.Name = "txtStaffCode";
+            this.txtStaffCode.Size = new System.Drawing.Size(458, 30);
+            this.txtStaffCode.TabIndex = 19;
+            // 
+            // Staff_Management_GUI
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1322, 750);
+            this.ClientSize = new System.Drawing.Size(1419, 720);
             this.Controls.Add(this.splitContainerControl1);
-            this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl1);
-            this.Name = "Ingredient_Management_GUI";
-            this.Text = "Quản lý nguyên liệu";
-            this.Load += new System.EventHandler(this.Ingredient_Management_GUI_Load);
+            this.Name = "Staff_Management_GUI";
+            this.Text = "Quản lý nhân viên";
+            this.Load += new System.EventHandler(this.Staff_Management_GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
@@ -518,8 +643,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcIngredient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvListIngredient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvListStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,7 +652,6 @@
 
         #endregion
 
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem btnAdd;
@@ -543,24 +667,32 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.XtraOpenFileDialog openfile;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private System.Windows.Forms.TextBox txtAddress;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private System.Windows.Forms.TextBox txtName;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuPictureBox ptImage;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private System.Windows.Forms.TextBox txtUnit;
+        private System.Windows.Forms.TextBox txtSDT;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-        private DevExpress.XtraGrid.GridControl gcIngredient;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvListIngredient;
-        private DevExpress.XtraGrid.Columns.GridColumn Ingredient_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn Ingredient_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn Ingredient_Image;
-        private DevExpress.XtraGrid.Columns.GridColumn Ingredient_Unit;
-        private DevExpress.XtraGrid.Columns.GridColumn Ingredient_Reserved;
-        private DevExpress.XtraGrid.Columns.GridColumn Ingredient_PriceImport;
-        private DevExpress.XtraGrid.Columns.GridColumn Ingredient_isActive;
-        private System.Windows.Forms.TextBox txtPrice;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private DevExpress.XtraGrid.GridControl gcStaff;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvListStaff;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_Image;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_Datebirth;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_Gender;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_Phone;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_Address;
+        private System.Windows.Forms.ComboBox cbbGender;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+        private Bunifu.UI.WinForms.BunifuDatePicker dtpkDatebirth;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_isAdmin;
+        private DevExpress.XtraGrid.Columns.GridColumn Staff_isActive;
+        private DevExpress.XtraEditors.XtraOpenFileDialog openfile;
+        private System.Windows.Forms.TextBox txtStaffCode;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
     }
 }

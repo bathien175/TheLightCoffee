@@ -166,6 +166,7 @@
     <Compile Include="DTO\Category.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\CategoryDTO.cs" />
     <Compile Include="DTO\dateReport.cs" />
     <Compile Include="DTO\DBTable.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
@@ -201,6 +202,7 @@
     <Compile Include="DTO\Ingredient.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ingredientDTO.cs" />
     <Compile Include="DTO\LightCoffee.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,6 +225,7 @@
     <Compile Include="DTO\Recipe.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\recipeDTO.cs" />
     <Compile Include="DTO\ReportBill.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -250,6 +253,7 @@
     <Compile Include="DTO\Staff.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\StaffDTO.cs" />
     <Compile Include="DTO\Surcharge.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -260,11 +264,11 @@
     <Compile Include="GUI\addToBill_GUI.Designer.cs">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\adminManagement_GUI.cs">
+    <Compile Include="GUI\Category_Management_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\adminManagement_GUI.Designer.cs">
-      <DependentUpon>adminManagement_GUI.cs</DependentUpon>
+    <Compile Include="GUI\Category_Management_GUI.Designer.cs">
+      <DependentUpon>Category_Management_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ChangePassword_GUI.cs">
       <SubType>Form</SubType>
@@ -302,6 +306,12 @@
     <Compile Include="GUI\Ingredient_GUI.Designer.cs">
       <DependentUpon>Ingredient_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Ingredient_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Ingredient_Management_GUI.Designer.cs">
+      <DependentUpon>Ingredient_Management_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\loadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,11 +324,11 @@
     <Compile Include="GUI\Login_GUI.Designer.cs">
       <DependentUpon>Login_GUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\managementStaff_GUI.cs">
+    <Compile Include="GUI\AdminForm_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\managementStaff_GUI.Designer.cs">
-      <DependentUpon>managementStaff_GUI.cs</DependentUpon>
+    <Compile Include="GUI\AdminForm_GUI.Designer.cs">
+      <DependentUpon>AdminForm_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\menu_Management_GUI.cs">
       <SubType>Form</SubType>
@@ -356,6 +366,12 @@
     <Compile Include="GUI\Product_GUI.Designer.cs">
       <DependentUpon>Product_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Recipe_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Recipe_Management_GUI.Designer.cs">
+      <DependentUpon>Recipe_Management_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Sell_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +383,12 @@
     </Compile>
     <Compile Include="GUI\single_Import_GUI.Designer.cs">
       <DependentUpon>single_Import_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Staff_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff_Management_GUI.Designer.cs">
+      <DependentUpon>Staff_Management_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\swithTable_GUI.cs">
       <SubType>Form</SubType>
@@ -418,6 +440,12 @@
     <Compile Include="userControl\item_Product.Designer.cs">
       <DependentUpon>item_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\item_Recipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\item_Recipe.Designer.cs">
+      <DependentUpon>item_Recipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\OptionHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -439,8 +467,8 @@
     <EmbeddedResource Include="GUI\addToBill_GUI.resx">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\adminManagement_GUI.resx">
-      <DependentUpon>adminManagement_GUI.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Category_Management_GUI.resx">
+      <DependentUpon>Category_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChangePassword_GUI.resx">
       <DependentUpon>ChangePassword_GUI.cs</DependentUpon>
@@ -460,14 +488,17 @@
     <EmbeddedResource Include="GUI\Ingredient_GUI.resx">
       <DependentUpon>Ingredient_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Ingredient_Management_GUI.resx">
+      <DependentUpon>Ingredient_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\loadingForm.resx">
       <DependentUpon>loadingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login_GUI.resx">
       <DependentUpon>Login_GUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\managementStaff_GUI.resx">
-      <DependentUpon>managementStaff_GUI.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\AdminForm_GUI.resx">
+      <DependentUpon>AdminForm_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\menu_Management_GUI.resx">
       <DependentUpon>menu_Management_GUI.cs</DependentUpon>
@@ -490,11 +521,17 @@
     <EmbeddedResource Include="GUI\Product_GUI.resx">
       <DependentUpon>Product_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Recipe_Management_GUI.resx">
+      <DependentUpon>Recipe_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Sell_GUI.resx">
       <DependentUpon>Sell_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\single_Import_GUI.resx">
       <DependentUpon>single_Import_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Staff_Management_GUI.resx">
+      <DependentUpon>Staff_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\swithTable_GUI.resx">
       <DependentUpon>swithTable_GUI.cs</DependentUpon>
@@ -527,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\item_Product.resx">
       <DependentUpon>item_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\item_Recipe.resx">
+      <DependentUpon>item_Recipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\OptionHome.resx">
       <DependentUpon>OptionHome.cs</DependentUpon>

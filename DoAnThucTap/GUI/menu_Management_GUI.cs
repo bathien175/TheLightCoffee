@@ -186,26 +186,6 @@ namespace DoAnThucTap.GUI
             edit = 0;
             showhideEdit();
         }
-        bool CheckImage(Image i1, Image i2)
-        {
-            String img_1,img_2;
-            Bitmap bmp1, bmp2;
-            bmp1 = new Bitmap(i1);
-            bmp2 = new Bitmap(i2);
-
-            if (bmp1.Width == bmp2.Width && bmp1.Height == bmp2.Height)
-            {
-                for (int i = 0; i < bmp1.Width; i++)
-                    for (int j = 0; j < bmp1.Height; j++)
-                    {
-                        img_1 = bmp1.GetPixel(i, j).ToString();
-                        img_2 = bmp2.GetPixel(i, j).ToString();
-                        if (img_1 != img_2) return false;
-                    }
-                return true;
-            }
-            else return false;
-        }
         public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -344,16 +324,6 @@ namespace DoAnThucTap.GUI
             }
             
         }
-        private void gvListProduct_Click(object sender, EventArgs e)
-        {
-            idP = int.Parse(gvListProduct.GetFocusedRowCellValue("Product_ID").ToString());
-            txtNameProduct.Text = gvListProduct.GetFocusedRowCellValue("Product_Name").ToString();
-            txtUnitProduct.Text = gvListProduct.GetFocusedRowCellValue("Product_Unit").ToString();
-            txtPriceProduct.Text = gvListProduct.GetFocusedRowCellValue("Product_Price").ToString();
-            writePrice();
-            cbbCategory.Text = gvListProduct.GetFocusedRowCellValue("Product_Category").ToString();
-            ptImageProduct.Image = (Image)gvListProduct.GetFocusedRowCellValue("Product_Image");
-        }
         private void ptImageProduct_Click(object sender, EventArgs e)
         {
             if (edit != 0)
@@ -408,6 +378,17 @@ namespace DoAnThucTap.GUI
                     }
                 }
             }
+        }
+
+        private void gvListProduct_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            idP = int.Parse(gvListProduct.GetFocusedRowCellValue("Product_ID").ToString());
+            txtNameProduct.Text = gvListProduct.GetFocusedRowCellValue("Product_Name").ToString();
+            txtUnitProduct.Text = gvListProduct.GetFocusedRowCellValue("Product_Unit").ToString();
+            txtPriceProduct.Text = gvListProduct.GetFocusedRowCellValue("Product_Price").ToString();
+            writePrice();
+            cbbCategory.Text = gvListProduct.GetFocusedRowCellValue("Product_Category").ToString();
+            ptImageProduct.Image = (Image)gvListProduct.GetFocusedRowCellValue("Product_Image");
         }
     }
 }

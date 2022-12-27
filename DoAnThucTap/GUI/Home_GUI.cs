@@ -1,4 +1,5 @@
-﻿using DoAnThucTap.DTO;
+﻿using DevExpress.XtraSplashScreen;
+using DoAnThucTap.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,16 +48,22 @@ namespace DoAnThucTap.GUI
 
         private void btnCreateBill_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             ChooseTable_GUI choose = new ChooseTable_GUI(s);
             this.Hide();
+            SplashScreenManager.CloseForm();
             choose.ShowDialog();
             this.Show();
         }
 
         private void btnTakeAway_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Sell_GUI sell = new Sell_GUI("TakeAway",s);
             this.Hide();
+            SplashScreenManager.CloseForm();
             sell.ShowDialog();
             this.Show();
         }
@@ -64,31 +71,43 @@ namespace DoAnThucTap.GUI
         private void btnStaff_Click(object sender, EventArgs e)
         {
             //form cá nhân
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Persional_GUI per = new Persional_GUI(s.Staff_Code);
             this.Hide();
+            SplashScreenManager.CloseForm();
             per.ShowDialog();
             this.Show();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Product_GUI product_GUI = new Product_GUI();
             this.Hide();
+            SplashScreenManager.CloseForm();
             product_GUI.ShowDialog();
             this.Show();
         }
 
         private void btnIngredient_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Ingredient_GUI ingredient = new Ingredient_GUI(s.Staff_Code);
             this.Hide();
+            SplashScreenManager.CloseForm();
             ingredient.ShowDialog();
             this.Show();
         }
 
         private void btnReportDay_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             printReportDate date = new printReportDate();
+            SplashScreenManager.CloseForm();
             date.ShowDialog();
         }
 

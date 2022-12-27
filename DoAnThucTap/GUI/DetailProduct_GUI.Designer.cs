@@ -41,6 +41,7 @@
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel5 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.txtRecipe = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -57,7 +58,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuPanel6 = new Bunifu.UI.WinForms.BunifuPanel();
             this.imageProduct = new System.Windows.Forms.PictureBox();
-            this.txtRecipe = new Bunifu.UI.WinForms.BunifuTextBox();
             this.top.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPanel3.SuspendLayout();
@@ -198,6 +198,84 @@
             this.bunifuPanel5.ShowBorders = true;
             this.bunifuPanel5.Size = new System.Drawing.Size(1128, 330);
             this.bunifuPanel5.TabIndex = 1;
+            // 
+            // txtRecipe
+            // 
+            this.txtRecipe.AcceptsReturn = false;
+            this.txtRecipe.AcceptsTab = false;
+            this.txtRecipe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRecipe.AnimationSpeed = 200;
+            this.txtRecipe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtRecipe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtRecipe.BackColor = System.Drawing.Color.Transparent;
+            this.txtRecipe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtRecipe.BackgroundImage")));
+            this.txtRecipe.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtRecipe.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtRecipe.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtRecipe.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtRecipe.BorderRadius = 1;
+            this.txtRecipe.BorderThickness = 1;
+            this.txtRecipe.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtRecipe.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRecipe.DefaultFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRecipe.DefaultText = "";
+            this.txtRecipe.FillColor = System.Drawing.Color.White;
+            this.txtRecipe.ForeColor = System.Drawing.Color.Black;
+            this.txtRecipe.HideSelection = true;
+            this.txtRecipe.IconLeft = null;
+            this.txtRecipe.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRecipe.IconPadding = 10;
+            this.txtRecipe.IconRight = null;
+            this.txtRecipe.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRecipe.Lines = new string[0];
+            this.txtRecipe.Location = new System.Drawing.Point(0, 72);
+            this.txtRecipe.MaxLength = 32767;
+            this.txtRecipe.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtRecipe.Modified = false;
+            this.txtRecipe.Multiline = true;
+            this.txtRecipe.Name = "txtRecipe";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtRecipe.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtRecipe.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtRecipe.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Black;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtRecipe.OnIdleState = stateProperties4;
+            this.txtRecipe.Padding = new System.Windows.Forms.Padding(3);
+            this.txtRecipe.PasswordChar = '\0';
+            this.txtRecipe.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtRecipe.PlaceholderText = "";
+            this.txtRecipe.ReadOnly = true;
+            this.txtRecipe.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtRecipe.SelectedText = "";
+            this.txtRecipe.SelectionLength = 0;
+            this.txtRecipe.SelectionStart = 0;
+            this.txtRecipe.ShortcutsEnabled = true;
+            this.txtRecipe.Size = new System.Drawing.Size(1128, 258);
+            this.txtRecipe.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtRecipe.TabIndex = 11;
+            this.txtRecipe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRecipe.TextMarginBottom = 0;
+            this.txtRecipe.TextMarginLeft = 3;
+            this.txtRecipe.TextMarginTop = 0;
+            this.txtRecipe.TextPlaceholder = "";
+            this.txtRecipe.UseSystemPasswordChar = false;
+            this.txtRecipe.WordWrap = true;
             // 
             // bunifuLabel3
             // 
@@ -490,84 +568,6 @@
             this.imageProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageProduct.TabIndex = 0;
             this.imageProduct.TabStop = false;
-            // 
-            // txtRecipe
-            // 
-            this.txtRecipe.AcceptsReturn = false;
-            this.txtRecipe.AcceptsTab = false;
-            this.txtRecipe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRecipe.AnimationSpeed = 200;
-            this.txtRecipe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtRecipe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtRecipe.BackColor = System.Drawing.Color.Transparent;
-            this.txtRecipe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtRecipe.BackgroundImage")));
-            this.txtRecipe.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtRecipe.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtRecipe.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtRecipe.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtRecipe.BorderRadius = 1;
-            this.txtRecipe.BorderThickness = 1;
-            this.txtRecipe.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtRecipe.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRecipe.DefaultFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecipe.DefaultText = "";
-            this.txtRecipe.FillColor = System.Drawing.Color.White;
-            this.txtRecipe.ForeColor = System.Drawing.Color.Black;
-            this.txtRecipe.HideSelection = true;
-            this.txtRecipe.IconLeft = null;
-            this.txtRecipe.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRecipe.IconPadding = 10;
-            this.txtRecipe.IconRight = null;
-            this.txtRecipe.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRecipe.Lines = new string[0];
-            this.txtRecipe.Location = new System.Drawing.Point(0, 72);
-            this.txtRecipe.MaxLength = 32767;
-            this.txtRecipe.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtRecipe.Modified = false;
-            this.txtRecipe.Multiline = true;
-            this.txtRecipe.Name = "txtRecipe";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtRecipe.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtRecipe.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtRecipe.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Black;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtRecipe.OnIdleState = stateProperties4;
-            this.txtRecipe.Padding = new System.Windows.Forms.Padding(3);
-            this.txtRecipe.PasswordChar = '\0';
-            this.txtRecipe.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtRecipe.PlaceholderText = "";
-            this.txtRecipe.ReadOnly = false;
-            this.txtRecipe.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtRecipe.SelectedText = "";
-            this.txtRecipe.SelectionLength = 0;
-            this.txtRecipe.SelectionStart = 0;
-            this.txtRecipe.ShortcutsEnabled = true;
-            this.txtRecipe.Size = new System.Drawing.Size(1128, 258);
-            this.txtRecipe.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtRecipe.TabIndex = 11;
-            this.txtRecipe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtRecipe.TextMarginBottom = 0;
-            this.txtRecipe.TextMarginLeft = 3;
-            this.txtRecipe.TextMarginTop = 0;
-            this.txtRecipe.TextPlaceholder = "";
-            this.txtRecipe.UseSystemPasswordChar = false;
-            this.txtRecipe.WordWrap = true;
             // 
             // DetailProduct_GUI
             // 

@@ -35,6 +35,7 @@
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.btnCancel = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
@@ -65,7 +66,6 @@
             this.Product_Price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Product_isActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openfile = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -143,6 +143,16 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Caption = "Khôi phục";
+            this.btnRestore.Id = 7;
+            this.btnRestore.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.ImageOptions.Image")));
+            this.btnRestore.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRestore.ImageOptions.LargeImage")));
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnRestore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore_ItemClick);
             // 
             // btnSave
             // 
@@ -453,8 +463,10 @@
             this.Product_isActive});
             this.gvListProduct.GridControl = this.gcProduct;
             this.gvListProduct.Name = "gvListProduct";
+            this.gvListProduct.OptionsFind.AlwaysVisible = true;
+            this.gvListProduct.OptionsView.ShowAutoFilterRow = true;
             this.gvListProduct.OptionsView.ShowGroupPanel = false;
-            this.gvListProduct.Click += new System.EventHandler(this.gvListProduct_Click);
+            this.gvListProduct.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListProduct_RowClick);
             // 
             // Product_ID
             // 
@@ -482,6 +494,8 @@
             this.Product_Image.FieldName = "Product_Image";
             this.Product_Image.MinWidth = 25;
             this.Product_Image.Name = "Product_Image";
+            this.Product_Image.OptionsFilter.AllowAutoFilter = false;
+            this.Product_Image.OptionsFilter.AllowFilter = false;
             this.Product_Image.Visible = true;
             this.Product_Image.VisibleIndex = 2;
             this.Product_Image.Width = 160;
@@ -529,16 +543,6 @@
             // openfile
             // 
             this.openfile.FileName = "filedialog";
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Caption = "Khôi phục";
-            this.btnRestore.Id = 7;
-            this.btnRestore.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnRestore.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnRestore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore_ItemClick);
             // 
             // menu_Management_GUI
             // 

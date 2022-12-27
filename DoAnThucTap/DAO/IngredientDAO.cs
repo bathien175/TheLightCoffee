@@ -42,10 +42,17 @@ namespace DoAnThucTap.DAO
                 i2.Ingredient_Name= i.Ingredient_Name;
                 i2.Ingredient_PriceImport = i.Ingredient_PriceImport;
                 i2.Ingredient_Unit = i.Ingredient_Unit;
+                i2.Ingredient_Image= i.Ingredient_Image;
                 db.SaveChanges();
             }
         }
-
+        public Ingredient getIngredientbyID(int id)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.Ingredients.Where(i => i.Ingredient_ID == id).FirstOrDefault();
+            }
+        }
         public void deleteIngredient(int iid)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())

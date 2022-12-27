@@ -112,6 +112,13 @@ namespace DoAnThucTap.DAO
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
+                return db.Categories.Where(i => i.Category_isActive==true).ToList();
+            }
+        }
+        public List<Category> getFullListCategory()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
                 return db.Categories.ToList();
             }
         }
@@ -196,6 +203,116 @@ namespace DoAnThucTap.DAO
                 }
             }
         }
+        public bool addCategory(Category i)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                if(db.Categories.Where(c => c.Category_Name == i.Category_Name).FirstOrDefault() == null)
+                {
+                    db.Categories.Add(i);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Phân loại này đã có sẵn trong hệ thống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
 
+        public bool updateCategory(Category i)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Category cate = db.Categories.Where(c => c.Category_ID == i.Category_ID).FirstOrDefault();
+                var ca = db.Categories.Where(x => x.Category_ID != i.Category_ID && x.Category_Name == i.Category_Name).FirstOrDefault();
+                if (ca == null)
+                {
+                    cate.Category_Name = i.Category_Name;
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Phân loại này đã có sẵn trong cơ sở dữ liệu","Lỗi trùng tên!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+        public bool deleteCategory(int i)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Category cate = db.Categories.Where(c => c.Category_ID == i).FirstOrDefault();
+                if (cate.Category_isActive==true)
+                {
+                    cate.Category_isActive = false;
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Loại này đã được ngưng sử dụng trước đó!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+        public bool restoreCategory(int i)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Category cate = db.Categories.Where(c => c.Category_ID == i).FirstOrDefault();
+                if(cate.Category_isActive==false)
+                {
+                    cate.Category_isActive = true;
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Loại này vẫn còn sử dụng!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+        public List<Recipe> getfullListRecipe()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<Recipe> list = db.Recipes.ToList();
+                return list;
+            }
+        }
+
+        public void AddRecipe(List<Recipe> r)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                foreach (var item in r)
+                {
+                    db.Recipes.Add(item);
+                    db.SaveChanges();
+                }
+                
+            }
+        }
+        public void updateRecipe(List<Recipe> r)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<Recipe> list = db.Recipes.Where(re => re.Recipe_Product == r[0].Recipe_Product).ToList();
+                foreach (var item in list)
+                {
+                    db.Recipes.Remove(item);
+                    db.SaveChanges();
+                }
+                foreach (var item in r)
+                {
+                    db.Recipes.Add(item);
+                    db.SaveChanges();
+                }
+            }
+        }
     }
 }

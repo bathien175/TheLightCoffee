@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace DoAnThucTap.GUI
 {
-    public partial class managementStaff_GUI : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class AdminForm_GUI : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public managementStaff_GUI()
+        public AdminForm_GUI()
         {
             InitializeComponent();
         }
@@ -61,6 +61,30 @@ namespace DoAnThucTap.GUI
             SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
             SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             openForm(typeof(Ingredient_Management_GUI));
+            SplashScreenManager.CloseForm();
+        }
+
+        private void btnCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+            openForm(typeof(Category_Management_GUI));
+            SplashScreenManager.CloseForm();
+        }
+
+        private void btnStaffList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+            openForm(typeof(Staff_Management_GUI));
+            SplashScreenManager.CloseForm();
+        }
+
+        private void btnRecipe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+            openForm(typeof(Recipe_Management_GUI));
             SplashScreenManager.CloseForm();
         }
     }

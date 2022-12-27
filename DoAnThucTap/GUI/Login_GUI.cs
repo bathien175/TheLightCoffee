@@ -24,7 +24,11 @@ namespace DoAnThucTap
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            DialogResult cl = MessageBox.Show("Bạn thực sự muốn thoát chương trình chứ?", "Chờ đã!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (cl == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -75,7 +79,7 @@ namespace DoAnThucTap
             {
                 if (admin == true)
                 {
-                    managementStaff_GUI ad = new managementStaff_GUI();
+                    AdminForm_GUI ad = new AdminForm_GUI();
                     this.Hide();
                     SplashScreenManager.CloseForm();
                     ad.ShowDialog();
@@ -94,8 +98,8 @@ namespace DoAnThucTap
             }
             else
             {
-                MessageBox.Show("Thông tin đăng nhập không đúng!", "Lỗi đăng nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SplashScreenManager.CloseForm();
+                MessageBox.Show("Thông tin đăng nhập không đúng!", "Lỗi đăng nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
