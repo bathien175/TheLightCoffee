@@ -466,6 +466,7 @@
             this.gvListProduct.OptionsFind.AlwaysVisible = true;
             this.gvListProduct.OptionsView.ShowAutoFilterRow = true;
             this.gvListProduct.OptionsView.ShowGroupPanel = false;
+            this.gvListProduct.RowHeight = 100;
             this.gvListProduct.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListProduct_RowClick);
             // 
             // Product_ID

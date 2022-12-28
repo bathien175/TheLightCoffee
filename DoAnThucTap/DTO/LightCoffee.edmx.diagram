@@ -26,6 +26,16 @@
         <AssociationConnector Association="TheLightCoffeeModel.FKBill122024" />
         <AssociationConnector Association="TheLightCoffeeModel.FKImport434180" />
         <AssociationConnector Association="TheLightCoffeeModel.FK_infoIngredient" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staticscal_Category" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staticscal_Product" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Discount" Width="1.5" PointX="5.25" PointY="14.875" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Payment" Width="1.5" PointX="3" PointY="15.5" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.receipt" Width="1.5" PointX="3" PointY="18.5" />
+        <AssociationConnector Association="TheLightCoffeeModel.FK_Discount_product" />
+        <AssociationConnector Association="TheLightCoffeeModel.FK_Payment_staff" />
+        <AssociationConnector Association="TheLightCoffeeModel.FK_receipts_staff" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staticscal_Product_bottom" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staticscal_Product_byDate" Width="1.5" PointX="5.375" PointY="7.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

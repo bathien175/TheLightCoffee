@@ -38,6 +38,13 @@ namespace DoAnThucTap.DTO
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Ingredient> Ingredients { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<Staticscal_Category> Staticscal_Category { get; set; }
+        public virtual DbSet<Staticscal_Product> Staticscal_Product { get; set; }
+        public virtual DbSet<Discount> Discounts { get; set; }
+        public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<receipt> receipts { get; set; }
+        public virtual DbSet<Staticscal_Product_bottom> Staticscal_Product_bottom { get; set; }
+        public virtual DbSet<Staticscal_Product_byDate> Staticscal_Product_byDate { get; set; }
     
         public virtual ObjectResult<exportBillTakeAway_Result> exportBillTakeAway(Nullable<int> billID)
         {

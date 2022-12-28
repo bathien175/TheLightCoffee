@@ -297,11 +297,11 @@ namespace DoAnThucTap.DAO
                 
             }
         }
-        public void updateRecipe(List<Recipe> r)
+        public void updateRecipe(List<Recipe> r,int pid)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
-                List<Recipe> list = db.Recipes.Where(re => re.Recipe_Product == r[0].Recipe_Product).ToList();
+                List<Recipe> list = db.Recipes.Where(re => re.Recipe_Product == pid).ToList();
                 foreach (var item in list)
                 {
                     db.Recipes.Remove(item);
@@ -310,6 +310,28 @@ namespace DoAnThucTap.DAO
                 foreach (var item in r)
                 {
                     db.Recipes.Add(item);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public List<Recipe> getRecipebyProduct(int PID)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<Recipe> list = db.Recipes.Where(l => l.Recipe_Product==PID).ToList();
+                return list;
+            }
+        }
+
+        public void deleteRecipe(int pid)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<Recipe> list = db.Recipes.Where(re => re.Recipe_Product == pid).ToList();
+                foreach (var item in list)
+                {
+                    db.Recipes.Remove(item);
                     db.SaveChanges();
                 }
             }

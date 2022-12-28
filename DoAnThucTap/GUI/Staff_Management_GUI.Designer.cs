@@ -46,6 +46,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.txtStaffCode = new System.Windows.Forms.TextBox();
+            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.cbbGender = new System.Windows.Forms.ComboBox();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dtpkDatebirth = new Bunifu.UI.WinForms.BunifuDatePicker();
@@ -70,8 +72,6 @@
             this.Staff_isAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Staff_isActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openfile = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.txtStaffCode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -275,6 +275,34 @@
             this.splitContainerControl1.Size = new System.Drawing.Size(1419, 670);
             this.splitContainerControl1.SplitterPosition = 147;
             this.splitContainerControl1.TabIndex = 6;
+            // 
+            // txtStaffCode
+            // 
+            this.txtStaffCode.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtStaffCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtStaffCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtStaffCode.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffCode.Location = new System.Drawing.Point(302, 24);
+            this.txtStaffCode.Name = "txtStaffCode";
+            this.txtStaffCode.Size = new System.Drawing.Size(458, 30);
+            this.txtStaffCode.TabIndex = 19;
+            // 
+            // bunifuLabel7
+            // 
+            this.bunifuLabel7.AllowParentOverrides = false;
+            this.bunifuLabel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel7.AutoEllipsis = false;
+            this.bunifuLabel7.AutoSize = false;
+            this.bunifuLabel7.CursorType = null;
+            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel7.Location = new System.Drawing.Point(174, 31);
+            this.bunifuLabel7.Name = "bunifuLabel7";
+            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel7.Size = new System.Drawing.Size(122, 23);
+            this.bunifuLabel7.TabIndex = 18;
+            this.bunifuLabel7.Text = "Mã nhân viên:";
+            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // cbbGender
             // 
@@ -496,6 +524,7 @@
             this.gvListStaff.OptionsFind.FindNullPrompt = "Tìm kiếm...";
             this.gvListStaff.OptionsView.ShowAutoFilterRow = true;
             this.gvListStaff.OptionsView.ShowGroupPanel = false;
+            this.gvListStaff.RowHeight = 100;
             this.gvListStaff.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListStaff_RowClick);
             // 
             // Staff_ID
@@ -591,34 +620,6 @@
             // openfile
             // 
             this.openfile.FileName = "filedialog";
-            // 
-            // bunifuLabel7
-            // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.AutoSize = false;
-            this.bunifuLabel7.CursorType = null;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.Location = new System.Drawing.Point(174, 31);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(122, 23);
-            this.bunifuLabel7.TabIndex = 18;
-            this.bunifuLabel7.Text = "Mã nhân viên:";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // txtStaffCode
-            // 
-            this.txtStaffCode.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtStaffCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtStaffCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtStaffCode.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffCode.Location = new System.Drawing.Point(302, 24);
-            this.txtStaffCode.Name = "txtStaffCode";
-            this.txtStaffCode.Size = new System.Drawing.Size(458, 30);
-            this.txtStaffCode.TabIndex = 19;
             // 
             // Staff_Management_GUI
             // 

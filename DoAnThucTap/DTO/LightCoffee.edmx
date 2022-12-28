@@ -54,6 +54,18 @@
           <Property Name="Table_Status" Type="int" Nullable="false" />
           <Property Name="isActive" Type="bit" />
         </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="Discount_ID" />
+          </Key>
+          <Property Name="Discount_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Discount_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Discount_allProduct" Type="bit" />
+          <Property Name="Discount_Product" Type="int" />
+          <Property Name="Discount_DateStart" Type="smalldatetime" />
+          <Property Name="Discount_DateEnd" Type="smalldatetime" />
+          <Property Name="Discount_Per" Type="int" />
+        </EntityType>
         <EntityType Name="Import">
           <Key>
             <PropertyRef Name="Import_ID" />
@@ -84,6 +96,16 @@
           <Property Name="Ingredient_Reserved" Type="real" />
           <Property Name="Ingredient_Image" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Payment_ID" />
+          </Key>
+          <Property Name="Payment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Payment_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Payment_time" Type="smalldatetime" />
+          <Property Name="Payment_Staff" Type="varchar" MaxLength="10" />
+          <Property Name="Payment_money" Type="bigint" />
+        </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Product_ID" />
@@ -95,6 +117,16 @@
           <Property Name="Product_Price" Type="bigint" Nullable="false" />
           <Property Name="Product_isActive" Type="bit" Nullable="false" />
           <Property Name="Product_Image" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="receipts">
+          <Key>
+            <PropertyRef Name="receipt_ID" />
+          </Key>
+          <Property Name="receipt_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="receipt_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="receipt_time" Type="smalldatetime" />
+          <Property Name="receipt_Staff" Type="varchar" MaxLength="10" />
+          <Property Name="receipt_money" Type="bigint" />
         </EntityType>
         <EntityType Name="Recipe">
           <Key>
@@ -129,6 +161,54 @@
           <Property Name="Surcharge_DateStart" Type="date" Nullable="false" />
           <Property Name="Surcharge_DateEnd" Type="date" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Staticscal_Category">
+          <Key>
+            <PropertyRef Name="Category_Name" />
+          </Key>
+          <Property Name="Category_Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="count_buy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Staticscal_Product">
+          <Key>
+            <PropertyRef Name="Product_Name" />
+          </Key>
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="count_buy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_bottom' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Staticscal_Product_bottom">
+          <Key>
+            <PropertyRef Name="Product_Name" />
+          </Key>
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="count_buy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Staticscal_Product_byDate">
+          <Key>
+            <PropertyRef Name="Product_Name" />
+          </Key>
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="count_buy" Type="int" />
+        </EntityType>
+        <Association Name="FK_Discount_product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Discount" Type="Self.Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Discount">
+              <PropertyRef Name="Discount_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_infoImport">
           <End Role="Import" Type="Self.Import" Multiplicity="0..1" />
           <End Role="Import_Info" Type="Self.Import_Info" Multiplicity="*" />
@@ -150,6 +230,30 @@
             </Principal>
             <Dependent Role="Import_Info">
               <PropertyRef Name="Info_Ingredient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_staff">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="Payment_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receipts_staff">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="receipts" Type="Self.receipts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="receipts">
+              <PropertyRef Name="receipt_Staff" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -294,13 +398,44 @@
           <EntitySet Name="Bill_Surcharge" EntityType="Self.Bill_Surcharge" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DBTable" EntityType="Self.DBTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Import" EntityType="Self.Import" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Import_Info" EntityType="Self.Import_Info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="receipts" EntityType="Self.receipts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Surcharge" EntityType="Self.Surcharge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staticscal_Category" EntityType="Self.Staticscal_Category" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Staticscal_Category].[Category_Name] AS [Category_Name], 
+    [Staticscal_Category].[count_buy] AS [count_buy]
+    FROM [dbo].[Staticscal_Category] AS [Staticscal_Category]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Staticscal_Product" EntityType="Self.Staticscal_Product" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Staticscal_Product].[Product_Name] AS [Product_Name], 
+    [Staticscal_Product].[count_buy] AS [count_buy]
+    FROM [dbo].[Staticscal_Product] AS [Staticscal_Product]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Staticscal_Product_bottom" EntityType="Self.Staticscal_Product_bottom" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Staticscal_Product_bottom].[Product_Name] AS [Product_Name], 
+    [Staticscal_Product_bottom].[count_buy] AS [count_buy]
+    FROM [dbo].[Staticscal_Product_bottom] AS [Staticscal_Product_bottom]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Staticscal_Product_byDate" EntityType="Self.Staticscal_Product_byDate" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Staticscal_Product_byDate].[Product_Name] AS [Product_Name], 
+    [Staticscal_Product_byDate].[count_buy] AS [count_buy]
+    FROM [dbo].[Staticscal_Product_byDate] AS [Staticscal_Product_byDate]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Discount_product" Association="Self.FK_Discount_product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Discount" EntitySet="Discount" />
+          </AssociationSet>
           <AssociationSet Name="FK_infoImport" Association="Self.FK_infoImport">
             <End Role="Import" EntitySet="Import" />
             <End Role="Import_Info" EntitySet="Import_Info" />
@@ -308,6 +443,14 @@
           <AssociationSet Name="FK_infoIngredient" Association="Self.FK_infoIngredient">
             <End Role="Ingredient" EntitySet="Ingredient" />
             <End Role="Import_Info" EntitySet="Import_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_staff" Association="Self.FK_Payment_staff">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receipts_staff" Association="Self.FK_receipts_staff">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="receipts" EntitySet="receipts" />
           </AssociationSet>
           <AssociationSet Name="FK_RecipeProduct" Association="Self.FK_RecipeProduct">
             <End Role="Product" EntitySet="Product" />
@@ -528,6 +671,25 @@
             <End Role="Ingredient" EntitySet="Ingredients" />
             <End Role="Import_Info" EntitySet="Import_Info" />
           </AssociationSet>
+          <EntitySet Name="Staticscal_Category" EntityType="TheLightCoffeeModel.Staticscal_Category" />
+          <EntitySet Name="Staticscal_Product" EntityType="TheLightCoffeeModel.Staticscal_Product" />
+          <EntitySet Name="Discounts" EntityType="TheLightCoffeeModel.Discount" />
+          <EntitySet Name="Payments" EntityType="TheLightCoffeeModel.Payment" />
+          <EntitySet Name="receipts" EntityType="TheLightCoffeeModel.receipt" />
+          <AssociationSet Name="FK_Discount_product" Association="TheLightCoffeeModel.FK_Discount_product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Discount" EntitySet="Discounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_staff" Association="TheLightCoffeeModel.FK_Payment_staff">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receipts_staff" Association="TheLightCoffeeModel.FK_receipts_staff">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="receipt" EntitySet="receipts" />
+          </AssociationSet>
+          <EntitySet Name="Staticscal_Product_bottom" EntityType="TheLightCoffeeModel.Staticscal_Product_bottom" />
+          <EntitySet Name="Staticscal_Product_byDate" EntityType="TheLightCoffeeModel.Staticscal_Product_byDate" />
           </EntityContainer>
         <ComplexType Name="exportBillTakeAway_Result">
           <Property Type="Int32" Name="Bill_Code" Nullable="false" />
@@ -619,6 +781,7 @@
           <NavigationProperty Name="Bill_Info" Relationship="TheLightCoffeeModel.FKBill_Info640249" FromRole="Product" ToRole="Bill_Info" />
           <NavigationProperty Name="Category" Relationship="TheLightCoffeeModel.FKProduct568957" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Recipes" Relationship="TheLightCoffeeModel.FK_RecipeProduct" FromRole="Product" ToRole="Recipe" />
+          <NavigationProperty Name="Discounts" Relationship="TheLightCoffeeModel.FK_Discount_product" FromRole="Product" ToRole="Discount" />
         </EntityType>
         <Association Name="FKBill_Info640249">
           <End Type="TheLightCoffeeModel.Product" Role="Product" Multiplicity="1" />
@@ -685,6 +848,8 @@
           <Property Name="Staff_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Bills" Relationship="TheLightCoffeeModel.FKBill122024" FromRole="Staff" ToRole="Bill" />
           <NavigationProperty Name="Imports" Relationship="TheLightCoffeeModel.FKImport434180" FromRole="Staff" ToRole="Import" />
+          <NavigationProperty Name="Payments" Relationship="TheLightCoffeeModel.FK_Payment_staff" FromRole="Staff" ToRole="Payment" />
+          <NavigationProperty Name="receipts" Relationship="TheLightCoffeeModel.FK_receipts_staff" FromRole="Staff" ToRole="receipt" />
         </EntityType>
         <Association Name="FKBill122024">
           <End Type="TheLightCoffeeModel.Staff" Role="Staff" Multiplicity="1" />
@@ -722,6 +887,105 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Staticscal_Category">
+          <Key>
+            <PropertyRef Name="Category_Name" />
+          </Key>
+          <Property Name="Category_Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="count_buy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Staticscal_Product">
+          <Key>
+            <PropertyRef Name="Product_Name" />
+          </Key>
+          <Property Name="Product_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="count_buy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="Discount_ID" />
+          </Key>
+          <Property Name="Discount_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Discount_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Discount_allProduct" Type="Boolean" />
+          <Property Name="Discount_Product" Type="Int32" />
+          <Property Name="Discount_DateStart" Type="DateTime" Precision="0" />
+          <Property Name="Discount_DateEnd" Type="DateTime" Precision="0" />
+          <Property Name="Discount_Per" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="TheLightCoffeeModel.FK_Discount_product" FromRole="Discount" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Payment_ID" />
+          </Key>
+          <Property Name="Payment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Payment_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Payment_time" Type="DateTime" Precision="0" />
+          <Property Name="Payment_Staff" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Payment_money" Type="Int64" />
+          <NavigationProperty Name="Staff" Relationship="TheLightCoffeeModel.FK_Payment_staff" FromRole="Payment" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="receipt">
+          <Key>
+            <PropertyRef Name="receipt_ID" />
+          </Key>
+          <Property Name="receipt_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="receipt_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="receipt_time" Type="DateTime" Precision="0" />
+          <Property Name="receipt_Staff" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="receipt_money" Type="Int64" />
+          <NavigationProperty Name="Staff" Relationship="TheLightCoffeeModel.FK_receipts_staff" FromRole="receipt" ToRole="Staff" />
+        </EntityType>
+        <Association Name="FK_Discount_product">
+          <End Type="TheLightCoffeeModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="TheLightCoffeeModel.Discount" Role="Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_ID" />
+            </Principal>
+            <Dependent Role="Discount">
+              <PropertyRef Name="Discount_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_staff">
+          <End Type="TheLightCoffeeModel.Staff" Role="Staff" Multiplicity="0..1" />
+          <End Type="TheLightCoffeeModel.Payment" Role="Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="Payment_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receipts_staff">
+          <End Type="TheLightCoffeeModel.Staff" Role="Staff" Multiplicity="0..1" />
+          <End Type="TheLightCoffeeModel.receipt" Role="receipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Staff_Code" />
+            </Principal>
+            <Dependent Role="receipt">
+              <PropertyRef Name="receipt_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Staticscal_Product_bottom">
+          <Key>
+            <PropertyRef Name="Product_Name" />
+          </Key>
+          <Property Name="Product_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="count_buy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Staticscal_Product_byDate">
+          <Key>
+            <PropertyRef Name="Product_Name" />
+          </Key>
+          <Property Name="Product_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="count_buy" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -925,6 +1189,73 @@
                 <ScalarProperty Name="Staff_Datebirth" ColumnName="Staff_Datebirth" />
                 <ScalarProperty Name="Staff_Name" ColumnName="Staff_Name" />
                 <ScalarProperty Name="Staff_Code" ColumnName="Staff_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staticscal_Category">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Staticscal_Category">
+              <MappingFragment StoreEntitySet="Staticscal_Category">
+                <ScalarProperty Name="count_buy" ColumnName="count_buy" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staticscal_Product">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Staticscal_Product">
+              <MappingFragment StoreEntitySet="Staticscal_Product">
+                <ScalarProperty Name="count_buy" ColumnName="count_buy" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discounts">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Discount">
+              <MappingFragment StoreEntitySet="Discount">
+                <ScalarProperty Name="Discount_Per" ColumnName="Discount_Per" />
+                <ScalarProperty Name="Discount_DateEnd" ColumnName="Discount_DateEnd" />
+                <ScalarProperty Name="Discount_DateStart" ColumnName="Discount_DateStart" />
+                <ScalarProperty Name="Discount_Product" ColumnName="Discount_Product" />
+                <ScalarProperty Name="Discount_allProduct" ColumnName="Discount_allProduct" />
+                <ScalarProperty Name="Discount_name" ColumnName="Discount_name" />
+                <ScalarProperty Name="Discount_ID" ColumnName="Discount_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="Payment_money" ColumnName="Payment_money" />
+                <ScalarProperty Name="Payment_Staff" ColumnName="Payment_Staff" />
+                <ScalarProperty Name="Payment_time" ColumnName="Payment_time" />
+                <ScalarProperty Name="Payment_name" ColumnName="Payment_name" />
+                <ScalarProperty Name="Payment_ID" ColumnName="Payment_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="receipts">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.receipt">
+              <MappingFragment StoreEntitySet="receipts">
+                <ScalarProperty Name="receipt_money" ColumnName="receipt_money" />
+                <ScalarProperty Name="receipt_Staff" ColumnName="receipt_Staff" />
+                <ScalarProperty Name="receipt_time" ColumnName="receipt_time" />
+                <ScalarProperty Name="receipt_name" ColumnName="receipt_name" />
+                <ScalarProperty Name="receipt_ID" ColumnName="receipt_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staticscal_Product_bottom">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Staticscal_Product_bottom">
+              <MappingFragment StoreEntitySet="Staticscal_Product_bottom">
+                <ScalarProperty Name="count_buy" ColumnName="count_buy" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staticscal_Product_byDate">
+            <EntityTypeMapping TypeName="TheLightCoffeeModel.Staticscal_Product_byDate">
+              <MappingFragment StoreEntitySet="Staticscal_Product_byDate">
+                <ScalarProperty Name="count_buy" ColumnName="count_buy" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

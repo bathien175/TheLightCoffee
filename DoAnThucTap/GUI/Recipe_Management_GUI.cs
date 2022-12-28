@@ -1,5 +1,7 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars.Ribbon.BackstageView.Accessible;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
+using DevExpress.XtraSplashScreen;
 using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using DoAnThucTap.userControl;
@@ -72,18 +74,142 @@ namespace DoAnThucTap.GUI
             {
                 clear();
                 edit = 2;
+                loadEdit();
                 showhideEdit();
             }
         }
-
+        void loadEdit()
+        {
+            menuDAO dao = new menuDAO();
+            cbbChooseProduct.Text = dao.getProductbyID(id).Product_Name;
+            List<Recipe> recipes = dao.getRecipebyProduct(id);
+            nbrQuantity.Value = recipes.Count;
+            int k = 1;
+            foreach (var item in recipes)
+            {
+                item_Recipe reci = new item_Recipe();
+                reci.getStep = k;
+                reci.getStepInfo = item.Recipe_Info;
+                k++;
+                flpRecipe.Controls.Add(reci);
+            }
+        }
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (id == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một món bất kỳ!", "Lỗi chưa chọn món", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                menuDAO dao = new menuDAO();
+                var p = dao.getProductbyID(id);
+                DialogResult cl = MessageBox.Show("Bạn có chắc chắn muốn xóa công thức của món '"+p.Product_Name+"' chứ?", "Chờ đã!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (cl == DialogResult.Yes)
+                {
+                    SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+                    SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+                    dao.deleteRecipe(id);
+                    id = 0;
+                    clear();
+                    showhideEdit();
+                    loadData();
+                    SplashScreenManager.CloseForm();
+                    MessageBox.Show("Xóa thành công!");
+                }
+            }
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            menuDAO dao = new menuDAO();
+            if (edit == 1)
+            {
+                if (dao.getRecipebyProduct(pid).Count <= 0)
+                {
+                    SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+                    SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+                    // thêm mới
+                    List<Recipe> recipes = new List<Recipe>();
+                    foreach (item_Recipe item in flpRecipe.Controls)
+                    {
+                        if (item.getStepInfo == "" || item.getStepInfo == null)
+                        {
 
+                        }
+                        else
+                        {
+                            Recipe p = new Recipe();
+                            p.Recipe_Product = pid;
+                            p.Recipe_Info = item.getStepInfo;
+                            recipes.Add(p);
+                        }
+                    }
+                    dao.AddRecipe(recipes);
+                    loadData();
+                    SplashScreenManager.CloseForm();
+                    MessageBox.Show("Thêm công thức thành công!");
+                }
+                else
+                {
+                   DialogResult cl = MessageBox.Show("Công thức món đã có sẵn! Xác nhận ghi đè chứ?","Công thức đã tồn tại!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    if (cl == DialogResult.Yes)
+                    {
+                        SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+                        SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+                        // thêm mới
+                        List<Recipe> recipes = new List<Recipe>();
+                        foreach (item_Recipe item in flpRecipe.Controls)
+                        {
+                            if (item.getStepInfo == "" || item.getStepInfo == null)
+                            {
+
+                            }
+                            else
+                            {
+                                Recipe p = new Recipe();
+                                p.Recipe_Product = pid;
+                                p.Recipe_Info = item.getStepInfo;
+                                recipes.Add(p);
+                            }
+                        }
+                        dao.updateRecipe(recipes,pid);
+                        loadData();
+                        SplashScreenManager.CloseForm();
+                        MessageBox.Show("Thêm công thức thành công!");
+                    }
+                }
+                
+            }
+            else
+            {
+                SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+                //sửa món
+                List<Recipe> recipes = new List<Recipe>();
+                foreach (item_Recipe item in flpRecipe.Controls)
+                {
+                    if (item.getStepInfo == "" || item.getStepInfo == null)
+                    {
+
+                    }
+                    else
+                    {
+                        Recipe p = new Recipe();
+                        p.Recipe_Product = id;
+                        p.Recipe_Info = item.getStepInfo;
+                        recipes.Add(p);
+                    }
+                }
+                dao.updateRecipe(recipes,id);
+                loadData();
+                SplashScreenManager.CloseForm();
+                MessageBox.Show("Cập nhật thành công!");
+            }
+            clear();
+            id = 0;
+            edit = 0;
+            showhideEdit();
         }
 
         private void btnCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -121,6 +247,7 @@ namespace DoAnThucTap.GUI
         {
             loadData();
             loadCombobox();
+            showhideEdit();
         }
         void loadCombobox()
         {
@@ -210,6 +337,7 @@ namespace DoAnThucTap.GUI
         {
             menuDAO dao = new menuDAO();
             id = dao.searchbyName(gvListRecipe.GetFocusedRowCellValue("Recipe_Product").ToString()).Product_ID;
+            cbbChooseProduct.Text = gvListRecipe.GetFocusedRowCellValue("Recipe_Product").ToString();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace DoAnThucTap.DTO
         {
             this.Bill_Info = new HashSet<Bill_Info>();
             this.Recipes = new HashSet<Recipe>();
+            this.Discounts = new HashSet<Discount>();
         }
     
         public int Product_ID { get; set; }
@@ -34,5 +35,7 @@ namespace DoAnThucTap.DTO
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recipe> Recipes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Discount> Discounts { get; set; }
     }
 }

@@ -39,6 +39,7 @@ namespace DoAnThucTap.userControl
             set
             {
                 StepInfo = value;
+                txtStep.Text = StepInfo;
             }
         }
 

@@ -19,6 +19,8 @@ namespace DoAnThucTap.DTO
         {
             this.Bills = new HashSet<Bill>();
             this.Imports = new HashSet<Import>();
+            this.Payments = new HashSet<Payment>();
+            this.receipts = new HashSet<receipt>();
         }
     
         public string Staff_Code { get; set; }
@@ -36,5 +38,9 @@ namespace DoAnThucTap.DTO
         public virtual ICollection<Bill> Bills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Import> Imports { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Payment> Payments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<receipt> receipts { get; set; }
     }
 }

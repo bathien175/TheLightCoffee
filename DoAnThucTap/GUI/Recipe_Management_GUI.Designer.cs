@@ -235,7 +235,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.gcRecipe);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1472, 696);
-            this.splitContainerControl1.SplitterPosition = 315;
+            this.splitContainerControl1.SplitterPosition = 259;
             this.splitContainerControl1.TabIndex = 6;
             // 
             // flpRecipe
@@ -245,7 +245,7 @@
             this.flpRecipe.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpRecipe.Location = new System.Drawing.Point(0, 49);
             this.flpRecipe.Name = "flpRecipe";
-            this.flpRecipe.Size = new System.Drawing.Size(1472, 266);
+            this.flpRecipe.Size = new System.Drawing.Size(1472, 210);
             this.flpRecipe.TabIndex = 1;
             this.flpRecipe.WrapContents = false;
             // 
@@ -348,7 +348,7 @@
             this.gcRecipe.MainView = this.gvListRecipe;
             this.gcRecipe.MenuManager = this.barManager1;
             this.gcRecipe.Name = "gcRecipe";
-            this.gcRecipe.Size = new System.Drawing.Size(1472, 369);
+            this.gcRecipe.Size = new System.Drawing.Size(1472, 425);
             this.gcRecipe.TabIndex = 0;
             this.gcRecipe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListRecipe});
@@ -365,6 +365,7 @@
             this.gvListRecipe.OptionsFind.FindNullPrompt = "Tìm kiếm...";
             this.gvListRecipe.OptionsView.ShowAutoFilterRow = true;
             this.gvListRecipe.OptionsView.ShowGroupPanel = false;
+            this.gvListRecipe.RowHeight = 50;
             this.gvListRecipe.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListRecipe_RowClick);
             // 
             // Recipe_ID

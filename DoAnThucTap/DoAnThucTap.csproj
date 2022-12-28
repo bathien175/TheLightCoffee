@@ -102,6 +102,8 @@
     <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDialogs.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -172,6 +174,9 @@
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\detailImport.cs" />
+    <Compile Include="DTO\Discount.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\dtaBill.cs">
       <DependentUpon>dtaBill.xsd</DependentUpon>
     </Compile>
@@ -218,10 +223,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LightCoffee.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Payment.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Product.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\productDTO.cs" />
+    <Compile Include="DTO\receipt.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Recipe.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -254,6 +265,18 @@
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\StaffDTO.cs" />
+    <Compile Include="DTO\Staticscal_Category.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Staticscal_Product.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Staticscal_Product_bottom.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Staticscal_Product_byDate.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Surcharge.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -389,6 +412,12 @@
     </Compile>
     <Compile Include="GUI\Staff_Management_GUI.Designer.cs">
       <DependentUpon>Staff_Management_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\statistical_menu_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\statistical_menu_GUI.Designer.cs">
+      <DependentUpon>statistical_menu_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\swithTable_GUI.cs">
       <SubType>Form</SubType>
@@ -532,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Staff_Management_GUI.resx">
       <DependentUpon>Staff_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\statistical_menu_GUI.resx">
+      <DependentUpon>statistical_menu_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\swithTable_GUI.resx">
       <DependentUpon>swithTable_GUI.cs</DependentUpon>

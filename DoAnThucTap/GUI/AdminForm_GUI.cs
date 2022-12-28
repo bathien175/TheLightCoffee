@@ -87,5 +87,13 @@ namespace DoAnThucTap.GUI
             openForm(typeof(Recipe_Management_GUI));
             SplashScreenManager.CloseForm();
         }
+
+        private void btnTopMenu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+            openForm(typeof(statistical_menu_GUI));
+            SplashScreenManager.CloseForm();
+        }
     }
 }

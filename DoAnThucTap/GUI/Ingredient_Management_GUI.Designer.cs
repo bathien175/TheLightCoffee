@@ -422,6 +422,7 @@
             this.gvListIngredient.OptionsFind.FindNullPrompt = "Tìm kiếm...";
             this.gvListIngredient.OptionsView.ShowAutoFilterRow = true;
             this.gvListIngredient.OptionsView.ShowGroupPanel = false;
+            this.gvListIngredient.RowHeight = 100;
             this.gvListIngredient.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListIngredient_RowClick);
             // 
             // Ingredient_ID
