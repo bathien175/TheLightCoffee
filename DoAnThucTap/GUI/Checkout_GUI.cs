@@ -1,4 +1,5 @@
-﻿using DoAnThucTap.DAO;
+﻿using DevExpress.XtraSplashScreen;
+using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,13 @@ namespace DoAnThucTap.GUI
         private int billid;
         private bool takeaway = false;
         private Staff staffcurr = new Staff();
-        public Checkout_GUI(int BillID, bool istakeaway,Staff s)
+        private bool split;
+        public Checkout_GUI(int BillID, bool istakeaway,Staff s,bool isSPlit)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             InitializeComponent();
+            split = isSPlit;
             this.billid= BillID;
             takeaway=istakeaway;
             this.staffcurr= s;
@@ -39,6 +44,7 @@ namespace DoAnThucTap.GUI
             lblTotalMoney1.Text = String.Format("{0:0,0}", Convert.ToInt64(totalMoneyFirst));
             totalMoneyLast = totalMoneyFirst;
             lblTotalmoney2.Text = String.Format("{0:0,0}", Convert.ToInt64(totalMoneyLast));
+            SplashScreenManager.CloseForm();
         }
         void setTotalMoney()
         {
@@ -57,7 +63,16 @@ namespace DoAnThucTap.GUI
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (split==true)
+            {
+                billDAO dao = new billDAO();
+                dao.removeBillSplit(billid);
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btnMoney_Click(object sender, EventArgs e)
@@ -437,41 +452,13 @@ namespace DoAnThucTap.GUI
             }
             else
             {
-                //tinh tien
-                billDAO dao = new billDAO();
-                dao.checkOut(billid, Convert.ToInt64(DiscountMoney), extraFeeTotal, totalMoneyLast);
-                if (takeaway == true)
+                if (split)
                 {
-                    List<billIsTakeAway> list = new List<billIsTakeAway>();
-                    using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
-                    {
-
-                        var x = db.exportBillTakeAway(billid).ToList();
-                        foreach (exportBillTakeAway_Result item in x)
-                        {
-                            billIsTakeAway b = new billIsTakeAway();
-                            b.Bill_Code = item.Bill_Code;
-                            b.Bill_Staff = item.Bill_Staff;
-                            b.Bill_Discount = item.Bill_Discount;
-                            b.Bill_ExtraFee = Convert.ToInt64(item.Bill_ExtraFee);
-                            b.Bill_Product = item.Bill_Product;
-                            b.Bill_Quantity = item.Bill_Quantity;
-                            b.Bill_UnitPrice = item.Bill_UnitPrice;
-                            b.Bill_TotalMoney = item.Bill_TotalMoney;
-                            list.Add(b);
-                        }
-                        printBill print = new printBill();
-                        this.Close();
-                        print.PrintBill(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
-                        print.ShowDialog();
-                    }
-                }
-                else
-                {
+                    billDAO dao = new billDAO();
+                    dao.checkOutSplit(billid, Convert.ToInt64(DiscountMoney), extraFeeTotal, totalMoneyLast);
                     List<billnoTakeAway> list = new List<billnoTakeAway>();
                     using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
                     {
-
                         var x = db.exportBillNoTakeAway(billid).ToList();
                         foreach (exportBillNoTakeAway_Result item in x)
                         {
@@ -495,6 +482,68 @@ namespace DoAnThucTap.GUI
                         print.ShowDialog();
                     }
                 }
+                else
+                {
+                    //tinh tien
+                    billDAO dao = new billDAO();
+                    dao.checkOut(billid, Convert.ToInt64(DiscountMoney), extraFeeTotal, totalMoneyLast);
+                    if (takeaway == true)
+                    {
+                        List<billIsTakeAway> list = new List<billIsTakeAway>();
+                        using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+                        {
+
+                            var x = db.exportBillTakeAway(billid).ToList();
+                            foreach (exportBillTakeAway_Result item in x)
+                            {
+                                billIsTakeAway b = new billIsTakeAway();
+                                b.Bill_Code = item.Bill_Code;
+                                b.Bill_Staff = item.Bill_Staff;
+                                b.Bill_Discount = item.Bill_Discount;
+                                b.Bill_ExtraFee = Convert.ToInt64(item.Bill_ExtraFee);
+                                b.Bill_Product = item.Bill_Product;
+                                b.Bill_Quantity = item.Bill_Quantity;
+                                b.Bill_UnitPrice = item.Bill_UnitPrice;
+                                b.Bill_TotalMoney = item.Bill_TotalMoney;
+                                list.Add(b);
+                            }
+                            printBill print = new printBill();
+                            this.Close();
+                            print.PrintBill(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
+                            print.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        List<billnoTakeAway> list = new List<billnoTakeAway>();
+                        using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+                        {
+
+                            var x = db.exportBillNoTakeAway(billid).ToList();
+                            foreach (exportBillNoTakeAway_Result item in x)
+                            {
+                                billnoTakeAway b = new billnoTakeAway();
+                                b.Bill_Code = item.Bill_Code;
+                                b.Bill_Staff = item.Bill_Staff;
+                                b.Bill_Discount = item.Bill_Discount;
+                                b.Bill_ExtraFee = Convert.ToInt64(item.Bill_ExtraFee);
+                                b.Bill_Product = item.Bill_Product;
+                                b.Bill_Quantity = item.Bill_Quantity;
+                                b.Bill_UnitPrice = item.Bill_UnitPrice;
+                                b.Bill_TotalMoney = item.Bill_TotalMoney;
+                                b.Bill_Table = item.Bill_Table;
+                                b.Bill_TimeFrom = item.Bill_TimeFrom;
+                                b.Bill_TimeTo = Convert.ToDateTime(item.Bill_TimeTo);
+                                list.Add(b);
+                            }
+                            printBill print = new printBill();
+                            this.Close();
+                            print.PrintBillTable(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
+                            print.ShowDialog();
+                        }
+                    }
+                }
+                
             }   
         }
 

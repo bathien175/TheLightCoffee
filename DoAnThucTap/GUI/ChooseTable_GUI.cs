@@ -1,4 +1,5 @@
-﻿using DoAnThucTap.DAO;
+﻿using DevExpress.XtraSplashScreen;
+using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using DoAnThucTap.userControl;
 using System;
@@ -27,6 +28,8 @@ namespace DoAnThucTap.GUI
         void loadTable(int state)
         {
             showTable.Controls.Clear();
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             tableDAO dao = new tableDAO();
             switch (state) {
                 case 0:
@@ -98,6 +101,7 @@ namespace DoAnThucTap.GUI
                     }
                     break;
             }
+            SplashScreenManager.CloseForm();
         }
 
         private void Btn_MouseClick(object sender, MouseEventArgs e)
@@ -168,8 +172,11 @@ namespace DoAnThucTap.GUI
 
         private void createBill_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Sell_GUI sell = new Sell_GUI(tableCode,staff);
             this.Hide();
+            SplashScreenManager.CloseForm();
             sell.ShowDialog();
             this.Show();
             loadTable(0);
@@ -205,8 +212,11 @@ namespace DoAnThucTap.GUI
 
         private void chỉnhSửaHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Sell_GUI sell = new Sell_GUI(tableCode, staff);
             this.Hide();
+            SplashScreenManager.CloseForm();
             sell.ShowDialog();
             this.Show();
             loadTable(0);
@@ -214,9 +224,20 @@ namespace DoAnThucTap.GUI
 
         private void chuyểnBànToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             swithTable_GUI switchtb = new swithTable_GUI(tableCode);
+            SplashScreenManager.CloseForm();
             switchtb.ShowDialog();
             loadTable(stat);
+        }
+
+        private void thanhToánTáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            billDAO dao = new billDAO();
+            split_Bill_GUI split = new split_Bill_GUI(dao.getBillbyTableID(tableCode).Bill_ID,staff.Staff_Code);
+            this.Close();
+            split.ShowDialog();
         }
     }
 }

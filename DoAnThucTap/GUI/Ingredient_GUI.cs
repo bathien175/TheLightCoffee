@@ -1,4 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
+using DevExpress.XtraSplashScreen;
 using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using DoAnThucTap.userControl;
@@ -36,6 +37,8 @@ namespace DoAnThucTap.GUI
         void loadData()
         {
             tbData.Controls.Clear();
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tải dữ liệu lên...");
             IngredientDAO dao = new IngredientDAO();
             List<Ingredient> list = dao.getFullIngredient();
             if (list.Count > 0)
@@ -58,6 +61,7 @@ namespace DoAnThucTap.GUI
                     stt++;
                 }
             }
+            SplashScreenManager.CloseForm();
         }
 
         private void btnFind50_Click(object sender, EventArgs e)

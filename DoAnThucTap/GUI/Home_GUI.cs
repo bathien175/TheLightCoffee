@@ -48,11 +48,8 @@ namespace DoAnThucTap.GUI
 
         private void btnCreateBill_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             ChooseTable_GUI choose = new ChooseTable_GUI(s);
             this.Hide();
-            SplashScreenManager.CloseForm();
             choose.ShowDialog();
             this.Show();
         }
@@ -93,11 +90,8 @@ namespace DoAnThucTap.GUI
 
         private void btnIngredient_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Ingredient_GUI ingredient = new Ingredient_GUI(s.Staff_Code);
             this.Hide();
-            SplashScreenManager.CloseForm();
             ingredient.ShowDialog();
             this.Show();
         }

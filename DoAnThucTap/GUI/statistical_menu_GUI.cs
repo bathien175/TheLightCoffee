@@ -1,15 +1,8 @@
 ﻿using DevExpress.XtraCharts;
-using DevExpress.XtraEditors;
 using DoAnThucTap.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace DoAnThucTap.GUI
 {
@@ -23,7 +16,7 @@ namespace DoAnThucTap.GUI
 
         void loadData()
         {
-            Series s = new Series("Sản lượng bán ra theo thể loại",ViewType.Pie);
+            Series s = new Series("Sản lượng bán ra theo thể loại", ViewType.Pie);
             Series s2 = new Series("Top 5 món bán chạy nhất", ViewType.Bar);
             Series s3 = new Series("Top 3 món bán chậm nhất", ViewType.Bar);
             Series s4 = new Series("Top 3 món bán chạy nhất hôm nay", ViewType.Bar);
@@ -40,7 +33,7 @@ namespace DoAnThucTap.GUI
             }
             foreach (var item in list)
             {
-                s.Points.Add(new SeriesPoint(item.Category_Name,item.count_buy));
+                s.Points.Add(new SeriesPoint(item.Category_Name, item.count_buy));
             }
             foreach (var item in list2)
             {

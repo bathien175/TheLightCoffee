@@ -280,7 +280,7 @@ namespace DoAnThucTap.GUI
                 billDAO dao  = new billDAO();
                 if (billcurrent.Bill_isTakeAway == true)
                 {
-                    Checkout_GUI check = new Checkout_GUI(billcurrent.Bill_ID, true,staff);
+                    Checkout_GUI check = new Checkout_GUI(billcurrent.Bill_ID, true,staff,false);
                     check.ShowDialog();
                     if (dao.checkStatusBill(billcurrent.Bill_ID))
                     {
@@ -289,7 +289,7 @@ namespace DoAnThucTap.GUI
                 }
                 else
                 {
-                    Checkout_GUI check = new Checkout_GUI(billcurrent.Bill_ID, false,staff);
+                    Checkout_GUI check = new Checkout_GUI(billcurrent.Bill_ID, false,staff,false);
                     check.ShowDialog();
                     if (dao.checkStatusBill(billcurrent.Bill_ID))
                     {

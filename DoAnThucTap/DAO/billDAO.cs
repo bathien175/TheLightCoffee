@@ -1,6 +1,10 @@
-﻿using DoAnThucTap.DTO;
+﻿using DevExpress.Utils.About;
+using DevExpress.XtraGrid.Views.Base.ViewInfo;
+using DoAnThucTap.DTO;
+using DoAnThucTap.userControl;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -72,6 +76,20 @@ namespace DoAnThucTap.DAO
                     db.Entry(tb).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges(); //cap nhat table
                 }
+            }
+        }
+        public void checkOutSplit(int BillID, long discount, long extra, long totalMoney)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Bill bill = db.Bills.Where(b => b.Bill_ID == BillID).FirstOrDefault();
+                bill.Bill_TimeTo = DateTime.Now;
+                bill.Bill_Status = true;
+                bill.Bill_Discount = discount;
+                bill.Bill_TotalMoney = totalMoney;
+                bill.Bill_ExtraFee = extra;
+                db.Entry(bill).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges(); //cap nhat bill
             }
         }
         public void addSurchange(int billid, int surchangeID)
@@ -212,6 +230,121 @@ namespace DoAnThucTap.DAO
                     bi.BI_Product = productID;
                     db.Bill_Info.Add(bi);
                     db.SaveChanges();
+                }
+                
+            }
+        }
+        public void restoreBillOld(int billid,List<Bill_Info> list)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Bill bold = getBill(billid);
+                List<Bill_Info> listold = db.Bill_Info.Where(bi => bi.BI_Bill == bold.Bill_ID).ToList();
+                foreach (var item in list)
+                {
+                    bool isFind = false;
+                    foreach (var i in listold)
+                    {
+                        if (i.BI_Product == item.BI_Product)
+                        {
+                            i.BI_Quantity += item.BI_Quantity;
+                            db.Entry(i).State = System.Data.Entity.EntityState.Modified;
+                            db.SaveChanges();
+                            isFind = true;break;
+                        }
+                    }
+                    if (!isFind)
+                    {
+                        Bill_Info bi = new Bill_Info();
+                        bi.BI_Bill = billid;
+                        bi.BI_Product = item.BI_Product;
+                        bi.BI_Quantity = item.BI_Quantity;
+                        db.Bill_Info.Add(bi);
+                        db.SaveChanges();
+                    }
+                }
+            }
+        }
+        public void removeBillSplit(int Bill_ID)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                Bill bnew = getBill(Bill_ID);
+                List<Bill_Info> listnew = db.Bill_Info.Where(bi => bi.BI_Bill == bnew.Bill_ID).ToList();
+                //phục hồi bill cũ
+                var billold = db.Bills.Where(x => x.Bill_Table == bnew.Bill_Table && x.Bill_Status == false && x.Bill_ID != bnew.Bill_ID).FirstOrDefault();
+                restoreBillOld(billold.Bill_ID, listnew);
+                //xóa bill đã tách
+                db.removeFullSurchange(bnew.Bill_ID);
+                foreach (Bill_Info item in listnew)
+                {
+                    db.Bill_Info.Remove(item);
+                    db.SaveChanges();
+                }
+                db.Bills.Attach(bnew);
+                db.Entry(bnew).State = EntityState.Deleted;
+                db.Bills.Remove(bnew);
+                db.SaveChanges();
+            }
+        }
+        public int createBillSplit(String staffId,String tableID, DateTime timefrom,List<itemBill> listdata)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                try
+                {
+                    //quá trình caajap nhật bill cũ
+                    Bill b = getBillbyTableID(tableID);
+                    List<Bill_Info> listbillold = db.Bill_Info.Where(x => x.BI_Bill == b.Bill_ID).ToList();
+                    foreach (var item in listbillold)
+                    {
+                        foreach (var i in listdata)
+                        {
+                            if(item.BI_Product == i.productid)
+                            {
+                                if (item.BI_Quantity > i.slMenu)
+                                {
+                                    item.BI_Quantity -= i.slMenu;
+                                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                                    db.SaveChanges();
+                                }
+                                else
+                                {
+                                    db.Bill_Info.Remove(item);
+                                    db.SaveChanges();
+                                }
+                            }
+                        }
+                    }
+                    //tạo bill tách mới
+                    Bill bill = new Bill();
+                    bill.Bill_Table = tableID;
+                    bill.Bill_Status = false;
+                    bill.Bill_TotalMoney = 0;
+                    bill.Bill_Staff = staffId;
+                    bill.Bill_TimeFrom = timefrom;
+                    bill.Bill_Discount = 0;
+                    bill.Bill_ExtraFee = 0;
+                    bill.Bill_TimeTo = null;
+                    bill.Bill_isTakeAway = false;
+                    db.Bills.Add(bill);
+                    db.SaveChanges();
+                    //add món
+                    foreach (var item in listdata)
+                    {
+                        Bill_Info bi = new Bill_Info();
+                        bi.BI_Bill = bill.Bill_ID;
+                        bi.BI_Quantity = item.slMenu;
+                        bi.BI_Product = item.productid;
+                        db.Bill_Info.Add(bi);
+                        db.SaveChanges();
+                    }
+                    return bill.Bill_ID;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra!Vui lòng thử lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return 0;
                 }
                 
             }
