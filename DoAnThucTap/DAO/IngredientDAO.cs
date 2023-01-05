@@ -1,5 +1,6 @@
 ﻿using DevExpress.Xpo.Helpers;
 using DoAnThucTap.DTO;
+using DoAnThucTap.userControl;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +12,19 @@ namespace DoAnThucTap.DAO
 {
     internal class IngredientDAO
     {
-
+        public void updateFullIngredient(List<item_updateIngredient> list)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                foreach (var item in list)
+                {
+                    var i = db.Ingredients.Where(x => x.Ingredient_ID == item.getIDIngredient).FirstOrDefault();
+                    i.Ingredient_Reserved = item.getQuantity;
+                    db.Entry(i).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+        }
         public List<Ingredient> getFullIngredient()
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
@@ -94,71 +107,131 @@ namespace DoAnThucTap.DAO
                 return db.Ingredients.Where(i => i.Ingredient_Name==name &&i.Ingredient_isActive==true).FirstOrDefault();
             }
         }
-        public void ImportSingle(String staffCode,int ingreId, int sl)
+        public long getbudget()
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
+                List<exportDate_Result> list = db.exportDate().ToList();
+                if (list.Count == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    long total = 0;
+                    foreach (var item in list)
+                    {
+                        if (item.TypeExport == 2)
+                        {
+                            total -= Convert.ToInt64(item.MoneyExport);
+                        }
+                        else
+                        {
+                            total+= Convert.ToInt64(item.MoneyExport);
+                        }
+                    }
+                    return total;
+                }
+            }
+        }
+        public bool ImportSingle(String staffCode,int ingreId, int sl)
+        {
+            long budget = getbudget();
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
                 Ingredient ingre = db.Ingredients.Where(i => i.Ingredient_ID==ingreId).FirstOrDefault();
-                //tạo phiếu nhập
-                Import im = new Import();
-                im.Import_Staff = staffCode;
-                im.Import_Date = DateTime.Now;
-                im.Import_TotalMoney = ingre.Ingredient_PriceImport * sl;
-                db.Imports.Add(im);
-                db.SaveChanges();
-                //tạo chi tiết phiếu
-                Import_Info info = new Import_Info();
-                info.Import_ID = im.Import_ID;
-                info.Info_Quantity= sl;
-                info.Info_Ingredient= ingreId;
-                db.Import_Info.Add(info);
-                db.SaveChanges();
-                //cập nhật số lượng
-                ingre.Ingredient_Reserved += sl;
-                db.Entry(ingre).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                if(budget< (ingre.Ingredient_PriceImport * sl))
+                {
+                    return false;
+                }
+                else
+                {
+                    //tạo phiếu nhập
+                    Import im = new Import();
+                    im.Import_Staff = staffCode;
+                    im.Import_Date = DateTime.Now;
+                    im.Import_TotalMoney = ingre.Ingredient_PriceImport * sl;
+                    db.Imports.Add(im);
+                    db.SaveChanges();
+                    //tạo chi tiết phiếu
+                    Import_Info info = new Import_Info();
+                    info.Import_ID = im.Import_ID;
+                    info.Info_Quantity = sl;
+                    info.Info_Ingredient = ingreId;
+                    db.Import_Info.Add(info);
+                    db.SaveChanges();
+                    //cập nhật số lượng
+                    ingre.Ingredient_Reserved += sl;
+                    db.Entry(ingre).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    //cập nhật phiếu chi
+                    Payment p = new Payment();
+                    p.Payment_Staff = staffCode;
+                    p.Payment_name = "Nhập '" + ingre.Ingredient_Name + "', SL = " + sl.ToString();
+                    p.Payment_time = DateTime.Now;
+                    p.Payment_money = ingre.Ingredient_PriceImport * sl;
+                    db.Payments.Add(p);
+                    db.SaveChanges();
+                    return true;
+                }
             }
         }
 
         public List<exportIImport_Result> ImportMultip (String staffCode, List<detailImport> list)
         {
+            long budget = getbudget();
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
-                ///tạo bill
-                Import im = new Import();
-                im.Import_Staff = staffCode;
-                im.Import_Date = DateTime.Now;
                 long total = 0;
                 foreach (var item in list)
                 {
                     long money = item.ingredient.Ingredient_PriceImport * item.sl;
                     total += money;
                 }
-                im.Import_TotalMoney = total;
-                db.Imports.Add(im);
-                db.SaveChanges();
-                // tạo chi tiết nhập
-                foreach (var item in list)
+                if (total > budget)
                 {
-                    Import_Info importin = new Import_Info();
-                    importin.Import_ID = im.Import_ID;
-                    importin.Info_Ingredient = item.ingredient.Ingredient_ID;
-                    importin.Info_Quantity = item.sl;
-                    db.Import_Info.Add(importin);
-                    db.SaveChanges() ;
-
-                    //cập nhạt số lượng trong kho
-                    Ingredient x = db.Ingredients.Where(a => a.Ingredient_ID == item.ingredient.Ingredient_ID).FirstOrDefault();
-                    if (x != null)
-                    {
-                        x.Ingredient_Reserved += item.sl;
-                        db.Entry(x).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
-                    }
+                    return new List<exportIImport_Result>();
                 }
-                //trả dữ liệu phiếu nhập ra
-                var result = db.exportIImport(im.Import_ID).ToList();
-                return result;
+                else
+                {
+                    ///tạo bill
+                    Import im = new Import();
+                    im.Import_Staff = staffCode;
+                    im.Import_Date = DateTime.Now;
+                    im.Import_TotalMoney = total;
+                    db.Imports.Add(im);
+                    db.SaveChanges();
+                    // tạo chi tiết nhập
+                    foreach (var item in list)
+                    {
+                        Import_Info importin = new Import_Info();
+                        importin.Import_ID = im.Import_ID;
+                        importin.Info_Ingredient = item.ingredient.Ingredient_ID;
+                        importin.Info_Quantity = item.sl;
+                        db.Import_Info.Add(importin);
+                        db.SaveChanges();
+
+                        //cập nhạt số lượng trong kho
+                        Ingredient x = db.Ingredients.Where(a => a.Ingredient_ID == item.ingredient.Ingredient_ID).FirstOrDefault();
+                        if (x != null)
+                        {
+                            x.Ingredient_Reserved += item.sl;
+                            db.Entry(x).State = System.Data.Entity.EntityState.Modified;
+                            db.SaveChanges();
+                        }
+                    }
+                    //tạo phiếu chi
+                    Payment p = new Payment();
+                    p.Payment_Staff = staffCode;
+                    p.Payment_time = DateTime.Now;
+                    p.Payment_name = "Phiếu nhập hàng số " + im.Import_ID.ToString();
+                    p.Payment_money = total;
+                    db.Payments.Add(p);
+                    db.SaveChanges();
+                    //trả dữ liệu phiếu nhập ra
+                    var result = db.exportIImport(im.Import_ID).ToList();
+                    return result;
+                } 
             }
         }
     }

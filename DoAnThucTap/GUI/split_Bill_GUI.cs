@@ -55,12 +55,6 @@ namespace DoAnThucTap.GUI
                 i.productid = item.BI_Product;
                 i.nameMenu = new menuDAO().getProductbyID(item.BI_Product).Product_Name;
                 i.slMenu = item.BI_Quantity;
-                Bunifu.UI.WinForms.BunifuImageButton btndel = i.btnDel();
-                Bunifu.UI.WinForms.BunifuImageButton btnsub = i.btnSubtract();
-                btndel.Tag = item.BI_Product;
-                btnsub.Tag = item.BI_Product;
-                btndel.Click += deleteItemBill_Click;
-                btnsub.Click += subItemBill_Click;
                 listRoot.Add(i);
             }
         }
@@ -181,6 +175,8 @@ namespace DoAnThucTap.GUI
                 Bunifu.UI.WinForms.BunifuImageButton btnsub = item.btnSubtract();
                 btndel.Tag = item.productid;
                 btnsub.Tag = item.productid;
+                btndel.Click -= deleteItemBill_Click;
+                btnsub.Click -= subItemBill_Click;
                 btndel.Click += deleteItemBill_Click;
                 btnsub.Click += subItemBill_Click;
                 flpRoot.Controls.Add(item);
@@ -195,38 +191,40 @@ namespace DoAnThucTap.GUI
                 Bunifu.UI.WinForms.BunifuImageButton btnsub = item.btnSubtract();
                 btndel.Tag = item.productid;
                 btnsub.Tag = item.productid;
+                btndel.Click -= deleteItemSplit_Click;
+                btnsub.Click -= subItemSplit_Click;
                 btndel.Click += deleteItemSplit_Click;
                 btnsub.Click += subItemSplit_Click;
                 flpSplit.Controls.Add(item);
             }
         }
-        bool checkSL_BillRoot()
-        {
-            if (listRoot.Count > 1) //Số lượng món trong bill lớn hơn 1 thì được tách thoải mái
-            {
-                return true;
-            }
-            else
-            {
-                if (listRoot.Count == 1) //nếu chỉ có một món thì phải kiểm tra số lượng
-                {
-                    if (listRoot[0].slMenu > 1) // nếu số lượng lớn hơn 1 thì mới tách được
-                    {
-                        //tách tối đa phải giữ cho bill gốc != null
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hóa đơn chỉ có 1 món không thể tách!", "Lỗi số lượng hợp lệ!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        //bool checkSL_BillRoot()
+        //{
+        //    if (listRoot.Count > 1) //Số lượng món trong bill lớn hơn 1 thì được tách thoải mái
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        if (listRoot.Count == 1) //nếu chỉ có một món thì phải kiểm tra số lượng
+        //        {
+        //            if (listRoot[0].slMenu > 1) // nếu số lượng lớn hơn 1 thì mới tách được
+        //            {
+        //                //tách tối đa phải giữ cho bill gốc != null
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Hóa đơn chỉ có 1 món không thể tách!", "Lỗi số lượng hợp lệ!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                return false;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //}
         void addSplit(itemBill b)
         {
             List<itemBill> list2 = new List<itemBill>();
@@ -260,31 +258,28 @@ namespace DoAnThucTap.GUI
         }
         void Split(int pid)
         {
-            if (checkSL_BillRoot()) // nếu hợp lệ thì cho tách
+            List < itemBill> list2 = new List<itemBill>();
+            foreach (var item in listRoot) //duyệt list cũ
             {
-                List < itemBill> list2 = new List<itemBill>();
-                foreach (var item in listRoot) //duyệt list cũ
+                if (item.productid == pid)
                 {
-                    if (item.productid == pid)
+                    if(item.slMenu > 1)
                     {
-                        if(item.slMenu > 1)
-                        {
-                            item.slMenu--;
-                            list2.Add(item);
-                        }
-                        itemBill splitItem = new itemBill();
-                        splitItem.productid = pid;
-                        splitItem.nameMenu = item.nameMenu;
-                        splitItem.slMenu = 1;
-                        addSplit(splitItem); //add vô list tách
-                    }
-                    else
-                    {
+                        item.slMenu--;
                         list2.Add(item);
                     }
+                    itemBill splitItem = new itemBill();
+                    splitItem.productid = pid;
+                    splitItem.nameMenu = item.nameMenu;
+                    splitItem.slMenu = 1;
+                    addSplit(splitItem); //add vô list tách
                 }
-                listRoot = list2; //tạo ra list mới đã trừ số lượng
+                else
+                {
+                    list2.Add(item);
+                }
             }
+            listRoot = list2; //tạo ra list mới đã trừ số lượng
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -300,13 +295,20 @@ namespace DoAnThucTap.GUI
             }
             else
             {
-                billDAO dao = new billDAO();
-                int billsplit = dao.createBillSplit(Staffid, billCur.Bill_Table, billCur.Bill_TimeFrom, listSplit);
-                Checkout_GUI checkout = new Checkout_GUI(billsplit, false, new staffDAO().getStaff(Staffid), true);
-                this.Close();
-                checkout.ShowDialog();
-                ChooseTable_GUI choose = new ChooseTable_GUI(new staffDAO().getStaff(Staffid));
-                choose.ShowDialog();
+                if(listSplit.Count == 0)
+                {
+                    MessageBox.Show("Hóa đơn tách đang trống! Vui lòng thêm món!","Trống hóa đơn!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                else
+                {
+                    billDAO dao = new billDAO();
+                    int billsplit = dao.createBillSplit(Staffid, billCur.Bill_Table, billCur.Bill_TimeFrom, listSplit);
+                    Checkout_GUI checkout = new Checkout_GUI(billsplit, false, new staffDAO().getStaff(Staffid), true);
+                    this.Close();
+                    checkout.ShowDialog();
+                    ChooseTable_GUI choose = new ChooseTable_GUI(new staffDAO().getStaff(Staffid));
+                    choose.ShowDialog();
+                }
             }
         }
     }

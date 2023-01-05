@@ -98,10 +98,7 @@ namespace DoAnThucTap.GUI
 
         private void btnReportDay_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
-            printReportDate date = new printReportDate();
-            SplashScreenManager.CloseForm();
+            Date_Management_GUI date = new Date_Management_GUI(s.Staff_Code);
             date.ShowDialog();
         }
 

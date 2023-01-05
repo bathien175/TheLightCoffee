@@ -123,6 +123,16 @@ namespace DoAnThucTap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap budget {
+            get {
+                object obj = ResourceManager.GetObject("budget", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap change {
             get {
                 object obj = ResourceManager.GetObject("change", resourceCulture);
@@ -167,6 +177,16 @@ namespace DoAnThucTap.Properties {
             get {
                 object obj = ResourceManager.GetObject("coffee_glass", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap costs_and_revenues_chart {
+            get {
+                object obj = ResourceManager.GetObject("costs_and_revenues_chart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -301,6 +321,16 @@ namespace DoAnThucTap.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon logoquan1 {
+            get {
+                object obj = ResourceManager.GetObject("logoquan1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logout {
@@ -346,6 +376,16 @@ namespace DoAnThucTap.Properties {
         internal static System.Drawing.Bitmap money_flow {
             get {
                 object obj = ResourceManager.GetObject("money_flow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money_inflation {
+            get {
+                object obj = ResourceManager.GetObject("money_inflation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -476,6 +516,26 @@ namespace DoAnThucTap.Properties {
         internal static System.Drawing.Bitmap table {
             get {
                 object obj = ResourceManager.GetObject("table", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] up {
+            get {
+                object obj = ResourceManager.GetObject("up", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap up1 {
+            get {
+                object obj = ResourceManager.GetObject("up1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

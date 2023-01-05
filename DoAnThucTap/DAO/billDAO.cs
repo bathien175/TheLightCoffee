@@ -57,7 +57,7 @@ namespace DoAnThucTap.DAO
                 return bi;
             }
         }
-        public void checkOut(int BillID, long discount, long extra, long totalMoney)
+        public void checkOut(String staff,int BillID, long discount, long extra, long totalMoney)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
@@ -76,9 +76,18 @@ namespace DoAnThucTap.DAO
                     db.Entry(tb).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges(); //cap nhat table
                 }
+                //tạo phiếu thu
+                receipt r = new receipt();
+                r.receipt_Staff = staff;
+                r.receipt_time = DateTime.Now;
+                r.receipt_name = "Thanh toán hóa đơn số "+ bill.Bill_ID.ToString();
+                r.receipt_isMoneyImport = false;
+                r.receipt_money = totalMoney;
+                db.receipts.Add(r);
+                db.SaveChanges();
             }
         }
-        public void checkOutSplit(int BillID, long discount, long extra, long totalMoney)
+        public void checkOutSplit(String staff,int BillID, long discount, long extra, long totalMoney)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
@@ -90,6 +99,15 @@ namespace DoAnThucTap.DAO
                 bill.Bill_ExtraFee = extra;
                 db.Entry(bill).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges(); //cap nhat bill
+                //tạo phiếu thu
+                receipt r = new receipt();
+                r.receipt_Staff = staff;
+                r.receipt_time = DateTime.Now;
+                r.receipt_name = "Thanh toán hóa đơn số " + bill.Bill_ID.ToString();
+                r.receipt_isMoneyImport = false;
+                r.receipt_money = totalMoney;
+                db.receipts.Add(r);
+                db.SaveChanges();
             }
         }
         public void addSurchange(int billid, int surchangeID)

@@ -40,11 +40,11 @@ namespace DoAnThucTap.DTO
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Staticscal_Category> Staticscal_Category { get; set; }
         public virtual DbSet<Staticscal_Product> Staticscal_Product { get; set; }
-        public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<receipt> receipts { get; set; }
         public virtual DbSet<Staticscal_Product_bottom> Staticscal_Product_bottom { get; set; }
         public virtual DbSet<Staticscal_Product_byDate> Staticscal_Product_byDate { get; set; }
+        public virtual DbSet<Discount> Discounts { get; set; }
     
         public virtual ObjectResult<exportBillTakeAway_Result> exportBillTakeAway(Nullable<int> billID)
         {
@@ -124,6 +124,15 @@ namespace DoAnThucTap.DTO
                 new ObjectParameter("ImportID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportIImport_Result>("exportIImport", importIDParameter);
+        }
+    
+        public virtual ObjectResult<FindDiscount_Result> FindDiscount(Nullable<int> discountID)
+        {
+            var discountIDParameter = discountID.HasValue ?
+                new ObjectParameter("DiscountID", discountID) :
+                new ObjectParameter("DiscountID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<FindDiscount_Result>("FindDiscount", discountIDParameter);
         }
     
         public virtual ObjectResult<exportDate_Result> exportDate()

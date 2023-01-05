@@ -10,17 +10,10 @@
 namespace DoAnThucTap.DTO
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class receipt
+    public partial class FindDiscount_Result
     {
-        public int receipt_ID { get; set; }
-        public string receipt_name { get; set; }
-        public Nullable<System.DateTime> receipt_time { get; set; }
-        public string receipt_Staff { get; set; }
-        public Nullable<long> receipt_money { get; set; }
-        public Nullable<bool> receipt_isMoneyImport { get; set; }
-    
-        public virtual Staff Staff { get; set; }
+        public int Discount_ID { get; set; }
+        public int Discount_Product { get; set; }
     }
 }

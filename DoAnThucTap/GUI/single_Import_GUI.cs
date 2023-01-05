@@ -42,9 +42,15 @@ namespace DoAnThucTap.GUI
         {
             //import
             IngredientDAO dao = new IngredientDAO();
-            dao.ImportSingle(staffcur, ingredientcur.Ingredient_ID, sl);
-            MessageBox.Show("Quá trình nhập hàng hoàn tất!","Chúc mừng",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            this.Close();
+            if(dao.ImportSingle(staffcur, ingredientcur.Ingredient_ID, sl))
+            {
+                MessageBox.Show("Quá trình nhập hàng hoàn tất!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tiền trong ngân sách không đủ để chi trả!", "Lỗi thiếu ngân sách", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn1_Click(object sender, EventArgs e)

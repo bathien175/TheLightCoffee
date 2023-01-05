@@ -1,5 +1,7 @@
 ﻿using DevExpress.ClipboardSource.SpreadsheetML;
 using DevExpress.Office.Utils;
+using DevExpress.XtraRichEdit.Model;
+using DevExpress.XtraSplashScreen;
 using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using System;
@@ -19,42 +21,59 @@ namespace DoAnThucTap.GUI
         private long tBill=0, tImport=0, tMoney = 0;
         public printReportDate()
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             InitializeComponent();
             List<dateReport> list = getdata();
             loadData(list,tBill,tImport,tMoney);
+            SplashScreenManager.CloseForm();
         }
         List<dateReport> getdata()
         {
             billDAO dao = new billDAO();
             List<exportDate_Result> list = dao.GetExportDate_Results();
-            List < dateReport > listdata = new List<dateReport>();
+            List <dateReport> listdata = new List<dateReport>();
             foreach (var item in list)
             {
                 dateReport da = new dateReport();
-                da.NameExport = item.NameExport.ToString();
-                da.ProductExport = item.ProductExport.ToString();
-                da.QuantityExport = Convert.ToInt32(item.QuantityExport);
-                da.PriceExport= Convert.ToInt64(item.PriceExport);
-                da.UnitExport = item.UnitExport.ToString();
-                da.Bill_ExtraFee = Convert.ToInt64(item.Bill_ExtraFee);
-                da.Bill_Discount = Convert.ToInt64(item.Bill_Discount);             
-                if (item.type == 0 || item.type == 1)
+                da.NameExport = item.NameExport;
+                da.StaffExport = item.StaffExport;
+                if(item.TypeExport== 1 || item.TypeExport == 0)
                 {
-                    da.TotalMoney = (da.PriceExport * da.QuantityExport) + da.Bill_ExtraFee - da.Bill_Discount;
-                    da.type = "Thu";
-                    tBill += da.TotalMoney;
-                    tMoney += da.TotalMoney;
+                    if(item.TypeExport == 1)
+                    {
+                        da.TypeExport = "Nhập";
+                        da.MoneyExport = String.Format("{0:0,0 vnđ}", item.MoneyExport);
+                    }
+                    else
+                    {
+                        da.TypeExport = "Thu";
+                        da.MoneyExport = String.Format("{0:0,0 vnđ}", item.MoneyExport);
+                        tBill += convertLong(da.MoneyExport);
+                    }
                 }
                 else
                 {
-                    da.TotalMoney = -(da.PriceExport * da.QuantityExport);
-                    da.type = "Chi";
-                    tImport += -da.TotalMoney;
-                    tMoney -= -da.TotalMoney;
+                    da.TypeExport = "Chi";
+                    da.MoneyExport = String.Format("{0:0,0 vnđ}", -item.MoneyExport);
+                    tImport += convertLong(da.MoneyExport);
                 }
                 listdata.Add(da);
             }
+            tMoney = tBill - tImport;
             return listdata;
+        }
+        long convertLong(String s)
+        {
+            string strlong = "";
+            foreach (var item in s)
+            {
+                if (char.IsDigit(item))
+                {
+                    strlong += item;
+                }
+            }
+            return Convert.ToInt64(strlong);
         }
         void loadData(List<dateReport> list,long totalbill, long totalimport, long totalmoney)
         {

@@ -336,5 +336,13 @@ namespace DoAnThucTap.DAO
                 }
             }
         }
+
+        public List<FindDiscount_Result> searchdiscount(int discountid)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.FindDiscount(discountid).ToList();
+            }
+        }
     }
 }

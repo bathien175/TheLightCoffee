@@ -136,6 +136,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\billDAO.cs" />
+    <Compile Include="DAO\BudgetDAO.cs" />
     <Compile Include="DAO\IngredientDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\menuDAO.cs" />
@@ -199,6 +201,9 @@
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\exportIImport_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\FindDiscount_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Import.cs">
@@ -309,11 +314,23 @@
     <Compile Include="GUI\Checkout_GUI.Designer.cs">
       <DependentUpon>Checkout_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\check_QuantityIngredient_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\check_QuantityIngredient_GUI.Designer.cs">
+      <DependentUpon>check_QuantityIngredient_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChooseTable_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ChooseTable_GUI.Designer.cs">
       <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Date_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Date_Management_GUI.Designer.cs">
+      <DependentUpon>Date_Management_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DetailProduct_GUI.cs">
       <SubType>Form</SubType>
@@ -455,6 +472,12 @@
     <Compile Include="userControl\itemMenu.Designer.cs">
       <DependentUpon>itemMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\itemMoneyDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\itemMoneyDate.Designer.cs">
+      <DependentUpon>itemMoneyDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\itemTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -484,6 +507,12 @@
     </Compile>
     <Compile Include="userControl\item_Recipe.Designer.cs">
       <DependentUpon>item_Recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\item_updateIngredient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\item_updateIngredient.Designer.cs">
+      <DependentUpon>item_updateIngredient.cs</DependentUpon>
     </Compile>
     <Compile Include="userControl\OptionHome.cs">
       <SubType>UserControl</SubType>
@@ -515,8 +544,14 @@
     <EmbeddedResource Include="GUI\Checkout_GUI.resx">
       <DependentUpon>Checkout_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\check_QuantityIngredient_GUI.resx">
+      <DependentUpon>check_QuantityIngredient_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChooseTable_GUI.resx">
       <DependentUpon>ChooseTable_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Date_Management_GUI.resx">
+      <DependentUpon>Date_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DetailProduct_GUI.resx">
       <DependentUpon>DetailProduct_GUI.cs</DependentUpon>
@@ -598,6 +633,9 @@
     <EmbeddedResource Include="userControl\itemMenu.resx">
       <DependentUpon>itemMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="userControl\itemMoneyDate.resx">
+      <DependentUpon>itemMoneyDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControl\itemTable.resx">
       <DependentUpon>itemTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,6 +650,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\item_Recipe.resx">
       <DependentUpon>item_Recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\item_updateIngredient.resx">
+      <DependentUpon>item_updateIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\OptionHome.resx">
       <DependentUpon>OptionHome.cs</DependentUpon>
@@ -725,6 +766,12 @@
       <DependentUpon>LightCoffee.edmx</DependentUpon>
       <LastGenOutput>LightCoffee.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logoquan.ico" />
+    <None Include="Resources\budget.png" />
+    <None Include="Resources\costs-and-revenues-chart.png" />
+    <None Include="Resources\money-inflation.png" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\up.svg" />
     <None Include="Resources\split.png" />
     <None Include="Resources\change.png" />
     <None Include="Resources\edit.png" />

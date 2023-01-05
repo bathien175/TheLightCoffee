@@ -174,11 +174,19 @@ namespace DoAnThucTap.GUI
                 try
                 {
                     List<exportIImport_Result> data = dao.ImportMultip(staffcode, listimport);
-                    printImport print = new printImport();
-                    print.Print(data);
-                    print.ShowDialog();
-                    listimport.Clear();
-                    loadTable();
+                    if(data.Count > 0) 
+                    {
+                        printImport print = new printImport();
+                        print.Print(data);
+                        print.ShowDialog();
+                        listimport.Clear();
+                        loadTable();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tiền nhập hàng lớn hơn ngân sách hiện có!", "Lỗi nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
                 catch (Exception)
                 {

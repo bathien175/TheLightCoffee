@@ -18,6 +18,7 @@ namespace DoAnThucTap.GUI
         bool err = true;
         private int txtChange = 0;
         private String DiscountMoney = "0";
+        private String DiscountString = "0";
         private String CusGiveMoney = "0";
         private long totalMoneyFirst = 0, totalMoneyLast = 0;
         private long cusRecive =0;
@@ -26,6 +27,7 @@ namespace DoAnThucTap.GUI
         private bool takeaway = false;
         private Staff staffcurr = new Staff();
         private bool split;
+        private List<Discount> apllydiscount = new List<Discount>();
         public Checkout_GUI(int BillID, bool istakeaway,Staff s,bool isSPlit)
         {
             SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
@@ -35,6 +37,7 @@ namespace DoAnThucTap.GUI
             this.billid= BillID;
             takeaway=istakeaway;
             this.staffcurr= s;
+            loadCbbDiscount();
             loadCbbExtraFee();
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
@@ -53,6 +56,13 @@ namespace DoAnThucTap.GUI
             lblTotalmoney2.Text = String.Format("{0:0,0}", Convert.ToInt64(totalMoneyLast));
             cusRecive = Convert.ToInt64(CusGiveMoney) - totalMoneyLast;
             txtCusRecive.Text = String.Format("{0:0,0}", cusRecive);
+        }
+        void loadCbbDiscount()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                cbbDiscount.DataSource = db.Discounts.Where(x => x.Discount_DateEnd == null).Select(x => x.Discount_name).ToList();
+            }
         }
         void loadCbbExtraFee()
         {
@@ -360,7 +370,7 @@ namespace DoAnThucTap.GUI
 
         private void txtDiscountMoney_Enter(object sender, EventArgs e)
         {
-            txtChange = 1;
+            //txtChange = 1;
         }
 
         bool checkDiscount()
@@ -387,15 +397,15 @@ namespace DoAnThucTap.GUI
         }
         private void txtDiscountMoney_Leave(object sender, EventArgs e)
         {
-            if (!checkDiscount())
-            {
-                MessageBox.Show("Tiền giảm giá không được lớn hơn tổng tiền hóa đơn!", "Lỗi giảm giá", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDiscountMoney.Focus();
-            }
-            else
-            {
-                txtChange = 0;
-            }
+            //if (!checkDiscount())
+            //{
+            //    MessageBox.Show("Tiền giảm giá không được lớn hơn tổng tiền hóa đơn!", "Lỗi giảm giá", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtDiscountMoney.Focus();
+            //}
+            //else
+            //{
+            //    txtChange = 0;
+            //}
         }
 
         private void txtCusGive_Enter(object sender, EventArgs e)
@@ -455,7 +465,7 @@ namespace DoAnThucTap.GUI
                 if (split)
                 {
                     billDAO dao = new billDAO();
-                    dao.checkOutSplit(billid, Convert.ToInt64(DiscountMoney), extraFeeTotal, totalMoneyLast);
+                    dao.checkOutSplit(staffcurr.Staff_Code,billid, Convert.ToInt64(DiscountMoney), extraFeeTotal, totalMoneyLast);
                     List<billnoTakeAway> list = new List<billnoTakeAway>();
                     using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
                     {
@@ -486,7 +496,7 @@ namespace DoAnThucTap.GUI
                 {
                     //tinh tien
                     billDAO dao = new billDAO();
-                    dao.checkOut(billid, Convert.ToInt64(DiscountMoney), extraFeeTotal, totalMoneyLast);
+                    dao.checkOut(staffcurr.Staff_Code, billid, Convert.ToInt64(DiscountMoney), extraFeeTotal, totalMoneyLast);
                     if (takeaway == true)
                     {
                         List<billIsTakeAway> list = new List<billIsTakeAway>();
@@ -552,6 +562,101 @@ namespace DoAnThucTap.GUI
             if (tbSurchange.Columns[e.ColumnIndex].Name == "deleteSur")
             {
                 removeSurchange(e.RowIndex);
+            }
+        }
+        void loadDiscount()
+        {
+            tbDiscount.Rows.Clear();
+            if (apllydiscount.Count > 0)
+            {
+                long totaldiscount = 0;
+                billDAO dao = new billDAO();
+                menuDAO menu = new menuDAO();
+                List<Bill_Info> listbill = dao.getListBillInfo(billid);
+                foreach (var item in apllydiscount)
+                {
+                    tbDiscount.Rows.Add(item.Discount_name, item.Discount_Per+"%",item.Discount_ID);
+                    if (item.Discount_allProduct == true) //áp dụng tất cả các món
+                    {
+                        foreach (var i in listbill)
+                        {
+                            var p = menu.getProductbyID(i.BI_Product);
+                            totaldiscount += Convert.ToInt64((p.Product_Price * item.Discount_Per / 100) * i.BI_Quantity);
+                        }
+                    }
+                    else //tìm các món nào được áp dụng voucher này thôi
+                    {
+                        List<FindDiscount_Result> listdis = menu.searchdiscount(item.Discount_ID);
+                        foreach (var i in listbill)
+                        {
+                            var p = menu.getProductbyID(i.BI_Product);
+                            foreach (var k in listdis)
+                            {
+                                if (k.Discount_Product == i.BI_Product)
+                                {
+                                    totaldiscount += Convert.ToInt64((p.Product_Price * item.Discount_Per / 100) * i.BI_Quantity);
+                                }
+                            }
+                        }
+                    }
+                }
+                DiscountMoney = totaldiscount.ToString();
+                txtDiscountMoney.Text = String.Format("{0:0,0 vnđ}", Convert.ToInt64(DiscountMoney));
+            }
+            else
+            {
+                DiscountMoney = "0";
+                txtDiscountMoney.Text = String.Format("{0:0,0 vnđ}", Convert.ToInt64(DiscountMoney)); ;
+            }
+        }
+        private void btnAddDiscount_Click(object sender, EventArgs e)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var dis = db.Discounts.Where(x => x.Discount_name == cbbDiscount.Text && x.Discount_DateEnd == null).FirstOrDefault();
+                if (dis != null)
+                {
+                    bool isfind = false;
+                    foreach (var item in apllydiscount)
+                    {
+                        if (dis.Discount_ID == item.Discount_ID)
+                        {
+                            isfind = true;break;
+                        }
+                    }
+                    if (!isfind)
+                    {
+                        apllydiscount.Add(dis);
+                        loadDiscount();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Loại khuyến mãi này đã được áp dụng!","Lỗi trùng lặp!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void tbDiscount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tbDiscount.Columns[e.ColumnIndex].Name == "deleteDis")
+            {
+                int x = 0;
+                foreach (DataGridViewRow i in tbDiscount.Rows)
+                {
+                    if (i.Index == e.RowIndex)
+                    { x = Convert.ToInt32(i.Cells[2].Value); tbDiscount.Rows.RemoveAt(i.Index); }
+                }
+                List<Discount> listnew = new List<Discount>();
+                foreach (var item in apllydiscount)
+                {
+                    if (item.Discount_ID != x)
+                    {
+                        listnew.Add(item);
+                    }
+                }
+                apllydiscount = listnew;
+                loadDiscount();
             }
         }
 

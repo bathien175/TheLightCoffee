@@ -15,12 +15,8 @@ namespace DoAnThucTap.DTO
     {
         public int IDExport { get; set; }
         public string NameExport { get; set; }
-        public string ProductExport { get; set; }
-        public Nullable<int> QuantityExport { get; set; }
-        public string UnitExport { get; set; }
-        public long PriceExport { get; set; }
-        public Nullable<long> Bill_ExtraFee { get; set; }
-        public Nullable<long> Bill_Discount { get; set; }
-        public int type { get; set; }
+        public string StaffExport { get; set; }
+        public Nullable<int> TypeExport { get; set; }
+        public Nullable<long> MoneyExport { get; set; }
     }
 }

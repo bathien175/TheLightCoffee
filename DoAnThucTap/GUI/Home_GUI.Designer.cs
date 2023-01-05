@@ -36,7 +36,7 @@
             this.imgAvatar = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnLogout = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bottom = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.flpHome = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnReportDay = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnIngredient = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnMenu = new Bunifu.Framework.UI.BunifuTileButton();
@@ -49,7 +49,7 @@
             this.top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).BeginInit();
             this.bottom.SuspendLayout();
-            this.bunifuPanel2.SuspendLayout();
+            this.flpHome.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             this.top.Location = new System.Drawing.Point(0, 0);
             this.top.Name = "top";
             this.top.ShowBorders = false;
-            this.top.Size = new System.Drawing.Size(1371, 63);
+            this.top.Size = new System.Drawing.Size(1371, 79);
             this.top.TabIndex = 0;
             // 
             // lblNameStaff
@@ -98,14 +98,14 @@
             // 
             this.imgAvatar.AllowFocused = false;
             this.imgAvatar.AutoSizeHeight = true;
-            this.imgAvatar.BorderRadius = 30;
+            this.imgAvatar.BorderRadius = 37;
             this.imgAvatar.Dock = System.Windows.Forms.DockStyle.Left;
             this.imgAvatar.Image = global::DoAnThucTap.Properties.Resources.manager;
             this.imgAvatar.IsCircle = true;
             this.imgAvatar.Location = new System.Drawing.Point(0, 0);
             this.imgAvatar.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
             this.imgAvatar.Name = "imgAvatar";
-            this.imgAvatar.Size = new System.Drawing.Size(60, 60);
+            this.imgAvatar.Size = new System.Drawing.Size(75, 75);
             this.imgAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgAvatar.TabIndex = 1;
             this.imgAvatar.TabStop = false;
@@ -130,8 +130,8 @@
             this.btnLogout.ImageActive = null;
             this.btnLogout.ImageLocation = null;
             this.btnLogout.ImageMargin = 0;
-            this.btnLogout.ImageSize = new System.Drawing.Size(55, 52);
-            this.btnLogout.ImageZoomSize = new System.Drawing.Size(56, 53);
+            this.btnLogout.ImageSize = new System.Drawing.Size(55, 68);
+            this.btnLogout.ImageZoomSize = new System.Drawing.Size(56, 69);
             this.btnLogout.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.InitialImage")));
             this.btnLogout.Location = new System.Drawing.Point(1312, 3);
             this.btnLogout.Name = "btnLogout";
@@ -140,7 +140,7 @@
             this.btnLogout.ShowCursorChanges = true;
             this.btnLogout.ShowImageBorders = true;
             this.btnLogout.ShowSizeMarkers = false;
-            this.btnLogout.Size = new System.Drawing.Size(56, 53);
+            this.btnLogout.Size = new System.Drawing.Size(56, 69);
             this.btnLogout.TabIndex = 0;
             this.btnLogout.ToolTipText = "";
             this.btnLogout.WaitOnLoad = false;
@@ -156,37 +156,37 @@
             this.bottom.BorderColor = System.Drawing.Color.Transparent;
             this.bottom.BorderRadius = 3;
             this.bottom.BorderThickness = 1;
-            this.bottom.Controls.Add(this.bunifuPanel2);
+            this.bottom.Controls.Add(this.flpHome);
             this.bottom.Controls.Add(this.bunifuPanel1);
             this.bottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bottom.Location = new System.Drawing.Point(0, 63);
+            this.bottom.Location = new System.Drawing.Point(0, 79);
             this.bottom.Name = "bottom";
             this.bottom.ShowBorders = false;
-            this.bottom.Size = new System.Drawing.Size(1371, 709);
+            this.bottom.Size = new System.Drawing.Size(1371, 693);
             this.bottom.TabIndex = 1;
             // 
-            // bunifuPanel2
+            // flpHome
             // 
-            this.bunifuPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flpHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.White;
-            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
-            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel2.BorderColor = System.Drawing.Color.Green;
-            this.bunifuPanel2.BorderRadius = 20;
-            this.bunifuPanel2.BorderThickness = 1;
-            this.bunifuPanel2.Controls.Add(this.btnReportDay);
-            this.bunifuPanel2.Controls.Add(this.btnIngredient);
-            this.bunifuPanel2.Controls.Add(this.btnMenu);
-            this.bunifuPanel2.Controls.Add(this.btnTakeAway);
-            this.bunifuPanel2.Controls.Add(this.btnStaff);
-            this.bunifuPanel2.Controls.Add(this.btnCreateBill);
-            this.bunifuPanel2.Location = new System.Drawing.Point(15, 86);
-            this.bunifuPanel2.Name = "bunifuPanel2";
-            this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(1341, 611);
-            this.bunifuPanel2.TabIndex = 1;
+            this.flpHome.BackgroundColor = System.Drawing.Color.White;
+            this.flpHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flpHome.BackgroundImage")));
+            this.flpHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flpHome.BorderColor = System.Drawing.Color.Green;
+            this.flpHome.BorderRadius = 20;
+            this.flpHome.BorderThickness = 1;
+            this.flpHome.Controls.Add(this.btnReportDay);
+            this.flpHome.Controls.Add(this.btnIngredient);
+            this.flpHome.Controls.Add(this.btnMenu);
+            this.flpHome.Controls.Add(this.btnTakeAway);
+            this.flpHome.Controls.Add(this.btnStaff);
+            this.flpHome.Controls.Add(this.btnCreateBill);
+            this.flpHome.Location = new System.Drawing.Point(15, 86);
+            this.flpHome.Name = "flpHome";
+            this.flpHome.ShowBorders = true;
+            this.flpHome.Size = new System.Drawing.Size(1341, 595);
+            this.flpHome.TabIndex = 1;
             // 
             // btnReportDay
             // 
@@ -202,7 +202,7 @@
             this.btnReportDay.ImageZoom = 60;
             this.btnReportDay.LabelPosition = 39;
             this.btnReportDay.LabelText = "Chốt ngày";
-            this.btnReportDay.Location = new System.Drawing.Point(896, 326);
+            this.btnReportDay.Location = new System.Drawing.Point(879, 320);
             this.btnReportDay.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnReportDay.Name = "btnReportDay";
             this.btnReportDay.Size = new System.Drawing.Size(200, 200);
@@ -223,7 +223,7 @@
             this.btnIngredient.ImageZoom = 60;
             this.btnIngredient.LabelPosition = 39;
             this.btnIngredient.LabelText = "Nguyên liệu";
-            this.btnIngredient.Location = new System.Drawing.Point(566, 326);
+            this.btnIngredient.Location = new System.Drawing.Point(562, 320);
             this.btnIngredient.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnIngredient.Name = "btnIngredient";
             this.btnIngredient.Size = new System.Drawing.Size(200, 200);
@@ -244,7 +244,7 @@
             this.btnMenu.ImageZoom = 60;
             this.btnMenu.LabelPosition = 39;
             this.btnMenu.LabelText = "Thực đơn";
-            this.btnMenu.Location = new System.Drawing.Point(237, 326);
+            this.btnMenu.Location = new System.Drawing.Point(247, 320);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(200, 200);
@@ -265,7 +265,7 @@
             this.btnTakeAway.ImageZoom = 60;
             this.btnTakeAway.LabelPosition = 39;
             this.btnTakeAway.LabelText = "Mang về";
-            this.btnTakeAway.Location = new System.Drawing.Point(566, 70);
+            this.btnTakeAway.Location = new System.Drawing.Point(562, 64);
             this.btnTakeAway.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnTakeAway.Name = "btnTakeAway";
             this.btnTakeAway.Size = new System.Drawing.Size(200, 200);
@@ -286,7 +286,7 @@
             this.btnStaff.ImageZoom = 60;
             this.btnStaff.LabelPosition = 39;
             this.btnStaff.LabelText = "Cá nhân";
-            this.btnStaff.Location = new System.Drawing.Point(896, 70);
+            this.btnStaff.Location = new System.Drawing.Point(879, 64);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(200, 200);
@@ -307,7 +307,7 @@
             this.btnCreateBill.ImageZoom = 60;
             this.btnCreateBill.LabelPosition = 39;
             this.btnCreateBill.LabelText = "Bán tại chỗ";
-            this.btnCreateBill.Location = new System.Drawing.Point(237, 70);
+            this.btnCreateBill.Location = new System.Drawing.Point(247, 64);
             this.btnCreateBill.Margin = new System.Windows.Forms.Padding(50, 70, 0, 0);
             this.btnCreateBill.Name = "btnCreateBill";
             this.btnCreateBill.Size = new System.Drawing.Size(200, 200);
@@ -373,7 +373,7 @@
             this.top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
             this.bottom.ResumeLayout(false);
-            this.bunifuPanel2.ResumeLayout(false);
+            this.flpHome.ResumeLayout(false);
             this.bunifuPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -390,7 +390,7 @@
         private Bunifu.UI.WinForms.BunifuLabel lblNameStaff;
         private Bunifu.UI.WinForms.BunifuPictureBox imgAvatar;
         private System.Windows.Forms.Timer clock;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
+        private Bunifu.UI.WinForms.BunifuPanel flpHome;
         private Bunifu.Framework.UI.BunifuTileButton btnReportDay;
         private Bunifu.Framework.UI.BunifuTileButton btnIngredient;
         private Bunifu.Framework.UI.BunifuTileButton btnMenu;

@@ -14,14 +14,20 @@ namespace DoAnThucTap.DTO
     
     public partial class Discount
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Discount()
+        {
+            this.Products = new HashSet<Product>();
+        }
+    
         public int Discount_ID { get; set; }
         public string Discount_name { get; set; }
         public Nullable<bool> Discount_allProduct { get; set; }
-        public Nullable<int> Discount_Product { get; set; }
         public Nullable<System.DateTime> Discount_DateStart { get; set; }
         public Nullable<System.DateTime> Discount_DateEnd { get; set; }
         public Nullable<int> Discount_Per { get; set; }
     
-        public virtual Product Product { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
