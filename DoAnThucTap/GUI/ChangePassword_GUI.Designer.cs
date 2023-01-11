@@ -377,6 +377,7 @@
             this.Controls.Add(this.txtNewPassAgain);
             this.Controls.Add(this.txtNewPass);
             this.Controls.Add(this.txtOldPass);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangePassword_GUI";

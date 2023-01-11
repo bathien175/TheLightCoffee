@@ -153,7 +153,8 @@ namespace DoAnThucTap.GUI
 
         private void btnReserved_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            check_QuantityIngredient_GUI check = new check_QuantityIngredient_GUI();
+            check.ShowDialog();
         }
 
         private void btnPrinter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

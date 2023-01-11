@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(statistical_menu_GUI));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.chartControl4 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.chartControl4 = new DevExpress.XtraCharts.ChartControl();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -57,6 +58,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1457, 708);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // chartControl4
+            // 
+            this.chartControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControl4.Location = new System.Drawing.Point(731, 357);
+            this.chartControl4.Name = "chartControl4";
+            this.chartControl4.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartControl4.Size = new System.Drawing.Size(723, 348);
+            this.chartControl4.TabIndex = 4;
             // 
             // chartControl2
             // 
@@ -85,15 +95,6 @@
             this.chartControl1.Size = new System.Drawing.Size(722, 348);
             this.chartControl1.TabIndex = 3;
             // 
-            // chartControl4
-            // 
-            this.chartControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl4.Location = new System.Drawing.Point(731, 357);
-            this.chartControl4.Name = "chartControl4";
-            this.chartControl4.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl4.Size = new System.Drawing.Size(723, 348);
-            this.chartControl4.TabIndex = 4;
-            // 
             // statistical_menu_GUI
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -101,13 +102,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1457, 708);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("statistical_menu_GUI.IconOptions.Icon")));
             this.Name = "statistical_menu_GUI";
             this.Text = "Thống kê thực đơn";
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).EndInit();
             this.ResumeLayout(false);
 
         }

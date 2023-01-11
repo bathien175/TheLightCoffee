@@ -497,5 +497,34 @@ namespace DoAnThucTap.DAO
                 db.SaveChanges();
             }
         }
+
+        public List<Bill> getFullListBill()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.Bills.ToList();
+            }
+        }
+        public List<Import> getFullListImport()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.Imports.ToList();
+            }
+        }
+        public List<receipt> getFullListReceipt()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.receipts.ToList();
+            }
+        }
+        public List<Payment> getFullListPayment()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.Payments.ToList();
+            }
+        }
     }
 }

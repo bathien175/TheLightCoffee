@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(swithTable_GUI));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.lblData = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbTabe = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblData = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnBack = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,23 +61,6 @@
             this.bunifuPanel1.Size = new System.Drawing.Size(711, 321);
             this.bunifuPanel1.TabIndex = 0;
             // 
-            // lblData
-            // 
-            this.lblData.AllowParentOverrides = false;
-            this.lblData.AutoEllipsis = false;
-            this.lblData.AutoSize = false;
-            this.lblData.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblData.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(0, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblData.Size = new System.Drawing.Size(711, 47);
-            this.lblData.TabIndex = 0;
-            this.lblData.Text = "Chuyển bàn: ";
-            this.lblData.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblData.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // tbTabe
             // 
             this.tbTabe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -89,6 +72,24 @@
             this.tbTabe.Name = "tbTabe";
             this.tbTabe.Size = new System.Drawing.Size(705, 265);
             this.tbTabe.TabIndex = 1;
+            // 
+            // lblData
+            // 
+            this.lblData.AllowParentOverrides = false;
+            this.lblData.AutoEllipsis = false;
+            this.lblData.AutoSize = false;
+            this.lblData.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblData.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblData.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(0, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblData.Size = new System.Drawing.Size(711, 47);
+            this.lblData.TabIndex = 0;
+            this.lblData.Text = "Chuyển bàn: ";
+            this.lblData.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblData.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnBack
             // 
@@ -133,6 +134,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "swithTable_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "swithTable_GUI";

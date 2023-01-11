@@ -41,7 +41,6 @@
             this.btnCancel = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
             this.btnClose = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -88,8 +87,7 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar3});
+            this.bar1});
             this.barManager1.DockControls.Add(this.barDockControl1);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -105,7 +103,6 @@
             this.btnClose,
             this.btnRestore});
             this.barManager1.MaxItemId = 8;
-            this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
             // 
@@ -200,18 +197,6 @@
             this.btnClose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClose_ItemClick);
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
@@ -224,9 +209,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 730);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 750);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1322, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1322, 0);
             // 
             // barDockControlLeft
             // 
@@ -234,7 +219,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 720);
             // 
             // barDockControlRight
             // 
@@ -242,7 +227,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1322, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 720);
             // 
             // openfile
             // 
@@ -253,6 +238,7 @@
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
@@ -271,8 +257,8 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcIngredient);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1322, 700);
-            this.splitContainerControl1.SplitterPosition = 147;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1322, 720);
+            this.splitContainerControl1.SplitterPosition = 184;
             this.splitContainerControl1.TabIndex = 5;
             // 
             // txtPrice
@@ -281,9 +267,10 @@
             this.txtPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtPrice.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(921, 90);
+            this.txtPrice.Location = new System.Drawing.Point(821, 112);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(398, 30);
+            this.txtPrice.Size = new System.Drawing.Size(496, 30);
             this.txtPrice.TabIndex = 13;
             this.txtPrice.Enter += new System.EventHandler(this.txtPrice_Enter);
             this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
@@ -296,10 +283,11 @@
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(793, 97);
+            this.bunifuLabel2.Location = new System.Drawing.Point(661, 121);
+            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(122, 23);
+            this.bunifuLabel2.Size = new System.Drawing.Size(152, 29);
             this.bunifuLabel2.TabIndex = 12;
             this.bunifuLabel2.Text = "Đơn giá nhập:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -311,9 +299,10 @@
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(424, 35);
+            this.txtName.Location = new System.Drawing.Point(200, 44);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(363, 30);
+            this.txtName.Size = new System.Drawing.Size(453, 30);
             this.txtName.TabIndex = 11;
             // 
             // bunifuLabel1
@@ -324,10 +313,11 @@
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(291, 42);
+            this.bunifuLabel1.Location = new System.Drawing.Point(34, 52);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(127, 23);
+            this.bunifuLabel1.Size = new System.Drawing.Size(159, 29);
             this.bunifuLabel1.TabIndex = 10;
             this.bunifuLabel1.Text = "Tên sản phẩm:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -342,9 +332,10 @@
             this.ptImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptImage.Image = global::DoAnThucTap.Properties.Resources.noimage;
             this.ptImage.IsCircle = true;
-            this.ptImage.Location = new System.Drawing.Point(29, 35);
+            this.ptImage.Location = new System.Drawing.Point(36, 44);
+            this.ptImage.Margin = new System.Windows.Forms.Padding(4);
             this.ptImage.Name = "ptImage";
-            this.ptImage.Size = new System.Drawing.Size(109, 109);
+            this.ptImage.Size = new System.Drawing.Size(136, 136);
             this.ptImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptImage.TabIndex = 9;
             this.ptImage.TabStop = false;
@@ -357,7 +348,8 @@
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.Location = new System.Drawing.Point(29, 6);
+            this.bunifuLabel5.Location = new System.Drawing.Point(36, 8);
+            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(109, 23);
@@ -372,9 +364,10 @@
             this.txtUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnit.Location = new System.Drawing.Point(921, 28);
+            this.txtUnit.Location = new System.Drawing.Point(821, 35);
+            this.txtUnit.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(398, 30);
+            this.txtUnit.Size = new System.Drawing.Size(496, 30);
             this.txtUnit.TabIndex = 5;
             // 
             // bunifuLabel3
@@ -385,10 +378,11 @@
             this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(793, 35);
+            this.bunifuLabel3.Location = new System.Drawing.Point(661, 44);
+            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(122, 23);
+            this.bunifuLabel3.Size = new System.Drawing.Size(152, 29);
             this.bunifuLabel3.TabIndex = 4;
             this.bunifuLabel3.Text = "Đơn vị tính:";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -397,11 +391,13 @@
             // gcIngredient
             // 
             this.gcIngredient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcIngredient.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcIngredient.Location = new System.Drawing.Point(0, 0);
             this.gcIngredient.MainView = this.gvListIngredient;
+            this.gcIngredient.Margin = new System.Windows.Forms.Padding(4);
             this.gcIngredient.MenuManager = this.barManager1;
             this.gcIngredient.Name = "gcIngredient";
-            this.gcIngredient.Size = new System.Drawing.Size(1322, 541);
+            this.gcIngredient.Size = new System.Drawing.Size(1322, 524);
             this.gcIngredient.TabIndex = 0;
             this.gcIngredient.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListIngredient});
@@ -416,84 +412,85 @@
             this.Ingredient_Reserved,
             this.Ingredient_PriceImport,
             this.Ingredient_isActive});
+            this.gvListIngredient.DetailHeight = 437;
             this.gvListIngredient.GridControl = this.gcIngredient;
             this.gvListIngredient.Name = "gvListIngredient";
             this.gvListIngredient.OptionsFind.AlwaysVisible = true;
             this.gvListIngredient.OptionsFind.FindNullPrompt = "Tìm kiếm...";
             this.gvListIngredient.OptionsView.ShowAutoFilterRow = true;
             this.gvListIngredient.OptionsView.ShowGroupPanel = false;
-            this.gvListIngredient.RowHeight = 100;
+            this.gvListIngredient.RowHeight = 125;
             this.gvListIngredient.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListIngredient_RowClick);
             // 
             // Ingredient_ID
             // 
             this.Ingredient_ID.Caption = "ID";
             this.Ingredient_ID.FieldName = "Ingredient_ID";
-            this.Ingredient_ID.MinWidth = 10;
+            this.Ingredient_ID.MinWidth = 12;
             this.Ingredient_ID.Name = "Ingredient_ID";
             this.Ingredient_ID.Visible = true;
             this.Ingredient_ID.VisibleIndex = 0;
-            this.Ingredient_ID.Width = 57;
+            this.Ingredient_ID.Width = 71;
             // 
             // Ingredient_Name
             // 
             this.Ingredient_Name.Caption = "Tên món";
             this.Ingredient_Name.FieldName = "Ingredient_Name";
-            this.Ingredient_Name.MinWidth = 25;
+            this.Ingredient_Name.MinWidth = 31;
             this.Ingredient_Name.Name = "Ingredient_Name";
             this.Ingredient_Name.Visible = true;
             this.Ingredient_Name.VisibleIndex = 1;
-            this.Ingredient_Name.Width = 530;
+            this.Ingredient_Name.Width = 662;
             // 
             // Ingredient_Image
             // 
             this.Ingredient_Image.Caption = "Ảnh minh họa";
             this.Ingredient_Image.FieldName = "Ingredient_Image";
-            this.Ingredient_Image.MinWidth = 25;
+            this.Ingredient_Image.MinWidth = 31;
             this.Ingredient_Image.Name = "Ingredient_Image";
             this.Ingredient_Image.Visible = true;
             this.Ingredient_Image.VisibleIndex = 2;
-            this.Ingredient_Image.Width = 141;
+            this.Ingredient_Image.Width = 176;
             // 
             // Ingredient_Unit
             // 
             this.Ingredient_Unit.Caption = "Đơn vị tính";
             this.Ingredient_Unit.FieldName = "Ingredient_Unit";
-            this.Ingredient_Unit.MinWidth = 25;
+            this.Ingredient_Unit.MinWidth = 31;
             this.Ingredient_Unit.Name = "Ingredient_Unit";
             this.Ingredient_Unit.Visible = true;
             this.Ingredient_Unit.VisibleIndex = 4;
-            this.Ingredient_Unit.Width = 200;
+            this.Ingredient_Unit.Width = 250;
             // 
             // Ingredient_Reserved
             // 
             this.Ingredient_Reserved.Caption = "Tồn kho";
             this.Ingredient_Reserved.FieldName = "Ingredient_Reserved";
-            this.Ingredient_Reserved.MinWidth = 25;
+            this.Ingredient_Reserved.MinWidth = 31;
             this.Ingredient_Reserved.Name = "Ingredient_Reserved";
             this.Ingredient_Reserved.Visible = true;
             this.Ingredient_Reserved.VisibleIndex = 3;
-            this.Ingredient_Reserved.Width = 88;
+            this.Ingredient_Reserved.Width = 110;
             // 
             // Ingredient_PriceImport
             // 
             this.Ingredient_PriceImport.Caption = "Đơn giá nhập";
             this.Ingredient_PriceImport.FieldName = "Ingredient_PriceImport";
-            this.Ingredient_PriceImport.MinWidth = 25;
+            this.Ingredient_PriceImport.MinWidth = 31;
             this.Ingredient_PriceImport.Name = "Ingredient_PriceImport";
             this.Ingredient_PriceImport.Visible = true;
             this.Ingredient_PriceImport.VisibleIndex = 5;
-            this.Ingredient_PriceImport.Width = 153;
+            this.Ingredient_PriceImport.Width = 191;
             // 
             // Ingredient_isActive
             // 
             this.Ingredient_isActive.Caption = "Trạng thái";
             this.Ingredient_isActive.FieldName = "Ingredient_isActive";
-            this.Ingredient_isActive.MinWidth = 25;
+            this.Ingredient_isActive.MinWidth = 31;
             this.Ingredient_isActive.Name = "Ingredient_isActive";
             this.Ingredient_isActive.Visible = true;
             this.Ingredient_isActive.VisibleIndex = 6;
-            this.Ingredient_isActive.Width = 123;
+            this.Ingredient_isActive.Width = 154;
             // 
             // Ingredient_Management_GUI
             // 
@@ -507,6 +504,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl1);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Ingredient_Management_GUI.IconOptions.Icon")));
             this.Name = "Ingredient_Management_GUI";
             this.Text = "Quản lý nguyên liệu";
             this.Load += new System.EventHandler(this.Ingredient_Management_GUI_Load);
@@ -539,7 +537,6 @@
         private DevExpress.XtraBars.BarButtonItem btnCancel;
         private DevExpress.XtraBars.BarButtonItem btnPrinter;
         private DevExpress.XtraBars.BarButtonItem btnClose;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

@@ -166,6 +166,7 @@
     <Compile Include="DTO\Bill.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\billDTO.cs" />
     <Compile Include="DTO\billIsTakeAway.cs" />
     <Compile Include="DTO\billnoTakeAway.cs" />
     <Compile Include="DTO\Bill_Info.cs">
@@ -179,10 +180,12 @@
     <Compile Include="DTO\DBTable.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\DBTableDTO.cs" />
     <Compile Include="DTO\detailImport.cs" />
     <Compile Include="DTO\Discount.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\DiscountDTO.cs" />
     <Compile Include="DTO\dtaBill.cs">
       <DependentUpon>dtaBill.xsd</DependentUpon>
     </Compile>
@@ -209,6 +212,7 @@
     <Compile Include="DTO\Import.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\importDTO.cs" />
     <Compile Include="DTO\importReport.cs" />
     <Compile Include="DTO\Import_Info.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
@@ -235,6 +239,7 @@
     <Compile Include="DTO\Payment.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\paymentDTO.cs" />
     <Compile Include="DTO\Product.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -242,6 +247,7 @@
     <Compile Include="DTO\receipt.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\receiptDTO.cs" />
     <Compile Include="DTO\Recipe.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -296,6 +302,24 @@
     <Compile Include="GUI\addToBill_GUI.Designer.cs">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Admin_DateReport_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin_DateReport_Management_GUI.Designer.cs">
+      <DependentUpon>Admin_DateReport_Management_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin_ReportByDate_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin_ReportByDate_Management_GUI.Designer.cs">
+      <DependentUpon>Admin_ReportByDate_Management_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Bill_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Bill_Management_GUI.Designer.cs">
+      <DependentUpon>Bill_Management_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Category_Management_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,11 +362,29 @@
     <Compile Include="GUI\DetailProduct_GUI.Designer.cs">
       <DependentUpon>DetailProduct_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Discount_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Discount_Management_GUI.Designer.cs">
+      <DependentUpon>Discount_Management_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ExtraFee_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ExtraFee_Management_GUI.Designer.cs">
+      <DependentUpon>ExtraFee_Management_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Home_GUI.Designer.cs">
       <DependentUpon>Home_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Import_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Import_Management_GUI.Designer.cs">
+      <DependentUpon>Import_Management_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Ingredient_GUI.cs">
       <SubType>Form</SubType>
@@ -386,6 +428,12 @@
     <Compile Include="GUI\multip_Import_GUI.Designer.cs">
       <DependentUpon>multip_Import_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Payment_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Payment_Management_GUI.Designer.cs">
+      <DependentUpon>Payment_Management_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Persional_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +457,12 @@
     </Compile>
     <Compile Include="GUI\Product_GUI.Designer.cs">
       <DependentUpon>Product_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Receipt_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Receipt_Management_GUI.Designer.cs">
+      <DependentUpon>Receipt_Management_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Recipe_Management_GUI.cs">
       <SubType>Form</SubType>
@@ -457,6 +511,12 @@
     </Compile>
     <Compile Include="GUI\printImport.Designer.cs">
       <DependentUpon>printImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Table_Management_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Table_Management_GUI.Designer.cs">
+      <DependentUpon>Table_Management_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -535,6 +595,15 @@
     <EmbeddedResource Include="GUI\addToBill_GUI.resx">
       <DependentUpon>addToBill_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin_DateReport_Management_GUI.resx">
+      <DependentUpon>Admin_DateReport_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin_ReportByDate_Management_GUI.resx">
+      <DependentUpon>Admin_ReportByDate_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Bill_Management_GUI.resx">
+      <DependentUpon>Bill_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Category_Management_GUI.resx">
       <DependentUpon>Category_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -556,8 +625,17 @@
     <EmbeddedResource Include="GUI\DetailProduct_GUI.resx">
       <DependentUpon>DetailProduct_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Discount_Management_GUI.resx">
+      <DependentUpon>Discount_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ExtraFee_Management_GUI.resx">
+      <DependentUpon>ExtraFee_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home_GUI.resx">
       <DependentUpon>Home_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Import_Management_GUI.resx">
+      <DependentUpon>Import_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Ingredient_GUI.resx">
       <DependentUpon>Ingredient_GUI.cs</DependentUpon>
@@ -580,6 +658,9 @@
     <EmbeddedResource Include="GUI\multip_Import_GUI.resx">
       <DependentUpon>multip_Import_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Payment_Management_GUI.resx">
+      <DependentUpon>Payment_Management_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Persional_GUI.resx">
       <DependentUpon>Persional_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -594,6 +675,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Product_GUI.resx">
       <DependentUpon>Product_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Receipt_Management_GUI.resx">
+      <DependentUpon>Receipt_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Recipe_Management_GUI.resx">
       <DependentUpon>Recipe_Management_GUI.cs</DependentUpon>
@@ -615,6 +699,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\swithTable_GUI.resx">
       <DependentUpon>swithTable_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Table_Management_GUI.resx">
+      <DependentUpon>Table_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

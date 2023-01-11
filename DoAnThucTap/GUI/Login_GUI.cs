@@ -43,6 +43,7 @@ namespace DoAnThucTap
 
         private void lblShowHide_Click(object sender, EventArgs e)
         {
+            
             if(lblShowHide.Text == "Hiện")
             {
                 txtPassword.PasswordChar = '\0';

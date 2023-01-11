@@ -39,7 +39,6 @@
             this.btnCancel = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
             this.btnClose = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -73,8 +72,7 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar3});
+            this.bar1});
             this.barManager1.DockControls.Add(this.barDockControl1);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -89,7 +87,6 @@
             this.btnPrinter,
             this.btnClose});
             this.barManager1.MaxItemId = 8;
-            this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
             // 
@@ -173,18 +170,6 @@
             this.btnClose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClose_ItemClick);
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
@@ -197,9 +182,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 746);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1472, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1472, 0);
             // 
             // barDockControlLeft
             // 
@@ -207,7 +192,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 696);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 716);
             // 
             // barDockControlRight
             // 
@@ -215,13 +200,14 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1472, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 696);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 716);
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
@@ -234,8 +220,8 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcRecipe);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1472, 696);
-            this.splitContainerControl1.SplitterPosition = 259;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1472, 716);
+            this.splitContainerControl1.SplitterPosition = 324;
             this.splitContainerControl1.TabIndex = 6;
             // 
             // flpRecipe
@@ -243,9 +229,10 @@
             this.flpRecipe.AutoScroll = true;
             this.flpRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpRecipe.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpRecipe.Location = new System.Drawing.Point(0, 49);
+            this.flpRecipe.Location = new System.Drawing.Point(0, 61);
+            this.flpRecipe.Margin = new System.Windows.Forms.Padding(4);
             this.flpRecipe.Name = "flpRecipe";
-            this.flpRecipe.Size = new System.Drawing.Size(1472, 210);
+            this.flpRecipe.Size = new System.Drawing.Size(1472, 263);
             this.flpRecipe.TabIndex = 1;
             this.flpRecipe.WrapContents = false;
             // 
@@ -258,17 +245,19 @@
             this.panel1.Controls.Add(this.nbrQuantity);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1472, 49);
+            this.panel1.Size = new System.Drawing.Size(1472, 61);
             this.panel1.TabIndex = 0;
             // 
             // btnAcceptProduct
             // 
             this.btnAcceptProduct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAcceptProduct.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceptProduct.Location = new System.Drawing.Point(1265, 9);
+            this.btnAcceptProduct.Location = new System.Drawing.Point(1581, 11);
+            this.btnAcceptProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcceptProduct.Name = "btnAcceptProduct";
-            this.btnAcceptProduct.Size = new System.Drawing.Size(137, 34);
+            this.btnAcceptProduct.Size = new System.Drawing.Size(171, 42);
             this.btnAcceptProduct.TabIndex = 5;
             this.btnAcceptProduct.Text = "Xác nhận";
             this.btnAcceptProduct.UseVisualStyleBackColor = true;
@@ -279,9 +268,10 @@
             this.cbbChooseProduct.BackColor = System.Drawing.Color.White;
             this.cbbChooseProduct.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbChooseProduct.FormattingEnabled = true;
-            this.cbbChooseProduct.Location = new System.Drawing.Point(454, 9);
+            this.cbbChooseProduct.Location = new System.Drawing.Point(568, 11);
+            this.cbbChooseProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cbbChooseProduct.Name = "cbbChooseProduct";
-            this.cbbChooseProduct.Size = new System.Drawing.Size(402, 34);
+            this.cbbChooseProduct.Size = new System.Drawing.Size(502, 34);
             this.cbbChooseProduct.TabIndex = 4;
             this.cbbChooseProduct.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -294,10 +284,11 @@
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(12, 6);
+            this.bunifuLabel2.Location = new System.Drawing.Point(15, 8);
+            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(436, 37);
+            this.bunifuLabel2.Size = new System.Drawing.Size(545, 46);
             this.bunifuLabel2.TabIndex = 3;
             this.bunifuLabel2.Text = "Chọn món:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
@@ -313,10 +304,11 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(862, 6);
+            this.bunifuLabel1.Location = new System.Drawing.Point(1078, 8);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(271, 37);
+            this.bunifuLabel1.Size = new System.Drawing.Size(339, 46);
             this.bunifuLabel1.TabIndex = 1;
             this.bunifuLabel1.Text = "Chọn số bước:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
@@ -326,14 +318,15 @@
             // 
             this.nbrQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nbrQuantity.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nbrQuantity.Location = new System.Drawing.Point(1139, 10);
+            this.nbrQuantity.Location = new System.Drawing.Point(1424, 12);
+            this.nbrQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.nbrQuantity.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nbrQuantity.Name = "nbrQuantity";
-            this.nbrQuantity.Size = new System.Drawing.Size(120, 34);
+            this.nbrQuantity.Size = new System.Drawing.Size(150, 34);
             this.nbrQuantity.TabIndex = 0;
             this.nbrQuantity.Value = new decimal(new int[] {
             1,
@@ -344,11 +337,13 @@
             // gcRecipe
             // 
             this.gcRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcRecipe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcRecipe.Location = new System.Drawing.Point(0, 0);
             this.gcRecipe.MainView = this.gvListRecipe;
+            this.gcRecipe.Margin = new System.Windows.Forms.Padding(4);
             this.gcRecipe.MenuManager = this.barManager1;
             this.gcRecipe.Name = "gcRecipe";
-            this.gcRecipe.Size = new System.Drawing.Size(1472, 425);
+            this.gcRecipe.Size = new System.Drawing.Size(1472, 380);
             this.gcRecipe.TabIndex = 0;
             this.gcRecipe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListRecipe});
@@ -359,44 +354,45 @@
             this.Recipe_ID,
             this.Recipe_Product,
             this.Recipe_Info});
+            this.gvListRecipe.DetailHeight = 437;
             this.gvListRecipe.GridControl = this.gcRecipe;
             this.gvListRecipe.Name = "gvListRecipe";
             this.gvListRecipe.OptionsFind.AlwaysVisible = true;
             this.gvListRecipe.OptionsFind.FindNullPrompt = "Tìm kiếm...";
             this.gvListRecipe.OptionsView.ShowAutoFilterRow = true;
             this.gvListRecipe.OptionsView.ShowGroupPanel = false;
-            this.gvListRecipe.RowHeight = 50;
+            this.gvListRecipe.RowHeight = 62;
             this.gvListRecipe.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListRecipe_RowClick);
             // 
             // Recipe_ID
             // 
             this.Recipe_ID.Caption = "ID";
             this.Recipe_ID.FieldName = "Recipe_ID";
-            this.Recipe_ID.MinWidth = 10;
+            this.Recipe_ID.MinWidth = 12;
             this.Recipe_ID.Name = "Recipe_ID";
             this.Recipe_ID.Visible = true;
             this.Recipe_ID.VisibleIndex = 0;
-            this.Recipe_ID.Width = 40;
+            this.Recipe_ID.Width = 50;
             // 
             // Recipe_Product
             // 
             this.Recipe_Product.Caption = "Tên món";
             this.Recipe_Product.FieldName = "Recipe_Product";
-            this.Recipe_Product.MinWidth = 25;
+            this.Recipe_Product.MinWidth = 31;
             this.Recipe_Product.Name = "Recipe_Product";
             this.Recipe_Product.Visible = true;
             this.Recipe_Product.VisibleIndex = 1;
-            this.Recipe_Product.Width = 250;
+            this.Recipe_Product.Width = 312;
             // 
             // Recipe_Info
             // 
             this.Recipe_Info.Caption = "Công thức";
             this.Recipe_Info.FieldName = "Recipe_Info";
-            this.Recipe_Info.MinWidth = 25;
+            this.Recipe_Info.MinWidth = 31;
             this.Recipe_Info.Name = "Recipe_Info";
             this.Recipe_Info.Visible = true;
             this.Recipe_Info.VisibleIndex = 2;
-            this.Recipe_Info.Width = 1152;
+            this.Recipe_Info.Width = 1440;
             // 
             // Recipe_Management_GUI
             // 
@@ -409,6 +405,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl1);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Recipe_Management_GUI.IconOptions.Icon")));
             this.Name = "Recipe_Management_GUI";
             this.Text = "Công thức pha chế";
             this.Load += new System.EventHandler(this.Recipe_Management_GUI_Load);
@@ -439,7 +436,6 @@
         private DevExpress.XtraBars.BarButtonItem btnCancel;
         private DevExpress.XtraBars.BarButtonItem btnPrinter;
         private DevExpress.XtraBars.BarButtonItem btnClose;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

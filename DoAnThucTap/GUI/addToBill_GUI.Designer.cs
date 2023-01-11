@@ -34,6 +34,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.lblNameMenu = new Bunifu.UI.WinForms.BunifuLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.lblTotalMoney = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.btn4 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn3 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn2 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.lblNameMenu = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPanel3.SuspendLayout();
             this.bunifuPanel5.SuspendLayout();
@@ -92,6 +92,25 @@
             this.bunifuPanel1.Size = new System.Drawing.Size(600, 51);
             this.bunifuPanel1.TabIndex = 0;
             this.bunifuPanel1.Click += new System.EventHandler(this.bunifuPanel1_Click);
+            // 
+            // lblNameMenu
+            // 
+            this.lblNameMenu.AllowParentOverrides = false;
+            this.lblNameMenu.AutoEllipsis = false;
+            this.lblNameMenu.AutoSize = false;
+            this.lblNameMenu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblNameMenu.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblNameMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNameMenu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameMenu.ForeColor = System.Drawing.Color.White;
+            this.lblNameMenu.Location = new System.Drawing.Point(0, 0);
+            this.lblNameMenu.Name = "lblNameMenu";
+            this.lblNameMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNameMenu.Size = new System.Drawing.Size(600, 51);
+            this.lblNameMenu.TabIndex = 0;
+            this.lblNameMenu.Text = "Tên món";
+            this.lblNameMenu.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNameMenu.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // label1
             // 
@@ -807,25 +826,6 @@
             this.btn2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
-            // lblNameMenu
-            // 
-            this.lblNameMenu.AllowParentOverrides = false;
-            this.lblNameMenu.AutoEllipsis = false;
-            this.lblNameMenu.AutoSize = false;
-            this.lblNameMenu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblNameMenu.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblNameMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNameMenu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameMenu.ForeColor = System.Drawing.Color.White;
-            this.lblNameMenu.Location = new System.Drawing.Point(0, 0);
-            this.lblNameMenu.Name = "lblNameMenu";
-            this.lblNameMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNameMenu.Size = new System.Drawing.Size(600, 51);
-            this.lblNameMenu.TabIndex = 0;
-            this.lblNameMenu.Text = "Tên món";
-            this.lblNameMenu.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNameMenu.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // addToBill_GUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -834,6 +834,7 @@
             this.Controls.Add(this.bunifuPanel2);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addToBill_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addToBill_GUI";

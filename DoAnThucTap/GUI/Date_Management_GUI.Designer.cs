@@ -38,7 +38,6 @@
             this.btnReserved = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
             this.btnClose = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -82,8 +81,7 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar3});
+            this.bar1});
             this.barManager1.DockControls.Add(this.barDockControl1);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -97,7 +95,6 @@
             this.btnPrinter,
             this.btnClose});
             this.barManager1.MaxItemId = 8;
-            this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
             // 
@@ -171,18 +168,6 @@
             this.btnClose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClose_ItemClick);
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
@@ -195,9 +180,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 657);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 677);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1636, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1636, 0);
             // 
             // barDockControlLeft
             // 
@@ -205,7 +190,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 627);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 647);
             // 
             // barDockControlRight
             // 
@@ -213,7 +198,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1636, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 627);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 647);
             // 
             // bunifuPanel1
             // 
@@ -229,7 +214,7 @@
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 30);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = false;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1636, 627);
+            this.bunifuPanel1.Size = new System.Drawing.Size(1636, 647);
             this.bunifuPanel1.TabIndex = 11;
             // 
             // splitContainerControl1
@@ -253,7 +238,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcProduct);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1636, 462);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1636, 482);
             this.splitContainerControl1.SplitterPosition = 109;
             this.splitContainerControl1.TabIndex = 5;
             // 
@@ -382,7 +367,7 @@
             this.gcProduct.MainView = this.gvListProduct;
             this.gcProduct.MenuManager = this.barManager1;
             this.gcProduct.Name = "gcProduct";
-            this.gcProduct.Size = new System.Drawing.Size(1636, 341);
+            this.gcProduct.Size = new System.Drawing.Size(1636, 361);
             this.gcProduct.TabIndex = 0;
             this.gcProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListProduct});
@@ -495,9 +480,10 @@
             this.moneyDate.getMoney = ((long)(0));
             this.moneyDate.getSetImage = global::DoAnThucTap.Properties.Resources.costs_and_revenues_chart;
             this.moneyDate.Gettitle = "doanh thu";
-            this.moneyDate.Location = new System.Drawing.Point(821, 3);
+            this.moneyDate.Location = new System.Drawing.Point(820, 2);
+            this.moneyDate.Margin = new System.Windows.Forms.Padding(2);
             this.moneyDate.Name = "moneyDate";
-            this.moneyDate.Size = new System.Drawing.Size(403, 159);
+            this.moneyDate.Size = new System.Drawing.Size(405, 161);
             this.moneyDate.TabIndex = 3;
             // 
             // moneyAll
@@ -506,9 +492,10 @@
             this.moneyAll.getMoney = ((long)(0));
             this.moneyAll.getSetImage = global::DoAnThucTap.Properties.Resources.budget;
             this.moneyAll.Gettitle = "Ngân sách";
-            this.moneyAll.Location = new System.Drawing.Point(1230, 3);
+            this.moneyAll.Location = new System.Drawing.Point(1229, 2);
+            this.moneyAll.Margin = new System.Windows.Forms.Padding(2);
             this.moneyAll.Name = "moneyAll";
-            this.moneyAll.Size = new System.Drawing.Size(403, 159);
+            this.moneyAll.Size = new System.Drawing.Size(405, 161);
             this.moneyAll.TabIndex = 2;
             // 
             // moneyOut
@@ -517,9 +504,10 @@
             this.moneyOut.getMoney = ((long)(0));
             this.moneyOut.getSetImage = global::DoAnThucTap.Properties.Resources.money_inflation;
             this.moneyOut.Gettitle = "Tiền ra";
-            this.moneyOut.Location = new System.Drawing.Point(3, 3);
+            this.moneyOut.Location = new System.Drawing.Point(2, 2);
+            this.moneyOut.Margin = new System.Windows.Forms.Padding(2);
             this.moneyOut.Name = "moneyOut";
-            this.moneyOut.Size = new System.Drawing.Size(403, 159);
+            this.moneyOut.Size = new System.Drawing.Size(405, 161);
             this.moneyOut.TabIndex = 1;
             // 
             // moneyIn
@@ -528,9 +516,10 @@
             this.moneyIn.getMoney = ((long)(0));
             this.moneyIn.getSetImage = global::DoAnThucTap.Properties.Resources.up1;
             this.moneyIn.Gettitle = "Tiền vào";
-            this.moneyIn.Location = new System.Drawing.Point(412, 3);
+            this.moneyIn.Location = new System.Drawing.Point(411, 2);
+            this.moneyIn.Margin = new System.Windows.Forms.Padding(2);
             this.moneyIn.Name = "moneyIn";
-            this.moneyIn.Size = new System.Drawing.Size(403, 159);
+            this.moneyIn.Size = new System.Drawing.Size(405, 161);
             this.moneyIn.TabIndex = 0;
             // 
             // bunifuLabel3
@@ -561,6 +550,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl1);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Date_Management_GUI.IconOptions.Icon")));
             this.Name = "Date_Management_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý dòng tiền ngày";
@@ -593,7 +583,6 @@
         private DevExpress.XtraBars.BarButtonItem btnReserved;
         private DevExpress.XtraBars.BarButtonItem btnPrinter;
         private DevExpress.XtraBars.BarButtonItem btnClose;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

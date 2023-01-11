@@ -53,6 +53,7 @@
             this.txtStaffCode = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnMinimize = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btnClose = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
@@ -129,8 +130,8 @@
             this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAdmin.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
             this.btnAdmin.BorderRadius = 12;
-            this.btnAdmin.Checked = false;
-            this.btnAdmin.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.btnAdmin.Checked = true;
+            this.btnAdmin.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
             this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAdmin.CustomCheckmarkImage = null;
             this.btnAdmin.Location = new System.Drawing.Point(149, 152);
@@ -417,7 +418,7 @@
             this.txtStaffCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtStaffCode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStaffCode.DefaultFont = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffCode.DefaultText = "NV_102";
+            this.txtStaffCode.DefaultText = "NV_101";
             this.txtStaffCode.FillColor = System.Drawing.Color.White;
             this.txtStaffCode.HideSelection = true;
             this.txtStaffCode.IconLeft = null;
@@ -426,7 +427,7 @@
             this.txtStaffCode.IconRight = null;
             this.txtStaffCode.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStaffCode.Lines = new string[] {
-        "NV_102"};
+        "NV_101"};
             this.txtStaffCode.Location = new System.Drawing.Point(149, 48);
             this.txtStaffCode.MaxLength = 32767;
             this.txtStaffCode.MinimumSize = new System.Drawing.Size(1, 1);
@@ -546,6 +547,23 @@
             this.btnClose.ZoomSpeed = 10;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(12, 700);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(399, 17);
+            this.bunifuLabel1.TabIndex = 3;
+            this.bunifuLabel1.Text = "TheLightCoffee Version 1.00 - Copyright by Trần Bá Thiện EnterSoft";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // Login_GUI
             // 
             this.AcceptButton = this.btnLogin;
@@ -553,10 +571,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1374, 732);
+            this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login_GUI";
             this.Text = "Đăng nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -567,6 +587,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -586,6 +607,7 @@
         private Bunifu.UI.WinForms.BunifuLabel lblShowHide;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuCheckBox btnAdmin;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
     }
 }
 

@@ -39,8 +39,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.top = new Bunifu.UI.WinForms.BunifuPanel();
             this.lblData = new Bunifu.UI.WinForms.BunifuLabel();
@@ -95,6 +95,10 @@
             this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
             this.tbDiscount = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteDis = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddDiscount = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.cbbDiscount = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -105,10 +109,6 @@
             this.bunifuLabel16 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblTotalMoney1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteDis = new System.Windows.Forms.DataGridViewButtonColumn();
             this.top.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             this.right.SuspendLayout();
@@ -1468,6 +1468,45 @@
             this.tbDiscount.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Teal;
             this.tbDiscount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbDiscount_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 104.1094F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Khuyến mãi";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 104.1094F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Phần trăm";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // idDiscount
+            // 
+            this.idDiscount.HeaderText = "Column1";
+            this.idDiscount.MinimumWidth = 6;
+            this.idDiscount.Name = "idDiscount";
+            this.idDiscount.ReadOnly = true;
+            this.idDiscount.Visible = false;
+            // 
+            // deleteDis
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            this.deleteDis.DefaultCellStyle = dataGridViewCellStyle7;
+            this.deleteDis.FillWeight = 49.87275F;
+            this.deleteDis.HeaderText = "Xóa";
+            this.deleteDis.MinimumWidth = 6;
+            this.deleteDis.Name = "deleteDis";
+            this.deleteDis.ReadOnly = true;
+            this.deleteDis.Text = "Xóa";
+            this.deleteDis.UseColumnTextForButtonValue = true;
+            // 
             // btnAddDiscount
             // 
             this.btnAddDiscount.AllowAnimations = true;
@@ -1748,45 +1787,6 @@
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 104.1094F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Khuyến mãi";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 104.1094F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Phần trăm";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // idDiscount
-            // 
-            this.idDiscount.HeaderText = "Column1";
-            this.idDiscount.MinimumWidth = 6;
-            this.idDiscount.Name = "idDiscount";
-            this.idDiscount.ReadOnly = true;
-            this.idDiscount.Visible = false;
-            // 
-            // deleteDis
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            this.deleteDis.DefaultCellStyle = dataGridViewCellStyle7;
-            this.deleteDis.FillWeight = 49.87275F;
-            this.deleteDis.HeaderText = "Xóa";
-            this.deleteDis.MinimumWidth = 6;
-            this.deleteDis.Name = "deleteDis";
-            this.deleteDis.ReadOnly = true;
-            this.deleteDis.Text = "Xóa";
-            this.deleteDis.UseColumnTextForButtonValue = true;
-            // 
             // Checkout_GUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1795,6 +1795,7 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Checkout_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Checkout_GUI";

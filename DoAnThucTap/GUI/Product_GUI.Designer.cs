@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_GUI));
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -39,20 +47,18 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.top = new Bunifu.UI.WinForms.BunifuPanel();
             this.lblData = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnBack = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.pnlMain = new Bunifu.UI.WinForms.BunifuPanel();
+            this.pnlListProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btnFind50 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnFind100 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.txtFind50 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.txtFind100 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bottomLeft = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnFood = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -64,18 +70,12 @@
             this.btnMilkTea = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCoffee = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnTea = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.txtFind100 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txtFind50 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.btnFind100 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.btnFind50 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.pnlListProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.top.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            this.bunifuPanel2.SuspendLayout();
             this.bottomLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
-            this.bunifuPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -189,6 +189,262 @@
             this.pnlMain.ShowBorders = true;
             this.pnlMain.Size = new System.Drawing.Size(1358, 676);
             this.pnlMain.TabIndex = 2;
+            // 
+            // pnlListProduct
+            // 
+            this.pnlListProduct.AutoScroll = true;
+            this.pnlListProduct.BackColor = System.Drawing.Color.White;
+            this.pnlListProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlListProduct.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlListProduct.Location = new System.Drawing.Point(0, 70);
+            this.pnlListProduct.Name = "pnlListProduct";
+            this.pnlListProduct.Size = new System.Drawing.Size(1358, 606);
+            this.pnlListProduct.TabIndex = 1;
+            this.pnlListProduct.WrapContents = false;
+            // 
+            // bunifuPanel2
+            // 
+            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
+            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel2.BorderRadius = 3;
+            this.bunifuPanel2.BorderThickness = 1;
+            this.bunifuPanel2.Controls.Add(this.btnFind50);
+            this.bunifuPanel2.Controls.Add(this.btnFind100);
+            this.bunifuPanel2.Controls.Add(this.txtFind50);
+            this.bunifuPanel2.Controls.Add(this.txtFind100);
+            this.bunifuPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuPanel2.Location = new System.Drawing.Point(0, 0);
+            this.bunifuPanel2.Name = "bunifuPanel2";
+            this.bunifuPanel2.ShowBorders = true;
+            this.bunifuPanel2.Size = new System.Drawing.Size(1358, 70);
+            this.bunifuPanel2.TabIndex = 0;
+            // 
+            // btnFind50
+            // 
+            this.btnFind50.ActiveImage = null;
+            this.btnFind50.AllowAnimations = true;
+            this.btnFind50.AllowBuffering = false;
+            this.btnFind50.AllowToggling = false;
+            this.btnFind50.AllowZooming = true;
+            this.btnFind50.AllowZoomingOnFocus = false;
+            this.btnFind50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind50.BackColor = System.Drawing.Color.Transparent;
+            this.btnFind50.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnFind50.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnFind50.ErrorImage")));
+            this.btnFind50.FadeWhenInactive = false;
+            this.btnFind50.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnFind50.Image = global::DoAnThucTap.Properties.Resources.search_paper;
+            this.btnFind50.ImageActive = null;
+            this.btnFind50.ImageLocation = null;
+            this.btnFind50.ImageMargin = 0;
+            this.btnFind50.ImageSize = new System.Drawing.Size(66, 64);
+            this.btnFind50.ImageZoomSize = new System.Drawing.Size(67, 65);
+            this.btnFind50.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnFind50.InitialImage")));
+            this.btnFind50.Location = new System.Drawing.Point(1288, 2);
+            this.btnFind50.Name = "btnFind50";
+            this.btnFind50.Rotation = 0;
+            this.btnFind50.ShowActiveImage = true;
+            this.btnFind50.ShowCursorChanges = true;
+            this.btnFind50.ShowImageBorders = false;
+            this.btnFind50.ShowSizeMarkers = false;
+            this.btnFind50.Size = new System.Drawing.Size(67, 65);
+            this.btnFind50.TabIndex = 3;
+            this.btnFind50.ToolTipText = "";
+            this.btnFind50.WaitOnLoad = false;
+            this.btnFind50.Zoom = 0;
+            this.btnFind50.ZoomSpeed = 10;
+            this.btnFind50.Click += new System.EventHandler(this.btnFind50_Click);
+            // 
+            // btnFind100
+            // 
+            this.btnFind100.ActiveImage = null;
+            this.btnFind100.AllowAnimations = true;
+            this.btnFind100.AllowBuffering = false;
+            this.btnFind100.AllowToggling = false;
+            this.btnFind100.AllowZooming = true;
+            this.btnFind100.AllowZoomingOnFocus = false;
+            this.btnFind100.BackColor = System.Drawing.Color.Transparent;
+            this.btnFind100.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnFind100.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnFind100.ErrorImage")));
+            this.btnFind100.FadeWhenInactive = false;
+            this.btnFind100.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnFind100.Image = global::DoAnThucTap.Properties.Resources.search_paper;
+            this.btnFind100.ImageActive = null;
+            this.btnFind100.ImageLocation = null;
+            this.btnFind100.ImageMargin = 0;
+            this.btnFind100.ImageSize = new System.Drawing.Size(66, 64);
+            this.btnFind100.ImageZoomSize = new System.Drawing.Size(67, 65);
+            this.btnFind100.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnFind100.InitialImage")));
+            this.btnFind100.Location = new System.Drawing.Point(597, 2);
+            this.btnFind100.Name = "btnFind100";
+            this.btnFind100.Rotation = 0;
+            this.btnFind100.ShowActiveImage = true;
+            this.btnFind100.ShowCursorChanges = true;
+            this.btnFind100.ShowImageBorders = false;
+            this.btnFind100.ShowSizeMarkers = false;
+            this.btnFind100.Size = new System.Drawing.Size(67, 65);
+            this.btnFind100.TabIndex = 2;
+            this.btnFind100.ToolTipText = "";
+            this.btnFind100.WaitOnLoad = false;
+            this.btnFind100.Zoom = 0;
+            this.btnFind100.ZoomSpeed = 10;
+            this.btnFind100.Click += new System.EventHandler(this.btnFind100_Click);
+            // 
+            // txtFind50
+            // 
+            this.txtFind50.AcceptsReturn = false;
+            this.txtFind50.AcceptsTab = false;
+            this.txtFind50.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFind50.AnimationSpeed = 200;
+            this.txtFind50.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtFind50.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtFind50.BackColor = System.Drawing.Color.Transparent;
+            this.txtFind50.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtFind50.BackgroundImage")));
+            this.txtFind50.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtFind50.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtFind50.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtFind50.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtFind50.BorderRadius = 1;
+            this.txtFind50.BorderThickness = 1;
+            this.txtFind50.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtFind50.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind50.DefaultFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFind50.DefaultText = "";
+            this.txtFind50.FillColor = System.Drawing.Color.White;
+            this.txtFind50.HideSelection = true;
+            this.txtFind50.IconLeft = null;
+            this.txtFind50.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind50.IconPadding = 10;
+            this.txtFind50.IconRight = null;
+            this.txtFind50.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind50.Lines = new string[0];
+            this.txtFind50.Location = new System.Drawing.Point(670, 8);
+            this.txtFind50.MaxLength = 32767;
+            this.txtFind50.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtFind50.Modified = false;
+            this.txtFind50.Multiline = false;
+            this.txtFind50.Name = "txtFind50";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFind50.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtFind50.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFind50.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFind50.OnIdleState = stateProperties4;
+            this.txtFind50.Padding = new System.Windows.Forms.Padding(3);
+            this.txtFind50.PasswordChar = '\0';
+            this.txtFind50.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtFind50.PlaceholderText = "Tìm gần đúng món...";
+            this.txtFind50.ReadOnly = false;
+            this.txtFind50.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFind50.SelectedText = "";
+            this.txtFind50.SelectionLength = 0;
+            this.txtFind50.SelectionStart = 0;
+            this.txtFind50.ShortcutsEnabled = true;
+            this.txtFind50.Size = new System.Drawing.Size(612, 49);
+            this.txtFind50.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtFind50.TabIndex = 1;
+            this.txtFind50.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFind50.TextMarginBottom = 0;
+            this.txtFind50.TextMarginLeft = 3;
+            this.txtFind50.TextMarginTop = 0;
+            this.txtFind50.TextPlaceholder = "Tìm gần đúng món...";
+            this.txtFind50.UseSystemPasswordChar = false;
+            this.txtFind50.WordWrap = true;
+            // 
+            // txtFind100
+            // 
+            this.txtFind100.AcceptsReturn = false;
+            this.txtFind100.AcceptsTab = false;
+            this.txtFind100.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtFind100.AnimationSpeed = 200;
+            this.txtFind100.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtFind100.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtFind100.BackColor = System.Drawing.Color.Transparent;
+            this.txtFind100.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtFind100.BackgroundImage")));
+            this.txtFind100.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtFind100.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtFind100.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtFind100.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtFind100.BorderRadius = 1;
+            this.txtFind100.BorderThickness = 1;
+            this.txtFind100.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtFind100.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind100.DefaultFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFind100.DefaultText = "";
+            this.txtFind100.FillColor = System.Drawing.Color.White;
+            this.txtFind100.HideSelection = true;
+            this.txtFind100.IconLeft = null;
+            this.txtFind100.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind100.IconPadding = 10;
+            this.txtFind100.IconRight = null;
+            this.txtFind100.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFind100.Lines = new string[0];
+            this.txtFind100.Location = new System.Drawing.Point(6, 8);
+            this.txtFind100.MaxLength = 32767;
+            this.txtFind100.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtFind100.Modified = false;
+            this.txtFind100.Multiline = false;
+            this.txtFind100.Name = "txtFind100";
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFind100.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtFind100.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFind100.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFind100.OnIdleState = stateProperties8;
+            this.txtFind100.Padding = new System.Windows.Forms.Padding(3);
+            this.txtFind100.PasswordChar = '\0';
+            this.txtFind100.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtFind100.PlaceholderText = "Tìm chính xác món...";
+            this.txtFind100.ReadOnly = false;
+            this.txtFind100.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFind100.SelectedText = "";
+            this.txtFind100.SelectionLength = 0;
+            this.txtFind100.SelectionStart = 0;
+            this.txtFind100.ShortcutsEnabled = true;
+            this.txtFind100.Size = new System.Drawing.Size(585, 49);
+            this.txtFind100.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtFind100.TabIndex = 0;
+            this.txtFind100.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFind100.TextMarginBottom = 0;
+            this.txtFind100.TextMarginLeft = 3;
+            this.txtFind100.TextMarginTop = 0;
+            this.txtFind100.TextPlaceholder = "Tìm chính xác món...";
+            this.txtFind100.UseSystemPasswordChar = false;
+            this.txtFind100.WordWrap = true;
             // 
             // bottomLeft
             // 
@@ -1043,262 +1299,6 @@
             this.btnTea.UseDefaultRadiusAndThickness = true;
             this.btnTea.Click += new System.EventHandler(this.btnTea_Click);
             // 
-            // bunifuPanel2
-            // 
-            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
-            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel2.BorderRadius = 3;
-            this.bunifuPanel2.BorderThickness = 1;
-            this.bunifuPanel2.Controls.Add(this.btnFind50);
-            this.bunifuPanel2.Controls.Add(this.btnFind100);
-            this.bunifuPanel2.Controls.Add(this.txtFind50);
-            this.bunifuPanel2.Controls.Add(this.txtFind100);
-            this.bunifuPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuPanel2.Location = new System.Drawing.Point(0, 0);
-            this.bunifuPanel2.Name = "bunifuPanel2";
-            this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(1358, 70);
-            this.bunifuPanel2.TabIndex = 0;
-            // 
-            // txtFind100
-            // 
-            this.txtFind100.AcceptsReturn = false;
-            this.txtFind100.AcceptsTab = false;
-            this.txtFind100.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtFind100.AnimationSpeed = 200;
-            this.txtFind100.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtFind100.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtFind100.BackColor = System.Drawing.Color.Transparent;
-            this.txtFind100.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtFind100.BackgroundImage")));
-            this.txtFind100.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtFind100.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtFind100.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtFind100.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtFind100.BorderRadius = 1;
-            this.txtFind100.BorderThickness = 1;
-            this.txtFind100.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtFind100.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFind100.DefaultFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFind100.DefaultText = "";
-            this.txtFind100.FillColor = System.Drawing.Color.White;
-            this.txtFind100.HideSelection = true;
-            this.txtFind100.IconLeft = null;
-            this.txtFind100.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFind100.IconPadding = 10;
-            this.txtFind100.IconRight = null;
-            this.txtFind100.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFind100.Lines = new string[0];
-            this.txtFind100.Location = new System.Drawing.Point(6, 8);
-            this.txtFind100.MaxLength = 32767;
-            this.txtFind100.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtFind100.Modified = false;
-            this.txtFind100.Multiline = false;
-            this.txtFind100.Name = "txtFind100";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtFind100.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtFind100.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtFind100.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtFind100.OnIdleState = stateProperties8;
-            this.txtFind100.Padding = new System.Windows.Forms.Padding(3);
-            this.txtFind100.PasswordChar = '\0';
-            this.txtFind100.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtFind100.PlaceholderText = "Tìm chính xác món...";
-            this.txtFind100.ReadOnly = false;
-            this.txtFind100.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtFind100.SelectedText = "";
-            this.txtFind100.SelectionLength = 0;
-            this.txtFind100.SelectionStart = 0;
-            this.txtFind100.ShortcutsEnabled = true;
-            this.txtFind100.Size = new System.Drawing.Size(585, 49);
-            this.txtFind100.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtFind100.TabIndex = 0;
-            this.txtFind100.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtFind100.TextMarginBottom = 0;
-            this.txtFind100.TextMarginLeft = 3;
-            this.txtFind100.TextMarginTop = 0;
-            this.txtFind100.TextPlaceholder = "Tìm chính xác món...";
-            this.txtFind100.UseSystemPasswordChar = false;
-            this.txtFind100.WordWrap = true;
-            // 
-            // txtFind50
-            // 
-            this.txtFind50.AcceptsReturn = false;
-            this.txtFind50.AcceptsTab = false;
-            this.txtFind50.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFind50.AnimationSpeed = 200;
-            this.txtFind50.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtFind50.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtFind50.BackColor = System.Drawing.Color.Transparent;
-            this.txtFind50.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtFind50.BackgroundImage")));
-            this.txtFind50.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtFind50.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtFind50.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtFind50.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtFind50.BorderRadius = 1;
-            this.txtFind50.BorderThickness = 1;
-            this.txtFind50.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtFind50.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFind50.DefaultFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFind50.DefaultText = "";
-            this.txtFind50.FillColor = System.Drawing.Color.White;
-            this.txtFind50.HideSelection = true;
-            this.txtFind50.IconLeft = null;
-            this.txtFind50.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFind50.IconPadding = 10;
-            this.txtFind50.IconRight = null;
-            this.txtFind50.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFind50.Lines = new string[0];
-            this.txtFind50.Location = new System.Drawing.Point(670, 8);
-            this.txtFind50.MaxLength = 32767;
-            this.txtFind50.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtFind50.Modified = false;
-            this.txtFind50.Multiline = false;
-            this.txtFind50.Name = "txtFind50";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtFind50.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtFind50.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtFind50.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtFind50.OnIdleState = stateProperties4;
-            this.txtFind50.Padding = new System.Windows.Forms.Padding(3);
-            this.txtFind50.PasswordChar = '\0';
-            this.txtFind50.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtFind50.PlaceholderText = "Tìm gần đúng món...";
-            this.txtFind50.ReadOnly = false;
-            this.txtFind50.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtFind50.SelectedText = "";
-            this.txtFind50.SelectionLength = 0;
-            this.txtFind50.SelectionStart = 0;
-            this.txtFind50.ShortcutsEnabled = true;
-            this.txtFind50.Size = new System.Drawing.Size(612, 49);
-            this.txtFind50.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtFind50.TabIndex = 1;
-            this.txtFind50.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtFind50.TextMarginBottom = 0;
-            this.txtFind50.TextMarginLeft = 3;
-            this.txtFind50.TextMarginTop = 0;
-            this.txtFind50.TextPlaceholder = "Tìm gần đúng món...";
-            this.txtFind50.UseSystemPasswordChar = false;
-            this.txtFind50.WordWrap = true;
-            // 
-            // btnFind100
-            // 
-            this.btnFind100.ActiveImage = null;
-            this.btnFind100.AllowAnimations = true;
-            this.btnFind100.AllowBuffering = false;
-            this.btnFind100.AllowToggling = false;
-            this.btnFind100.AllowZooming = true;
-            this.btnFind100.AllowZoomingOnFocus = false;
-            this.btnFind100.BackColor = System.Drawing.Color.Transparent;
-            this.btnFind100.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnFind100.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnFind100.ErrorImage")));
-            this.btnFind100.FadeWhenInactive = false;
-            this.btnFind100.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnFind100.Image = global::DoAnThucTap.Properties.Resources.search_paper;
-            this.btnFind100.ImageActive = null;
-            this.btnFind100.ImageLocation = null;
-            this.btnFind100.ImageMargin = 0;
-            this.btnFind100.ImageSize = new System.Drawing.Size(66, 64);
-            this.btnFind100.ImageZoomSize = new System.Drawing.Size(67, 65);
-            this.btnFind100.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnFind100.InitialImage")));
-            this.btnFind100.Location = new System.Drawing.Point(597, 2);
-            this.btnFind100.Name = "btnFind100";
-            this.btnFind100.Rotation = 0;
-            this.btnFind100.ShowActiveImage = true;
-            this.btnFind100.ShowCursorChanges = true;
-            this.btnFind100.ShowImageBorders = false;
-            this.btnFind100.ShowSizeMarkers = false;
-            this.btnFind100.Size = new System.Drawing.Size(67, 65);
-            this.btnFind100.TabIndex = 2;
-            this.btnFind100.ToolTipText = "";
-            this.btnFind100.WaitOnLoad = false;
-            this.btnFind100.Zoom = 0;
-            this.btnFind100.ZoomSpeed = 10;
-            this.btnFind100.Click += new System.EventHandler(this.btnFind100_Click);
-            // 
-            // btnFind50
-            // 
-            this.btnFind50.ActiveImage = null;
-            this.btnFind50.AllowAnimations = true;
-            this.btnFind50.AllowBuffering = false;
-            this.btnFind50.AllowToggling = false;
-            this.btnFind50.AllowZooming = true;
-            this.btnFind50.AllowZoomingOnFocus = false;
-            this.btnFind50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFind50.BackColor = System.Drawing.Color.Transparent;
-            this.btnFind50.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnFind50.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnFind50.ErrorImage")));
-            this.btnFind50.FadeWhenInactive = false;
-            this.btnFind50.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnFind50.Image = global::DoAnThucTap.Properties.Resources.search_paper;
-            this.btnFind50.ImageActive = null;
-            this.btnFind50.ImageLocation = null;
-            this.btnFind50.ImageMargin = 0;
-            this.btnFind50.ImageSize = new System.Drawing.Size(66, 64);
-            this.btnFind50.ImageZoomSize = new System.Drawing.Size(67, 65);
-            this.btnFind50.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnFind50.InitialImage")));
-            this.btnFind50.Location = new System.Drawing.Point(1288, 2);
-            this.btnFind50.Name = "btnFind50";
-            this.btnFind50.Rotation = 0;
-            this.btnFind50.ShowActiveImage = true;
-            this.btnFind50.ShowCursorChanges = true;
-            this.btnFind50.ShowImageBorders = false;
-            this.btnFind50.ShowSizeMarkers = false;
-            this.btnFind50.Size = new System.Drawing.Size(67, 65);
-            this.btnFind50.TabIndex = 3;
-            this.btnFind50.ToolTipText = "";
-            this.btnFind50.WaitOnLoad = false;
-            this.btnFind50.Zoom = 0;
-            this.btnFind50.ZoomSpeed = 10;
-            this.btnFind50.Click += new System.EventHandler(this.btnFind50_Click);
-            // 
-            // pnlListProduct
-            // 
-            this.pnlListProduct.AutoScroll = true;
-            this.pnlListProduct.BackColor = System.Drawing.Color.White;
-            this.pnlListProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlListProduct.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlListProduct.Location = new System.Drawing.Point(0, 70);
-            this.pnlListProduct.Name = "pnlListProduct";
-            this.pnlListProduct.Size = new System.Drawing.Size(1358, 606);
-            this.pnlListProduct.TabIndex = 1;
-            this.pnlListProduct.WrapContents = false;
-            // 
             // Product_GUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1306,6 +1306,7 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Product_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_GUI";
@@ -1313,9 +1314,9 @@
             this.top.ResumeLayout(false);
             this.bunifuPanel1.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
+            this.bunifuPanel2.ResumeLayout(false);
             this.bottomLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
-            this.bunifuPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -111,9 +111,9 @@
             // 
             this.reportView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportView.IsMetric = false;
-            this.reportView.Location = new System.Drawing.Point(0, 56);
+            this.reportView.Location = new System.Drawing.Point(0, 53);
             this.reportView.Name = "reportView";
-            this.reportView.Size = new System.Drawing.Size(1383, 667);
+            this.reportView.Size = new System.Drawing.Size(1383, 673);
             this.reportView.TabIndex = 0;
             // 
             // documentViewerBarManager1
@@ -683,31 +683,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.documentViewerBarManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1383, 56);
+            this.barDockControlTop.Size = new System.Drawing.Size(1383, 53);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 723);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
             this.barDockControlBottom.Manager = this.documentViewerBarManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1383, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1383, 24);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 56);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
             this.barDockControlLeft.Manager = this.documentViewerBarManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 667);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 673);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1383, 56);
+            this.barDockControlRight.Location = new System.Drawing.Point(1383, 53);
             this.barDockControlRight.Manager = this.documentViewerBarManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 667);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 673);
             // 
             // printPreviewBarCheckItem1
             // 
@@ -912,6 +912,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("printBill.IconOptions.Icon")));
             this.Name = "printBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "printBill";

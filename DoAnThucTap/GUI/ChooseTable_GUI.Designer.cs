@@ -538,7 +538,7 @@
             this.detailBill});
             this.menuTrip.Name = "menuTrip";
             this.menuTrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuTrip.Size = new System.Drawing.Size(297, 136);
+            this.menuTrip.Size = new System.Drawing.Size(297, 108);
             this.menuTrip.Style = MetroFramework.MetroColorStyle.Green;
             this.menuTrip.Theme = MetroFramework.MetroThemeStyle.Light;
             this.menuTrip.UseCustomBackColor = true;
@@ -626,6 +626,7 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChooseTable_GUI";

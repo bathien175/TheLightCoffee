@@ -93,7 +93,7 @@ namespace DoAnThucTap.GUI
                     if (sl == DialogResult.Yes)
                     {
                         dao.restoreIngredient(idI);
-                        MessageBox.Show("Cập nhật thành công!");
+                        MessageBox.Show("Khôi phục thành công!");
                         idI = 0;
                         loadData();
                     }

@@ -44,6 +44,15 @@ namespace DoAnThucTap.DAO
             }
         }
 
+        public List<DBTable> getFullListTable()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<DBTable> list = db.DBTables.ToList();
+                return list;
+            }
+        }
+
         public List<tableBill> getTablebyLocation(String locate)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
@@ -118,6 +127,63 @@ namespace DoAnThucTap.DAO
                 t.Table_Status = 0;
                 db.Entry(t).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges(); //cap nhat table
+            }
+        }
+
+        public void addTable(DBTable t)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                db.DBTables.Add(t);
+                db.SaveChanges();
+            }
+        }
+
+        public void updateTable(DBTable t)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var t2 = db.DBTables.Where(x =>x.Table_Code==t.Table_Code).FirstOrDefault();
+                t2.Table_Location = t.Table_Location;
+                db.Entry(t2).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+        public void deleteTable(String t)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var t2 = db.DBTables.Where(x => x.Table_Code == t).FirstOrDefault();
+                t2.isActive = false;
+                db.Entry(t2).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public void restoreTable(String t)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var t2 = db.DBTables.Where(x => x.Table_Code == t).FirstOrDefault();
+                t2.isActive = true;
+                db.Entry(t2).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public bool checkExistCode(String t)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var t2 = db.DBTables.Where(x => x.Table_Code == t).FirstOrDefault();
+                if (t2 != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }
