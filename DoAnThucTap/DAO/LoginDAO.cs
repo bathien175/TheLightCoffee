@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoAnThucTap.DAO
 {
@@ -16,13 +17,13 @@ namespace DoAnThucTap.DAO
                 Staff staff = new Staff();
                 if (admin == false)
                 {
-                    staff = db.Staffs.Where(s => s.Staff_Code == staffcode && s.Staff_Password == password && s.Staff_isActive==true).FirstOrDefault();
+                    staff = db.Staffs.Where(s => s.Staff_Code == staffcode && s.Staff_Password == password && s.Staff_isActive == true).FirstOrDefault();
                 }
                 else
                 {
-                    staff = db.Staffs.Where(s => s.Staff_Code == staffcode && s.Staff_Password == password && s.Staff_isActive == true && s.Staff_isAdmin==true).FirstOrDefault();
+                    staff = db.Staffs.Where(s => s.Staff_Code == staffcode && s.Staff_Password == password && s.Staff_isActive == true && s.Staff_isAdmin == true).FirstOrDefault();
                 }
-                
+
                 if (staff != null)
                 {
                     return staff;
@@ -31,7 +32,7 @@ namespace DoAnThucTap.DAO
                 {
                     return null;
                 }
-            }
+            }  
         }
     }
 }
