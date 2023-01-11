@@ -202,7 +202,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1419, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1432, 30);
             // 
             // barDockControlBottom
             // 
@@ -210,7 +210,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 720);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1419, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1432, 0);
             // 
             // barDockControlLeft
             // 
@@ -224,7 +224,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1419, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1432, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 690);
             // 
@@ -258,31 +258,31 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcStaff);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1419, 690);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1432, 690);
             this.splitContainerControl1.SplitterPosition = 184;
             this.splitContainerControl1.TabIndex = 6;
             // 
             // txtStaffCode
             // 
-            this.txtStaffCode.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtStaffCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtStaffCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtStaffCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtStaffCode.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffCode.Location = new System.Drawing.Point(23, 30);
+            this.txtStaffCode.Location = new System.Drawing.Point(317, 30);
             this.txtStaffCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtStaffCode.Name = "txtStaffCode";
-            this.txtStaffCode.Size = new System.Drawing.Size(572, 30);
+            this.txtStaffCode.Size = new System.Drawing.Size(291, 30);
             this.txtStaffCode.TabIndex = 19;
             // 
             // bunifuLabel7
             // 
             this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.AutoSize = false;
             this.bunifuLabel7.CursorType = null;
             this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.Location = new System.Drawing.Point(-137, 39);
+            this.bunifuLabel7.Location = new System.Drawing.Point(157, 36);
             this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -294,27 +294,27 @@
             // 
             // cbbGender
             // 
-            this.cbbGender.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbbGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbGender.FormattingEnabled = true;
             this.cbbGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ",
             "Khác"});
-            this.cbbGender.Location = new System.Drawing.Point(1253, 94);
+            this.cbbGender.Location = new System.Drawing.Point(1197, 84);
             this.cbbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGender.Name = "cbbGender";
-            this.cbbGender.Size = new System.Drawing.Size(150, 24);
+            this.cbbGender.Size = new System.Drawing.Size(219, 24);
             this.cbbGender.TabIndex = 17;
             // 
             // bunifuLabel6
             // 
             this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.AutoSize = false;
             this.bunifuLabel6.CursorType = null;
             this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel6.Location = new System.Drawing.Point(1093, 94);
+            this.bunifuLabel6.Location = new System.Drawing.Point(1037, 84);
             this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -326,7 +326,7 @@
             // 
             // dtpkDatebirth
             // 
-            this.dtpkDatebirth.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dtpkDatebirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpkDatebirth.BackColor = System.Drawing.Color.Transparent;
             this.dtpkDatebirth.BorderRadius = 1;
             this.dtpkDatebirth.Color = System.Drawing.Color.Silver;
@@ -344,7 +344,7 @@
             this.dtpkDatebirth.IconColor = System.Drawing.Color.Gray;
             this.dtpkDatebirth.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpkDatebirth.LeftTextMargin = 5;
-            this.dtpkDatebirth.Location = new System.Drawing.Point(831, 84);
+            this.dtpkDatebirth.Location = new System.Drawing.Point(776, 84);
             this.dtpkDatebirth.Margin = new System.Windows.Forms.Padding(4);
             this.dtpkDatebirth.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtpkDatebirth.Name = "dtpkDatebirth";
@@ -354,12 +354,12 @@
             // bunifuLabel4
             // 
             this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.AutoSize = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(671, 94);
+            this.bunifuLabel4.Location = new System.Drawing.Point(616, 84);
             this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -371,25 +371,25 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(23, 142);
+            this.txtAddress.Location = new System.Drawing.Point(317, 141);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(1380, 30);
+            this.txtAddress.Size = new System.Drawing.Size(1102, 30);
             this.txtAddress.TabIndex = 13;
             // 
             // bunifuLabel2
             // 
             this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(-137, 151);
+            this.bunifuLabel2.Location = new System.Drawing.Point(157, 142);
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -401,11 +401,11 @@
             // 
             // txtName
             // 
-            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(763, 30);
+            this.txtName.Location = new System.Drawing.Point(776, 30);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(640, 30);
@@ -414,31 +414,32 @@
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(603, 36);
+            this.bunifuLabel1.Location = new System.Drawing.Point(616, 31);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(152, 29);
             this.bunifuLabel1.TabIndex = 10;
             this.bunifuLabel1.Text = "Tên nhân viên:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // ptImage
             // 
             this.ptImage.AllowFocused = false;
-            this.ptImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ptImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ptImage.AutoSizeHeight = true;
             this.ptImage.BorderRadius = 0;
             this.ptImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptImage.Image = global::DoAnThucTap.Properties.Resources.noimage;
             this.ptImage.IsCircle = true;
-            this.ptImage.Location = new System.Drawing.Point(36, 44);
+            this.ptImage.Location = new System.Drawing.Point(13, 44);
             this.ptImage.Margin = new System.Windows.Forms.Padding(4);
             this.ptImage.Name = "ptImage";
             this.ptImage.Size = new System.Drawing.Size(136, 136);
@@ -454,7 +455,7 @@
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.Location = new System.Drawing.Point(36, 8);
+            this.bunifuLabel5.Location = new System.Drawing.Point(22, 7);
             this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -466,25 +467,25 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(23, 86);
+            this.txtSDT.Location = new System.Drawing.Point(317, 84);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(640, 30);
+            this.txtSDT.Size = new System.Drawing.Size(291, 30);
             this.txtSDT.TabIndex = 5;
             // 
             // bunifuLabel3
             // 
             this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(-137, 92);
+            this.bunifuLabel3.Location = new System.Drawing.Point(157, 84);
             this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -503,7 +504,7 @@
             this.gcStaff.Margin = new System.Windows.Forms.Padding(4);
             this.gcStaff.MenuManager = this.barManager1;
             this.gcStaff.Name = "gcStaff";
-            this.gcStaff.Size = new System.Drawing.Size(1419, 494);
+            this.gcStaff.Size = new System.Drawing.Size(1432, 494);
             this.gcStaff.TabIndex = 0;
             this.gcStaff.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListStaff});
@@ -629,7 +630,7 @@
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1419, 720);
+            this.ClientSize = new System.Drawing.Size(1432, 720);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

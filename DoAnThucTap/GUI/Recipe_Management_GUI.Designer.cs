@@ -176,7 +176,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1472, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1418, 30);
             // 
             // barDockControlBottom
             // 
@@ -184,7 +184,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 746);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1472, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1418, 0);
             // 
             // barDockControlLeft
             // 
@@ -198,7 +198,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1472, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1418, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 716);
             // 
@@ -220,7 +220,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcRecipe);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1472, 716);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1418, 716);
             this.splitContainerControl1.SplitterPosition = 324;
             this.splitContainerControl1.TabIndex = 6;
             // 
@@ -232,7 +232,7 @@
             this.flpRecipe.Location = new System.Drawing.Point(0, 61);
             this.flpRecipe.Margin = new System.Windows.Forms.Padding(4);
             this.flpRecipe.Name = "flpRecipe";
-            this.flpRecipe.Size = new System.Drawing.Size(1472, 263);
+            this.flpRecipe.Size = new System.Drawing.Size(1418, 263);
             this.flpRecipe.TabIndex = 1;
             this.flpRecipe.WrapContents = false;
             // 
@@ -247,14 +247,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1472, 61);
+            this.panel1.Size = new System.Drawing.Size(1418, 61);
             this.panel1.TabIndex = 0;
             // 
             // btnAcceptProduct
             // 
             this.btnAcceptProduct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAcceptProduct.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceptProduct.Location = new System.Drawing.Point(1581, 11);
+            this.btnAcceptProduct.Location = new System.Drawing.Point(1090, 14);
             this.btnAcceptProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcceptProduct.Name = "btnAcceptProduct";
             this.btnAcceptProduct.Size = new System.Drawing.Size(171, 42);
@@ -268,7 +268,7 @@
             this.cbbChooseProduct.BackColor = System.Drawing.Color.White;
             this.cbbChooseProduct.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbChooseProduct.FormattingEnabled = true;
-            this.cbbChooseProduct.Location = new System.Drawing.Point(568, 11);
+            this.cbbChooseProduct.Location = new System.Drawing.Point(253, 19);
             this.cbbChooseProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cbbChooseProduct.Name = "cbbChooseProduct";
             this.cbbChooseProduct.Size = new System.Drawing.Size(502, 34);
@@ -288,7 +288,7 @@
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(545, 46);
+            this.bunifuLabel2.Size = new System.Drawing.Size(230, 46);
             this.bunifuLabel2.TabIndex = 3;
             this.bunifuLabel2.Text = "Chọn món:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
@@ -304,11 +304,11 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(1078, 8);
+            this.bunifuLabel1.Location = new System.Drawing.Point(763, 7);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(339, 46);
+            this.bunifuLabel1.Size = new System.Drawing.Size(161, 46);
             this.bunifuLabel1.TabIndex = 1;
             this.bunifuLabel1.Text = "Chọn số bước:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
@@ -318,7 +318,7 @@
             // 
             this.nbrQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nbrQuantity.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nbrQuantity.Location = new System.Drawing.Point(1424, 12);
+            this.nbrQuantity.Location = new System.Drawing.Point(932, 19);
             this.nbrQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.nbrQuantity.Minimum = new decimal(new int[] {
             1,
@@ -343,7 +343,7 @@
             this.gcRecipe.Margin = new System.Windows.Forms.Padding(4);
             this.gcRecipe.MenuManager = this.barManager1;
             this.gcRecipe.Name = "gcRecipe";
-            this.gcRecipe.Size = new System.Drawing.Size(1472, 380);
+            this.gcRecipe.Size = new System.Drawing.Size(1418, 380);
             this.gcRecipe.TabIndex = 0;
             this.gcRecipe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListRecipe});
@@ -399,7 +399,7 @@
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1472, 746);
+            this.ClientSize = new System.Drawing.Size(1418, 746);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

@@ -183,7 +183,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1440, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1432, 30);
             // 
             // barDockControlBottom
             // 
@@ -191,7 +191,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 761);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1440, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1432, 0);
             // 
             // barDockControlLeft
             // 
@@ -205,7 +205,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1440, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1432, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 731);
             // 
@@ -227,7 +227,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcCategory);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1440, 731);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1432, 731);
             this.splitContainerControl1.SplitterPosition = 104;
             this.splitContainerControl1.TabIndex = 6;
             // 
@@ -237,10 +237,10 @@
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(215, 25);
+            this.txtName.Location = new System.Drawing.Point(213, 25);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(1209, 30);
+            this.txtName.Size = new System.Drawing.Size(1206, 30);
             this.txtName.TabIndex = 11;
             // 
             // bunifuLabel1
@@ -251,7 +251,7 @@
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(15, 34);
+            this.bunifuLabel1.Location = new System.Drawing.Point(13, 25);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -270,7 +270,7 @@
             this.gcCategory.Margin = new System.Windows.Forms.Padding(4);
             this.gcCategory.MenuManager = this.barManager1;
             this.gcCategory.Name = "gcCategory";
-            this.gcCategory.Size = new System.Drawing.Size(1440, 615);
+            this.gcCategory.Size = new System.Drawing.Size(1432, 615);
             this.gcCategory.TabIndex = 0;
             this.gcCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListCategory});
@@ -329,7 +329,7 @@
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1440, 761);
+            this.ClientSize = new System.Drawing.Size(1432, 761);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

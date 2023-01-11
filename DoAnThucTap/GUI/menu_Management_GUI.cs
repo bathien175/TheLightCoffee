@@ -390,5 +390,10 @@ namespace DoAnThucTap.GUI
             cbbCategory.Text = gvListProduct.GetFocusedRowCellValue("Product_Category").ToString();
             ptImageProduct.Image = (Image)gvListProduct.GetFocusedRowCellValue("Product_Image");
         }
+
+        private void txtUnitProduct_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
