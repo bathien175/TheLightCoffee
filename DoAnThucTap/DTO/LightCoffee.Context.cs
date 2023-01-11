@@ -139,5 +139,22 @@ namespace DoAnThucTap.DTO
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportDate_Result>("exportDate");
         }
+    
+        public virtual ObjectResult<exportbyDate_Result> exportbyDate(Nullable<int> dayexport, Nullable<int> monexport, Nullable<int> yearexport)
+        {
+            var dayexportParameter = dayexport.HasValue ?
+                new ObjectParameter("dayexport", dayexport) :
+                new ObjectParameter("dayexport", typeof(int));
+    
+            var monexportParameter = monexport.HasValue ?
+                new ObjectParameter("monexport", monexport) :
+                new ObjectParameter("monexport", typeof(int));
+    
+            var yearexportParameter = yearexport.HasValue ?
+                new ObjectParameter("yearexport", yearexport) :
+                new ObjectParameter("yearexport", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportbyDate_Result>("exportbyDate", dayexportParameter, monexportParameter, yearexportParameter);
+        }
     }
 }

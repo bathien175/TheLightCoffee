@@ -200,6 +200,9 @@
     <Compile Include="DTO\exportBillTakeAway_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\exportbyDate_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\exportDate_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -295,6 +298,7 @@
     <Compile Include="DTO\Surcharge.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\SurchargeDTO.cs" />
     <Compile Include="DTO\tableBill.cs" />
     <Compile Include="GUI\addToBill_GUI.cs">
       <SubType>Form</SubType>

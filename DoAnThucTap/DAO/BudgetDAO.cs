@@ -18,6 +18,14 @@ namespace DoAnThucTap.DAO
                 return list;
             }
         }
+        public List<exportbyDate_Result> getListByDate(DateTime d)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<exportbyDate_Result> list = db.exportbyDate(d.Day,d.Month,d.Year).ToList();
+                return list;
+            }
+        }
         public void addPayment(Payment p)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
@@ -93,5 +101,65 @@ namespace DoAnThucTap.DAO
                 return db.Discounts.Where(d => d.Discount_ID == disID).FirstOrDefault();
             }
         }
+
+        public List<Surcharge> getFullListSurcharge()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.Surcharges.ToList();
+            }
+        }
+        public void addSurcharge(Surcharge sur)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                db.Surcharges.Add(sur);
+                db.SaveChanges();
+            }
+        }
+
+        public void updateSurcharge(Surcharge sur)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var sur2 = db.Surcharges.Where(d => d.Surcharge_ID == sur.Surcharge_ID).FirstOrDefault();
+                sur2.Surcharge_Name = sur.Surcharge_Name;
+                sur2.Surcharge_Price = sur.Surcharge_Price;
+                db.Entry(sur2).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public void deleteSurcharge(int surID)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var sur2 = db.Surcharges.Where(d => d.Surcharge_ID == surID).FirstOrDefault();
+                sur2.Surcharge_DateEnd = DateTime.Now;
+                db.Entry(sur2).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public void restoreSurcharge(int surID)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var sur2 = db.Surcharges.Where(d => d.Surcharge_ID == surID).FirstOrDefault();
+                sur2.Surcharge_DateStart = DateTime.Now;
+                sur2.Surcharge_DateEnd = null;
+                db.Entry(sur2).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public Surcharge getSurcharge(int surID)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                return db.Surcharges.Where(d => d.Surcharge_ID ==surID).FirstOrDefault();
+            }
+        }
+
     }
 }

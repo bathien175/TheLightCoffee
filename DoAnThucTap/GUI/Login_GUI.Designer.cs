@@ -130,8 +130,8 @@
             this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAdmin.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
             this.btnAdmin.BorderRadius = 12;
-            this.btnAdmin.Checked = true;
-            this.btnAdmin.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
+            this.btnAdmin.Checked = false;
+            this.btnAdmin.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAdmin.CustomCheckmarkImage = null;
             this.btnAdmin.Location = new System.Drawing.Point(149, 152);
@@ -342,7 +342,7 @@
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultFont = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.DefaultText = "123456";
+            this.txtPassword.DefaultText = "";
             this.txtPassword.FillColor = System.Drawing.Color.White;
             this.txtPassword.HideSelection = true;
             this.txtPassword.IconLeft = null;
@@ -350,8 +350,7 @@
             this.txtPassword.IconPadding = 10;
             this.txtPassword.IconRight = null;
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.Lines = new string[] {
-        "123456"};
+            this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(149, 99);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
@@ -418,7 +417,7 @@
             this.txtStaffCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtStaffCode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStaffCode.DefaultFont = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffCode.DefaultText = "NV_101";
+            this.txtStaffCode.DefaultText = "";
             this.txtStaffCode.FillColor = System.Drawing.Color.White;
             this.txtStaffCode.HideSelection = true;
             this.txtStaffCode.IconLeft = null;
@@ -426,8 +425,7 @@
             this.txtStaffCode.IconPadding = 10;
             this.txtStaffCode.IconRight = null;
             this.txtStaffCode.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStaffCode.Lines = new string[] {
-        "NV_101"};
+            this.txtStaffCode.Lines = new string[0];
             this.txtStaffCode.Location = new System.Drawing.Point(149, 48);
             this.txtStaffCode.MaxLength = 32767;
             this.txtStaffCode.MinimumSize = new System.Drawing.Size(1, 1);

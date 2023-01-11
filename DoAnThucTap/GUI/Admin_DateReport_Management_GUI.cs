@@ -22,6 +22,18 @@ namespace DoAnThucTap.GUI
             loadData();
             loadMoney();
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            printReportDate date = new printReportDate();
+            date.ShowDialog();
+        }
+
         void loadData()
         {
             BudgetDAO dao = new BudgetDAO();

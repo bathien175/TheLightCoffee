@@ -33,7 +33,11 @@ namespace DoAnThucTap.GUI
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
+            DialogResult cl = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi giao diện quản lý chứ?","Chờ đã!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(cl == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -18,7 +18,7 @@ namespace DoAnThucTap
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminForm_GUI());
+            Application.Run(new Login_GUI());
         }
     }
 }

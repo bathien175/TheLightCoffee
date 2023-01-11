@@ -130,7 +130,7 @@ namespace DoAnThucTap.GUI
                         idI = 0;
                         loadData();
                         SplashScreenManager.CloseForm();
-                        MessageBox.Show("Xóa mã giảm giá thành công!");
+                        MessageBox.Show("Phục hồi mã giảm giá thành công!");
                     }
                 }
             }

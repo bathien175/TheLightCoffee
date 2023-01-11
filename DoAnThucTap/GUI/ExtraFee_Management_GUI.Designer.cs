@@ -46,6 +46,14 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.openfile = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.txtMoney = new System.Windows.Forms.TextBox();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.dtpkDateEnd = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.dtpkDateStart = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.gcExtraFee = new DevExpress.XtraGrid.GridControl();
             this.gvListExtraFee = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Surcharge_ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
@@ -107,6 +116,7 @@
             this.btnAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAdd.ImageOptions.SvgImage")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnEdit
             // 
@@ -115,6 +125,7 @@
             this.btnEdit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEdit.ImageOptions.SvgImage")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDelete
             // 
@@ -123,6 +134,7 @@
             this.btnDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDelete.ImageOptions.SvgImage")));
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelete_ItemClick);
             // 
             // btnRestore
             // 
@@ -132,6 +144,7 @@
             this.btnRestore.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRestore.ImageOptions.LargeImage")));
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnRestore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore_ItemClick);
             // 
             // btnSave
             // 
@@ -141,6 +154,7 @@
             this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
             this.btnSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
             // btnCancel
             // 
@@ -150,6 +164,7 @@
             this.btnCancel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.LargeImage")));
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCancel_ItemClick);
             // 
             // btnPrinter
             // 
@@ -159,6 +174,7 @@
             this.btnPrinter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPrinter.ImageOptions.LargeImage")));
             this.btnPrinter.Name = "btnPrinter";
             this.btnPrinter.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnPrinter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrinter_ItemClick);
             // 
             // btnClose
             // 
@@ -167,6 +183,7 @@
             this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
             this.btnClose.Name = "btnClose";
             this.btnClose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClose_ItemClick);
             // 
             // barDockControl1
             // 
@@ -214,6 +231,14 @@
             // 
             // splitContainerControl1.Panel1
             // 
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtMoney);
+            this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel5);
+            this.splitContainerControl1.Panel1.Controls.Add(this.dtpkDateEnd);
+            this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel4);
+            this.splitContainerControl1.Panel1.Controls.Add(this.dtpkDateStart);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtName);
+            this.splitContainerControl1.Panel1.Controls.Add(this.bunifuLabel3);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             // 
             // splitContainerControl1.Panel2
@@ -221,8 +246,150 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.gcExtraFee);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1465, 698);
-            this.splitContainerControl1.SplitterPosition = 184;
+            this.splitContainerControl1.SplitterPosition = 93;
             this.splitContainerControl1.TabIndex = 7;
+            // 
+            // txtMoney
+            // 
+            this.txtMoney.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtMoney.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtMoney.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoney.Location = new System.Drawing.Point(888, 4);
+            this.txtMoney.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMoney.Name = "txtMoney";
+            this.txtMoney.Size = new System.Drawing.Size(564, 30);
+            this.txtMoney.TabIndex = 25;
+            this.txtMoney.Enter += new System.EventHandler(this.txtMoney_Enter);
+            this.txtMoney.Leave += new System.EventHandler(this.txtMoney_Leave);
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.AutoSize = false;
+            this.bunifuLabel1.CursorType = null;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(786, 8);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(94, 29);
+            this.bunifuLabel1.TabIndex = 24;
+            this.bunifuLabel1.Text = "Số tiền:";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel5
+            // 
+            this.bunifuLabel5.AllowParentOverrides = false;
+            this.bunifuLabel5.AutoEllipsis = false;
+            this.bunifuLabel5.AutoSize = false;
+            this.bunifuLabel5.CursorType = null;
+            this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel5.Location = new System.Drawing.Point(397, 47);
+            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel5.Name = "bunifuLabel5";
+            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel5.Size = new System.Drawing.Size(152, 29);
+            this.bunifuLabel5.TabIndex = 23;
+            this.bunifuLabel5.Text = "Ngày áp dụng:";
+            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // dtpkDateEnd
+            // 
+            this.dtpkDateEnd.BackColor = System.Drawing.Color.Transparent;
+            this.dtpkDateEnd.BorderRadius = 1;
+            this.dtpkDateEnd.Color = System.Drawing.Color.Silver;
+            this.dtpkDateEnd.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.dtpkDateEnd.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dtpkDateEnd.DisabledColor = System.Drawing.Color.Gray;
+            this.dtpkDateEnd.DisplayWeekNumbers = false;
+            this.dtpkDateEnd.DPHeight = 0;
+            this.dtpkDateEnd.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpkDateEnd.FillDatePicker = false;
+            this.dtpkDateEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpkDateEnd.ForeColor = System.Drawing.Color.Black;
+            this.dtpkDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkDateEnd.Icon = ((System.Drawing.Image)(resources.GetObject("dtpkDateEnd.Icon")));
+            this.dtpkDateEnd.IconColor = System.Drawing.Color.Gray;
+            this.dtpkDateEnd.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dtpkDateEnd.LeftTextMargin = 5;
+            this.dtpkDateEnd.Location = new System.Drawing.Point(556, 47);
+            this.dtpkDateEnd.MinimumSize = new System.Drawing.Size(0, 32);
+            this.dtpkDateEnd.Name = "dtpkDateEnd";
+            this.dtpkDateEnd.Size = new System.Drawing.Size(222, 32);
+            this.dtpkDateEnd.TabIndex = 22;
+            // 
+            // bunifuLabel4
+            // 
+            this.bunifuLabel4.AllowParentOverrides = false;
+            this.bunifuLabel4.AutoEllipsis = false;
+            this.bunifuLabel4.AutoSize = false;
+            this.bunifuLabel4.CursorType = null;
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Location = new System.Drawing.Point(4, 47);
+            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel4.Name = "bunifuLabel4";
+            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel4.Size = new System.Drawing.Size(156, 29);
+            this.bunifuLabel4.TabIndex = 21;
+            this.bunifuLabel4.Text = "Ngày áp dụng:";
+            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // dtpkDateStart
+            // 
+            this.dtpkDateStart.BackColor = System.Drawing.Color.Transparent;
+            this.dtpkDateStart.BorderRadius = 1;
+            this.dtpkDateStart.Color = System.Drawing.Color.Silver;
+            this.dtpkDateStart.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.dtpkDateStart.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dtpkDateStart.DisabledColor = System.Drawing.Color.Gray;
+            this.dtpkDateStart.DisplayWeekNumbers = false;
+            this.dtpkDateStart.DPHeight = 0;
+            this.dtpkDateStart.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpkDateStart.FillDatePicker = false;
+            this.dtpkDateStart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpkDateStart.ForeColor = System.Drawing.Color.Black;
+            this.dtpkDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkDateStart.Icon = ((System.Drawing.Image)(resources.GetObject("dtpkDateStart.Icon")));
+            this.dtpkDateStart.IconColor = System.Drawing.Color.Gray;
+            this.dtpkDateStart.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dtpkDateStart.LeftTextMargin = 5;
+            this.dtpkDateStart.Location = new System.Drawing.Point(168, 47);
+            this.dtpkDateStart.MinimumSize = new System.Drawing.Size(0, 32);
+            this.dtpkDateStart.Name = "dtpkDateStart";
+            this.dtpkDateStart.Size = new System.Drawing.Size(222, 32);
+            this.dtpkDateStart.TabIndex = 20;
+            // 
+            // txtName
+            // 
+            this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(168, 7);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(610, 30);
+            this.txtName.TabIndex = 19;
+            // 
+            // bunifuLabel3
+            // 
+            this.bunifuLabel3.AllowParentOverrides = false;
+            this.bunifuLabel3.AutoEllipsis = false;
+            this.bunifuLabel3.AutoSize = false;
+            this.bunifuLabel3.CursorType = null;
+            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Location = new System.Drawing.Point(4, 7);
+            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel3.Name = "bunifuLabel3";
+            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel3.Size = new System.Drawing.Size(156, 29);
+            this.bunifuLabel3.TabIndex = 18;
+            this.bunifuLabel3.Text = "Lý do giảm giá:";
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // gcExtraFee
             // 
@@ -233,7 +400,7 @@
             this.gcExtraFee.Margin = new System.Windows.Forms.Padding(4);
             this.gcExtraFee.MenuManager = this.barManager1;
             this.gcExtraFee.Name = "gcExtraFee";
-            this.gcExtraFee.Size = new System.Drawing.Size(1465, 502);
+            this.gcExtraFee.Size = new System.Drawing.Size(1465, 593);
             this.gcExtraFee.TabIndex = 0;
             this.gcExtraFee.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListExtraFee});
@@ -254,6 +421,7 @@
             this.gvListExtraFee.OptionsView.ShowAutoFilterRow = true;
             this.gvListExtraFee.OptionsView.ShowGroupPanel = false;
             this.gvListExtraFee.RowHeight = 20;
+            this.gvListExtraFee.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvListExtraFee_RowClick);
             // 
             // Surcharge_ID
             // 
@@ -278,6 +446,8 @@
             // Surcharge_Price
             // 
             this.Surcharge_Price.Caption = "Số tiền";
+            this.Surcharge_Price.DisplayFormat.FormatString = "{0:0,0 VNĐ}";
+            this.Surcharge_Price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.Surcharge_Price.FieldName = "Surcharge_Price";
             this.Surcharge_Price.MinWidth = 31;
             this.Surcharge_Price.Name = "Surcharge_Price";
@@ -288,6 +458,8 @@
             // Surcharge_DateStart
             // 
             this.Surcharge_DateStart.Caption = "Ngày áp dụng";
+            this.Surcharge_DateStart.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.Surcharge_DateStart.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Surcharge_DateStart.FieldName = "Surcharge_DateStart";
             this.Surcharge_DateStart.MinWidth = 31;
             this.Surcharge_DateStart.Name = "Surcharge_DateStart";
@@ -298,6 +470,8 @@
             // Surcharge_DateEnd
             // 
             this.Surcharge_DateEnd.Caption = "Ngày kết thúc";
+            this.Surcharge_DateEnd.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.Surcharge_DateEnd.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Surcharge_DateEnd.FieldName = "Surcharge_DateEnd";
             this.Surcharge_DateEnd.MinWidth = 31;
             this.Surcharge_DateEnd.Name = "Surcharge_DateEnd";
@@ -323,6 +497,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            this.splitContainerControl1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
             this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
@@ -359,5 +535,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn Surcharge_Price;
         private DevExpress.XtraGrid.Columns.GridColumn Surcharge_DateStart;
         private DevExpress.XtraGrid.Columns.GridColumn Surcharge_DateEnd;
+        private System.Windows.Forms.TextBox txtMoney;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
+        private Bunifu.UI.WinForms.BunifuDatePicker dtpkDateEnd;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private Bunifu.UI.WinForms.BunifuDatePicker dtpkDateStart;
+        private System.Windows.Forms.TextBox txtName;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
     }
 }

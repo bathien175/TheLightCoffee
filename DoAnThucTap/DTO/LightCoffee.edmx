@@ -398,6 +398,11 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
         <Function Name="exportBillTakeAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BillID" Type="int" Mode="In" />
         </Function>
+        <Function Name="exportbyDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dayexport" Type="int" Mode="In" />
+          <Parameter Name="monexport" Type="int" Mode="In" />
+          <Parameter Name="yearexport" Type="int" Mode="In" />
+        </Function>
         <Function Name="exportDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="exportIImport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ImportID" Type="int" Mode="In" />
@@ -721,6 +726,11 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           <Parameter Name="DiscountID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exportDate" ReturnType="Collection(TheLightCoffeeModel.exportDate_Result)" />
+          <FunctionImport Name="exportbyDate" ReturnType="Collection(TheLightCoffeeModel.exportbyDate_Result)">
+            <Parameter Name="dayexport" Mode="In" Type="Int32" />
+            <Parameter Name="monexport" Mode="In" Type="Int32" />
+            <Parameter Name="yearexport" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="exportBillTakeAway_Result">
           <Property Type="Int32" Name="Bill_Code" Nullable="false" />
@@ -1009,6 +1019,13 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           <Property Type="Int32" Name="TypeExport" Nullable="true" />
           <Property Type="Int64" Name="MoneyExport" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="exportbyDate_Result">
+          <Property Type="Int32" Name="IDExport" Nullable="false" />
+          <Property Type="String" Name="NameExport" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="StaffExport" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="TypeExport" Nullable="true" />
+          <Property Type="Int64" Name="MoneyExport" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1286,6 +1303,17 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           <FunctionImportMapping FunctionImportName="exportDate" FunctionName="TheLightCoffeeModel.Store.exportDate">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportDate_Result">
+                <ScalarProperty Name="IDExport" ColumnName="IDExport" />
+                <ScalarProperty Name="NameExport" ColumnName="NameExport" />
+                <ScalarProperty Name="StaffExport" ColumnName="StaffExport" />
+                <ScalarProperty Name="TypeExport" ColumnName="TypeExport" />
+                <ScalarProperty Name="MoneyExport" ColumnName="MoneyExport" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="exportbyDate" FunctionName="TheLightCoffeeModel.Store.exportbyDate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportbyDate_Result">
                 <ScalarProperty Name="IDExport" ColumnName="IDExport" />
                 <ScalarProperty Name="NameExport" ColumnName="NameExport" />
                 <ScalarProperty Name="StaffExport" ColumnName="StaffExport" />
