@@ -40,7 +40,7 @@ namespace DoAnThucTap.GUI
                     dto.receipt_type = "Dịch vụ";
                 }
                 dto.receipt_time = Convert.ToDateTime(item.receipt_time);
-                dto.receipt_staff = new staffDAO().getStaff(item.receipt_Staff).Staff_Name;
+                dto.receipt_staff = new staffDAO().findStaff(item.receipt_Staff).Staff_Name;
                 dto.receipt_money = Convert.ToInt64(item.receipt_money);
                 listdto.Add(dto);
             }

@@ -31,7 +31,7 @@ namespace DoAnThucTap.GUI
                 importDTO dto = new importDTO();
                 dto.Import_ID = item.Import_ID;
                 dto.Import_Date = item.Import_Date;
-                dto.Import_Staff = new staffDAO().getStaff(item.Import_Staff).Staff_Name;
+                dto.Import_Staff = new staffDAO().findStaff(item.Import_Staff).Staff_Name;
                 dto.Import_TotalMoney = item.Import_TotalMoney;
                 listdto.Add(dto);
             }

@@ -33,11 +33,7 @@ namespace DoAnThucTap.GUI
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult cl = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi giao diện quản lý chứ?","Chờ đã!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if(cl == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -172,6 +168,15 @@ namespace DoAnThucTap.GUI
             SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             openForm(typeof(Admin_ReportByDate_Management_GUI));
             SplashScreenManager.CloseForm();
+        }
+
+        private void AdminForm_GUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult cl = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi giao diện quản lý chứ?", "Chờ đã!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (cl != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

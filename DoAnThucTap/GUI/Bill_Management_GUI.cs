@@ -32,7 +32,7 @@ namespace DoAnThucTap.GUI
                 billDTO dto = new billDTO();
                 dto.Bill_ID= item.Bill_ID;
                 dto.Bill_Table = item.Bill_Table;
-                dto.Bill_Staff = new staffDAO().getStaff(item.Bill_Staff).Staff_Name;
+                dto.Bill_Staff = new staffDAO().findStaff(item.Bill_Staff).Staff_Name;
                 if (item.Bill_isTakeAway)
                 {
                     dto.Bill_Type = "Mang về";

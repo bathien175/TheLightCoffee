@@ -15,7 +15,7 @@ namespace DoAnThucTap.DAO
 {
     internal class billDAO
     {
-        String connectStr = @"Data Source=192.168.1.7,1433;Initial Catalog=TheLightCoffee;Persist Security Info=True;User ID=sa;Password=sa;MultipleActiveResultSets=True;Application Name=EntityFramework";
+        String connectStr = @"Data Source=.;Initial Catalog=TheLightCoffee;Persist Security Info=True;User ID=sa;Password=sa;MultipleActiveResultSets=True;Application Name=EntityFramework";
         public Bill getBillbyTableID(String tableID)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())

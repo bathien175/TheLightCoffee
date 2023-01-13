@@ -1,5 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
 using DevExpress.PivotGrid.OLAP.Mdx;
+using DevExpress.XtraSplashScreen;
 using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using DoAnThucTap.userControl;
@@ -79,51 +80,80 @@ namespace DoAnThucTap.GUI
 
         private void btnTea_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(2);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnCoffee_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(7);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnMilkTea_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(1);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnJuice_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(3);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnVitamin_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(4);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnIce_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(6);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnYaour_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(5);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnMoreDrink_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(9);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnFood_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             loadData(8);
+            SplashScreenManager.CloseForm();
         }
 
         private void btnFind100_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             menuDAO dao = new menuDAO();
             var p = dao.searchbyName(txtFind100.Text);
             if (p != null)
@@ -140,15 +170,19 @@ namespace DoAnThucTap.GUI
                 btn.Tag = p.Product_ID;
                 btn.Click += BtnDetail_Click;
                 pnlListProduct.Controls.Add(pro);
+                SplashScreenManager.CloseForm();
             }
             else
             {
+                SplashScreenManager.CloseForm();
                 MessageBox.Show("Không tìm thấy món bạn cần tìm!");
             }
         }
 
         private void btnFind50_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
             pnlListProduct.Controls.Clear();
             menuDAO dao = new menuDAO();
             List<Product> list = dao.find50(txtFind50.Text);
@@ -171,6 +205,7 @@ namespace DoAnThucTap.GUI
                     stt++;
                 }
             }
+            SplashScreenManager.CloseForm();
         }
     }
 }

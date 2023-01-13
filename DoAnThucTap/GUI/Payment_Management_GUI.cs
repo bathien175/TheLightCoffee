@@ -32,7 +32,7 @@ namespace DoAnThucTap.GUI
                 dto.payment_ID = item.Payment_ID;
                 dto.payment_name = item.Payment_name;
                 dto.payment_time = Convert.ToDateTime(item.Payment_time);
-                dto.payment_staff = new staffDAO().getStaff(item.Payment_Staff).Staff_Name;
+                dto.payment_staff = new staffDAO().findStaff(item.Payment_Staff).Staff_Name;
                 dto.payment_money = Convert.ToInt64(item.Payment_money);
                 listdto.Add(dto);
             }
