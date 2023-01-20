@@ -1,4 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
+using DevExpress.PivotGrid.OLAP.Mdx;
 using DoAnThucTap.DAO;
 using DoAnThucTap.DTO;
 using DoAnThucTap.userControl;
@@ -10,13 +11,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 using System.Windows.Forms;
 
 namespace DoAnThucTap.GUI
 {
     public partial class multip_Import_GUI : Form
     {
-        private List<detailImport> listimport = new List<detailImport>();
         private String staffcode;
         public multip_Import_GUI(string staffID)
         {
@@ -41,9 +42,10 @@ namespace DoAnThucTap.GUI
         }
         bool checkImportList(Ingredient i)
         {
-            foreach (var item in listimport)
+            foreach (var item in tbImport.Controls)
             {
-                if (item.ingredient.Ingredient_ID == i.Ingredient_ID)
+                item_Import im = (item_Import)item;
+                if (im.getSetID == i.Ingredient_ID)
                 {
                     return true;
                 }
@@ -60,137 +62,164 @@ namespace DoAnThucTap.GUI
             {
                 IngredientDAO dao = new IngredientDAO();
                 var x = dao.searchByName(cbbIngredient.Text);
-                if (listimport.Count > 0)
+                if (tbImport.Controls.Count > 0)
                 {
-                    if (checkImportList(x))
+                    if (checkImportList(x)) //;tồn tại sẵn món
                     {
-                        List<detailImport> list2 = new List<detailImport>();
-                        foreach (var item in listimport)
+                        foreach (var item in tbImport.Controls) //duyệt list cũ
                         {
-                            if (item.ingredient.Ingredient_ID == x.Ingredient_ID)
+                            item_Import im = (item_Import)item;
+                            if (im.getSetID == x.Ingredient_ID) // nếu tìm đc thì cập nhạt số lượng
                             {
-                                item.sl += Convert.ToInt32(nbrSL.Value);
-                                list2.Add(item);
+                                im.getSetSL += Convert.ToDouble(nbrSL.Value);
                             }
                             else
                             {
-                                list2.Add(item);
+                                //còn không đúng thì next
                             }
                         }
-                        listimport = list2;
                     }
-                    else
+                    else // chưa tồn tại thì add
                     {
-                        detailImport d = new detailImport();
-                        d.sl = Convert.ToInt32(nbrSL.Value);
-                        d.ingredient = x;
-                        listimport.Add(d);
+                        item_Import d = new item_Import();
+                        d.getSetID= x.Ingredient_ID;
+                        d.getSetName = x.Ingredient_Name;
+                        d.getSetImage = x.Ingredient_Image;
+                        d.getSetPrice = x.Ingredient_PriceImport;
+                        d.getSetSL = Convert.ToDouble(nbrSL.Value);
+                        double check = Math.Ceiling(Math.Round((Convert.ToDouble(d.getSetPrice * d.getSetSL) / 1000), 1));
+                        d.getSetTotal = Convert.ToInt64(check * 1000);
+                        BunifuImageButton btnSub = d.getbtnSub();
+                        BunifuImageButton btnDel = d.getbtnDel();
+                        btnSub.Tag = x.Ingredient_ID;
+                        btnDel.Tag = x.Ingredient_ID;
+                        btnSub.Click += BtnSub_Click;
+                        btnDel.Click += BtnDel_Click;
+                        d.Width = tbImport.Width;
+                        tbImport.Controls.Add(d);
                     }
                 }
-                else
+                else // ngược lại list rỗng thì cũng add thẳng
                 {
-                    detailImport d = new detailImport();
-                    d.sl = Convert.ToInt32(nbrSL.Value);
-                    d.ingredient = x;
-                    listimport.Add(d);
+                    item_Import d = new item_Import();
+                    d.getSetID = x.Ingredient_ID;
+                    d.getSetName = x.Ingredient_Name;
+                    d.getSetImage = x.Ingredient_Image;
+                    d.getSetPrice = x.Ingredient_PriceImport;
+                    d.getSetSL = Convert.ToDouble(nbrSL.Value);
+                    double check = Math.Ceiling(Math.Round((Convert.ToDouble(d.getSetPrice * d.getSetSL) / 1000), 1));
+                    d.getSetTotal = Convert.ToInt64(check * 1000);
+                    BunifuImageButton btnSub = d.getbtnSub();
+                    BunifuImageButton btnDel = d.getbtnDel();
+                    btnSub.Tag = x.Ingredient_ID;
+                    btnDel.Tag = x.Ingredient_ID;
+                    btnSub.Click += BtnSub_Click;
+                    btnDel.Click += BtnDel_Click;
+                    d.Width = tbImport.Width;
+                    tbImport.Controls.Add(d);
                 }
                 nbrSL.Value = 1;
-                loadTable();
             }
         }
-
-        private void loadTable()
-        {
-            tbImport.Controls.Clear();
-            int stt = 1;
-            foreach (var item in listimport)
-            {
-                item_Import i = new item_Import();
-                i.getSetID = stt;
-                i.getSetName = item.ingredient.Ingredient_Name;
-                i.getSetPrice = item.ingredient.Ingredient_PriceImport;
-                i.getSetUnit = item.ingredient.Ingredient_Unit;
-                i.getSetImage = item.ingredient.Ingredient_Image;
-                i.getSetSL = item.sl;
-                BunifuImageButton btnSub = i.getbtnSub();
-                BunifuImageButton btnDel = i.getbtnDel();
-                btnSub.Tag = item.ingredient.Ingredient_ID;
-                btnDel.Tag = item.ingredient.Ingredient_ID;
-                btnSub.Click += BtnSub_Click;
-                btnDel.Click += BtnDel_Click;
-                stt++;
-                tbImport.Controls.Add(i);
-            }
-        }
-
         private void BtnDel_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32((sender as BunifuImageButton).Tag);
             List<detailImport> list2 = new List<detailImport>();
-            foreach (var item in listimport)
+            for (int i = 0; i < tbImport.Controls.Count;i++)
             {
-                if (item.ingredient.Ingredient_ID != id)
+                item_Import im = (item_Import)tbImport.Controls[i];
+                if (im.getSetID == id)
                 {
-                    list2.Add(item);
+                    tbImport.Controls.RemoveAt(i);
                 }
             }
-            listimport = list2;
-            loadTable();
         }
 
         private void BtnSub_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32((sender as BunifuImageButton).Tag);
             List<detailImport> list2 = new List<detailImport>();
-            foreach (var item in listimport)
+            for (int i = 0; i < tbImport.Controls.Count; i++)
             {
-                if (item.ingredient.Ingredient_ID == id)
+                item_Import im = (item_Import)tbImport.Controls[i];
+                if (im.getSetID == id)
                 {
-                    if (item.sl > 1)
+                    if (im.getSetSL > 1)
                     {
-                        item.sl--;
-                        list2.Add(item);
+                        im.getSetSL -= 1;
                     }
+                    else
+                    {
+                        tbImport.Controls.RemoveAt(i);
+                    }
+                }
+            }
+        }
+        private int checkMoney()
+        {
+            int s = 0;
+            foreach (var item in tbImport.Controls)
+            {
+                item_Import i = (item_Import)item;
+                int test = Convert.ToInt32(i.getSetPrice % 1000);
+                if (test != 5 && test != 0)
+                {
+                    i.errorMoney(true);
+                    s++;
                 }
                 else
                 {
-                    list2.Add(item);
+                    i.errorMoney(false);
                 }
             }
-            listimport = list2;
-            loadTable();
+            return s;
         }
-
         private void btnImport_Click(object sender, EventArgs e)
         {
-            if (listimport.Count <= 0)
+            if (tbImport.Controls.Count <= 0)
             {
                 MessageBox.Show("Bạn chưa chọn một nguyên liệu nào!", "Lỗi nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                // nhập nhiều
-                IngredientDAO dao = new IngredientDAO();
-                try
+                if (checkMoney() == 0) // kiểm tra lỗi tiền
                 {
-                    List<exportIImport_Result> data = dao.ImportMultip(staffcode, listimport);
-                    if(data.Count > 0) 
+                    // nhập nhiều
+                    IngredientDAO dao = new IngredientDAO();
+                    try
                     {
-                        printImport print = new printImport();
-                        print.Print(data);
-                        print.ShowDialog();
-                        listimport.Clear();
-                        loadTable();
+                        List<detailImport> listimport = new List<detailImport>();
+                        foreach (var item in tbImport.Controls)
+                        {
+                            item_Import im = (item_Import)item;
+                            detailImport dto = new detailImport();
+                            dto.ingredient = new IngredientDAO().getIngredientbyID(im.getSetID);
+                            dto.sl = im.getSetSL;
+                            dto.Price = im.getSetPrice;
+                            listimport.Add(dto);
+                        }
+                        List<exportIImport_Result> data = dao.ImportMultip(staffcode, listimport);
+                        if (data.Count > 0)
+                        {
+                            printImport print = new printImport();
+                            print.Print(data);
+                            print.ShowDialog();
+                            tbImport.Controls.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tiền nhập hàng lớn hơn ngân sách hiện có!", "Lỗi nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
-                    else
+                    catch (Exception)
                     {
-                        MessageBox.Show("Tiền nhập hàng lớn hơn ngân sách hiện có!", "Lỗi nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Đã có lỗi xảy ra vui lòng kiểm tra và thử lại sau!");
                     }
-                    
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Đã có lỗi xảy ra vui lòng kiểm tra và thử lại sau!");
+                    MessageBox.Show("Tiền nhập không hợp lệ! Vui lòng kiểm tra và thử lại!", "Lỗi nhập!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

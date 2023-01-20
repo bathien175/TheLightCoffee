@@ -25,7 +25,7 @@ namespace DoAnThucTap.DTO
         public string Ingredient_Unit { get; set; }
         public long Ingredient_PriceImport { get; set; }
         public bool Ingredient_isActive { get; set; }
-        public Nullable<float> Ingredient_Reserved { get; set; }
+        public Nullable<double> Ingredient_Reserved { get; set; }
         public byte[] Ingredient_Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

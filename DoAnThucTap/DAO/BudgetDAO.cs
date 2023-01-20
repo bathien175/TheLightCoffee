@@ -18,6 +18,14 @@ namespace DoAnThucTap.DAO
                 return list;
             }
         }
+        public List<exportDatebyStaff_Result> getListDatebyStaff(String staff)
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                List<exportDatebyStaff_Result> list = db.exportDatebyStaff(staff).ToList();
+                return list;
+            }
+        }
         public List<exportbyDate_Result> getListByDate(DateTime d)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())

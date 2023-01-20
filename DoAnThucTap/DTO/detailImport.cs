@@ -9,6 +9,8 @@ namespace DoAnThucTap.DTO
     internal class detailImport
     {
         public Ingredient ingredient { get; set; }
-        public int sl { get; set; }
+        public double sl { get; set; }
+
+        public long Price {get; set; }
     }
 }

@@ -203,6 +203,16 @@ namespace DoAnThucTap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edi {
+            get {
+                object obj = ResourceManager.GetObject("edi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
@@ -257,6 +267,16 @@ namespace DoAnThucTap.Properties {
             get {
                 object obj = ResourceManager.GetObject("human-resources", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_design {
+            get {
+                object obj = ResourceManager.GetObject("icons8_design", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

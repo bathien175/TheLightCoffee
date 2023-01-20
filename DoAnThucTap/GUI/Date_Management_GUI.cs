@@ -18,23 +18,26 @@ namespace DoAnThucTap.GUI
     {
         private long moneyin = 0, moneyout = 0, moneytotal = 0, moneyimport = 0, newmoney = 0;
         private String staffcur;
-        public Date_Management_GUI(string staffcur)
+        public Date_Management_GUI(string staffid)
         {
             SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
             SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             InitializeComponent();
+            this.staffcur = staffid;
             loadData();
             loadMoney();
             cbbType.SelectedIndex = 0;
             showhideEdit(false);
-            this.staffcur = staffcur;
             SplashScreenManager.CloseForm();
         }
 
         void loadData()
         {
+            moneyin = 0;
+            moneyimport = 0;
+            moneyout = 0;
             BudgetDAO dao = new BudgetDAO();
-            List<exportDate_Result> list = dao.getListDate();
+            List<exportDatebyStaff_Result> list = dao.getListDatebyStaff(staffcur);
             List<dateReport> dateDTO = new List<dateReport>();
             int iid = 1;
             foreach (var item in list)
@@ -256,7 +259,7 @@ namespace DoAnThucTap.GUI
         {
             moneyIn.getMoney = moneyin;
             moneyOut.getMoney = moneyout;
-            moneyDate.getMoney = moneytotal;
+            moneyDate.getMoney = moneyimport;
             moneyAll.getMoney = moneytotal + moneyimport;
         }
         long convertLong(String s)

@@ -163,6 +163,7 @@
     <Compile Include="DAO\menuDAO.cs" />
     <Compile Include="DAO\staffDAO.cs" />
     <Compile Include="DAO\tableDAO.cs" />
+    <Compile Include="DTO\ApplyDiscountDTO.cs" />
     <Compile Include="DTO\Bill.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -203,6 +204,9 @@
     <Compile Include="DTO\exportbyDate_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\exportDatebyStaff_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\exportDate_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
@@ -210,6 +214,12 @@
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\FindDiscount_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\getListDiscount_Result.cs">
+      <DependentUpon>LightCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\getSurcharge_Result.cs">
       <DependentUpon>LightCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Import.cs">
@@ -318,6 +328,12 @@
     <Compile Include="GUI\Admin_ReportByDate_Management_GUI.Designer.cs">
       <DependentUpon>Admin_ReportByDate_Management_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ApplyDiscountForMenu_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ApplyDiscountForMenu_GUI.Designer.cs">
+      <DependentUpon>ApplyDiscountForMenu_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Bill_Management_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +351,12 @@
     </Compile>
     <Compile Include="GUI\ChangePassword_GUI.Designer.cs">
       <DependentUpon>ChangePassword_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Change_InputPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Change_InputPrice.Designer.cs">
+      <DependentUpon>Change_InputPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Checkout_GUI.cs">
       <SubType>Form</SubType>
@@ -605,6 +627,9 @@
     <EmbeddedResource Include="GUI\Admin_ReportByDate_Management_GUI.resx">
       <DependentUpon>Admin_ReportByDate_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ApplyDiscountForMenu_GUI.resx">
+      <DependentUpon>ApplyDiscountForMenu_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Bill_Management_GUI.resx">
       <DependentUpon>Bill_Management_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -613,6 +638,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChangePassword_GUI.resx">
       <DependentUpon>ChangePassword_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Change_InputPrice.resx">
+      <DependentUpon>Change_InputPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Checkout_GUI.resx">
       <DependentUpon>Checkout_GUI.cs</DependentUpon>
@@ -857,6 +885,8 @@
       <DependentUpon>LightCoffee.edmx</DependentUpon>
       <LastGenOutput>LightCoffee.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8_design.ico" />
+    <None Include="Resources\icons8_design_50px.png" />
     <None Include="Resources\logoquan.ico" />
     <None Include="Resources\budget.png" />
     <None Include="Resources\costs-and-revenues-chart.png" />

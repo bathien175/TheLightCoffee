@@ -47,6 +47,7 @@ namespace DoAnThucTap.GUI
             lblTotalMoney1.Text = String.Format("{0:0,0}", Convert.ToInt64(totalMoneyFirst));
             totalMoneyLast = totalMoneyFirst;
             lblTotalmoney2.Text = String.Format("{0:0,0}", Convert.ToInt64(totalMoneyLast));
+            loadSurcharge();
             SplashScreenManager.CloseForm();
         }
         void setTotalMoney()
@@ -415,17 +416,8 @@ namespace DoAnThucTap.GUI
 
         private void txtCusGive_Leave(object sender, EventArgs e)
         {
-            if (!checkCusGive())
-            {
-                MessageBox.Show("Tiền trả không được nhỏ hơn tổng tiền hóa đơn!", "Lỗi thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtCusGive.Focus();
-            }
-            else
-            {
-                txtChange = 0;
-                cusRecive = Convert.ToInt64(CusGiveMoney) - totalMoneyLast;
-                txtCusRecive.Text = String.Format("{0:0,0}", cusRecive);
-            }
+            cusRecive = Convert.ToInt64(CusGiveMoney) - totalMoneyLast;
+            txtCusRecive.Text = String.Format("{0:0,0}", cusRecive);
         }
 
         private void txtDiscountMoney_TextChanged(object sender, EventArgs e)
@@ -449,7 +441,12 @@ namespace DoAnThucTap.GUI
             foreach (DataGridViewRow item in tbSurchange.Rows)
             {
                 if(item.Index== tbid)
-                { x = Convert.ToInt32(item.Cells[0].Value); tbSurchange.Rows.RemoveAt(item.Index); }
+                { 
+                    x = Convert.ToInt32(item.Cells[0].Value);
+                    String s = tbSurchange.Rows[item.Index].Cells[2].Value.ToString();
+                    extraFeeTotal -= convertMoney(s); 
+                    tbSurchange.Rows.RemoveAt(item.Index); 
+                }
             }
             billDAO dao = new billDAO();
             dao.removeSurchange(billid, x);
@@ -462,6 +459,9 @@ namespace DoAnThucTap.GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+                DialogResult cs = new DialogResult();
                 if (split)
                 {
                     billDAO dao = new billDAO();
@@ -486,10 +486,20 @@ namespace DoAnThucTap.GUI
                             b.Bill_TimeTo = Convert.ToDateTime(item.Bill_TimeTo);
                             list.Add(b);
                         }
-                        printBill print = new printBill();
-                        this.Close();
-                        print.PrintBillTable(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
-                        print.ShowDialog();
+                        SplashScreenManager.CloseForm();
+                        cs = MessageBox.Show("Bạn có muốn xuất hóa đơn thanh toán không?", "Xác nhận thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (cs == DialogResult.Yes)
+                        {
+                            printBill print = new printBill();
+                            this.Close();
+                            print.PrintBillTable(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
+                            print.ShowDialog();
+                        }
+                        else
+                        {
+                            this.Close();
+                        }
+                        
                     }
                 }
                 else
@@ -517,10 +527,19 @@ namespace DoAnThucTap.GUI
                                 b.Bill_TotalMoney = item.Bill_TotalMoney;
                                 list.Add(b);
                             }
-                            printBill print = new printBill();
-                            this.Close();
-                            print.PrintBill(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
-                            print.ShowDialog();
+                            SplashScreenManager.CloseForm();
+                            cs = MessageBox.Show("Bạn có muốn xuất hóa đơn thanh toán không?", "Xác nhận thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (cs == DialogResult.Yes)
+                            {
+                                printBill print = new printBill();
+                                this.Close();
+                                print.PrintBill(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
+                                print.ShowDialog();
+                            }
+                            else
+                            {
+                                this.Close();
+                            }
                         }
                     }
                     else
@@ -546,10 +565,19 @@ namespace DoAnThucTap.GUI
                                 b.Bill_TimeTo = Convert.ToDateTime(item.Bill_TimeTo);
                                 list.Add(b);
                             }
-                            printBill print = new printBill();
-                            this.Close();
-                            print.PrintBillTable(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
-                            print.ShowDialog();
+                            SplashScreenManager.CloseForm();
+                            cs = MessageBox.Show("Bạn có muốn xuất hóa đơn thanh toán không?", "Xác nhận thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (cs == DialogResult.Yes)
+                            {
+                                printBill print = new printBill();
+                                this.Close();
+                                print.PrintBillTable(list, Convert.ToInt64(CusGiveMoney), Convert.ToInt64(cusRecive));
+                                print.ShowDialog();
+                            }
+                            else
+                            {
+                                this.Close();
+                            } 
                         }
                     }
                 }
@@ -557,11 +585,71 @@ namespace DoAnThucTap.GUI
             }   
         }
 
+        private void btnPrintBill_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
+            List<billnoTakeAway> list = new List<billnoTakeAway>();
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var x = db.exportBillNoTakeAway(billid).ToList();
+                long total = 0;
+                foreach (exportBillNoTakeAway_Result item in x)
+                {
+                    total += item.Bill_UnitPrice * item.Bill_Quantity;
+                }
+                foreach (exportBillNoTakeAway_Result item in x)
+                {
+                    billnoTakeAway b = new billnoTakeAway();
+                    b.Bill_Code = item.Bill_Code;
+                    b.Bill_Staff = item.Bill_Staff;
+                    b.Bill_Discount = Convert.ToInt64(DiscountMoney);
+                    if (tbSurchange.Rows.Count > 0)
+                    {
+                        long surcharge = 0;
+                        foreach (DataGridViewRow i in tbSurchange.Rows)
+                        {
+                            surcharge += convertMoney(i.Cells[2].Value.ToString());
+                        }
+                        b.Bill_ExtraFee = surcharge;
+                    }
+                    else
+                    {
+                        b.Bill_ExtraFee = 0;
+                    }
+                    b.Bill_Product = item.Bill_Product;
+                    b.Bill_Quantity = item.Bill_Quantity;
+                    b.Bill_UnitPrice = item.Bill_UnitPrice;
+                    b.Bill_TotalMoney = total;
+                    b.Bill_Table = item.Bill_Table;
+                    b.Bill_TimeFrom = item.Bill_TimeFrom;
+                    b.Bill_TimeTo = Convert.ToDateTime(item.Bill_TimeTo);
+                    list.Add(b);
+                }
+            }
+            printBill print = new printBill();
+            print.PrintBillTable(list, -1, -1);
+            SplashScreenManager.CloseForm();
+            print.ShowDialog();
+        }
+        long convertMoney(String s)
+        {
+            String v = "";
+            foreach (var item in s)
+            {
+                if (char.IsDigit(item))
+                {
+                    v += item;
+                }
+            }
+            return long.Parse(v);
+        }
         private void tbSurchange_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (tbSurchange.Columns[e.ColumnIndex].Name == "deleteSur")
             {
                 removeSurchange(e.RowIndex);
+                setTotalMoney();
             }
         }
         void loadDiscount()
@@ -600,7 +688,8 @@ namespace DoAnThucTap.GUI
                         }
                     }
                 }
-                DiscountMoney = totaldiscount.ToString();
+                double check = Math.Ceiling(Math.Round((Convert.ToDouble(totaldiscount) / 1000),1));
+                DiscountMoney = (check*1000).ToString();
                 txtDiscountMoney.Text = String.Format("{0:0,0 vnđ}", Convert.ToInt64(DiscountMoney));
             }
             else
@@ -635,6 +724,7 @@ namespace DoAnThucTap.GUI
                     }
                 }
             }
+            setTotalMoney();
         }
 
         private void tbDiscount_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -657,7 +747,25 @@ namespace DoAnThucTap.GUI
                 }
                 apllydiscount = listnew;
                 loadDiscount();
+                setTotalMoney();
             }
+        }
+        void loadSurcharge()
+        {
+            using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
+            {
+                var s = db.getSurcharge(billid).ToList();
+                if (s.Count > 0)
+                {
+                    foreach (var item in s)
+                    {
+                        var i = db.Surcharges.Where(x => x.Surcharge_ID == item.Surcharge_ID).FirstOrDefault();
+                        tbSurchange.Rows.Add(i.Surcharge_ID, i.Surcharge_Name, String.Format("{0:0,0 vnđ}", i.Surcharge_Price), (i.Surcharge_DateStart).ToShortDateString());
+                        extraFeeTotal += i.Surcharge_Price;
+                    }
+                }
+            }
+            setTotalMoney();
         }
 
         private void btnAddSurchange_Click(object sender, EventArgs e)

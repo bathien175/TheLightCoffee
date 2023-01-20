@@ -64,8 +64,8 @@
             this.pExtra = new DevExpress.XtraReports.UI.XRLabel();
             this.pDiscount = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblCusRecive = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblCusGive = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
@@ -421,8 +421,8 @@
             this.pExtra,
             this.pDiscount,
             this.xrLabel13,
-            this.xrLabel12,
-            this.xrLabel11,
+            this.lblCusRecive,
+            this.lblCusGive,
             this.xrLabel10,
             this.xrLabel9,
             this.xrLabel8});
@@ -532,31 +532,31 @@
     "n gặp lại.";
             this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel12
+            // lblCusRecive
             // 
-            this.xrLabel12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(151.6667F, 155.3334F);
-            this.xrLabel12.Multiline = true;
-            this.xrLabel12.Name = "xrLabel12";
-            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel12.SizeF = new System.Drawing.SizeF(104.1668F, 23F);
-            this.xrLabel12.StylePriority.UseFont = false;
-            this.xrLabel12.StylePriority.UseTextAlignment = false;
-            this.xrLabel12.Text = "Tiền thừa:";
-            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblCusRecive.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusRecive.LocationFloat = new DevExpress.Utils.PointFloat(151.6667F, 155.3334F);
+            this.lblCusRecive.Multiline = true;
+            this.lblCusRecive.Name = "lblCusRecive";
+            this.lblCusRecive.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblCusRecive.SizeF = new System.Drawing.SizeF(104.1668F, 23F);
+            this.lblCusRecive.StylePriority.UseFont = false;
+            this.lblCusRecive.StylePriority.UseTextAlignment = false;
+            this.lblCusRecive.Text = "Tiền thừa:";
+            this.lblCusRecive.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel11
+            // lblCusGive
             // 
-            this.xrLabel11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(151.6667F, 117.8334F);
-            this.xrLabel11.Multiline = true;
-            this.xrLabel11.Name = "xrLabel11";
-            this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel11.SizeF = new System.Drawing.SizeF(104.1668F, 22.99999F);
-            this.xrLabel11.StylePriority.UseFont = false;
-            this.xrLabel11.StylePriority.UseTextAlignment = false;
-            this.xrLabel11.Text = "Khách đưa:";
-            this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblCusGive.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusGive.LocationFloat = new DevExpress.Utils.PointFloat(151.6667F, 117.8334F);
+            this.lblCusGive.Multiline = true;
+            this.lblCusGive.Name = "lblCusGive";
+            this.lblCusGive.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblCusGive.SizeF = new System.Drawing.SizeF(104.1668F, 22.99999F);
+            this.lblCusGive.StylePriority.UseFont = false;
+            this.lblCusGive.StylePriority.UseTextAlignment = false;
+            this.lblCusGive.Text = "Khách đưa:";
+            this.lblCusGive.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel10
             // 
@@ -678,8 +678,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel12;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel11;
+        private DevExpress.XtraReports.UI.XRLabel lblCusRecive;
+        private DevExpress.XtraReports.UI.XRLabel lblCusGive;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;

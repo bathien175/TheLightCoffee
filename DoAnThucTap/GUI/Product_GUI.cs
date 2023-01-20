@@ -1,4 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
+using Bunifu.UI.WinForms.BunifuButton;
 using DevExpress.PivotGrid.OLAP.Mdx;
 using DevExpress.XtraSplashScreen;
 using DoAnThucTap.DAO;
@@ -13,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Bunifu.UI.WinForms.BunifuButton.BunifuButton;
 
 namespace DoAnThucTap.GUI
 {
@@ -20,9 +22,12 @@ namespace DoAnThucTap.GUI
     {
         public Product_GUI()
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             InitializeComponent();
             loadSource();
-            loadData(0);
+            loadCategory();
+            SplashScreenManager.CloseForm();
         }
         void loadSource()
         {
@@ -35,8 +40,10 @@ namespace DoAnThucTap.GUI
             }
             txtFind100.AutoCompleteCustomSource = listString;
         }
-        void loadData(int cate)
+        public void loadData(int cate)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             pnlListProduct.Controls.Clear();
             menuDAO dao = new menuDAO();
             List<Product> list = new List<Product>();
@@ -61,9 +68,11 @@ namespace DoAnThucTap.GUI
                 BunifuImageButton btn = pro.detailButton;
                 btn.Tag = item.Product_ID;
                 btn.Click += BtnDetail_Click;
+                pro.Width = pnlListProduct.Width;
                 pnlListProduct.Controls.Add(pro);
                 stt++;
             }
+            SplashScreenManager.CloseForm();
         }
 
         private void BtnDetail_Click(object sender, EventArgs e)
@@ -77,79 +86,126 @@ namespace DoAnThucTap.GUI
         {
             this.Close();
         }
-
-        private void btnTea_Click(object sender, EventArgs e)
+        #region loadGenre
+        Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+        BunifuButton createNewBunifuBtn(String txt)
         {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(2);
-            SplashScreenManager.CloseForm();
+            BunifuButton btnTea = new BunifuButton();
+            btnTea.AllowAnimations = true;
+            btnTea.AllowMouseEffects = true;
+            btnTea.AllowToggling = false;
+            btnTea.AnimationSpeed = 200;
+            btnTea.AutoGenerateColors = false;
+            btnTea.AutoRoundBorders = false;
+            btnTea.AutoSizeLeftIcon = true;
+            btnTea.AutoSizeRightIcon = true;
+            btnTea.BackColor = System.Drawing.Color.Transparent;
+            btnTea.BackColor1 = System.Drawing.Color.Teal;
+            //this.btnTea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTea.BackgroundImage")));
+            btnTea.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            btnTea.ButtonText = txt;
+            btnTea.ButtonTextMarginLeft = 0;
+            btnTea.ColorContrastOnClick = 45;
+            btnTea.ColorContrastOnHover = 45;
+            btnTea.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            btnTea.CustomizableEdges = borderEdges10;
+            btnTea.DialogResult = System.Windows.Forms.DialogResult.None;
+            btnTea.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            btnTea.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            btnTea.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            btnTea.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            btnTea.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnTea.ForeColor = System.Drawing.Color.White;
+            btnTea.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnTea.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            btnTea.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            btnTea.IconMarginLeft = 11;
+            btnTea.IconPadding = 10;
+            btnTea.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnTea.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            btnTea.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            btnTea.IconSize = 25;
+            btnTea.IdleBorderColor = System.Drawing.Color.Azure;
+            btnTea.IdleBorderRadius = 10;
+            btnTea.IdleBorderThickness = 1;
+            btnTea.IdleFillColor = System.Drawing.Color.Teal;
+            btnTea.IdleIconLeftImage = null;
+            btnTea.IdleIconRightImage = null;
+            btnTea.IndicateFocus = false;
+            btnTea.Location = new System.Drawing.Point(8, 8);
+            btnTea.Name = "btnTea";
+            btnTea.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            btnTea.OnDisabledState.BorderRadius = 10;
+            btnTea.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            btnTea.OnDisabledState.BorderThickness = 1;
+            btnTea.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            btnTea.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            btnTea.OnDisabledState.IconLeftImage = null;
+            btnTea.OnDisabledState.IconRightImage = null;
+            btnTea.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            btnTea.onHoverState.BorderRadius = 10;
+            btnTea.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            btnTea.onHoverState.BorderThickness = 1;
+            btnTea.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            btnTea.onHoverState.ForeColor = System.Drawing.Color.White;
+            btnTea.onHoverState.IconLeftImage = null;
+            btnTea.onHoverState.IconRightImage = null;
+            btnTea.OnIdleState.BorderColor = System.Drawing.Color.Azure;
+            btnTea.OnIdleState.BorderRadius = 10;
+            btnTea.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            btnTea.OnIdleState.BorderThickness = 1;
+            btnTea.OnIdleState.FillColor = System.Drawing.Color.Teal;
+            btnTea.OnIdleState.ForeColor = System.Drawing.Color.White;
+            btnTea.OnIdleState.IconLeftImage = null;
+            btnTea.OnIdleState.IconRightImage = null;
+            btnTea.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            btnTea.OnPressedState.BorderRadius = 10;
+            btnTea.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            btnTea.OnPressedState.BorderThickness = 1;
+            btnTea.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            btnTea.OnPressedState.ForeColor = System.Drawing.Color.White;
+            btnTea.OnPressedState.IconLeftImage = null;
+            btnTea.OnPressedState.IconRightImage = null;
+            btnTea.Size = new System.Drawing.Size(193, 49);
+            btnTea.TabIndex = 0;
+            btnTea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            btnTea.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            btnTea.TextMarginLeft = 0;
+            btnTea.TextPadding = new System.Windows.Forms.Padding(0);
+            btnTea.UseDefaultRadiusAndThickness = true;
+            //this.btnTea.Click += new System.EventHandler(this.btnTea_Click);
+            return btnTea;
         }
-
-        private void btnCoffee_Click(object sender, EventArgs e)
+        private void btnGenre_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(7);
-            SplashScreenManager.CloseForm();
+            int t = Convert.ToInt32((sender as BunifuButton).Tag);
+            loadData(t);
         }
-
-        private void btnMilkTea_Click(object sender, EventArgs e)
+        void loadCategory()
         {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(1);
-            SplashScreenManager.CloseForm();
+            flpCategory.Controls.Clear();
+            menuDAO dao = new menuDAO();
+            List<Category> listcate = dao.getListCategory();
+            if (listcate.Count > 0)
+            {
+                BunifuButton btnAll = createNewBunifuBtn("Tất cả");
+                btnAll.Tag = 0;
+                btnAll.Click += btnGenre_Click;
+                flpCategory.Controls.Add(btnAll);
+                foreach (var item in listcate)
+                {
+                    BunifuButton btn = createNewBunifuBtn(item.Category_Name);
+                    btn.Tag = item.Category_ID;
+                    btn.Click += btnGenre_Click;
+                    flpCategory.Controls.Add(btn);
+                }
+            }
         }
-
-        private void btnJuice_Click(object sender, EventArgs e)
-        {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(3);
-            SplashScreenManager.CloseForm();
-        }
-
-        private void btnVitamin_Click(object sender, EventArgs e)
-        {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(4);
-            SplashScreenManager.CloseForm();
-        }
-
-        private void btnIce_Click(object sender, EventArgs e)
-        {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(6);
-            SplashScreenManager.CloseForm();
-        }
-
-        private void btnYaour_Click(object sender, EventArgs e)
-        {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(5);
-            SplashScreenManager.CloseForm();
-        }
-
-        private void btnMoreDrink_Click(object sender, EventArgs e)
-        {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(9);
-            SplashScreenManager.CloseForm();
-        }
-
-        private void btnFood_Click(object sender, EventArgs e)
-        {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Đang tìm món đâyyy...");
-            loadData(8);
-            SplashScreenManager.CloseForm();
-        }
-
+        #endregion
         private void btnFind100_Click(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);

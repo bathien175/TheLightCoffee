@@ -20,9 +20,11 @@ namespace DoAnThucTap.GUI
         private Staff staffcur;
         public Ingredient_GUI(String staffcode)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tải dữ liệu lên...");
             InitializeComponent();
             loadStaff(staffcode);
-            loadData();
+            SplashScreenManager.CloseForm();
         }
         void loadStaff(string sid)
         {
@@ -34,11 +36,11 @@ namespace DoAnThucTap.GUI
             this.Close();
         }
 
-        void loadData()
+        public void loadData()
         {
-            tbData.Controls.Clear();
             SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
             SplashScreenManager.Default.SetWaitFormCaption("Đang tải dữ liệu lên...");
+            tbData.Controls.Clear();
             IngredientDAO dao = new IngredientDAO();
             List<Ingredient> list = dao.getFullIngredient();
             if (list.Count > 0)
@@ -57,6 +59,7 @@ namespace DoAnThucTap.GUI
                     BunifuImageButton btn = ingre.getBtn();
                     btn.Tag = item.Ingredient_ID;
                     btn.Click += Btn_Click;
+                    ingre.Width = tbData.Width;
                     tbData.Controls.Add(ingre);
                     stt++;
                 }
@@ -71,6 +74,8 @@ namespace DoAnThucTap.GUI
 
         void findIngredient (String t)
         {
+            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormCaption("Đang tải dữ liệu lên...");
             tbData.Controls.Clear();
             IngredientDAO dao = new IngredientDAO();
             List<Ingredient> list = dao.findIngredient(t);
@@ -90,10 +95,12 @@ namespace DoAnThucTap.GUI
                     BunifuImageButton btn = ingre.getBtn();
                     btn.Tag = item.Ingredient_ID;
                     btn.Click += Btn_Click;
+                    ingre.Width = tbData.Width;
                     tbData.Controls.Add(ingre);
                     stt++;
                 }
             }
+            SplashScreenManager.CloseForm();
         }
 
         private void btnImport_Click(object sender, EventArgs e)
@@ -104,13 +111,31 @@ namespace DoAnThucTap.GUI
             import.ShowDialog();
             this.Show();
         }
-
+        void updateReservedSingle(int id)
+        {
+            IngredientDAO dao = new IngredientDAO();
+            Ingredient i = dao.getIngredientbyID(id);
+            foreach (var item in tbData.Controls)
+            {
+                item_Ingredient k = (item_Ingredient)item;
+                if (k.code == i.Ingredient_ID)
+                {
+                    k.reservedIngredient = Convert.ToDouble(i.Ingredient_Reserved);
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
         private void Btn_Click(object sender, EventArgs e)
         {
+            int iid = Convert.ToInt32((sender as BunifuImageButton).Tag);
             //single import
-            single_Import_GUI import = new single_Import_GUI(staffcur.Staff_Code,Convert.ToInt32((sender as BunifuImageButton).Tag));
+            single_Import_GUI import = new single_Import_GUI(staffcur.Staff_Code,iid);
             import.ShowDialog();
-            loadData();
+            updateReservedSingle(iid);
         }
     }
 }

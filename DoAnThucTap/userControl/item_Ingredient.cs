@@ -100,6 +100,11 @@ namespace DoAnThucTap.userControl
             }
         }
 
+        private void item_Ingredient_Load(object sender, EventArgs e)
+        {
+           
+        }
+
         public BunifuImageButton getBtn()
         {
             return bunifuImageButton1;

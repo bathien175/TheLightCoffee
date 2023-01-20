@@ -117,21 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuPanel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAG0AAABkCAYAAACM976eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADoSURBVHhe7dPBCQMxEARB5R+P8rPvHk5hcEMVCLHvZs69
-        9/N75+H+//v9qVEuSLQg0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg
-        0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg
-        0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg0WDB0oJECxINFiwtSLQg
-        0WDB0oJECxItSLQg0YJEqznnC0zT559XGzvtAAAAAElFTkSuQmCC
-</value>
+  <data name="lblID.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 24px;font-family: 'Times New Roman'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuImageButton1.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAABtUSURBVHhe7d1L
+        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAABtUSURBVHhe7d1L
         cuRGkoBhHUJ36QPogNI1atdlJtOid3WCWfdpetzJTBYLzAeAxCMi/PvNfrOZFpkEgkCEu4cH6zcAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACg
         aX78+PF7+Me7//z148e37/PMr71+34/fLx8HAABaJBfrXxf7v/8v/v//vWZ+xi9BgYAAAIAWyEX5fYHe
@@ -254,7 +247,7 @@
   <data name="bunifuImageButton1.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAawAAAGsCAYAAACByJOsAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAEiiSURBVHhe7Z0J
+        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAEiiSURBVHhe7Z0J
         tCRVff/DNgwgm7IpoghKUFFRFFExQQGDBg0qEI0ecUGjRo1JTGISDbh7YhJMMCGDM4Mzo38jJjHb0SSI
         83xvYFgUDCioGHHHaAwgwpig4f/5Frce1dW3lu7XXUv393PO99R7Xffeqq7l9+271K2fMWaW+fSnP70K
         7ZPRH6GPZLWwsHA7y7u6LPbxDpYD+430XbLfbVX42sYYY7qKgnUI2gOGRKD/EcuoCcya+K63sbSZGWNM
@@ -568,48 +561,16 @@
         RK5CYII=
 </value>
   </data>
-  <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFcAAABkCAYAAADzJqxvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADdSURBVHhe7dKxCcRAEATByz+ey+8lRxl8GwNVsMa6zZx7
-        7++78/L/96eicEjckLhsstyQuCFx2WS5IXFD4rLJckPihsRlk+WGxA2JyybLDYkbEpdNlhsSNyQumyw3
-        JG5IXDZZbkjckLhsstyQuCFx2WS5IXFD4rLJckPihsRlk+WGxA2JyybLDYkbEpdNlhsSNyQumyw3JG5I
-        XDZZbkjckLhsstyQuCFx2WS5IXFD4rLJckPihsRlk+WGxA2JyybLDYkbEpdNlhsSNyQumyw3JG5I3JC4
-        IXFD4lbOeQB0/bXvb7Z1FAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="lblID.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 36px;font-family: 'Times New Roman'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
-  </data>
-  <data name="bunifuPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAABRwAAABkCAYAAADkK/x6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALqSURBVHhe7doxDcRAEATB44/n+L2dmMCrgwmqpA2WQmvO
-        vff33Xn5/X6/3+/3+/1+v9/v9/v9fv+/PwAAAABAR3kEAAAAADKCIwAAAACQERwBAAAAAAAAAACAPRaO
-        AAAAAEBGcAQAAAAAMoIjAAAAAAAAAAAAsMfCEQAAAADICI4AAAAAQEZwBAAAAAAAAAAAAPZYOAIAAAAA
-        GcERAAAAAMgIjgAAAAAAAAAAAMAeC0cAAAAAICM4AgAAAAAZwREAAAAAAAAAAADYY+EIAAAAAGQERwAA
-        AAAgIzgCAAAAAAAAAAAAeywcAQAAAICM4AgAAAAAZARHAAAAAAAAAAAAYI+FIwAAAACQERwBAAAAgIzg
-        CAAAAAAAAAAAAOyxcAQAAAAAMoIjAAAAAJARHAEAAAAAAAAAAIA9Fo4AAAAAQEZwBAAAAAAygiMAAAAA
-        AAAAAACwx8IRAAAAAMgIjgAAAABARnAEAAAAAAAAAAAA9lg4AgAAAAAZwREAAAAAyAiOAAAAAAAAAAAA
-        wB4LRwAAAAAgIzgCAAAAABnBEQAAAAAAAAAAANhj4QgAAAAAZARHAAAAACAjOAIAAAAAAAAAAAB7LBwB
-        AAAAgIzgCAAAAABkBEcAAAAAAAAAAABgj4UjAAAAAJARHAEAAACAjOAIAAAAAAAAAAAA7LFwBAAAAAAy
-        giMAAAAAkBEcAQAAAAAAAAAAgD0WjgAAAABARnAEAAAAADKCIwAAAAAAAAAAALDHwhEAAAAAyAiOAAAA
-        AEBGcAQAAAAAAAAAAAD2WDgCAAAAABnBEQAAAADICI4AAAAAAAAAAADAHgtHAAAAACAjOAIAAAAAGcER
-        AAAAAAAAAAAA2GPhCAAAAABkBEcAAAAAICM4AgAAAAAAAAAAAHssHAEAAACAjOAIAAAAAGQERwAAAAAA
-        AAAAAGCPhSMAAAAAkBEcAQAAAICM4AgAAAAAZARHAAAAACAjOAIAAAAAGcERAAAAAGic8wA3QdAVGj4n
-        0AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="lblName.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 36px;font-family: 'Times New Roman'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
-  </data>
-  <data name="lblUnit.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 36px;font-family: 'Times New Roman'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+  <data name="lblReserved.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 24px;font-family: 'Times New Roman'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
   <data name="lblPrice.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 36px;font-family: 'Times New Roman'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 24px;font-family: 'Times New Roman'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
-  <data name="lblReserved.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 36px;font-family: 'Times New Roman'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+  <data name="lblUnit.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 24px;font-family: 'Times New Roman'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+  </data>
+  <data name="lblName.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 24px;font-family: 'Times New Roman'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
 </root>

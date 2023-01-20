@@ -17,9 +17,9 @@ namespace DoAnThucTap.DTO
         public System.DateTime Import_Date { get; set; }
         public string Import_Staff { get; set; }
         public string Import_Ingredient { get; set; }
-        public Nullable<int> Import_Quantity { get; set; }
+        public Nullable<double> Import_Quantity { get; set; }
         public string Import_Unit { get; set; }
-        public long Import_Price { get; set; }
+        public Nullable<long> Import_Price { get; set; }
         public long Import_TotalMoney { get; set; }
     }
 }

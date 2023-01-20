@@ -15,8 +15,24 @@ namespace DoAnThucTap.DTO
         }
         public void InitData(long give, long recive, List<billnoTakeAway> data)
         {
-            cusGiveMoney.Value = give;
-            cusReciveMoeny.Value = recive;
+            if (give == -1 && recive == -1)
+            {
+                lblCusGive.Visible = false;
+                lblRecive.Visible = false;
+                pCusGive.Visible = false;
+                pCusRecive.Visible = false;
+                lbltitle.Text = "PHIẾU TÍNH TIỀN";
+            }
+            else
+            {
+                lblCusGive.Visible = true;
+                lblRecive.Visible = true;
+                pCusGive.Visible = true;
+                pCusRecive.Visible = true;
+                cusGiveMoney.Value = give;
+                cusReciveMoeny.Value = recive;
+                lbltitle.Text = "HÓA ĐƠN THANH TOÁN";
+            }
             objectDataSource1.DataSource = data;
         }
 

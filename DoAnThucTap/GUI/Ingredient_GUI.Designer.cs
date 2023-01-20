@@ -440,7 +440,7 @@
             this.bunifuLabel7.Location = new System.Drawing.Point(236, 0);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(647, 58);
+            this.bunifuLabel7.Size = new System.Drawing.Size(632, 58);
             this.bunifuLabel7.TabIndex = 6;
             this.bunifuLabel7.Text = "Tên sản phẩm";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -473,10 +473,10 @@
             this.bunifuLabel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.bunifuLabel5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel5.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel5.Location = new System.Drawing.Point(883, 0);
+            this.bunifuLabel5.Location = new System.Drawing.Point(868, 0);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(325, 58);
+            this.bunifuLabel5.Size = new System.Drawing.Size(381, 58);
             this.bunifuLabel5.TabIndex = 4;
             this.bunifuLabel5.Text = "Đơn vị tính";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -491,12 +491,12 @@
             this.bunifuLabel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.bunifuLabel4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel4.Location = new System.Drawing.Point(1208, 0);
+            this.bunifuLabel4.Location = new System.Drawing.Point(1249, 0);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(119, 58);
+            this.bunifuLabel4.Size = new System.Drawing.Size(129, 58);
             this.bunifuLabel4.TabIndex = 3;
-            this.bunifuLabel4.Text = "Đơn giá";
+            this.bunifuLabel4.Text = "Giá tham khảo";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -509,13 +509,13 @@
             this.bunifuLabel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.bunifuLabel3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel3.Location = new System.Drawing.Point(1327, 0);
+            this.bunifuLabel3.Location = new System.Drawing.Point(1378, 0);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(204, 58);
+            this.bunifuLabel3.Size = new System.Drawing.Size(153, 58);
             this.bunifuLabel3.TabIndex = 2;
             this.bunifuLabel3.Text = "Còn lại";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel2

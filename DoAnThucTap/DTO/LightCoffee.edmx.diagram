@@ -22,7 +22,7 @@
         <AssociationConnector Association="TheLightCoffeeModel.FKProduct568957" />
         <AssociationConnector Association="TheLightCoffeeModel.FK_RecipeProduct" />
         <EntityTypeShape EntityType="TheLightCoffeeModel.Ingredient" Width="1.5" PointX="10.375" PointY="1" />
-        <EntityTypeShape EntityType="TheLightCoffeeModel.Staff" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="TheLightCoffeeModel.Staff" Width="1.5" PointX="0.875" PointY="4.375" />
         <AssociationConnector Association="TheLightCoffeeModel.FKBill122024" />
         <AssociationConnector Association="TheLightCoffeeModel.FKImport434180" />
         <AssociationConnector Association="TheLightCoffeeModel.FK_infoIngredient" />

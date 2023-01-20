@@ -10,17 +10,13 @@
 namespace DoAnThucTap.DTO
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Import_Info
+    public partial class exportDatebyStaff_Result
     {
-        public int ImportInfo_ID { get; set; }
-        public Nullable<int> Import_ID { get; set; }
-        public Nullable<double> Info_Quantity { get; set; }
-        public Nullable<int> Info_Ingredient { get; set; }
-        public Nullable<long> info_Price { get; set; }
-    
-        public virtual Import Import { get; set; }
-        public virtual Ingredient Ingredient { get; set; }
+        public int IDExport { get; set; }
+        public string NameExport { get; set; }
+        public string StaffExport { get; set; }
+        public Nullable<int> TypeExport { get; set; }
+        public Nullable<long> MoneyExport { get; set; }
     }
 }

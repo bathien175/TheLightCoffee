@@ -495,7 +495,7 @@
             this.xrLabel9.SizeF = new System.Drawing.SizeF(150.9581F, 67.33337F);
             this.xrLabel9.StylePriority.UseFont = false;
             this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.Text = "Doanh thu:";
+            this.xrLabel9.Text = "Lợi nhuận:";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel6

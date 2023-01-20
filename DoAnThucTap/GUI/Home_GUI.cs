@@ -79,21 +79,16 @@ namespace DoAnThucTap.GUI
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(this, typeof(loadingForm), true, true, false);
-            SplashScreenManager.Default.SetWaitFormCaption("Xin vui lòng chờ...");
             Product_GUI product_GUI = new Product_GUI();
-            this.Hide();
-            SplashScreenManager.CloseForm();
-            product_GUI.ShowDialog();
-            this.Show();
+            product_GUI.Show();
+            product_GUI.loadData(0);
         }
 
         private void btnIngredient_Click(object sender, EventArgs e)
         {
             Ingredient_GUI ingredient = new Ingredient_GUI(s.Staff_Code);
-            this.Hide();
-            ingredient.ShowDialog();
-            this.Show();
+            ingredient.Show();
+            ingredient.loadData();
         }
 
         private void btnReportDay_Click(object sender, EventArgs e)

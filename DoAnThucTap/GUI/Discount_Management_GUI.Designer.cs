@@ -36,6 +36,7 @@
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
             this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
+            this.btnApply = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.btnCancel = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrinter = new DevExpress.XtraBars.BarButtonItem();
@@ -64,7 +65,6 @@
             this.Discount_DateStart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Discount_DateEnd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Discount_Per = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnApply = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -153,6 +153,16 @@
             this.btnRestore.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnRestore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore_ItemClick);
             // 
+            // btnApply
+            // 
+            this.btnApply.Caption = "Áp dụng khuyến mãi";
+            this.btnApply.Id = 8;
+            this.btnApply.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnApply.ImageOptions.Image")));
+            this.btnApply.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnApply.ImageOptions.LargeImage")));
+            this.btnApply.Name = "btnApply";
+            this.btnApply.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnApply.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnApply_ItemClick);
+            // 
             // btnSave
             // 
             this.btnSave.Caption = "Lưu";
@@ -198,7 +208,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1499, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1499, 24);
             // 
             // barDockControlBottom
             // 
@@ -212,17 +222,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 729);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 735);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1499, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1499, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 729);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 735);
             // 
             // openfile
             // 
@@ -232,7 +242,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 24);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
@@ -254,7 +264,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcDiscount);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1499, 729);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1499, 735);
             this.splitContainerControl1.SplitterPosition = 89;
             this.splitContainerControl1.TabIndex = 7;
             // 
@@ -365,7 +375,7 @@
             this.nbrPer.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nbrPer.Location = new System.Drawing.Point(1153, 10);
             this.nbrPer.Name = "nbrPer";
-            this.nbrPer.Size = new System.Drawing.Size(80, 28);
+            this.nbrPer.Size = new System.Drawing.Size(80, 24);
             this.nbrPer.TabIndex = 12;
             // 
             // btnAllproduct
@@ -446,7 +456,7 @@
             this.txtName.Location = new System.Drawing.Point(173, 8);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(713, 30);
+            this.txtName.Size = new System.Drawing.Size(713, 26);
             this.txtName.TabIndex = 9;
             // 
             // bunifuLabel3
@@ -475,7 +485,7 @@
             this.gcDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.gcDiscount.MenuManager = this.barManager1;
             this.gcDiscount.Name = "gcDiscount";
-            this.gcDiscount.Size = new System.Drawing.Size(1499, 628);
+            this.gcDiscount.Size = new System.Drawing.Size(1499, 636);
             this.gcDiscount.TabIndex = 0;
             this.gcDiscount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListDiscount});
@@ -558,15 +568,6 @@
             this.Discount_Per.Visible = true;
             this.Discount_Per.VisibleIndex = 5;
             this.Discount_Per.Width = 100;
-            // 
-            // btnApply
-            // 
-            this.btnApply.Caption = "Áp dụng khuyến mãi";
-            this.btnApply.Id = 8;
-            this.btnApply.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnApply.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnApply.Name = "btnApply";
-            this.btnApply.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // Discount_Management_GUI
             // 

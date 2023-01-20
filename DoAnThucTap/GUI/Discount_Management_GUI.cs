@@ -320,5 +320,28 @@ namespace DoAnThucTap.GUI
             gcDiscount.DataSource = discountDTOs;
             gvListDiscount.OptionsBehavior.Editable = false;
         }
+
+        private void btnApply_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (idI == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn mã giảm giá cần chỉnh sửa! Vui lòng chọn và thử lại!", "Lỗi chưa chọn mã giảm giá!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                BudgetDAO dao = new BudgetDAO();
+                Discount d = dao.getDiscount(idI);
+                if (d.Discount_allProduct == true)
+                {
+                    MessageBox.Show("Đây là mã giảm giá toàn sản phẩm!", "Lỗi loại mã giảm giá!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    ApplyDiscountForMenu_GUI apply = new ApplyDiscountForMenu_GUI(idI);
+                    apply.ShowDialog();
+                    idI = 0;
+                }
+            } 
+        }
     }
 }

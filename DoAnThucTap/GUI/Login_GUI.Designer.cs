@@ -189,7 +189,7 @@
             this.lblShowHide.Location = new System.Drawing.Point(456, 109);
             this.lblShowHide.Name = "lblShowHide";
             this.lblShowHide.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblShowHide.Size = new System.Drawing.Size(38, 23);
+            this.lblShowHide.Size = new System.Drawing.Size(28, 19);
             this.lblShowHide.TabIndex = 5;
             this.lblShowHide.Text = "Hiện";
             this.lblShowHide.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -556,9 +556,9 @@
             this.bunifuLabel1.Location = new System.Drawing.Point(12, 700);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(399, 17);
+            this.bunifuLabel1.Size = new System.Drawing.Size(306, 12);
             this.bunifuLabel1.TabIndex = 3;
-            this.bunifuLabel1.Text = "TheLightCoffee Version 1.00 - Copyright by Trần Bá Thiện EnterSoft";
+            this.bunifuLabel1.Text = "TheLightCoffee Version 1.02 - Copyright by Trần Bá Thiện EnterSoft";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 

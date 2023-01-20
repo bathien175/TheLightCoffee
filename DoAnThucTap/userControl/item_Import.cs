@@ -14,13 +14,15 @@ namespace DoAnThucTap.userControl
 {
     public partial class item_Import : UserControl
     {
-        private int id, sl;
-        private long price;
+        private int id;
+        private double sl;
+        private long price,total;
         private String name, unit;
         private byte[] image;
         public item_Import()
         {
             InitializeComponent();
+
         }
         public int getSetID
         {
@@ -34,7 +36,7 @@ namespace DoAnThucTap.userControl
                 lblID.Text = id.ToString();
             }
         }
-        public int getSetSL
+        public double getSetSL
         {
             get
             {
@@ -44,6 +46,8 @@ namespace DoAnThucTap.userControl
             {
                 sl = value;
                 lblSL.Text = sl.ToString();
+                double check = Math.Ceiling(Math.Round((Convert.ToDouble(price * sl) / 1000), 1));
+                getSetTotal = Convert.ToInt64(check * 1000);
             }
         }
         public String getSetName
@@ -99,6 +103,52 @@ namespace DoAnThucTap.userControl
             {
                 price = value;
                 lblPrice.Text = String.Format("{0:0,0}", price) + " VNĐ";
+                double check = Math.Ceiling(Math.Round((Convert.ToDouble(price*sl) / 1000), 1));
+                getSetTotal = Convert.ToInt64(check * 1000);
+            }
+        }
+
+        private void lblPrice_Leave(object sender, EventArgs e)
+        {
+            getSetPrice = convertMoney(lblPrice.Text);
+
+        }
+        long convertMoney(String s)
+        {
+            String money = "";
+            if (s.Length == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                foreach (var item in s)
+                {
+                    if (char.IsDigit(item))
+                    {
+                        money += item;
+                    }
+                }
+                if (money.Length == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return Convert.ToInt64(money);
+                }
+            }
+        }
+        public long getSetTotal
+        {
+            get
+            {
+                return total;
+            }
+            set
+            {
+                total = value;
+                lblTotal.Text = String.Format("{0:0,0}", total) + " VNĐ";
             }
         }
         public BunifuImageButton getbtnSub()
@@ -108,6 +158,18 @@ namespace DoAnThucTap.userControl
         public BunifuImageButton getbtnDel()
         {
             return btnDel;
+        }
+        public void errorMoney(bool t)
+        {
+            if (t)
+            {
+                lblPrice.BackColor = Color.Red;
+            }
+            else
+            {
+                lblPrice.BackColor = Color.White;
+            }
+           
         }
     }
 }

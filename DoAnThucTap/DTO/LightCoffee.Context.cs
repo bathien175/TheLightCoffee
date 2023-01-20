@@ -117,15 +117,6 @@ namespace DoAnThucTap.DTO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("removeFullSurchange", billidParameter);
         }
     
-        public virtual ObjectResult<exportIImport_Result> exportIImport(Nullable<int> importID)
-        {
-            var importIDParameter = importID.HasValue ?
-                new ObjectParameter("ImportID", importID) :
-                new ObjectParameter("ImportID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportIImport_Result>("exportIImport", importIDParameter);
-        }
-    
         public virtual ObjectResult<FindDiscount_Result> FindDiscount(Nullable<int> discountID)
         {
             var discountIDParameter = discountID.HasValue ?
@@ -155,6 +146,64 @@ namespace DoAnThucTap.DTO
                 new ObjectParameter("yearexport", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportbyDate_Result>("exportbyDate", dayexportParameter, monexportParameter, yearexportParameter);
+        }
+    
+        public virtual ObjectResult<getSurcharge_Result> getSurcharge(Nullable<int> billId)
+        {
+            var billIdParameter = billId.HasValue ?
+                new ObjectParameter("billId", billId) :
+                new ObjectParameter("billId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getSurcharge_Result>("getSurcharge", billIdParameter);
+        }
+    
+        public virtual ObjectResult<exportDatebyStaff_Result> exportDatebyStaff(string staffid)
+        {
+            var staffidParameter = staffid != null ?
+                new ObjectParameter("staffid", staffid) :
+                new ObjectParameter("staffid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportDatebyStaff_Result>("exportDatebyStaff", staffidParameter);
+        }
+    
+        public virtual int addDiscountApply(Nullable<int> discountID, Nullable<int> productID)
+        {
+            var discountIDParameter = discountID.HasValue ?
+                new ObjectParameter("DiscountID", discountID) :
+                new ObjectParameter("DiscountID", typeof(int));
+    
+            var productIDParameter = productID.HasValue ?
+                new ObjectParameter("ProductID", productID) :
+                new ObjectParameter("ProductID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addDiscountApply", discountIDParameter, productIDParameter);
+        }
+    
+        public virtual int deleteDiscountApply(Nullable<int> discountID)
+        {
+            var discountIDParameter = discountID.HasValue ?
+                new ObjectParameter("DiscountID", discountID) :
+                new ObjectParameter("DiscountID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deleteDiscountApply", discountIDParameter);
+        }
+    
+        public virtual ObjectResult<getListDiscount_Result> getListDiscount(Nullable<int> discountID)
+        {
+            var discountIDParameter = discountID.HasValue ?
+                new ObjectParameter("DiscountID", discountID) :
+                new ObjectParameter("DiscountID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getListDiscount_Result>("getListDiscount", discountIDParameter);
+        }
+    
+        public virtual ObjectResult<exportIImport_Result> exportIImport(Nullable<int> importID)
+        {
+            var importIDParameter = importID.HasValue ?
+                new ObjectParameter("ImportID", importID) :
+                new ObjectParameter("ImportID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<exportIImport_Result>("exportIImport", importIDParameter);
         }
     }
 }

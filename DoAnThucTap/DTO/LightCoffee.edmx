@@ -88,8 +88,9 @@
           </Key>
           <Property Name="ImportInfo_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Import_ID" Type="int" />
-          <Property Name="Info_Quantity" Type="int" />
+          <Property Name="Info_Quantity" Type="float" />
           <Property Name="Info_Ingredient" Type="int" />
+          <Property Name="info_Price" Type="bigint" />
         </EntityType>
         <EntityType Name="Ingredient">
           <Key>
@@ -100,7 +101,7 @@
           <Property Name="Ingredient_Unit" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Ingredient_PriceImport" Type="bigint" Nullable="false" />
           <Property Name="Ingredient_isActive" Type="bit" Nullable="false" />
-          <Property Name="Ingredient_Reserved" Type="real" />
+          <Property Name="Ingredient_Reserved" Type="float" />
           <Property Name="Ingredient_Image" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Payment">
@@ -385,12 +386,19 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="addDiscountApply" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DiscountID" Type="int" Mode="In" />
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+        </Function>
         <Function Name="addSurchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="billid" Type="int" Mode="In" />
           <Parameter Name="surid" Type="int" Mode="In" />
         </Function>
         <Function Name="checkSurcharge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="billid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="deleteDiscountApply" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DiscountID" Type="int" Mode="In" />
         </Function>
         <Function Name="exportBillNoTakeAway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BillID" Type="int" Mode="In" />
@@ -404,11 +412,20 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           <Parameter Name="yearexport" Type="int" Mode="In" />
         </Function>
         <Function Name="exportDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="exportDatebyStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="staffid" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="exportIImport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ImportID" Type="int" Mode="In" />
         </Function>
         <Function Name="FindDiscount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="DiscountID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getListDiscount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DiscountID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getSurcharge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billId" Type="int" Mode="In" />
         </Function>
         <Function Name="removeFullSurchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="billid" Type="int" Mode="In" />
@@ -673,9 +690,6 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
             <End Role="Import" EntitySet="Imports" />
             <End Role="Import_Info" EntitySet="Import_Info" />
           </AssociationSet>
-          <FunctionImport Name="exportIImport" ReturnType="Collection(TheLightCoffeeModel.exportIImport_Result)">
-          <Parameter Name="ImportID" Mode="In" Type="Int32" />
-          </FunctionImport>
           <EntitySet Name="Products" EntityType="TheLightCoffeeModel.Product" />
           <AssociationSet Name="FKBill_Info640249" Association="TheLightCoffeeModel.FKBill_Info640249">
             <End Role="Product" EntitySet="Products" />
@@ -731,6 +745,25 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
             <Parameter Name="monexport" Mode="In" Type="Int32" />
             <Parameter Name="yearexport" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="getSurcharge" ReturnType="Collection(TheLightCoffeeModel.getSurcharge_Result)">
+          <Parameter Name="billId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="exportDatebyStaff" ReturnType="Collection(TheLightCoffeeModel.exportDatebyStaff_Result)">
+          <Parameter Name="staffid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="addDiscountApply">
+            <Parameter Name="DiscountID" Mode="In" Type="Int32" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="deleteDiscountApply">
+          <Parameter Name="DiscountID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getListDiscount" ReturnType="Collection(TheLightCoffeeModel.getListDiscount_Result)">
+          <Parameter Name="DiscountID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="exportIImport" ReturnType="Collection(TheLightCoffeeModel.exportIImport_Result)">
+            <Parameter Name="ImportID" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="exportBillTakeAway_Result">
           <Property Type="Int32" Name="Bill_Code" Nullable="false" />
@@ -770,10 +803,11 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           </Key>
           <Property Name="ImportInfo_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Import_ID" Type="Int32" />
-          <Property Name="Info_Quantity" Type="Int32" />
+          <Property Name="Info_Quantity" Type="Double" />
           <Property Name="Info_Ingredient" Type="Int32" />
           <NavigationProperty Name="Import" Relationship="TheLightCoffeeModel.FK_infoImport" FromRole="Import_Info" ToRole="Import" />
           <NavigationProperty Name="Ingredient" Relationship="TheLightCoffeeModel.FK_infoIngredient" FromRole="Import_Info" ToRole="Ingredient" />
+          <Property Name="info_Price" Type="Int64" />
         </EntityType>
         <Association Name="FK_infoImport">
           <End Type="TheLightCoffeeModel.Import" Role="Import" Multiplicity="0..1" />
@@ -787,16 +821,6 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="exportIImport_Result">
-          <Property Type="Int32" Name="Import_ID" Nullable="false" />
-          <Property Type="DateTime" Name="Import_Date" Nullable="false" Precision="23" />
-          <Property Type="String" Name="Import_Staff" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Import_Ingredient" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="Import_Quantity" Nullable="true" />
-          <Property Type="String" Name="Import_Unit" Nullable="false" MaxLength="100" />
-          <Property Type="Int64" Name="Import_Price" Nullable="false" />
-          <Property Type="Int64" Name="Import_TotalMoney" Nullable="false" />
-        </ComplexType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Product_ID" />
@@ -858,7 +882,7 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           <Property Name="Ingredient_Unit" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Ingredient_PriceImport" Type="Int64" Nullable="false" />
           <Property Name="Ingredient_isActive" Type="Boolean" Nullable="false" />
-          <Property Name="Ingredient_Reserved" Type="Single" />
+          <Property Name="Ingredient_Reserved" Type="Double" />
           <Property Name="Ingredient_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Import_Info" Relationship="TheLightCoffeeModel.FK_infoIngredient" FromRole="Ingredient" ToRole="Import_Info" />
         </EntityType>
@@ -1026,6 +1050,31 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           <Property Type="Int32" Name="TypeExport" Nullable="true" />
           <Property Type="Int64" Name="MoneyExport" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="getSurcharge_Result">
+          <Property Type="Int32" Name="Bill_ID" Nullable="false" />
+          <Property Type="Int32" Name="Surcharge_ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="exportDatebyStaff_Result">
+          <Property Type="Int32" Name="IDExport" Nullable="false" />
+          <Property Type="String" Name="NameExport" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="StaffExport" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="TypeExport" Nullable="true" />
+          <Property Type="Int64" Name="MoneyExport" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getListDiscount_Result">
+          <Property Type="Int32" Name="Discount_ID" Nullable="false" />
+          <Property Type="Int32" Name="Discount_Product" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="exportIImport_Result">
+          <Property Type="Int32" Name="Import_ID" Nullable="false" />
+          <Property Type="DateTime" Name="Import_Date" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Import_Staff" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Import_Ingredient" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="Import_Quantity" Nullable="true" />
+          <Property Type="String" Name="Import_Unit" Nullable="false" MaxLength="100" />
+          <Property Type="Int64" Name="Import_Price" Nullable="true" />
+          <Property Type="Int64" Name="Import_TotalMoney" Nullable="false" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1154,6 +1203,7 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
           <EntitySetMapping Name="Import_Info">
             <EntityTypeMapping TypeName="TheLightCoffeeModel.Import_Info">
               <MappingFragment StoreEntitySet="Import_Info">
+                <ScalarProperty Name="info_Price" ColumnName="info_Price" />
                 <ScalarProperty Name="Info_Ingredient" ColumnName="Info_Ingredient" />
                 <ScalarProperty Name="Info_Quantity" ColumnName="Info_Quantity" />
                 <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
@@ -1161,20 +1211,6 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="exportIImport" FunctionName="TheLightCoffeeModel.Store.exportIImport">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportIImport_Result">
-                <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
-                <ScalarProperty Name="Import_Date" ColumnName="Import_Date" />
-                <ScalarProperty Name="Import_Staff" ColumnName="Import_Staff" />
-                <ScalarProperty Name="Import_Ingredient" ColumnName="Import_Ingredient" />
-                <ScalarProperty Name="Import_Quantity" ColumnName="Import_Quantity" />
-                <ScalarProperty Name="Import_Unit" ColumnName="Import_Unit" />
-                <ScalarProperty Name="Import_Price" ColumnName="Import_Price" />
-                <ScalarProperty Name="Import_TotalMoney" ColumnName="Import_TotalMoney" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="TheLightCoffeeModel.Product">
               <MappingFragment StoreEntitySet="Product">
@@ -1319,6 +1355,49 @@ warning 6002: The table/view 'TheLightCoffee.dbo.Staticscal_Product_byDate' does
                 <ScalarProperty Name="StaffExport" ColumnName="StaffExport" />
                 <ScalarProperty Name="TypeExport" ColumnName="TypeExport" />
                 <ScalarProperty Name="MoneyExport" ColumnName="MoneyExport" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getSurcharge" FunctionName="TheLightCoffeeModel.Store.getSurcharge">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.getSurcharge_Result">
+                <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
+                <ScalarProperty Name="Surcharge_ID" ColumnName="Surcharge_ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="exportDatebyStaff" FunctionName="TheLightCoffeeModel.Store.exportDatebyStaff">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportDatebyStaff_Result">
+                <ScalarProperty Name="IDExport" ColumnName="IDExport" />
+                <ScalarProperty Name="NameExport" ColumnName="NameExport" />
+                <ScalarProperty Name="StaffExport" ColumnName="StaffExport" />
+                <ScalarProperty Name="TypeExport" ColumnName="TypeExport" />
+                <ScalarProperty Name="MoneyExport" ColumnName="MoneyExport" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="addDiscountApply" FunctionName="TheLightCoffeeModel.Store.addDiscountApply" />
+          <FunctionImportMapping FunctionImportName="deleteDiscountApply" FunctionName="TheLightCoffeeModel.Store.deleteDiscountApply" />
+          <FunctionImportMapping FunctionImportName="getListDiscount" FunctionName="TheLightCoffeeModel.Store.getListDiscount">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.getListDiscount_Result">
+                <ScalarProperty Name="Discount_ID" ColumnName="Discount_ID" />
+                <ScalarProperty Name="Discount_Product" ColumnName="Discount_Product" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="exportIImport" FunctionName="TheLightCoffeeModel.Store.exportIImport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TheLightCoffeeModel.exportIImport_Result">
+                <ScalarProperty Name="Import_ID" ColumnName="Import_ID" />
+                <ScalarProperty Name="Import_Date" ColumnName="Import_Date" />
+                <ScalarProperty Name="Import_Staff" ColumnName="Import_Staff" />
+                <ScalarProperty Name="Import_Ingredient" ColumnName="Import_Ingredient" />
+                <ScalarProperty Name="Import_Quantity" ColumnName="Import_Quantity" />
+                <ScalarProperty Name="Import_Unit" ColumnName="Import_Unit" />
+                <ScalarProperty Name="Import_Price" ColumnName="Import_Price" />
+                <ScalarProperty Name="Import_TotalMoney" ColumnName="Import_TotalMoney" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -174,7 +174,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1636, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1636, 24);
             // 
             // barDockControlBottom
             // 
@@ -188,17 +188,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 647);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 653);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1636, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1636, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 647);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 653);
             // 
             // bunifuPanel1
             // 
@@ -211,10 +211,10 @@
             this.bunifuPanel1.Controls.Add(this.splitContainerControl1);
             this.bunifuPanel1.Controls.Add(this.bunifuPanel2);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuPanel1.Location = new System.Drawing.Point(0, 30);
+            this.bunifuPanel1.Location = new System.Drawing.Point(0, 24);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = false;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1636, 647);
+            this.bunifuPanel1.Size = new System.Drawing.Size(1636, 653);
             this.bunifuPanel1.TabIndex = 11;
             // 
             // splitContainerControl1
@@ -238,7 +238,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcProduct);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1636, 482);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1636, 488);
             this.splitContainerControl1.SplitterPosition = 109;
             this.splitContainerControl1.TabIndex = 5;
             // 
@@ -296,7 +296,7 @@
             this.txtTotalMoney.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalMoney.Location = new System.Drawing.Point(1282, 41);
             this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Size = new System.Drawing.Size(351, 30);
+            this.txtTotalMoney.Size = new System.Drawing.Size(351, 26);
             this.txtTotalMoney.TabIndex = 7;
             this.txtTotalMoney.Enter += new System.EventHandler(this.txtTotalMoney_Enter);
             this.txtTotalMoney.Leave += new System.EventHandler(this.txtTotalMoney_Leave);
@@ -311,7 +311,7 @@
             this.bunifuLabel4.Location = new System.Drawing.Point(1199, 46);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(77, 23);
+            this.bunifuLabel4.Size = new System.Drawing.Size(61, 19);
             this.bunifuLabel4.TabIndex = 6;
             this.bunifuLabel4.Text = "Tổng tiền:";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -328,7 +328,7 @@
             this.bunifuLabel2.Location = new System.Drawing.Point(930, 48);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(83, 23);
+            this.bunifuLabel2.Size = new System.Drawing.Size(66, 19);
             this.bunifuLabel2.TabIndex = 2;
             this.bunifuLabel2.Text = "Loại phiếu:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -340,7 +340,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(257, 39);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(667, 30);
+            this.txtName.Size = new System.Drawing.Size(667, 26);
             this.txtName.TabIndex = 1;
             // 
             // bunifuLabel6
@@ -354,7 +354,7 @@
             this.bunifuLabel6.Location = new System.Drawing.Point(130, 46);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(121, 23);
+            this.bunifuLabel6.Size = new System.Drawing.Size(97, 19);
             this.bunifuLabel6.TabIndex = 0;
             this.bunifuLabel6.Text = "Lý do lập phiếu:";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -367,7 +367,7 @@
             this.gcProduct.MainView = this.gvListProduct;
             this.gcProduct.MenuManager = this.barManager1;
             this.gcProduct.Name = "gcProduct";
-            this.gcProduct.Size = new System.Drawing.Size(1636, 361);
+            this.gcProduct.Size = new System.Drawing.Size(1636, 369);
             this.gcProduct.TabIndex = 0;
             this.gcProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListProduct});
@@ -478,10 +478,10 @@
             // 
             this.moneyDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moneyDate.getMoney = ((long)(0));
-            this.moneyDate.getSetImage = global::DoAnThucTap.Properties.Resources.costs_and_revenues_chart;
-            this.moneyDate.Gettitle = "doanh thu";
+            this.moneyDate.getSetImage = global::DoAnThucTap.Properties.Resources.add;
+            this.moneyDate.Gettitle = "Tiền nhập thêm";
             this.moneyDate.Location = new System.Drawing.Point(820, 2);
-            this.moneyDate.Margin = new System.Windows.Forms.Padding(2);
+            this.moneyDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moneyDate.Name = "moneyDate";
             this.moneyDate.Size = new System.Drawing.Size(405, 161);
             this.moneyDate.TabIndex = 3;
@@ -491,9 +491,9 @@
             this.moneyAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moneyAll.getMoney = ((long)(0));
             this.moneyAll.getSetImage = global::DoAnThucTap.Properties.Resources.budget;
-            this.moneyAll.Gettitle = "Ngân sách";
+            this.moneyAll.Gettitle = "Quỹ tiền mặt";
             this.moneyAll.Location = new System.Drawing.Point(1229, 2);
-            this.moneyAll.Margin = new System.Windows.Forms.Padding(2);
+            this.moneyAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moneyAll.Name = "moneyAll";
             this.moneyAll.Size = new System.Drawing.Size(405, 161);
             this.moneyAll.TabIndex = 2;
@@ -503,9 +503,9 @@
             this.moneyOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moneyOut.getMoney = ((long)(0));
             this.moneyOut.getSetImage = global::DoAnThucTap.Properties.Resources.money_inflation;
-            this.moneyOut.Gettitle = "Tiền ra";
+            this.moneyOut.Gettitle = "Chi ra";
             this.moneyOut.Location = new System.Drawing.Point(2, 2);
-            this.moneyOut.Margin = new System.Windows.Forms.Padding(2);
+            this.moneyOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moneyOut.Name = "moneyOut";
             this.moneyOut.Size = new System.Drawing.Size(405, 161);
             this.moneyOut.TabIndex = 1;
@@ -515,9 +515,9 @@
             this.moneyIn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moneyIn.getMoney = ((long)(0));
             this.moneyIn.getSetImage = global::DoAnThucTap.Properties.Resources.up1;
-            this.moneyIn.Gettitle = "Tiền vào";
+            this.moneyIn.Gettitle = "Thu vào";
             this.moneyIn.Location = new System.Drawing.Point(411, 2);
-            this.moneyIn.Margin = new System.Windows.Forms.Padding(2);
+            this.moneyIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moneyIn.Name = "moneyIn";
             this.moneyIn.Size = new System.Drawing.Size(405, 161);
             this.moneyIn.TabIndex = 0;

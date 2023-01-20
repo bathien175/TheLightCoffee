@@ -78,7 +78,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(838, 55);
             this.label1.TabIndex = 1;
-            this.label1.Text = "HÓA ĐƠN GỐC";
+            this.label1.Text = "PHIẾU TÍNH TIỀN GỐC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -114,7 +114,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(895, 55);
             this.label2.TabIndex = 1;
-            this.label2.Text = "HÓA ĐƠN TÁCH";
+            this.label2.Text = "PHIẾU TÍNH TIỀN TÁCH LẺ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3

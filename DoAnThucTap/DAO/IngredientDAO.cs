@@ -107,11 +107,11 @@ namespace DoAnThucTap.DAO
                 return db.Ingredients.Where(i => i.Ingredient_Name==name &&i.Ingredient_isActive==true).FirstOrDefault();
             }
         }
-        public long getbudget()
+        public long getbudget(String s)
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
-                List<exportDate_Result> list = db.exportDate().ToList();
+                List<exportDatebyStaff_Result> list = db.exportDatebyStaff(s).ToList();
                 if (list.Count == 0)
                 {
                     return 0;
@@ -134,9 +134,9 @@ namespace DoAnThucTap.DAO
                 }
             }
         }
-        public bool ImportSingle(String staffCode,int ingreId, int sl)
+        public bool ImportSingle(String staffCode,int ingreId, int sl, long price)
         {
-            long budget = getbudget();
+            long budget = getbudget(staffCode);
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
                 Ingredient ingre = db.Ingredients.Where(i => i.Ingredient_ID==ingreId).FirstOrDefault();
@@ -150,7 +150,7 @@ namespace DoAnThucTap.DAO
                     Import im = new Import();
                     im.Import_Staff = staffCode;
                     im.Import_Date = DateTime.Now;
-                    im.Import_TotalMoney = ingre.Ingredient_PriceImport * sl;
+                    im.Import_TotalMoney = price * sl;
                     db.Imports.Add(im);
                     db.SaveChanges();
                     //tạo chi tiết phiếu
@@ -158,6 +158,7 @@ namespace DoAnThucTap.DAO
                     info.Import_ID = im.Import_ID;
                     info.Info_Quantity = sl;
                     info.Info_Ingredient = ingreId;
+                    info.info_Price = price;
                     db.Import_Info.Add(info);
                     db.SaveChanges();
                     //cập nhật số lượng
@@ -169,7 +170,7 @@ namespace DoAnThucTap.DAO
                     p.Payment_Staff = staffCode;
                     p.Payment_name = "Nhập '" + ingre.Ingredient_Name + "', SL = " + sl.ToString();
                     p.Payment_time = DateTime.Now;
-                    p.Payment_money = ingre.Ingredient_PriceImport * sl;
+                    p.Payment_money = price * sl;
                     db.Payments.Add(p);
                     db.SaveChanges();
                     return true;
@@ -179,13 +180,14 @@ namespace DoAnThucTap.DAO
 
         public List<exportIImport_Result> ImportMultip (String staffCode, List<detailImport> list)
         {
-            long budget = getbudget();
+            long budget = getbudget(staffCode);
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
                 long total = 0;
                 foreach (var item in list)
                 {
-                    long money = item.ingredient.Ingredient_PriceImport * item.sl;
+                    double check = Math.Ceiling(Math.Round((Convert.ToDouble(item.Price * item.sl) / 1000), 1));
+                    long money = Convert.ToInt64(check * 1000);
                     total += money;
                 }
                 if (total > budget)
@@ -208,6 +210,7 @@ namespace DoAnThucTap.DAO
                         importin.Import_ID = im.Import_ID;
                         importin.Info_Ingredient = item.ingredient.Ingredient_ID;
                         importin.Info_Quantity = item.sl;
+                        importin.info_Price = item.Price;
                         db.Import_Info.Add(importin);
                         db.SaveChanges();
 
