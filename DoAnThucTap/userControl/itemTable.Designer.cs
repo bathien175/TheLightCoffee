@@ -82,7 +82,7 @@
             this.lblTime.AutoSize = false;
             this.lblTime.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTime.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblTime.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Location = new System.Drawing.Point(3, 132);
             this.lblTime.Name = "lblTime";
@@ -120,7 +120,7 @@
             this.lblTotalBill.Location = new System.Drawing.Point(38, 6);
             this.lblTotalBill.Name = "lblTotalBill";
             this.lblTotalBill.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotalBill.Size = new System.Drawing.Size(9, 19);
+            this.lblTotalBill.Size = new System.Drawing.Size(2, 0);
             this.lblTotalBill.TabIndex = 1;
             this.lblTotalBill.Text = "0";
             this.lblTotalBill.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             this.lblStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblStatus.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Location = new System.Drawing.Point(5, 0);
             this.lblStatus.Name = "lblStatus";
@@ -224,7 +224,7 @@
             this.createBill.Image = global::DoAnThucTap.Properties.Resources.invoice;
             this.createBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.createBill.Name = "createBill";
-            this.createBill.Size = new System.Drawing.Size(261, 26);
+            this.createBill.Size = new System.Drawing.Size(219, 26);
             this.createBill.Text = "Tạo hóa đơn";
             // 
             // bookTable
@@ -232,7 +232,7 @@
             this.bookTable.Image = global::DoAnThucTap.Properties.Resources.check;
             this.bookTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bookTable.Name = "bookTable";
-            this.bookTable.Size = new System.Drawing.Size(261, 26);
+            this.bookTable.Size = new System.Drawing.Size(219, 26);
             this.bookTable.Text = "Đặt bàn";
             // 
             // cancleBook
@@ -240,7 +240,7 @@
             this.cancleBook.Image = global::DoAnThucTap.Properties.Resources.close__1_;
             this.cancleBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cancleBook.Name = "cancleBook";
-            this.cancleBook.Size = new System.Drawing.Size(261, 26);
+            this.cancleBook.Size = new System.Drawing.Size(219, 26);
             this.cancleBook.Text = "Hủy lệnh đặt";
             // 
             // detailBill
@@ -248,7 +248,7 @@
             this.detailBill.Image = global::DoAnThucTap.Properties.Resources.pencil;
             this.detailBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.detailBill.Name = "detailBill";
-            this.detailBill.Size = new System.Drawing.Size(261, 26);
+            this.detailBill.Size = new System.Drawing.Size(219, 26);
             this.detailBill.Text = "Xem thông tin hóa đơn";
             // 
             // menuTrip
@@ -262,7 +262,7 @@
             this.cancleBook,
             this.detailBill});
             this.menuTrip.Name = "menuTrip";
-            this.menuTrip.Size = new System.Drawing.Size(262, 136);
+            this.menuTrip.Size = new System.Drawing.Size(220, 108);
             this.menuTrip.Style = MetroFramework.MetroColorStyle.Green;
             this.menuTrip.Theme = MetroFramework.MetroThemeStyle.Light;
             this.menuTrip.UseCustomBackColor = true;

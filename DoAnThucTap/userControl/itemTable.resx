@@ -124,7 +124,7 @@
   <data name="bunifuPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAACaCAYAAAATmXWpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALFSURBVHhe7dkhbhtBAIbRgYGFhYWFgTlCjlBoWBgYmFsU
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALFSURBVHhe7dkhbhtBAIbRgYGFhYWFgTlCjlBoWBgYmFsU
         9liFhYWFRUk6rkeq7Dq0u5/0fulpZe8s/bSyh5lZeq9j3E6H6QngPzu8jHG3cvT2joeex/g2H3gF2NJs
         0Y/ZpPuVp/MdY3XtIYCNHVamTptf3Myafb84BLC52aaf8/p+5crbFbBvs1GfVq7+BOvh2iGAnXhauZqf
         Tr/MXzsEsAeCBWQIFpAhWECGYAEZggVkCBaQIVhAhmABGYIFZAgWkCFYQIZgARmCBWQIFpAhWECGYAEZ
@@ -140,18 +140,18 @@
 </value>
   </data>
   <data name="lblTime.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 1px;font-family: 'Times New Roman'; font-size: 10.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 2px;font-family: 'Times New Roman'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
   <data name="lblTotalBill.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Times New Roman'; font-size: 10.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: -8px;font-family: 'Times New Roman'; font-size: 10,2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
   <data name="lblTableCode.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 54px;font-family: 'Times New Roman'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 58px;font-family: 'Times New Roman'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
   </data>
   <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAAwCAYAAACrHkchAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADmSURBVHhe7dZBCoNAEEVB73+euV/CLISISHZJP6gC0QbX
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADmSURBVHhe7dZBCoNAEEVB73+euV/CLISISHZJP6gC0QbX
         j38AZK21Xvv5/Ha73e5f3wApj/FSNWCiW5vECsgQLGAyjQIyLsFSLyBDsIDJLCwgQ6OADAsLaBIsYDIL
         C8jQKCDDwgKaBAuYzMICMjQKyLCwgCbBAiazsIAMjQIyLCygSbCAySwsIEOjgAwLC2gSLGAyCwvI0Cgg
         w8ICmgQLmMzCAjI0CsiwsIAmwQIms7CADI0CMiwsoEmwgMksLCBDsIAMwQIybo0SLWCixzaJFjDJ1ybt
@@ -159,7 +159,7 @@
 </value>
   </data>
   <data name="lblStatus.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 10px;font-family: 'Times New Roman'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 15px;font-family: 'Times New Roman'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
   <data name="btnOptionBill.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

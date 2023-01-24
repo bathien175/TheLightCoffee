@@ -83,12 +83,12 @@
             this.lblNameStaff.AutoSize = false;
             this.lblNameStaff.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNameStaff.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblNameStaff.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameStaff.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameStaff.ForeColor = System.Drawing.Color.White;
-            this.lblNameStaff.Location = new System.Drawing.Point(103, 0);
+            this.lblNameStaff.Location = new System.Drawing.Point(118, 9);
             this.lblNameStaff.Name = "lblNameStaff";
             this.lblNameStaff.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNameStaff.Size = new System.Drawing.Size(282, 63);
+            this.lblNameStaff.Size = new System.Drawing.Size(344, 63);
             this.lblNameStaff.TabIndex = 2;
             this.lblNameStaff.Text = "Tên nhân viên";
             this.lblNameStaff.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;

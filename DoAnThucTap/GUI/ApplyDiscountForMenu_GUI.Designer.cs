@@ -135,33 +135,33 @@
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 31);
             this.barDockControlTop.Manager = this.toolbarFormManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1026, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 627);
             this.barDockControlBottom.Manager = this.toolbarFormManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1026, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
             this.barDockControlLeft.Manager = this.toolbarFormManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 596);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1026, 31);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 596);
             // 
             // barButtonItem1
             // 
@@ -181,6 +181,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1026, 627);
             this.Controls.Add(this.gcApplyDiscount);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.toolbarFormControl1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ApplyDiscountForMenu_GUI.IconOptions.Icon")));
             this.Name = "ApplyDiscountForMenu_GUI";
@@ -192,6 +196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

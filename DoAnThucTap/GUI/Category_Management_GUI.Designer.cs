@@ -183,7 +183,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1432, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1432, 24);
             // 
             // barDockControlBottom
             // 
@@ -197,23 +197,23 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 731);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 737);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1432, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1432, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 731);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 737);
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 24);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
@@ -227,7 +227,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcCategory);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1432, 731);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1432, 737);
             this.splitContainerControl1.SplitterPosition = 104;
             this.splitContainerControl1.TabIndex = 6;
             // 
@@ -240,7 +240,7 @@
             this.txtName.Location = new System.Drawing.Point(213, 25);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(1206, 30);
+            this.txtName.Size = new System.Drawing.Size(1206, 26);
             this.txtName.TabIndex = 11;
             // 
             // bunifuLabel1
@@ -250,7 +250,7 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.Location = new System.Drawing.Point(13, 25);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
@@ -270,7 +270,7 @@
             this.gcCategory.Margin = new System.Windows.Forms.Padding(4);
             this.gcCategory.MenuManager = this.barManager1;
             this.gcCategory.Name = "gcCategory";
-            this.gcCategory.Size = new System.Drawing.Size(1432, 615);
+            this.gcCategory.Size = new System.Drawing.Size(1432, 623);
             this.gcCategory.TabIndex = 0;
             this.gcCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListCategory});

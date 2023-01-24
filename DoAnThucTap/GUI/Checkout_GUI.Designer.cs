@@ -291,7 +291,7 @@
             this.bunifuLabel14.AutoEllipsis = false;
             this.bunifuLabel14.AutoSize = false;
             this.bunifuLabel14.CursorType = null;
-            this.bunifuLabel14.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel14.Location = new System.Drawing.Point(3, 3);
             this.bunifuLabel14.Name = "bunifuLabel14";
             this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -813,7 +813,7 @@
             this.bunifuLabel13.AutoEllipsis = false;
             this.bunifuLabel13.AutoSize = false;
             this.bunifuLabel13.CursorType = null;
-            this.bunifuLabel13.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel13.Location = new System.Drawing.Point(6, 6);
             this.bunifuLabel13.Name = "bunifuLabel13";
             this.bunifuLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -921,7 +921,7 @@
             this.bunifuLabel12.AutoEllipsis = false;
             this.bunifuLabel12.AutoSize = false;
             this.bunifuLabel12.CursorType = null;
-            this.bunifuLabel12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel12.Location = new System.Drawing.Point(6, 178);
             this.bunifuLabel12.Name = "bunifuLabel12";
             this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -939,7 +939,7 @@
             this.bunifuLabel11.AutoSize = false;
             this.bunifuLabel11.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel11.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel11.Location = new System.Drawing.Point(6, 106);
             this.bunifuLabel11.Name = "bunifuLabel11";
             this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -995,7 +995,7 @@
             this.bunifuLabel17.AutoEllipsis = false;
             this.bunifuLabel17.AutoSize = false;
             this.bunifuLabel17.CursorType = null;
-            this.bunifuLabel17.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel17.ForeColor = System.Drawing.Color.White;
             this.bunifuLabel17.Location = new System.Drawing.Point(630, 3);
             this.bunifuLabel17.Name = "bunifuLabel17";
@@ -1015,7 +1015,7 @@
             this.lblTotalmoney2.AutoEllipsis = false;
             this.lblTotalmoney2.AutoSize = false;
             this.lblTotalmoney2.CursorType = null;
-            this.lblTotalmoney2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalmoney2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalmoney2.ForeColor = System.Drawing.Color.White;
             this.lblTotalmoney2.Location = new System.Drawing.Point(131, 3);
             this.lblTotalmoney2.Name = "lblTotalmoney2";
@@ -1036,7 +1036,7 @@
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.ForeColor = System.Drawing.Color.White;
             this.bunifuLabel1.Location = new System.Drawing.Point(12, 3);
             this.bunifuLabel1.Name = "bunifuLabel1";
@@ -1829,7 +1829,7 @@
             this.bunifuLabel16.AutoSize = false;
             this.bunifuLabel16.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel16.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel16.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel16.ForeColor = System.Drawing.Color.White;
             this.bunifuLabel16.Location = new System.Drawing.Point(578, 3);
             this.bunifuLabel16.Name = "bunifuLabel16";
@@ -1850,7 +1850,7 @@
             this.lblTotalMoney1.AutoSize = false;
             this.lblTotalMoney1.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalMoney1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblTotalMoney1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMoney1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalMoney1.ForeColor = System.Drawing.Color.White;
             this.lblTotalMoney1.Location = new System.Drawing.Point(150, 6);
             this.lblTotalMoney1.Name = "lblTotalMoney1";
@@ -1870,7 +1870,7 @@
             this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel3.ForeColor = System.Drawing.Color.White;
             this.bunifuLabel3.Location = new System.Drawing.Point(12, 6);
             this.bunifuLabel3.Name = "bunifuLabel3";

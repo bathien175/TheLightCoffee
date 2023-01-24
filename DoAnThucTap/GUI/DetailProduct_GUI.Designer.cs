@@ -351,7 +351,7 @@
             this.lblPrice.AutoEllipsis = false;
             this.lblPrice.AutoSize = false;
             this.lblPrice.CursorType = null;
-            this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.Black;
             this.lblPrice.Location = new System.Drawing.Point(162, 344);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);
@@ -369,7 +369,7 @@
             this.bunifuLabel8.AutoEllipsis = false;
             this.bunifuLabel8.AutoSize = false;
             this.bunifuLabel8.CursorType = null;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel8.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel8.Location = new System.Drawing.Point(8, 344);
             this.bunifuLabel8.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);
@@ -389,7 +389,7 @@
             this.lblUnit.AutoEllipsis = false;
             this.lblUnit.AutoSize = false;
             this.lblUnit.CursorType = null;
-            this.lblUnit.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnit.ForeColor = System.Drawing.Color.Black;
             this.lblUnit.Location = new System.Drawing.Point(162, 263);
             this.lblUnit.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);
@@ -407,7 +407,7 @@
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.AutoSize = false;
             this.bunifuLabel6.CursorType = null;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel6.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel6.Location = new System.Drawing.Point(8, 263);
             this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);
@@ -427,7 +427,7 @@
             this.lblTypeProduct.AutoEllipsis = false;
             this.lblTypeProduct.AutoSize = false;
             this.lblTypeProduct.CursorType = null;
-            this.lblTypeProduct.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeProduct.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTypeProduct.ForeColor = System.Drawing.Color.Black;
             this.lblTypeProduct.Location = new System.Drawing.Point(162, 182);
             this.lblTypeProduct.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);
@@ -445,7 +445,7 @@
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.AutoSize = false;
             this.bunifuLabel4.CursorType = null;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel4.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel4.Location = new System.Drawing.Point(8, 182);
             this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);
@@ -465,7 +465,7 @@
             this.lblNameProduct.AutoEllipsis = false;
             this.lblNameProduct.AutoSize = false;
             this.lblNameProduct.CursorType = null;
-            this.lblNameProduct.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameProduct.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameProduct.ForeColor = System.Drawing.Color.Black;
             this.lblNameProduct.Location = new System.Drawing.Point(162, 101);
             this.lblNameProduct.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);
@@ -484,7 +484,7 @@
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel1.Location = new System.Drawing.Point(8, 101);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(5, 20, 5, 10);

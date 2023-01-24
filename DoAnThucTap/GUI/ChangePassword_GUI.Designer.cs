@@ -287,7 +287,7 @@
             this.warningPass.AutoSize = false;
             this.warningPass.Cursor = System.Windows.Forms.Cursors.Default;
             this.warningPass.CursorType = System.Windows.Forms.Cursors.Default;
-            this.warningPass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warningPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warningPass.ForeColor = System.Drawing.Color.Red;
             this.warningPass.Location = new System.Drawing.Point(12, 61);
             this.warningPass.Name = "warningPass";
@@ -307,7 +307,7 @@
             this.warningNewPass.AutoEllipsis = false;
             this.warningNewPass.AutoSize = false;
             this.warningNewPass.CursorType = null;
-            this.warningNewPass.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warningNewPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warningNewPass.ForeColor = System.Drawing.Color.Red;
             this.warningNewPass.Location = new System.Drawing.Point(12, 136);
             this.warningNewPass.Name = "warningNewPass";
@@ -327,7 +327,7 @@
             this.waningNewPassAgain.AutoEllipsis = false;
             this.waningNewPassAgain.AutoSize = false;
             this.waningNewPassAgain.CursorType = null;
-            this.waningNewPassAgain.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.waningNewPassAgain.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.waningNewPassAgain.ForeColor = System.Drawing.Color.Red;
             this.waningNewPassAgain.Location = new System.Drawing.Point(12, 211);
             this.waningNewPassAgain.Name = "waningNewPassAgain";

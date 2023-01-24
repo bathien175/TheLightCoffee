@@ -101,7 +101,7 @@
             this.lblNameMenu.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNameMenu.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblNameMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNameMenu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameMenu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameMenu.ForeColor = System.Drawing.Color.White;
             this.lblNameMenu.Location = new System.Drawing.Point(0, 0);
             this.lblNameMenu.Name = "lblNameMenu";
@@ -219,7 +219,7 @@
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel2.Location = new System.Drawing.Point(0, 0);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -271,7 +271,7 @@
             this.lblSL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblSL.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSL.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblSL.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSL.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSL.Location = new System.Drawing.Point(0, 29);
             this.lblSL.Name = "lblSL";
             this.lblSL.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -289,7 +289,7 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;

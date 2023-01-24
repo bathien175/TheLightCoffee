@@ -311,7 +311,7 @@
             this.bunifuLabel4.Location = new System.Drawing.Point(1199, 46);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(61, 19);
+            this.bunifuLabel4.Size = new System.Drawing.Size(16, 4);
             this.bunifuLabel4.TabIndex = 6;
             this.bunifuLabel4.Text = "Tổng tiền:";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -328,7 +328,7 @@
             this.bunifuLabel2.Location = new System.Drawing.Point(930, 48);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(66, 19);
+            this.bunifuLabel2.Size = new System.Drawing.Size(17, 4);
             this.bunifuLabel2.TabIndex = 2;
             this.bunifuLabel2.Text = "Loại phiếu:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -350,7 +350,7 @@
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel6.Location = new System.Drawing.Point(130, 46);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;

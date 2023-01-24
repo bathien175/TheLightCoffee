@@ -435,7 +435,7 @@
             this.bunifuLabel7.AutoSize = false;
             this.bunifuLabel7.CursorType = null;
             this.bunifuLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel7.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel7.Location = new System.Drawing.Point(236, 0);
             this.bunifuLabel7.Name = "bunifuLabel7";
@@ -453,7 +453,7 @@
             this.bunifuLabel6.AutoSize = false;
             this.bunifuLabel6.CursorType = null;
             this.bunifuLabel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel6.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel6.Location = new System.Drawing.Point(86, 0);
             this.bunifuLabel6.Name = "bunifuLabel6";
@@ -471,7 +471,7 @@
             this.bunifuLabel5.AutoSize = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel5.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel5.Location = new System.Drawing.Point(868, 0);
             this.bunifuLabel5.Name = "bunifuLabel5";
@@ -489,7 +489,7 @@
             this.bunifuLabel4.AutoSize = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel4.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel4.Location = new System.Drawing.Point(1249, 0);
             this.bunifuLabel4.Name = "bunifuLabel4";
@@ -507,7 +507,7 @@
             this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel3.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel3.Location = new System.Drawing.Point(1378, 0);
             this.bunifuLabel3.Name = "bunifuLabel3";
@@ -525,7 +525,7 @@
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel2.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel2.Location = new System.Drawing.Point(1531, 0);
             this.bunifuLabel2.Name = "bunifuLabel2";
@@ -544,7 +544,7 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.ForeColor = System.Drawing.Color.Black;
             this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuLabel1.Name = "bunifuLabel1";

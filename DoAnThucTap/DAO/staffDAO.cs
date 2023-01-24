@@ -56,7 +56,7 @@ namespace DoAnThucTap.DAO
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
-                List<Staff> list = db.Staffs.Where(n => n.Staff_Code != "NV_101").ToList();
+                List<Staff> list = db.Staffs.Where(n => n.Staff_Code != "admin").ToList();
                 return list;
             }
         }

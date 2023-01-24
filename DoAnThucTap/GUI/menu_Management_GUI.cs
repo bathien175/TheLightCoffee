@@ -395,5 +395,10 @@ namespace DoAnThucTap.GUI
         {
 
         }
+
+        private void bunifuLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

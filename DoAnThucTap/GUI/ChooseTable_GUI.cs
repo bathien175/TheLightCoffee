@@ -42,6 +42,7 @@ namespace DoAnThucTap.GUI
                             tb.TableCode = item.dbtable.Table_Code;
                             tb.TableStatus = item.dbtable.Table_Status;
                             tb.QuantityBill = item.BillQuantity;
+                            tb.GetTime = item.BillTime;
                             Bunifu.UI.WinForms.BunifuImageButton btn = tb.GetImageButton();
                             btn.Tag = tb.TableCode;
                             btn.MouseClick += Btn_MouseClick;
@@ -59,6 +60,7 @@ namespace DoAnThucTap.GUI
                             tb.TableCode = item.dbtable.Table_Code;
                             tb.TableStatus = item.dbtable.Table_Status;
                             tb.QuantityBill = item.BillQuantity;
+                            tb.GetTime = item.BillTime;
                             Bunifu.UI.WinForms.BunifuImageButton btn = tb.GetImageButton();
                             btn.Tag = tb.TableCode;
                             btn.MouseClick += Btn_MouseClick;
@@ -76,6 +78,7 @@ namespace DoAnThucTap.GUI
                             tb.TableCode = item.dbtable.Table_Code;
                             tb.TableStatus = item.dbtable.Table_Status;
                             tb.QuantityBill = item.BillQuantity;
+                            tb.GetTime = item.BillTime;
                             Bunifu.UI.WinForms.BunifuImageButton btn = tb.GetImageButton();
                             btn.Tag = tb.TableCode;
                             btn.MouseClick += Btn_MouseClick;
@@ -93,6 +96,7 @@ namespace DoAnThucTap.GUI
                             tb.TableCode = item.dbtable.Table_Code;
                             tb.TableStatus = item.dbtable.Table_Status;
                             tb.QuantityBill = item.BillQuantity;
+                            tb.GetTime = item.BillTime;
                             Bunifu.UI.WinForms.BunifuImageButton btn = tb.GetImageButton();
                             btn.Tag = tb.TableCode;
                             btn.MouseClick += Btn_MouseClick; ;

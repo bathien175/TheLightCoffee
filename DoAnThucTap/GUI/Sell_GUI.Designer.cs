@@ -402,7 +402,7 @@
             this.btnCheckout.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnCheckout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCheckout.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnCheckout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckout.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckout.ForeColor = System.Drawing.Color.White;
             this.btnCheckout.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckout.IconLeftCursor = System.Windows.Forms.Cursors.Hand;

@@ -176,7 +176,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1418, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1418, 24);
             // 
             // barDockControlBottom
             // 
@@ -190,23 +190,23 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 716);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 722);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1418, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1418, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 716);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 722);
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 24);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
@@ -220,7 +220,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcRecipe);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1418, 716);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1418, 722);
             this.splitContainerControl1.SplitterPosition = 324;
             this.splitContainerControl1.TabIndex = 6;
             // 
@@ -271,7 +271,7 @@
             this.cbbChooseProduct.Location = new System.Drawing.Point(253, 19);
             this.cbbChooseProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cbbChooseProduct.Name = "cbbChooseProduct";
-            this.cbbChooseProduct.Size = new System.Drawing.Size(502, 34);
+            this.cbbChooseProduct.Size = new System.Drawing.Size(502, 28);
             this.cbbChooseProduct.TabIndex = 4;
             this.cbbChooseProduct.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -283,7 +283,7 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel2.Location = new System.Drawing.Point(15, 8);
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel2.Name = "bunifuLabel2";
@@ -291,7 +291,7 @@
             this.bunifuLabel2.Size = new System.Drawing.Size(230, 46);
             this.bunifuLabel2.TabIndex = 3;
             this.bunifuLabel2.Text = "Chọn món:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel1
@@ -303,7 +303,7 @@
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.Location = new System.Drawing.Point(763, 7);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
@@ -311,7 +311,7 @@
             this.bunifuLabel1.Size = new System.Drawing.Size(161, 46);
             this.bunifuLabel1.TabIndex = 1;
             this.bunifuLabel1.Text = "Chọn số bước:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.BottomRight;
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // nbrQuantity
@@ -326,7 +326,7 @@
             0,
             0});
             this.nbrQuantity.Name = "nbrQuantity";
-            this.nbrQuantity.Size = new System.Drawing.Size(150, 34);
+            this.nbrQuantity.Size = new System.Drawing.Size(150, 29);
             this.nbrQuantity.TabIndex = 0;
             this.nbrQuantity.Value = new decimal(new int[] {
             1,
@@ -343,7 +343,7 @@
             this.gcRecipe.Margin = new System.Windows.Forms.Padding(4);
             this.gcRecipe.MenuManager = this.barManager1;
             this.gcRecipe.Name = "gcRecipe";
-            this.gcRecipe.Size = new System.Drawing.Size(1418, 380);
+            this.gcRecipe.Size = new System.Drawing.Size(1418, 388);
             this.gcRecipe.TabIndex = 0;
             this.gcRecipe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListRecipe});

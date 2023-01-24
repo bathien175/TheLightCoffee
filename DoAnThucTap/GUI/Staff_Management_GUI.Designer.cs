@@ -202,7 +202,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1432, 30);
+            this.barDockControl1.Size = new System.Drawing.Size(1432, 24);
             // 
             // barDockControlBottom
             // 
@@ -216,23 +216,23 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 690);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 696);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1432, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1432, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 690);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 696);
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 24);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
@@ -258,7 +258,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gcStaff);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1432, 690);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1432, 696);
             this.splitContainerControl1.SplitterPosition = 184;
             this.splitContainerControl1.TabIndex = 6;
             // 
@@ -271,7 +271,7 @@
             this.txtStaffCode.Location = new System.Drawing.Point(317, 30);
             this.txtStaffCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtStaffCode.Name = "txtStaffCode";
-            this.txtStaffCode.Size = new System.Drawing.Size(291, 30);
+            this.txtStaffCode.Size = new System.Drawing.Size(291, 26);
             this.txtStaffCode.TabIndex = 19;
             // 
             // bunifuLabel7
@@ -281,7 +281,7 @@
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.AutoSize = false;
             this.bunifuLabel7.CursorType = null;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel7.Location = new System.Drawing.Point(157, 36);
             this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel7.Name = "bunifuLabel7";
@@ -303,7 +303,7 @@
             this.cbbGender.Location = new System.Drawing.Point(1197, 84);
             this.cbbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGender.Name = "cbbGender";
-            this.cbbGender.Size = new System.Drawing.Size(219, 24);
+            this.cbbGender.Size = new System.Drawing.Size(219, 21);
             this.cbbGender.TabIndex = 17;
             // 
             // bunifuLabel6
@@ -313,7 +313,7 @@
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.AutoSize = false;
             this.bunifuLabel6.CursorType = null;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel6.Location = new System.Drawing.Point(1037, 84);
             this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel6.Name = "bunifuLabel6";
@@ -358,7 +358,7 @@
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.AutoSize = false;
             this.bunifuLabel4.CursorType = null;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel4.Location = new System.Drawing.Point(616, 84);
             this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel4.Name = "bunifuLabel4";
@@ -378,7 +378,7 @@
             this.txtAddress.Location = new System.Drawing.Point(317, 141);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(1102, 30);
+            this.txtAddress.Size = new System.Drawing.Size(1102, 26);
             this.txtAddress.TabIndex = 13;
             // 
             // bunifuLabel2
@@ -388,7 +388,7 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel2.Location = new System.Drawing.Point(157, 142);
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel2.Name = "bunifuLabel2";
@@ -408,7 +408,7 @@
             this.txtName.Location = new System.Drawing.Point(776, 30);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(640, 30);
+            this.txtName.Size = new System.Drawing.Size(640, 26);
             this.txtName.TabIndex = 11;
             // 
             // bunifuLabel1
@@ -418,7 +418,7 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.Location = new System.Drawing.Point(616, 31);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel1.Name = "bunifuLabel1";
@@ -454,12 +454,12 @@
             this.bunifuLabel5.AllowParentOverrides = false;
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel5.Location = new System.Drawing.Point(22, 7);
             this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(109, 23);
+            this.bunifuLabel5.Size = new System.Drawing.Size(98, 21);
             this.bunifuLabel5.TabIndex = 8;
             this.bunifuLabel5.Text = "Ảnh minh họa";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -474,7 +474,7 @@
             this.txtSDT.Location = new System.Drawing.Point(317, 84);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(291, 30);
+            this.txtSDT.Size = new System.Drawing.Size(291, 26);
             this.txtSDT.TabIndex = 5;
             // 
             // bunifuLabel3
@@ -484,7 +484,7 @@
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel3.Location = new System.Drawing.Point(157, 84);
             this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel3.Name = "bunifuLabel3";
@@ -504,7 +504,7 @@
             this.gcStaff.Margin = new System.Windows.Forms.Padding(4);
             this.gcStaff.MenuManager = this.barManager1;
             this.gcStaff.Name = "gcStaff";
-            this.gcStaff.Size = new System.Drawing.Size(1432, 494);
+            this.gcStaff.Size = new System.Drawing.Size(1432, 502);
             this.gcStaff.TabIndex = 0;
             this.gcStaff.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListStaff});

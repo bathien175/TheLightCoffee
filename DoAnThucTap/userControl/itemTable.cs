@@ -32,6 +32,31 @@ namespace DoAnThucTap.userControl
                 lblTableCode.Text = "Bàn " + value;
             }
         }
+        public DateTime GetTime
+        {
+            get { return time; }
+            set
+            {
+                time = value;
+                int h = DateTime.Now.Hour - time.Hour;
+                if (DateTime.Now.Hour > time.Hour)
+                {
+                    lblTime.Text = h + " giờ trước";
+                }
+                else
+                {
+                    int m = DateTime.Now.Minute - time.Minute;
+                    if (DateTime.Now.Minute > time.Minute)
+                    {
+                        lblTime.Text = m + " phút trước";
+                    }
+                    else
+                    {
+                        lblTime.Text = "Bây giờ";
+                    }
+                }
+            }
+        }
         public int QuantityBill
         {
             get { return countBill; }

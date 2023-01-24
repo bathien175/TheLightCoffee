@@ -120,23 +120,20 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAWMAAAB6CAYAAABqbDIGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH1SURBVHhe7dYxCsJQFETR7H892Z9i8QsRyzC3OAckvqS/
-        zAVAyH3fr/M8P7fb7XY/d//4+wGAR+kvQMBXjJUZIECMATYsY4AA/QUIsIwBasQYYMMyBgjQX4AAyxig
-        RowBNixjgAD9BQiwjAFqxBhgwzIGCNBfgADLGKBGjAE2LGOAAP0FCLCMAWrEGGDDMgYI0F+AAMsYoEaM
-        ATYsY4AA/QUIsIwBasQYYMMyBgjQX4AAyxigRowBNixjgAD9BQiwjAFqxBhgwzIGCNBfgADLGKBGjAE2
-        LGOAAP0FCLCMAWrEGGDDMgYI0F+AAMsYoEaMATYsY4AA/QUIsIwBasQYYMMyBgjQX4AAyxigRowBNixj
-        gAD9BQiwjAFqxBhgwzIGCNBfgADLGKBGjAE2LGOAAP0FCLCMAWrEGGDDMgYI0F+AAMsYoEaMATYsY4AA
-        /QUIsIwBasQYYMMyBgjQX4AAyxigRowBNixjgAD9BQiwjAFqxBhgwzIGCNBfgADLGKBGjAE2LGOAAP0F
-        CLCMAWrEGGDDMgYI0F+AAMsYoEaMATYsY4AA/QUIsIwBasQYYMMyBgjQX4AAyxigRowBNixjgAD9BQiw
-        jAFqxBhgwzIGCNBfgADLGKBGjAE2LGOAAP0FCPiJ8efFeXn+u91ut/vZG4CM63oDgeuEg1A0+HoAAAAA
-        SUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAQsAAABjCAYAAACMhSXRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFASURBVHhe7dbRacNQFERB9V+P+nMIWAaTGI7wfs6AQPcV
+        cNgD4LbzPB/X53a73df/y58HgKe3PogFAPAVywJIxAJIxAIA2LEsgEQsgEQsAIAdywJIxAJIxAIA2LEs
+        gEQsgEQsAIAdywJIxAJIxAIA2LEsgEQsgEQsAIAdywJIxAJIxAIA2LEsgEQsgEQsAIAdywJIxAJIxAIA
+        2LEsgEQsgEQsAIAdywJIxAJIxAIA2LEsgEQsgEQsAIAdywJIxAJIxAIA2LEsgEQsgEQsAIAdywJIxAJI
+        xAIA2LEsgEQsgEQsAIAdywJIxAJIxAIA2LEsgEQsgEQsAIAdywJIxAJIxAIA2LEsgEQsgEQsAIAdywJI
+        xAJIxAIA2LEsgEQsgEQsAIAdywJIxAJIxAK4TyyAT/7tw+/j9bndbvf1DxAdxw++mYP+urcQfQAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
   <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 27px;font-family: 'Britannic Bold'; font-size: 13.8pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 24px;font-family: 'Britannic Bold'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
   <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Tahoma'; font-size: 16.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 4px;font-family: 'Tahoma'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
 </root>

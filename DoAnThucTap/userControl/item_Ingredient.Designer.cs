@@ -44,9 +44,10 @@
             this.lblID.AllowParentOverrides = false;
             this.lblID.AutoEllipsis = false;
             this.lblID.AutoSize = false;
+            this.lblID.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblID.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblID.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblID.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(0, 0);
             this.lblID.Name = "lblID";
             this.lblID.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -108,7 +109,7 @@
             this.lblReserved.AutoSize = false;
             this.lblReserved.CursorType = null;
             this.lblReserved.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblReserved.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReserved.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReserved.Location = new System.Drawing.Point(1315, 0);
             this.lblReserved.Name = "lblReserved";
             this.lblReserved.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -125,7 +126,7 @@
             this.lblPrice.AutoSize = false;
             this.lblPrice.CursorType = null;
             this.lblPrice.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.Location = new System.Drawing.Point(1091, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -142,7 +143,7 @@
             this.lblUnit.AutoSize = false;
             this.lblUnit.CursorType = null;
             this.lblUnit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblUnit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnit.Location = new System.Drawing.Point(806, 0);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -159,7 +160,7 @@
             this.lblName.AutoSize = false;
             this.lblName.CursorType = null;
             this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(209, 0);
             this.lblName.Name = "lblName";
             this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
