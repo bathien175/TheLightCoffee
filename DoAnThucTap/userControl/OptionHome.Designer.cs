@@ -46,12 +46,13 @@
             this.imgImage.AllowFocused = false;
             this.imgImage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgImage.AutoSizeHeight = true;
-            this.imgImage.BorderRadius = 69;
+            this.imgImage.BorderRadius = 52;
             this.imgImage.Image = ((System.Drawing.Image)(resources.GetObject("imgImage.Image")));
             this.imgImage.IsCircle = true;
-            this.imgImage.Location = new System.Drawing.Point(30, 24);
+            this.imgImage.Location = new System.Drawing.Point(22, 20);
+            this.imgImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.imgImage.Name = "imgImage";
-            this.imgImage.Size = new System.Drawing.Size(139, 139);
+            this.imgImage.Size = new System.Drawing.Size(104, 104);
             this.imgImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgImage.TabIndex = 0;
             this.imgImage.TabStop = false;
@@ -65,11 +66,12 @@
             this.lblOption.AutoSize = false;
             this.lblOption.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblOption.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblOption.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOption.Location = new System.Drawing.Point(11, 169);
+            this.lblOption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOption.Location = new System.Drawing.Point(8, 137);
+            this.lblOption.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lblOption.Name = "lblOption";
             this.lblOption.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblOption.Size = new System.Drawing.Size(176, 25);
+            this.lblOption.Size = new System.Drawing.Size(132, 20);
             this.lblOption.TabIndex = 1;
             this.lblOption.Text = "Tên chức năng";
             this.lblOption.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,12 +79,13 @@
             // 
             // OptionHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblOption);
             this.Controls.Add(this.imgImage);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "OptionHome";
-            this.Size = new System.Drawing.Size(200, 203);
+            this.Size = new System.Drawing.Size(150, 165);
             this.Load += new System.EventHandler(this.OptionHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgImage)).EndInit();
             this.ResumeLayout(false);

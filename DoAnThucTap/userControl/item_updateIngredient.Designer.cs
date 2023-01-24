@@ -48,7 +48,7 @@
             this.lblID.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblID.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblID.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(0, 0);
             this.lblID.Name = "lblID";
             this.lblID.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -73,7 +73,7 @@
             this.nbrQuantity.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nbrQuantity.Location = new System.Drawing.Point(13, 23);
             this.nbrQuantity.Name = "nbrQuantity";
-            this.nbrQuantity.Size = new System.Drawing.Size(120, 34);
+            this.nbrQuantity.Size = new System.Drawing.Size(120, 29);
             this.nbrQuantity.TabIndex = 3;
             this.nbrQuantity.ValueChanged += new System.EventHandler(this.nbrQuantity_ValueChanged);
             // 
@@ -100,7 +100,7 @@
             this.lblUnit.AutoSize = false;
             this.lblUnit.CursorType = null;
             this.lblUnit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblUnit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnit.Location = new System.Drawing.Point(1009, 0);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -117,7 +117,7 @@
             this.lblNAme.AutoSize = false;
             this.lblNAme.CursorType = null;
             this.lblNAme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNAme.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNAme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNAme.Location = new System.Drawing.Point(250, 0);
             this.lblNAme.Name = "lblNAme";
             this.lblNAme.RightToLeft = System.Windows.Forms.RightToLeft.No;

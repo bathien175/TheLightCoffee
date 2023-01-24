@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblStep.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 11px;font-family: 'Times New Roman'; font-size: 16.2pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 18px;font-family: 'Times New Roman'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtStep.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABNUAAAA2CAYAAADgSa8tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHESURBVHhe7dixCcNAAATB778qPV+Gy3ABNg9KHMhoFc/A
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHESURBVHhe7dixCcNAAATB778qPV+Gy3ABNg9KHMhoFc/A
         JVfCDgAAAADggbXW6ziOj5mZmZmZmZmZmV1vd7QzqY2xDwAAAADgv93RzqQmqgEAAADAHaIaAAAAAESi
         GgAAAABEohoAAAAARKIaAAAAAESiGgAAAABEohoAAAAARKIaAAAAAESiGgAAAABEohoAAAAARKIaAAAA
         AESiGgAAAABEohoAAAAARKIaAAAAAESiGgAAAABEohoAAAAARKIaAAAAAESiGgAAAABEohoAAAAARKIa

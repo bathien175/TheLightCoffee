@@ -48,7 +48,7 @@
             this.lblID.AutoSize = false;
             this.lblID.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblID.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(0, 0);
             this.lblID.Name = "lblID";
             this.lblID.RightToLeft = System.Windows.Forms.RightToLeft.No;

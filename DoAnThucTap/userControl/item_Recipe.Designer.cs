@@ -45,7 +45,7 @@
             this.lblStep.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblStep.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblStep.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblStep.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStep.Location = new System.Drawing.Point(0, 0);
             this.lblStep.Name = "lblStep";
             this.lblStep.RightToLeft = System.Windows.Forms.RightToLeft.No;

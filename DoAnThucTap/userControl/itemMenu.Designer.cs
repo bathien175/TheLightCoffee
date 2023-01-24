@@ -77,7 +77,7 @@
             this.lblPrice.AutoEllipsis = false;
             this.lblPrice.AutoSize = false;
             this.lblPrice.CursorType = null;
-            this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.Firebrick;
             this.lblPrice.Location = new System.Drawing.Point(2, 201);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2);

@@ -113,14 +113,15 @@
             // 
             this.lblTotalBill.AllowParentOverrides = false;
             this.lblTotalBill.AutoEllipsis = false;
+            this.lblTotalBill.AutoSize = false;
             this.lblTotalBill.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalBill.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblTotalBill.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBill.ForeColor = System.Drawing.Color.White;
             this.lblTotalBill.Location = new System.Drawing.Point(38, 6);
             this.lblTotalBill.Name = "lblTotalBill";
             this.lblTotalBill.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotalBill.Size = new System.Drawing.Size(2, 0);
+            this.lblTotalBill.Size = new System.Drawing.Size(34, 26);
             this.lblTotalBill.TabIndex = 1;
             this.lblTotalBill.Text = "0";
             this.lblTotalBill.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,7 +279,6 @@
             this.Name = "itemTable";
             this.Size = new System.Drawing.Size(300, 202);
             this.bunifuPanel2.ResumeLayout(false);
-            this.bunifuPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
             this.menuTrip.ResumeLayout(false);
