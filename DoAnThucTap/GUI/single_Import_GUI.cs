@@ -45,7 +45,9 @@ namespace DoAnThucTap.GUI
             IngredientDAO dao = new IngredientDAO();
             this.staffcur = s;
             this.ingredientcur = dao.searchIngredientbyID(i);
+            lblName.Text = ingredientcur.Ingredient_Name;
             lblPrice.Text = String.Format("{0:0,0 vnđ}", ingredientcur.Ingredient_PriceImport);
+            lblTotalMoney.Text = "Thành tiền : " + String.Format("{0:0,0 vnđ}", (sl * convertMoney(lblPrice.Text)));
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

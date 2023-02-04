@@ -183,7 +183,7 @@ namespace DoAnThucTap.GUI
             SplashScreenManager.CloseForm();
             sell.ShowDialog();
             this.Show();
-            loadTable(0);
+            loadTable(stat);
 
         }
 

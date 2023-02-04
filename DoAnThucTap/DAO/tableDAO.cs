@@ -20,9 +20,12 @@ namespace DoAnThucTap.DAO
                 {
                     tableBill tb = new tableBill();
                     tb.dbtable = item;
-                    var bid = db.Bills.Where(b => b.Bill_Table == item.Table_Code && b.Bill_Status == false).FirstOrDefault();
-                    tb.BillQuantity = db.Bill_Info.Count(bif => bif.BI_Bill == bid.Bill_ID);
-                    tb.BillTime = bid.Bill_TimeFrom;
+                    if(item.Table_Status == 1) 
+                    {
+                        var bid = db.Bills.Where(b => b.Bill_Table == item.Table_Code && b.Bill_Status == false).FirstOrDefault();
+                        tb.BillQuantity = db.Bill_Info.Count(bif => bif.BI_Bill == bid.Bill_ID);
+                        tb.BillTime = bid.Bill_TimeFrom;
+                    }
                     listTableBill.Add(tb);
                 }
                 return listTableBill;

@@ -179,6 +179,7 @@ namespace DoAnThucTap.GUI
                 btnsub.Click -= subItemBill_Click;
                 btndel.Click += deleteItemBill_Click;
                 btnsub.Click += subItemBill_Click;
+                //item.Width = flpRoot.Width;
                 flpRoot.Controls.Add(item);
             }
         }
@@ -195,6 +196,7 @@ namespace DoAnThucTap.GUI
                 btnsub.Click -= subItemSplit_Click;
                 btndel.Click += deleteItemSplit_Click;
                 btnsub.Click += subItemSplit_Click;
+                //item.Width-= flpSplit.Width;
                 flpSplit.Controls.Add(item);
             }
         }

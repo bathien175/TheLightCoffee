@@ -225,6 +225,7 @@ namespace DoAnThucTap.GUI
                 BunifuImageButton btn = pro.detailButton;
                 btn.Tag = p.Product_ID;
                 btn.Click += BtnDetail_Click;
+                pro.Width = pnlListProduct.Width;
                 pnlListProduct.Controls.Add(pro);
                 SplashScreenManager.CloseForm();
             }
@@ -257,6 +258,7 @@ namespace DoAnThucTap.GUI
                     BunifuImageButton btn = pro.detailButton;
                     btn.Tag = item.Product_ID;
                     btn.Click += BtnDetail_Click;
+                    pro.Width = pnlListProduct.Width;
                     pnlListProduct.Controls.Add(pro);
                     stt++;
                 }

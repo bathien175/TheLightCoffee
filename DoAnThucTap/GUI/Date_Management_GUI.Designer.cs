@@ -307,11 +307,11 @@
             this.bunifuLabel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.bunifuLabel4.Location = new System.Drawing.Point(1199, 46);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(16, 4);
+            this.bunifuLabel4.Size = new System.Drawing.Size(68, 21);
             this.bunifuLabel4.TabIndex = 6;
             this.bunifuLabel4.Text = "Tổng tiền:";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -324,11 +324,11 @@
             this.bunifuLabel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.bunifuLabel2.Location = new System.Drawing.Point(930, 48);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(17, 4);
+            this.bunifuLabel2.Size = new System.Drawing.Size(75, 21);
             this.bunifuLabel2.TabIndex = 2;
             this.bunifuLabel2.Text = "Loại phiếu:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -481,7 +481,7 @@
             this.moneyDate.getSetImage = global::DoAnThucTap.Properties.Resources.add;
             this.moneyDate.Gettitle = "Tiền nhập thêm";
             this.moneyDate.Location = new System.Drawing.Point(820, 2);
-            this.moneyDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moneyDate.Margin = new System.Windows.Forms.Padding(2);
             this.moneyDate.Name = "moneyDate";
             this.moneyDate.Size = new System.Drawing.Size(405, 161);
             this.moneyDate.TabIndex = 3;
@@ -493,7 +493,7 @@
             this.moneyAll.getSetImage = global::DoAnThucTap.Properties.Resources.budget;
             this.moneyAll.Gettitle = "Quỹ tiền mặt";
             this.moneyAll.Location = new System.Drawing.Point(1229, 2);
-            this.moneyAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moneyAll.Margin = new System.Windows.Forms.Padding(2);
             this.moneyAll.Name = "moneyAll";
             this.moneyAll.Size = new System.Drawing.Size(405, 161);
             this.moneyAll.TabIndex = 2;
@@ -505,7 +505,7 @@
             this.moneyOut.getSetImage = global::DoAnThucTap.Properties.Resources.money_inflation;
             this.moneyOut.Gettitle = "Chi ra";
             this.moneyOut.Location = new System.Drawing.Point(2, 2);
-            this.moneyOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moneyOut.Margin = new System.Windows.Forms.Padding(2);
             this.moneyOut.Name = "moneyOut";
             this.moneyOut.Size = new System.Drawing.Size(405, 161);
             this.moneyOut.TabIndex = 1;
@@ -517,7 +517,7 @@
             this.moneyIn.getSetImage = global::DoAnThucTap.Properties.Resources.up1;
             this.moneyIn.Gettitle = "Thu vào";
             this.moneyIn.Location = new System.Drawing.Point(411, 2);
-            this.moneyIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moneyIn.Margin = new System.Windows.Forms.Padding(2);
             this.moneyIn.Name = "moneyIn";
             this.moneyIn.Size = new System.Drawing.Size(405, 161);
             this.moneyIn.TabIndex = 0;

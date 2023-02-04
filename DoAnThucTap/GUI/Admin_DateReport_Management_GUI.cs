@@ -15,7 +15,7 @@ namespace DoAnThucTap.GUI
 {
     public partial class Admin_DateReport_Management_GUI : DevExpress.XtraEditors.XtraForm
     {
-        private long moneyin = 0, moneyout = 0, moneytotal = 0, moneyimport = 0;
+        private long moneyin = 0, moneyout = 0, moneyimport = 0;
         public Admin_DateReport_Management_GUI()
         {
             InitializeComponent();
@@ -69,7 +69,6 @@ namespace DoAnThucTap.GUI
                 dateDTO.Add(dto);
                 iid++;
             }
-            moneytotal = moneyin - moneyout;
             gcProduct.DataSource = dateDTO;
             gvListProduct.OptionsBehavior.Editable = false;
         }
@@ -90,7 +89,7 @@ namespace DoAnThucTap.GUI
             btnReceipt.getMoney = moneyin;
             btnPayment.getMoney = moneyout;
             btnImportMoney.getMoney = moneyimport;
-            btnTotalMoney.getMoney = moneytotal;
+            btnTotalMoney.getMoney = moneyin;
         }
     }
 }

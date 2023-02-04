@@ -16,7 +16,7 @@ namespace DoAnThucTap.GUI
 {
     public partial class Admin_ReportByDate_Management_GUI : DevExpress.XtraEditors.XtraForm
     {
-        private long moneyin = 0, moneyout = 0, moneytotal = 0, moneyimport = 0;
+        private long moneyin = 0, moneyout = 0, moneyimport = 0;
         public Admin_ReportByDate_Management_GUI()
         {
             InitializeComponent();
@@ -37,7 +37,6 @@ namespace DoAnThucTap.GUI
         {
             moneyin = 0;
             moneyout = 0;
-            moneytotal = 0; 
             moneyimport = 0;
             BudgetDAO dao = new BudgetDAO();
             List<exportbyDate_Result> list = dao.getListByDate(Convert.ToDateTime(dtpkChooseDate.EditValue.ToString()));
@@ -72,7 +71,6 @@ namespace DoAnThucTap.GUI
                 dateDTO.Add(dto);
                 iid++;
             }
-            moneytotal = moneyin - moneyout;
             gcProduct.DataSource = dateDTO;
             gvListProduct.OptionsBehavior.Editable = false;
         }
@@ -99,7 +97,7 @@ namespace DoAnThucTap.GUI
             btnReceipt.getMoney = moneyin;
             btnPayment.getMoney = moneyout;
             btnImportMoney.getMoney = moneyimport;
-            btnTotalMoney.getMoney = moneytotal;
+            btnTotalMoney.getMoney = moneyin;
         }
         private void ShowGridPreview(GridControl grid)
         {

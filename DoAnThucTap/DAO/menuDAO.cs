@@ -79,7 +79,7 @@ namespace DoAnThucTap.DAO
         {
             using (TheLightCoffeeEntities db = new TheLightCoffeeEntities())
             {
-                var pr = db.Products.Where(p => p.Product_ID == id && p.Product_isActive == true).FirstOrDefault();
+                var pr = db.Products.Where(p => p.Product_ID == id).FirstOrDefault();
                 return pr;
             }
         }

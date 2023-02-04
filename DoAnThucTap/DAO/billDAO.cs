@@ -448,6 +448,7 @@ namespace DoAnThucTap.DAO
                                 db.SaveChanges();
 
                                 exsist= true;
+                                break;
                             }
                             else 
                             {
